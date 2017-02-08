@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <ScrollPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@logo.png" />
+               </image></ImageView>
+            <ButtonBar prefHeight="200.0" prefWidth="1092.0">
+              <buttons>
+                <Button mnemonicParsing="false" text="Accueil" />
+                  <Button mnemonicParsing="false" text="Gallerie" />
+                  <Button mnemonicParsing="false" text="Nos magasins" />
+                  <Button mnemonicParsing="false" text="Info pratique" />
+              </buttons>
+            </ButtonBar>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox prefHeight="80.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="110.0" prefWidth="200.0" text="salut" />
+            <Pane prefHeight="100.0" prefWidth="880.0" />
+            <ImageView fitHeight="80.0" fitWidth="236.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </HBox>
+   </bottom>
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #7cb131;" BorderPane.alignment="CENTER" />
+   </left>
+</BorderPane>
