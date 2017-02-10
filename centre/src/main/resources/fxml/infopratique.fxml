@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <ScrollPane maxHeight="750.0" prefHeight="727.0" prefWidth="1080.0" BorderPane.alignment="CENTER">
+         <content>
+            <AnchorPane prefHeight="690.0" prefWidth="1061.0">
+               <padding>
+                  <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+               </padding>
+               <children>
+                  <AnchorPane layoutX="78.0" layoutY="60.0" prefHeight="620.0" prefWidth="425.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <Label alignment="CENTER" layoutX="168.0" layoutY="287.0" prefHeight="620.0" prefWidth="425.0" text="CARTE DU CENTRE" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font size="96.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="563.0" layoutY="380.0" prefHeight="300.0" prefWidth="425.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <Label alignment="CENTER" layoutX="168.0" layoutY="287.0" prefHeight="620.0" prefWidth="425.0" text="LEGENDE DE LA CARTE" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font size="72.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="563.0" layoutY="60.0" prefHeight="300.0" prefWidth="425.0" style="-fx-background-color: #84a5c9;">
+                     <children>
+                        <GridPane alignment="CENTER" layoutX="-19.0" layoutY="60.0" prefHeight="300.0" prefWidth="425.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="82.0" prefWidth="428.0" text="Lundi - Samedi toute l'année" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.rowIndex="1">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="82.0" prefWidth="428.0" text="Boutiques : 8h - 19h" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.rowIndex="2">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="82.0" prefWidth="428.0" text="Restaurants : 10h - 23h" textAlignment="CENTER" textFill="WHITE" wrapText="true" GridPane.rowIndex="3">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="82.0" prefWidth="428.0" text="HORAIRES D'OUVERTURE :" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </center>
+   <top>
+      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #8;" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #84a5c9;">
+               <children>
+                  <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/logoCentre.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="360.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="200.0" prefWidth="360.0" style="-fx-background-color: #4B77BE; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="ACTUALITES" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="360.0" prefHeight="200.0" prefWidth="360.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="200.0" prefWidth="360.0" style="-fx-background-color: #4B77BE; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="BOUTIQUES" textFill="WHITE">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="720.0" prefHeight="200.0" prefWidth="360.0">
+                     <children>
+                        <Button mnemonicParsing="false" prefHeight="200.0" prefWidth="360.0" style="-fx-background-color: #84a5c9; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="INFOS PRATIQUES" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font size="40.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="80.0" prefWidth="198.0" text="13:37">
+               <font>
+                  <Font size="40.0" />
+               </font></Label>
+            <AnchorPane prefHeight="80.0" prefWidth="883.0" style="-fx-border-style: solid; -fx-border-color: #aaaaaa; -fx-border-width: 0 2 0 2;">
+               <children>
+                  <Label layoutX="4.0" layoutY="32.0" prefHeight="80.0" prefWidth="882.0" text="#IHM, l'équipde de J-A a eu 20 au projet IHM.                          #IHM Josué en échec ..." AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                     </padding>
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <StackPane prefHeight="80.0" prefWidth="202.0">
+               <children>
+                  <ImageView fitHeight="67.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/united-kingdom.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </StackPane>
+         </children>
+      </HBox>
+   </bottom>
+   <left>
+      <Pane maxHeight="1.7976931348623157E308" prefHeight="552.0" prefWidth="200.0" style="-fx-background-color: #4B77BE; -fx-border-color: #ffffff; -fx-border-width: 2 0 0 0;" BorderPane.alignment="CENTER" />
+   </left>
+</BorderPane>
