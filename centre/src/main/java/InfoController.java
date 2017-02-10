@@ -8,16 +8,21 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class BoutiquesController {
+public class InfoController {
 
     @FXML
-    void switchActu(MouseEvent event) throws IOException {
+    void clickActu(MouseEvent event) throws IOException {
         switchScene(event, "/fxml/Actu.fxml");
     }
 
     @FXML
-    void switchInfo(MouseEvent event) throws IOException {
-        switchScene(event, "/fxml/infopratique.fxml");
+    void clickBoutiques(MouseEvent event) throws IOException {
+        switchScene(event, "/fxml/Boutiques.fxml");
+    }
+
+    @FXML
+    void switchLanguage(MouseEvent event) {
+
     }
 
     private void switchScene(MouseEvent event, String location) throws IOException {

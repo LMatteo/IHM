@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="InfoController">
    <center>
       <ScrollPane maxHeight="750.0" prefHeight="727.0" prefWidth="1080.0" BorderPane.alignment="CENTER">
          <content>
@@ -101,7 +101,7 @@
                <children>
                   <Pane prefHeight="200.0" prefWidth="360.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="200.0" prefWidth="360.0" style="-fx-background-color: #4B77BE; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="ACTUALITES" textAlignment="CENTER" textFill="WHITE">
+                        <Button mnemonicParsing="false" onMouseClicked="#clickActu" prefHeight="200.0" prefWidth="360.0" style="-fx-background-color: #4B77BE; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="ACTUALITES" textAlignment="CENTER" textFill="WHITE">
                            <font>
                               <Font size="40.0" />
                            </font>
@@ -110,7 +110,7 @@
                   </Pane>
                   <Pane layoutX="360.0" prefHeight="200.0" prefWidth="360.0">
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="200.0" prefWidth="360.0" style="-fx-background-color: #4B77BE; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="BOUTIQUES" textFill="WHITE">
+                        <Button mnemonicParsing="false" onMouseClicked="#clickBoutiques" prefHeight="200.0" prefWidth="360.0" style="-fx-background-color: #4B77BE; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="BOUTIQUES" textFill="WHITE">
                            <font>
                               <Font size="40.0" />
                            </font>
@@ -152,7 +152,7 @@
             </AnchorPane>
             <StackPane prefHeight="80.0" prefWidth="202.0">
                <children>
-                  <ImageView fitHeight="67.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="67.0" fitWidth="126.0" onMouseClicked="#switchLanguage" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../images/united-kingdom.png" />
                      </image>
