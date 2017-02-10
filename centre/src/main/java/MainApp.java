@@ -21,7 +21,7 @@ public class MainApp extends Application {
         FXMLLoader loader = new FXMLLoader();
         Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
 
-        Scene scene = new Scene(rootNode, 400, 200);
+        Scene scene = new Scene(rootNode, 1280, 1024);
 
         stage.setTitle("Borne");
         stage.setScene(scene);
