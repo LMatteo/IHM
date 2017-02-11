@@ -28,7 +28,7 @@ public class AccControl {
 
     @FXML
     void goToAcc(ActionEvent event) throws IOException{
-        VBox box = FXMLLoader.load(getClass().getResource("../resources/home.fxml"));
+        VBox box = FXMLLoader.load(getClass().getResource("/home.fxml"));
         pane.setContent(box);
     }
 
