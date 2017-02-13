@@ -28,7 +28,7 @@ public class Home{
 
     @FXML
     void goToBook(MouseEvent event) throws IOException{
-        switchScene(event, "/fxml/Home.fxml");
+        switchScene(event, "/fxml/Livre.fxml");
     }
 
     @FXML
@@ -37,8 +37,8 @@ public class Home{
     }
 
     @FXML
-    void goToCD(MouseEvent event) {
-
+    void goToCD(MouseEvent event) throws IOException {
+        switchScene(event, "/fxml/Media.fxml");
     }
 
     @FXML

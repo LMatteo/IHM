@@ -19,13 +19,13 @@ import java.io.IOException;
 public class Catalogue {
 
     @FXML
-    void goToBook(MouseEvent event) {
-
+    void goToBook(MouseEvent event) throws IOException {
+        switchScene(event, "/fxml/Livre.fxml");
     }
 
     @FXML
-    void goToCD(MouseEvent event) {
-
+    void goToCD(MouseEvent event) throws IOException {
+        switchScene(event, "/fxml/Media.fxml");
     }
 
     @FXML

@@ -18,8 +18,8 @@ public class Currently {
     }
 
     @FXML
-    void goToCD(MouseEvent event) {
-
+    void goToCD(MouseEvent event) throws IOException {
+        switchScene(event, "/fxml/Media.fxml");
     }
 
     @FXML

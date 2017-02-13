@@ -1,5 +1,9 @@
 package magasin;
 
+/**
+ * @author Zaki
+ */
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -10,16 +14,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/**
- * @author Zaki
- */
-
-public class Livre {
+public class Media {
 
     @FXML
-    void goToBook(MouseEvent event) throws IOException{
+    void goToBook(MouseEvent event) throws IOException {
         switchScene(event, "/fxml/Livre.fxml");
     }
+
 
     @FXML
     void goToCD(MouseEvent event) throws IOException {
@@ -32,7 +33,8 @@ public class Livre {
     }
 
     @FXML
-    void goToMall(MouseEvent event) throws IOException {
+    void goToMall(MouseEvent event) {
+
     }
 
     @FXML
@@ -48,4 +50,5 @@ public class Livre {
         stage.setScene(scene);
         stage.show();
     }
+
 }
