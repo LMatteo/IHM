@@ -156,7 +156,7 @@
                <children>
                   <ImageView fitHeight="80.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@resources/img/united-kingdom.png" />
+                        <Image url="@/images/united-kingdom.png" />
                      </image>
                   </ImageView>
                </children>
@@ -169,7 +169,7 @@
          <children>
             <ImageView fitHeight="52.0" fitWidth="70.0" layoutX="72.0" layoutY="11.0" onMouseClicked="#goToMall" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@resources/img/homepage.png" />
+                  <Image url="@/images/homepage.png" />
                </image>
             </ImageView>
          </children>
