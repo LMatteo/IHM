@@ -10,10 +10,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Currently {
+/**
+ * @author Zaki
+ */
+
+public class Livre {
 
     @FXML
-    void goToBook(MouseEvent event) throws IOException {
+    void goToBook(MouseEvent event) throws IOException{
         switchScene(event, "/fxml/Livre.fxml");
     }
 
@@ -28,8 +32,7 @@ public class Currently {
     }
 
     @FXML
-    void goToMall(MouseEvent event) {
-
+    void goToMall(MouseEvent event) throws IOException {
     }
 
     @FXML

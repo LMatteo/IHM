@@ -9,6 +9,10 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.util.Properties;
+
 import java.io.IOException;
 
 /**
@@ -24,6 +28,7 @@ public class Home{
 
     @FXML
     void goToBook(MouseEvent event) throws IOException{
+        switchScene(event, "/fxml/Home.fxml");
     }
 
     @FXML
@@ -42,8 +47,8 @@ public class Home{
     }
 
     @FXML
-    void goToMall(MouseEvent event) {
-
+    void goToMall(MouseEvent event) throws  IOException{
+        //switchScene(event, System.getProperty("user.dir")+ File.separator +"IHM/centre/src/resources/fxml/Actu.fxml");
     }
 
     @FXML
