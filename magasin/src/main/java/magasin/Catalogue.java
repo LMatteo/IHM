@@ -1,5 +1,9 @@
 package magasin;
 
+/**
+ * @author Zaki
+ */
+
 import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,23 +15,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-/**
- * @author Zaki
- */
 
-public class Home{
+public class Catalogue {
 
     @FXML
-    void goToActu(MouseEvent event) throws IOException {
-        switchScene(event, "/fxml/Currently.fxml");
-    }
-
-    @FXML
-    void goToBook(MouseEvent event) throws IOException{
-    }
-
-    @FXML
-    void goToBoutique(MouseEvent event) {
+    void goToBook(MouseEvent event) {
 
     }
 
@@ -37,8 +29,8 @@ public class Home{
     }
 
     @FXML
-    void goToCatalog(MouseEvent event) throws IOException{
-        switchScene(event, "/fxml/Catalogue.fxml");
+    void goToHomePage(MouseEvent event) throws IOException{
+        switchScene(event, "/fxml/Home.fxml");
     }
 
     @FXML
@@ -47,14 +39,10 @@ public class Home{
     }
 
     @FXML
-    void goToPromo(MouseEvent event) {
-
-    }
-
-    @FXML
     void goToStage(MouseEvent event) {
 
     }
+
 
     private void switchScene(MouseEvent event, String location) throws IOException {
         Node node = (Node) event.getSource();
@@ -64,7 +52,4 @@ public class Home{
         stage.setScene(scene);
         stage.show();
     }
-
-
 }
-
