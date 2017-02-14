@@ -6,12 +6,22 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1060.0" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
    <children>
+      <Pane prefHeight="150.0" prefWidth="200.0">
+         <children>
+            <Text layoutX="191.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bienvenue chez To Be Or To Have !">
+               <font>
+                  <Font name="Comic Sans MS" size="39.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="1040.0" style="-fx-background-color: #fff; -fx-border-style: solid; -fx-border-color: #7f8c8d;" styleClass="-fx-border">
          <children>
             <Text layoutX="39.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Découvrez la nouvelle collection des livres DurifMyMen " AnchorPane.leftAnchor="39.0" AnchorPane.topAnchor="14.0">
