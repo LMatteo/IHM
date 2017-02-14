@@ -38,8 +38,8 @@ public class Media {
     }
 
     @FXML
-    void goToStage(MouseEvent event) {
-
+    void goToStage(MouseEvent event) throws IOException{
+        switchScene(event, "/fxml/Stage.fxml");
     }
 
     private void switchScene(MouseEvent event, String location) throws IOException {
