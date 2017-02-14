@@ -32,8 +32,8 @@ public class Home{
     }
 
     @FXML
-    void goToBoutique(MouseEvent event) {
-
+    void goToBoutique(MouseEvent event) throws IOException{
+        switchScene(event, "/fxml/Boutique.fxml");
     }
 
     @FXML
