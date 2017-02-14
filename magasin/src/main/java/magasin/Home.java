@@ -52,8 +52,8 @@ public class Home{
     }
 
     @FXML
-    void goToPromo(MouseEvent event) {
-
+    void goToPromo(MouseEvent event) throws IOException{
+        switchScene(event, "/fxml/Catalogue.fxml");
     }
 
     @FXML

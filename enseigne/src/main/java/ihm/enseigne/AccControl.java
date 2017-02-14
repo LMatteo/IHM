@@ -30,8 +30,12 @@ public class AccControl {
 
     private Button previous;
     @FXML
+    public void initialize() throws IOException {
+        VBox box = FXMLLoader.load(getClass().getResource("/home.fxml"));
+        pane.setContent(box);
+    }
+    @FXML
     void goToAcc(ActionEvent event) throws IOException{
-        System.out.println("salut");
         VBox box = FXMLLoader.load(getClass().getResource("/home.fxml"));
         pane.setContent(box);
         switchBut(accueil);
