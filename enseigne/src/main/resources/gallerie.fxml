@@ -1,124 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1060.0" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="1040.0" style="-fx-background-color: #fff; -fx-border-style: solid; -fx-border-color: #7f8c8d;" styleClass="-fx-border">
+      <Pane prefHeight="150.0" prefWidth="200.0">
          <children>
-            <Text layoutX="39.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Découvrez la nouvelle collection des livres DurifMyMen " AnchorPane.leftAnchor="39.0" AnchorPane.topAnchor="14.0">
+            <Text layoutX="95.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Découvrez notre collection de photographies...!">
                <font>
-                  <Font size="32.0" />
-               </font>
-            </Text>
-            <ImageView fitHeight="176.0" fitWidth="263.0" layoutX="47.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@livre1.png" />
-               </image>
-            </ImageView>
-            <Text layoutX="317.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Le grand auteur Michel Colette présente en exclusivité dans nos magasins sa nouvelle trilogie de romans. A travers toujours plus d'aventures et d'humour, l'auteur nous emmene aux quatres du monde pour résoudre les plus grands complots de notre société, tel que les reptiliens ou les illuminatis." textAlignment="JUSTIFY" wrappingWidth="621.376953125">
-               <font>
-                  <Font size="21.0" />
-               </font>
-            </Text>
-            <Text layoutX="746.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A découvrir ...">
-               <font>
-                  <Font size="32.0" />
+                  <Font name="Comic Sans MS" size="39.0" />
                </font>
             </Text>
          </children>
-         <VBox.margin>
-            <Insets left="10.0" right="10.0" top="10.0" />
-         </VBox.margin>
-         <padding>
-            <Insets left="10.0" right="10.0" />
-         </padding>
-      </AnchorPane>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="1040.0" style="-fx-background-color: #fff; -fx-border-style: solid; -fx-border-color: #7f8c8d;">
+      </Pane>
+      <HBox prefHeight="200.0" prefWidth="1060.0">
          <children>
-            <Text layoutX="39.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Découvrez notre TOP des artistes 2016 !" AnchorPane.leftAnchor="39.0" AnchorPane.topAnchor="14.0">
-               <font>
-                  <Font size="32.0" />
-               </font>
-            </Text>
-            <Text layoutX="39.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="JUSTIFY" wrappingWidth="744.376953125">
-               <font>
-                  <Font size="21.0" />
-               </font>
-            </Text>
-            <ScrollPane hbarPolicy="ALWAYS" layoutX="39.0" layoutY="76.0" prefHeight="194.0" prefWidth="920.0" vbarPolicy="NEVER">
-               <content>
-                  <HBox prefHeight="176.0">
-                     <children>
-                        <ImageView fitHeight="175.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@swag.jpg" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="175.0" fitWidth="274.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@pitbull.jpg" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="174.0" fitWidth="282.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@gims.jpg" />
-                           </image>
-                        </ImageView>
-                        <ImageView fitHeight="176.0" fitWidth="339.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@kaaris.jpg" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
-               </content>
-            </ScrollPane>
+            <Pane prefHeight="200.0" prefWidth="212.0" style="-fx-background-color: #1abc9c;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="212.0" style="-fx-background-color: #2ecc71;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="212.0" style="-fx-background-color: #3498db;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="212.0" style="-fx-background-color: #9b59b6;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="212.0" style="-fx-background-color: #34495e;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Pane>
          </children>
-         <VBox.margin>
-            <Insets left="10.0" right="10.0" top="10.0" />
-         </VBox.margin>
-         <padding>
-            <Insets left="10.0" right="10.0" />
-         </padding>
-      </AnchorPane>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="1040.0" style="-fx-background-color: #fff; -fx-border-style: solid; -fx-border-color: #7f8c8d;">
+      </HBox>
+      <HBox prefHeight="200.0" prefWidth="1060.0">
          <children>
-            <Text layoutX="39.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Buffet gratuit lors de la session de dédicaces de SwaggMan à Tours" AnchorPane.leftAnchor="39.0" AnchorPane.topAnchor="14.0">
-               <font>
-                  <Font size="32.0" />
-               </font>
-            </Text>
-            <ImageView fitHeight="176.0" fitWidth="263.0" layoutX="732.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@swag.jpg" />
-               </image>
-            </ImageView>
-            <Text layoutX="43.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Le fameux rappeur SwaggMan sera présent ce dimanche à Tours pour une session dédicace de son nouveau album &quot;Equipey Tatouey&quot;. Un buffet à base de toasts au saumon sera offert durant la session. " textAlignment="JUSTIFY" wrappingWidth="652.376953125">
-               <font>
-                  <Font size="21.0" />
-               </font>
-            </Text>
-            <Text layoutX="215.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Venez nombreux !">
-               <font>
-                  <Font size="32.0" />
-               </font>
-            </Text>
+            <Pane prefHeight="200.0" prefWidth="212.0" style="-fx-background-color: #16a085;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="212.0" style="-fx-background-color: #27ae60;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="212.0" style="-fx-background-color: #2980b9;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="212.0" style="-fx-background-color: #8e44ad;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="212.0" style="-fx-background-color: #2c3e50;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Pane>
          </children>
-         <VBox.margin>
-            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-         </VBox.margin>
-         <padding>
-            <Insets left="10.0" right="10.0" />
-         </padding>
-      </AnchorPane>
+      </HBox>
+      <HBox prefHeight="200.0" prefWidth="1060.0">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="212.0" style="-fx-background-color: #f1c40f;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="212.0" style="-fx-background-color: #e67e22;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="212.0" style="-fx-background-color: #e74c3c;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="212.0" style="-fx-background-color: #c8cdce;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="212.0" style="-fx-background-color: #95a5a6;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Pane>
+         </children>
+      </HBox>
+      <HBox prefHeight="200.0" prefWidth="1060.0">
+         <children>
+            <Pane prefHeight="200.0" prefWidth="212.0" style="-fx-background-color: #f39c12;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="212.0" style="-fx-background-color: #d35400;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="212.0" style="-fx-background-color: #c0392b;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="212.0" style="-fx-background-color: #bdc3c7;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="212.0" style="-fx-background-color: #7f8c8d;">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Pane>
+         </children>
+      </HBox>
    </children>
+   <padding>
+      <Insets left="10.0" right="10.0" />
+   </padding>
 </VBox>
