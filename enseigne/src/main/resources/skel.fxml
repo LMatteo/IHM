@@ -18,7 +18,7 @@
       <ScrollPane fx:id="pane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
    </center>
    <top>
-      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #8;" BorderPane.alignment="CENTER">
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #a3d35f;">
                <children>
@@ -29,22 +29,22 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <Button fx:id="accueil" mnemonicParsing="false" onAction="#goToAcc" prefHeight="200.0" prefWidth="226.0" style="-fx-background-color: #a3d35f; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Accueil" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <Button fx:id="accueil" mnemonicParsing="false" prefHeight="200.0" prefWidth="226.0" style="-fx-background-color: #a3d35f; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Accueil" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <font>
                   <Font size="40.0" />
                </font>
             </Button>
-            <Button fx:id="gallerie" mnemonicParsing="false" onAction="#goToGal" prefHeight="200.0" prefWidth="244.0" style="-fx-background-color: #a3d35f; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Gallerie" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <Button fx:id="gallerie" mnemonicParsing="false" prefHeight="200.0" prefWidth="244.0" style="-fx-background-color: #a3d35f; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Gallerie" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <font>
                   <Font size="40.0" />
                </font>
             </Button>
-            <Button fx:id="mag" mnemonicParsing="false" onAction="#goToMag" prefHeight="200.0" prefWidth="316.0" style="-fx-background-color: #a3d35f; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Nos Magasins" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <Button fx:id="mag" mnemonicParsing="false" prefHeight="200.0" prefWidth="316.0" style="-fx-background-color: #a3d35f; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Nos Magasins" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <font>
                   <Font size="40.0" />
                </font>
             </Button>
-            <Button fx:id="info" mnemonicParsing="false" onAction="#goToInfo" prefHeight="200.0" prefWidth="304.0" style="-fx-background-color: #a3d35f; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Infos pratiques" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <Button fx:id="info" mnemonicParsing="false" prefHeight="200.0" prefWidth="304.0" style="-fx-background-color: #a3d35f; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Infos pratiques" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <font>
                   <Font size="40.0" />
                </font>
