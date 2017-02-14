@@ -34,6 +34,7 @@ public class AccControl {
     public void initialize() throws IOException {
         VBox box = FXMLLoader.load(getClass().getResource("/home.fxml"));
         switchBut(accueil);
+        pane.setVvalue(0);
         pane.setContent(box);
         accueil.setCursor(Cursor.HAND);
     }
@@ -42,6 +43,7 @@ public class AccControl {
         VBox box = FXMLLoader.load(getClass().getResource("/home.fxml"));
         pane.setContent(box);
         switchBut(accueil);
+        pane.setVvalue(0);
     }
 
     @FXML
@@ -49,6 +51,7 @@ public class AccControl {
         VBox box = FXMLLoader.load(getClass().getResource("/gallerie.fxml"));
         pane.setContent(box);
         switchBut(gallerie);
+        pane.setVvalue(0);
 
     }
 
@@ -57,6 +60,7 @@ public class AccControl {
         VBox box = FXMLLoader.load(getClass().getResource("/infos.fxml"));
         pane.setContent(box);
         switchBut(info);
+        pane.setVvalue(0);
 
     }
 
@@ -65,7 +69,7 @@ public class AccControl {
         VBox box = FXMLLoader.load(getClass().getResource("/magasins.fxml"));
         pane.setContent(box);
         switchBut(mag);
-
+        pane.setVvalue(0);
     }
 
     private void switchBut(Button bigButt){
