@@ -12,8 +12,9 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         FXMLLoader loader = new FXMLLoader();
         Parent root = loader.load(getClass().getResource("/skel.fxml"));
+        Scene scene = new Scene(root, 1280, 1024);
         primaryStage.setTitle("salut");
-        primaryStage.setScene(new Scene(root, 1280, 1024));
+        primaryStage.setScene(scene);
         primaryStage.show();
     }
 
