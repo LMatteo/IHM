@@ -45,7 +45,7 @@ public class AccControl {
 
     @FXML
     void goToGal(ActionEvent event) throws IOException {
-        VBox box = FXMLLoader.load(getClass().getResource("/home.fxml"));
+        VBox box = FXMLLoader.load(getClass().getResource("/gallerie.fxml"));
         pane.setContent(box);
         switchBut(gallerie);
 
@@ -53,7 +53,7 @@ public class AccControl {
 
     @FXML
     void goToInfo(ActionEvent event) throws IOException{
-        VBox box = FXMLLoader.load(getClass().getResource("/home.fxml"));
+        VBox box = FXMLLoader.load(getClass().getResource("/infos.fxml"));
         pane.setContent(box);
         switchBut(info);
 
@@ -61,7 +61,7 @@ public class AccControl {
 
     @FXML
     void goToMag(ActionEvent event) throws IOException {
-        VBox box = FXMLLoader.load(getClass().getResource("/home.fxml"));
+        VBox box = FXMLLoader.load(getClass().getResource("/magasins.fxml"));
         pane.setContent(box);
         switchBut(mag);
 
