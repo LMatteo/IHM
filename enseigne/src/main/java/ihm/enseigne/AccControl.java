@@ -3,6 +3,7 @@ package ihm.enseigne;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
@@ -33,6 +34,7 @@ public class AccControl {
     public void initialize() throws IOException {
         VBox box = FXMLLoader.load(getClass().getResource("/home.fxml"));
         pane.setContent(box);
+        accueil.setCursor(Cursor.HAND);
     }
     @FXML
     void goToAcc(ActionEvent event) throws IOException{
@@ -42,19 +44,25 @@ public class AccControl {
     }
 
     @FXML
-    void goToGal(ActionEvent event) {
+    void goToGal(ActionEvent event) throws IOException {
+        VBox box = FXMLLoader.load(getClass().getResource("/home.fxml"));
+        pane.setContent(box);
         switchBut(gallerie);
 
     }
 
     @FXML
-    void goToInfo(ActionEvent event) {
+    void goToInfo(ActionEvent event) throws IOException{
+        VBox box = FXMLLoader.load(getClass().getResource("/home.fxml"));
+        pane.setContent(box);
         switchBut(info);
 
     }
 
     @FXML
-    void goToMag(ActionEvent event) {
+    void goToMag(ActionEvent event) throws IOException {
+        VBox box = FXMLLoader.load(getClass().getResource("/home.fxml"));
+        pane.setContent(box);
         switchBut(mag);
 
     }
