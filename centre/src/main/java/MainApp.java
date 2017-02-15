@@ -16,7 +16,7 @@ public class MainApp extends Application {
 
     public void start(Stage stage) throws Exception {
 
-        String fxmlFile = "/fxml/Actu.fxml";
+        String fxmlFile = "/fxml/layout.fxml";
         log.debug("Loading FXML for main view from: {}", fxmlFile);
         FXMLLoader loader = new FXMLLoader();
         Parent rootNode = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
