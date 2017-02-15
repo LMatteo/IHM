@@ -13,8 +13,9 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <padding>
       <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
    </padding>
@@ -46,7 +47,7 @@
          <children>
             <HBox prefHeight="192.0" prefWidth="836.0" style="-fx-background-color: #dcdcdc; -fx-border-style: solid; -fx-border-color: #7f8c8d;">
                <children>
-                  <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: #7f8c8d; -fx-border-width: 0 1 0 0; -fx-background-color: #fff;">
+                  <StackPane maxHeight="201.0" maxWidth="200.0" minHeight="150.0" minWidth="200.0" prefHeight="201.0" prefWidth="200.0" style="-fx-border-color: #7f8c8d; -fx-border-width: 0 1 0 0; -fx-background-color: #fff;">
                      <children>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -60,32 +61,44 @@
                   </StackPane>
                   <VBox prefHeight="150.0" prefWidth="699.0">
                      <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="684.0" style="-fx-border-color: #7f8c8d; -fx-border-width: 0 0 1 0;" text="To Be or to Have">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" prefHeight="109.0" prefWidth="684.0" style="-fx-background-color: #ffffff; -fx-border-width: 0 1 0 0; -fx-border-color: #7f8c8d;" text="Promotions actuelles">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" prefHeight="63.0" prefWidth="684.0" style="-fx-border-width: 1 0 0 0; -fx-border-color: #7f8c8d;" text="Accéder à la page de la boutique">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
+                        <AnchorPane>
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="684.0" style="-fx-border-color: #7f8c8d; -fx-border-width: 0 0 1 0;" text="To Be or to Have">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="95.0" prefWidth="684.0" style="-fx-background-color: #ffffff;">
+                           <children>
+                              <Text layoutX="7.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="St valentin : venez avec votre moitié au stage de développement personnel !" textAlignment="CENTER" wrappingWidth="666.87890625">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="24.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <Label alignment="CENTER" prefHeight="52.0" prefWidth="684.0" style="-fx-border-width: 1 0 0 0; -fx-border-color: #7f8c8d;" text="Accéder à la page de la boutique">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
                      </children>
                   </VBox>
                </children>
             </HBox>
             <HBox prefHeight="192.0" prefWidth="836.0" style="-fx-background-color: #dcdcdc; -fx-border-style: solid; -fx-border-color: #7f8c8d;">
                <children>
-                  <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: #7f8c8d; -fx-border-width: 0 1 0 0; -fx-background-color: #fff;">
+                  <StackPane maxHeight="201.0" maxWidth="200.0" minHeight="150.0" minWidth="200.0" prefHeight="201.0" prefWidth="200.0" style="-fx-border-color: #7f8c8d; -fx-border-width: 0 1 0 0; -fx-background-color: #fff;">
                      <children>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/logo.png" />
+                              <Image url="@../images/burger-king.png" />
                            </image>
                            <StackPane.margin>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -95,32 +108,44 @@
                   </StackPane>
                   <VBox prefHeight="150.0" prefWidth="699.0">
                      <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="684.0" style="-fx-border-color: #7f8c8d; -fx-border-width: 0 0 1 0;" text="To Be or to Have">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" prefHeight="109.0" prefWidth="684.0" style="-fx-background-color: #ffffff; -fx-border-width: 0 1 0 0; -fx-border-color: #7f8c8d;" text="Promotions actuelles">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" prefHeight="63.0" prefWidth="684.0" style="-fx-border-width: 1 0 0 0; -fx-border-color: #7f8c8d;" text="Accéder à la page de la boutique">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
+                        <AnchorPane>
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="684.0" style="-fx-border-color: #7f8c8d; -fx-border-width: 0 0 1 0;" text="Burger King">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="95.0" prefWidth="684.0" style="-fx-background-color: #ffffff;">
+                           <children>
+                              <Text layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ouverture le 25/01 : venez nombreux !" textAlignment="CENTER" wrappingWidth="666.87890625">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="24.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <Label alignment="CENTER" prefHeight="52.0" prefWidth="684.0" style="-fx-border-width: 1 0 0 0; -fx-border-color: #7f8c8d;" text="Accéder à la page de la boutique">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
                      </children>
                   </VBox>
                </children>
             </HBox>
             <HBox prefHeight="192.0" prefWidth="836.0" style="-fx-background-color: #dcdcdc; -fx-border-style: solid; -fx-border-color: #7f8c8d;">
                <children>
-                  <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: #7f8c8d; -fx-border-width: 0 1 0 0; -fx-background-color: #fff;">
+                  <StackPane maxHeight="201.0" maxWidth="200.0" minHeight="150.0" minWidth="200.0" prefHeight="201.0" prefWidth="200.0" style="-fx-border-color: #7f8c8d; -fx-border-width: 0 1 0 0; -fx-background-color: #fff;">
                      <children>
-                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="132.0" fitWidth="186.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/logo.png" />
+                              <Image url="@../images/logo-mic.jpg" />
                            </image>
                            <StackPane.margin>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -130,32 +155,44 @@
                   </StackPane>
                   <VBox prefHeight="150.0" prefWidth="699.0">
                      <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="684.0" style="-fx-border-color: #7f8c8d; -fx-border-width: 0 0 1 0;" text="To Be or to Have">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" prefHeight="109.0" prefWidth="684.0" style="-fx-background-color: #ffffff; -fx-border-width: 0 1 0 0; -fx-border-color: #7f8c8d;" text="Promotions actuelles">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" prefHeight="63.0" prefWidth="684.0" style="-fx-border-width: 1 0 0 0; -fx-border-color: #7f8c8d;" text="Accéder à la page de la boutique">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
+                        <AnchorPane>
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="684.0" style="-fx-border-color: #7f8c8d; -fx-border-width: 0 0 1 0;" text="Micromania">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="95.0" prefWidth="684.0" style="-fx-background-color: #ffffff;">
+                           <children>
+                              <Text layoutX="7.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-25% pour la St valentin pour tous les célibataires" textAlignment="CENTER" wrappingWidth="666.87890625">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="24.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <Label alignment="CENTER" prefHeight="52.0" prefWidth="684.0" style="-fx-border-width: 1 0 0 0; -fx-border-color: #7f8c8d;" text="Accéder à la page de la boutique">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
                      </children>
                   </VBox>
                </children>
             </HBox>
             <HBox prefHeight="192.0" prefWidth="836.0" style="-fx-background-color: #dcdcdc; -fx-border-style: solid; -fx-border-color: #7f8c8d;">
                <children>
-                  <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-border-color: #7f8c8d; -fx-border-width: 0 1 0 0; -fx-background-color: #fff;">
+                  <StackPane maxHeight="201.0" maxWidth="200.0" minHeight="150.0" minWidth="200.0" prefHeight="201.0" prefWidth="200.0" style="-fx-border-color: #7f8c8d; -fx-border-width: 0 1 0 0; -fx-background-color: #fff;">
                      <children>
                         <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/logo.png" />
+                              <Image url="@../images/celio-logo.png" />
                            </image>
                            <StackPane.margin>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -165,21 +202,33 @@
                   </StackPane>
                   <VBox prefHeight="150.0" prefWidth="699.0">
                      <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="684.0" style="-fx-border-color: #7f8c8d; -fx-border-width: 0 0 1 0;" text="To Be or to Have">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" prefHeight="109.0" prefWidth="684.0" style="-fx-background-color: #ffffff; -fx-border-width: 0 1 0 0; -fx-border-color: #7f8c8d;" text="Promotions actuelles">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
-                        <Label alignment="CENTER" prefHeight="63.0" prefWidth="684.0" style="-fx-border-width: 1 0 0 0; -fx-border-color: #7f8c8d;" text="Accéder à la page de la boutique">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                        </Label>
+                        <AnchorPane>
+                           <children>
+                              <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="60.0" prefWidth="684.0" style="-fx-border-color: #7f8c8d; -fx-border-width: 0 0 1 0;" text="Celio">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="95.0" prefWidth="684.0" style="-fx-background-color: #ffffff;">
+                           <children>
+                              <Text layoutX="7.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Réduction d'hiver le jour de la St-Valentin" textAlignment="CENTER" wrappingWidth="666.87890625">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="24.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane>
+                           <children>
+                              <Label alignment="CENTER" prefHeight="52.0" prefWidth="684.0" style="-fx-border-width: 1 0 0 0; -fx-border-color: #7f8c8d;" text="Accéder à la page de la boutique">
+                                 <font>
+                                    <Font name="Comic Sans MS" size="24.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
                      </children>
                   </VBox>
                </children>
