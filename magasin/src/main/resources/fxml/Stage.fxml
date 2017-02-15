@@ -64,12 +64,12 @@
                      <children>
                         <ImageView fitHeight="262.0" fitWidth="368.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@/images/stage1.png" />
+                              <Image url="@/images/stage2.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="259.0" fitWidth="368.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                            <image>
-                              <Image url="@/images/stage2.png" />
+                              <Image url="@/images/stage1.png" />
                            </image>
                         </ImageView>
                         <Pane minHeight="-Infinity" prefHeight="242.0" prefWidth="517.0" style="-fx-border-color: #000000; -fx-border-width: 2px;" GridPane.columnIndex="1">
