@@ -63,15 +63,51 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #7cb131;" />
-                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #b3d287;" GridPane.columnIndex="1" />
-                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #7cb131;" GridPane.columnIndex="2" />
-                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #b3d287;" GridPane.rowIndex="1" />
-                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #7cb131;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #b3d287;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #7cb131;" GridPane.rowIndex="2" />
-                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #b3d287;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Pane prefHeight="157.0" prefWidth="216.0" style="-fx-background-color: #7cb131;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <ImageView fitHeight="196.0" fitWidth="282.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/DVD1.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="196.0" fitWidth="282.0" layoutX="10.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                           <image>
+                              <Image url="@../images/DVD2.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="196.0" fitWidth="282.0" layoutX="290.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
+                           <image>
+                              <Image url="@../images/DVD3.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="196.0" fitWidth="282.0" layoutX="10.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../images/DVD4.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="196.0" fitWidth="282.0" layoutX="10.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../images/DVD5.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="196.0" fitWidth="282.0" layoutX="10.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <image>
+                              <Image url="@../images/DVD6.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="196.0" fitWidth="282.0" layoutX="10.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
+                           <image>
+                              <Image url="@../images/DVD7.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="196.0" fitWidth="282.0" layoutX="10.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <image>
+                              <Image url="@../images/DVD8.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="196.0" fitWidth="282.0" layoutX="290.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <image>
+                              <Image url="@../images/DVD9.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </GridPane>
                </children>
