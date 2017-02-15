@@ -68,47 +68,47 @@
                      <children>
                         <ImageView fitHeight="195.0" fitWidth="352.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/BOOK5.png" />
+                              <Image url="@/images/BOOK5.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="199.0" fitWidth="283.0" layoutX="10.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
                            <image>
-                              <Image url="@../images/DVD8.png" />
+                              <Image url="@/images/DVD8.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="195.0" fitWidth="352.0" layoutX="290.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2">
                            <image>
-                              <Image url="@../images/stage1.png" />
+                              <Image url="@/images/stage1.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="195.0" fitWidth="352.0" layoutX="10.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
                            <image>
-                              <Image url="@../images/DVD4.png" />
+                              <Image url="@/images/DVD4.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="195.0" fitWidth="352.0" layoutX="10.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <image>
-                              <Image url="@../images/BOOK3.png" />
+                              <Image url="@/images/BOOK3.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="195.0" fitWidth="352.0" layoutX="290.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <image>
-                              <Image url="@../images/BOOK9.png" />
+                              <Image url="@/images/BOOK9.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="195.0" fitWidth="352.0" layoutX="10.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2">
                            <image>
-                              <Image url="@../images/BOOK2.png" />
+                              <Image url="@/images/BOOK2.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="195.0" fitWidth="352.0" layoutX="10.0" layoutY="386.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <image>
-                              <Image url="@../images/stage2.png" />
+                              <Image url="@/images/stage2.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="195.0" fitWidth="352.0" layoutX="290.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
                            <image>
-                              <Image url="@../images/BOOK6.png" />
+                              <Image url="@/images/BOOK6.png" />
                            </image>
                         </ImageView>
                      </children>
