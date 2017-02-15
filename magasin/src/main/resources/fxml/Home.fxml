@@ -25,23 +25,23 @@
                      <children>
                         <ImageView fitHeight="443.0" fitWidth="958.0" layoutX="65.0" layoutY="24.0" onMouseClicked="#goToActu" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/alaffiche.png" />
+                              <Image url="@/images/alaffiche.png" />
                            </image>
                         </ImageView>
                         <Slider layoutX="437.0" layoutY="394.0" prefHeight="12.0" prefWidth="208.0" />
                         <ImageView fitHeight="230.0" fitWidth="320.0" layoutX="24.0" layoutY="480.0" onMouseClicked="#goToCatalog" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/catalogue.png" />
+                              <Image url="@/images/catalogue.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="230.0" fitWidth="320.0" layoutX="377.0" layoutY="482.0" onMouseClicked="#goToPromo" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/promotion.png" />
+                              <Image url="@/images/promotion.png" />
                            </image>
                         </ImageView>
                         <ImageView fitHeight="230.0" fitWidth="320.0" layoutX="722.0" layoutY="480.0" onMouseClicked="#goToBoutique" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/magasin.png" />
+                              <Image url="@/images/magasin.png" />
                            </image>
                         </ImageView>
                         <Label layoutX="114.0" layoutY="610.0" text="Catalogue" textFill="#111010">
@@ -91,7 +91,7 @@
          <children>
             <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/logo.png" />
+                  <Image url="@/images/logo.png" />
                </image></ImageView>
             <Pane prefHeight="198.0" prefWidth="297.0" style="-fx-border-width: 2px;">
                <children>
@@ -161,7 +161,7 @@
                <children>
                   <ImageView fitHeight="80.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../images/united-kingdom.png" />
+                        <Image url="@/images/united-kingdom.png" />
                      </image>
                   </ImageView>
                </children>
@@ -174,7 +174,7 @@
          <children>
             <ImageView fitHeight="52.0" fitWidth="70.0" layoutX="72.0" layoutY="11.0" onMouseClicked="#goToMall" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/homepage.png" />
+                  <Image url="@/images/homepage.png" />
                </image>
             </ImageView>
          </children>
