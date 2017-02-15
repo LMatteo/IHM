@@ -1,3 +1,5 @@
+package magasin;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -8,21 +10,31 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class InfoController {
+public class Currently {
 
     @FXML
-    void clickActu(MouseEvent event) throws IOException {
-        switchScene(event, "/fxml/Actu.fxml");
+    void goToBook(MouseEvent event) throws IOException {
+        switchScene(event, "/fxml/Livre.fxml");
     }
 
     @FXML
-    void clickBoutiques(MouseEvent event) throws IOException {
-        switchScene(event, "/fxml/Boutiques.fxml");
+    void goToCD(MouseEvent event) throws IOException {
+        switchScene(event, "/fxml/Media.fxml");
     }
 
     @FXML
-    void switchLanguage(MouseEvent event) {
+    void goToHomePage(MouseEvent event) throws IOException{
+        switchScene(event, "/fxml/Home.fxml");
+    }
 
+    @FXML
+    void goToMall(MouseEvent event) {
+
+    }
+
+    @FXML
+    void goToStage(MouseEvent event) throws IOException{
+        switchScene(event, "/fxml/Stage.fxml");
     }
 
     private void switchScene(MouseEvent event, String location) throws IOException {
@@ -33,5 +45,4 @@ public class InfoController {
         stage.setScene(scene);
         stage.show();
     }
-
 }

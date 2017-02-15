@@ -1,6 +1,5 @@
 package magasin;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -9,31 +8,17 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.util.Properties;
-
 import java.io.IOException;
 
 /**
  * @author Zaki
  */
 
-public class Home{
-
-    @FXML
-    void goToActu(MouseEvent event) throws IOException {
-        switchScene(event, "/fxml/Currently.fxml");
-    }
+public class Livre {
 
     @FXML
     void goToBook(MouseEvent event) throws IOException{
         switchScene(event, "/fxml/Livre.fxml");
-    }
-
-    @FXML
-    void goToBoutique(MouseEvent event) throws IOException{
-        switchScene(event, "/fxml/Boutique.fxml");
     }
 
     @FXML
@@ -42,18 +27,12 @@ public class Home{
     }
 
     @FXML
-    void goToCatalog(MouseEvent event) throws IOException{
-        switchScene(event, "/fxml/Catalogue.fxml");
+    void goToHomePage(MouseEvent event) throws IOException{
+        switchScene(event, "/fxml/Home.fxml");
     }
 
     @FXML
-    void goToMall(MouseEvent event) throws  IOException{
-        //switchScene(event, System.getProperty("user.dir")+ File.separator +"IHM/centre/src/resources/fxml/Actu.fxml");
-    }
-
-    @FXML
-    void goToPromo(MouseEvent event) throws IOException{
-        switchScene(event, "/fxml/Catalogue.fxml");
+    void goToMall(MouseEvent event) throws IOException {
     }
 
     @FXML
@@ -69,7 +48,4 @@ public class Home{
         stage.setScene(scene);
         stage.show();
     }
-
-
 }
-

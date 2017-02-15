@@ -3,6 +3,7 @@ package ihm.enseigne;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
@@ -10,6 +11,8 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 
 public class AccControl {
+    public static final String color = "#a3d35f";
+    public static final String foncey = "#7cb131";
 
     @FXML
     private ScrollPane pane;
@@ -21,30 +24,38 @@ public class AccControl {
     private Button gallerie;
 
     @FXML
-    private Button mag;
+    private Button magasins;
 
     @FXML
-    private Button info;
+    private Button infos;
 
+    private Button previous;
     @FXML
-    void goToAcc(ActionEvent event) throws IOException{
-        VBox box = FXMLLoader.load(getClass().getResource("/home.fxml"));
+    public void initialize() throws IOException {
+        VBox box = FXMLLoader.load(getClass().getResource("/accueil.fxml"));
+        switchBut(accueil);
+        pane.setVvalue(0);
         pane.setContent(box);
+        accueil.setCursor(Cursor.HAND);
+    }
+    private void switchBut(Button bigButt){
+        if(previous != null){
+            previous.setStyle("-fx-background-color: "+color+"; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;");
+        }
+        bigButt.setStyle("-fx-background-color: "+foncey+"; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;");
+        previous = bigButt;
+
     }
 
     @FXML
-    void goToGal(ActionEvent event) {
-
-    }
-
-    @FXML
-    void goToInfo(ActionEvent event) {
-
-    }
-
-    @FXML
-    void goToMag(ActionEvent event) {
-
+    void switchPanel(ActionEvent event) throws IOException {
+        Button source = (Button)event.getSource();
+        String id = source.getId();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/"+id+".fxml"));
+        VBox box = loader.load();
+        pane.setContent(box);
+        switchBut(source);
+        pane.setVvalue(0);
     }
 
 }
