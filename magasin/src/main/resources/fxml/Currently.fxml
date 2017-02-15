@@ -72,9 +72,9 @@
                <image>
                   <Image url="@/images/logo.png" />
                </image></ImageView>
-            <Pane prefHeight="198.0" prefWidth="297.0" style="-fx-border-width: 2px;">
+            <Pane onMouseClicked="#goToHomePage" prefHeight="198.0" prefWidth="297.0" style="-fx-border-width: 2px;">
                <children>
-                  <Label layoutY="59.0" style="-fx-vertical-align: center;" text="To Be Or To Have" textFill="WHITE">
+                  <Label layoutY="59.0" onMouseClicked="#goToHomePage" style="-fx-vertical-align: center;" text="To Be Or To Have" textFill="WHITE">
                      <font>
                         <Font name="Blackberries Bold" size="56.0" />
                      </font>
