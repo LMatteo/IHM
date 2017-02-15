@@ -24,54 +24,20 @@ public class AccControl {
     private Button gallerie;
 
     @FXML
-    private Button mag;
+    private Button magasins;
 
     @FXML
-    private Button info;
+    private Button infos;
 
     private Button previous;
     @FXML
     public void initialize() throws IOException {
-        VBox box = FXMLLoader.load(getClass().getResource("/home.fxml"));
+        VBox box = FXMLLoader.load(getClass().getResource("/accueil.fxml"));
         switchBut(accueil);
         pane.setVvalue(0);
         pane.setContent(box);
         accueil.setCursor(Cursor.HAND);
     }
-    @FXML
-    void goToAcc(ActionEvent event) throws IOException{
-        VBox box = FXMLLoader.load(getClass().getResource("/home.fxml"));
-        pane.setContent(box);
-        switchBut(accueil);
-        pane.setVvalue(0);
-    }
-
-    @FXML
-    void goToGal(ActionEvent event) throws IOException {
-        VBox box = FXMLLoader.load(getClass().getResource("/gallerie.fxml"));
-        pane.setContent(box);
-        switchBut(gallerie);
-        pane.setVvalue(0);
-
-    }
-
-    @FXML
-    void goToInfo(ActionEvent event) throws IOException{
-        VBox box = FXMLLoader.load(getClass().getResource("/infos.fxml"));
-        pane.setContent(box);
-        switchBut(info);
-        pane.setVvalue(0);
-
-    }
-
-    @FXML
-    void goToMag(ActionEvent event) throws IOException {
-        VBox box = FXMLLoader.load(getClass().getResource("/magasins.fxml"));
-        pane.setContent(box);
-        switchBut(mag);
-        pane.setVvalue(0);
-    }
-
     private void switchBut(Button bigButt){
         if(previous != null){
             previous.setStyle("-fx-background-color: "+color+"; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;");
@@ -79,6 +45,17 @@ public class AccControl {
         bigButt.setStyle("-fx-background-color: "+foncey+"; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;");
         previous = bigButt;
 
+    }
+
+    @FXML
+    void switchPanel(ActionEvent event) throws IOException {
+        Button source = (Button)event.getSource();
+        String id = source.getId();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/"+id+".fxml"));
+        VBox box = loader.load();
+        pane.setContent(box);
+        switchBut(source);
+        pane.setVvalue(0);
     }
 
 }
