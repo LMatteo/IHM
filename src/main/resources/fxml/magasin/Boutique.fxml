@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0"
+            prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="magasin.Boutique">
+    <top>
+        <HBox prefHeight="100.0" prefWidth="200.0"
+              style="-fx-background-color: #b3d287; -fx-border-color: white; -fx-border-width: 2px;"
+              BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="200.0" fitWidth="200.0" onMouseClicked="#goToHomePage" pickOnBounds="true"
+                           preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/common/logo/toBeOrToHave.png"/>
+                    </image>
+                </ImageView>
+                <Pane onMouseClicked="#goToHomePage" prefHeight="198.0" prefWidth="297.0"
+                      style="-fx-border-width: 2px;">
+                    <children>
+                        <Label layoutY="59.0" onMouseClicked="#goToHomePage" style="-fx-vertical-align: center;"
+                               text="To Be Or To Have" textFill="WHITE">
+                            <font>
+                                <Font name="Blackberries Bold" size="56.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane prefHeight="200.0" prefWidth="267.0" style="-fx-background-color: #7cb131;">
+                    <children>
+                        <Button id="button" layoutY="-2.0" mnemonicParsing="false" onMouseClicked="#goToBook"
+                                prefHeight="204.0" prefWidth="264.0"
+                                style="-fx-background-color: #b3d287; -fx-border-color: white; -fx-border-width: 2px;"
+                                text="LIVRE" textFill="WHITE">
+                            <font>
+                                <Font name="Blackberries Bold" size="48.0"/>
+                            </font>
+                            <effect>
+                                <ColorAdjust/>
+                            </effect>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Button>
+                    </children>
+                </Pane>
+                <Pane prefHeight="200.0" prefWidth="267.0" style="-fx-background-color: #7cb131;">
+                    <children>
+                        <Button id="button" layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false"
+                                onMouseClicked="#goToCD" prefHeight="204.0" prefWidth="264.0"
+                                style="-fx-background-color: #b3d287; -fx-border-color: white; -fx-border-width: 2px;"
+                                text="CD/DVD" textFill="WHITE">
+                            <font>
+                                <Font name="Blackberries Bold" size="48.0"/>
+                            </font>
+                            <effect>
+                                <ColorAdjust/>
+                            </effect>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Button>
+                    </children>
+                </Pane>
+                <Pane prefHeight="200.0" prefWidth="267.0" style="-fx-background-color: #7cb131;">
+                    <children>
+                        <Button id="button" layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false"
+                                onMouseClicked="#goToStage" prefHeight="204.0" prefWidth="264.0"
+                                style="-fx-background-color: #b3d287; -fx-border-color: white; -fx-border-width: 2px;"
+                                text="STAGES" textFill="WHITE">
+                            <font>
+                                <Font name="Blackberries Bold" size="48.0"/>
+                            </font>
+                            <effect>
+                                <ColorAdjust/>
+                            </effect>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Button>
+                    </children>
+                </Pane>
+            </children>
+        </HBox>
+    </top>
+    <bottom>
+        <HBox prefHeight="80.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" prefHeight="80.0" prefWidth="247.0" style="-fx-border-color: #000000;"
+                       text=" 13:37">
+                    <font>
+                        <Font size="36.0"/>
+                    </font>
+                </Label>
+                <AnchorPane prefHeight="80.0" prefWidth="1015.0" style="-fx-border-color: #000000;"/>
+                <StackPane prefHeight="80.0" prefWidth="160.0" style="-fx-border-color: #000000;">
+                    <children>
+                        <ImageView fitHeight="80.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/common/flags/united-kingdom.png"/>
+                            </image>
+                        </ImageView>
+                    </children>
+                </StackPane>
+            </children>
+        </HBox>
+    </bottom>
+    <left>
+        <Pane prefHeight="758.0" prefWidth="200.0" style="-fx-background-color: #b3d287;" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="52.0" fitWidth="70.0" layoutX="72.0" layoutY="11.0" onMouseClicked="#goToMall"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/magasin/homepage.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+    </left>
+    <center>
+        <ScrollPane BorderPane.alignment="CENTER">
+            <content>
+                <Pane prefHeight="1074.0" prefWidth="1056.0">
+                    <children>
+                        <ScrollPane layoutX="16.0" layoutY="307.0" prefHeight="277.0" prefWidth="1026.0">
+                            <content>
+                                <AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="228.0"
+                                            prefWidth="1620.0">
+                                    <children>
+                                        <HBox layoutX="-1.0" layoutY="-5.0" prefHeight="214.0" prefWidth="1280.0">
+                                            <children>
+                                                <ImageView fitHeight="325.0" fitWidth="404.0" pickOnBounds="true"
+                                                           preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../images/magasin/boutique5.jpg"/>
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="325.0" fitWidth="404.0" layoutX="10.0"
+                                                           layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../images/magasin/boutique4.jpg"/>
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="325.0" fitWidth="404.0" layoutX="330.0"
+                                                           layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../images/magasin/boutique2.jpg"/>
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="325.0" fitWidth="404.0" layoutX="650.0"
+                                                           layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../images/magasin/boutique3.jpg"/>
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="325.0" fitWidth="404.0" layoutX="805.0"
+                                                           layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../images/magasin/boutique1.jpg"/>
+                                                    </image>
+                                                </ImageView>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </ScrollPane>
+                        <Pane layoutX="34.0" layoutY="642.0" prefHeight="326.0" prefWidth="972.0">
+                            <children>
+                                <Text layoutX="2.0" layoutY="144.0" smooth="false" strokeType="OUTSIDE"
+                                      strokeWidth="0.0"
+                                      text="Nous sommes bien plus qu'une simple boutique, nous disposons d'une salle de conférence où nous recevons d'éminents chercheurs, nous y diffusons aussi des documentaires puis organisons des débats autour d'un verre. Nous proposons également des stages de développement personnel ! Une terrasse est également à votre disposition où vous pourrez dégustez nos jus et smoothie les plus frais et bio ! Alors n'hésitez plus, venez prendre une bouffée d'air frais chez To Be Or To Have ! "
+                                      textAlignment="JUSTIFY" wrappingWidth="968.0660400390625">
+                                    <font>
+                                        <Font size="24.0"/>
+                                    </font>
+                                </Text>
+                                <Text layoutY="42.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0"
+                                      text="To Be Or To Have vous ouvre ses portes à Cap Sophia ! Ici vous pourrez acheter le dernier numéro de votre revue scientifique préférée, ou avoir accès avant tout le monde aux derniers ouvrages scientifiques ! "
+                                      textAlignment="JUSTIFY" wrappingWidth="972.7666625976562">
+                                    <font>
+                                        <Font size="24.0"/>
+                                    </font>
+                                </Text>
+                            </children>
+                        </Pane>
+                        <Label layoutX="14.0" layoutY="9.0" text="To Be or To Have - Cap Sophia ">
+                            <font>
+                                <Font name="Blackberries Bold" size="64.0"/>
+                            </font>
+                        </Label>
+                        <Pane layoutX="21.0" layoutY="103.0" prefHeight="187.0" prefWidth="1008.0">
+                            <children>
+                                <ImageView fitHeight="74.0" fitWidth="80.0" layoutX="457.0" pickOnBounds="true"
+                                           preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../images/magasin/clock.png"/>
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="80.0" fitWidth="84.0" layoutX="73.0" pickOnBounds="true"
+                                           preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../images/magasin/acces.png"/>
+                                    </image>
+                                </ImageView>
+                                <Label layoutX="62.0" layoutY="77.0" prefHeight="50.0" prefWidth="107.0" text="ACCÈS">
+                                    <font>
+                                        <Font size="36.0"/>
+                                    </font>
+                                </Label>
+                                <Label layoutX="45.0" layoutY="109.0" prefHeight="59.0" prefWidth="142.0"
+                                       text="Niveau 0" textFill="#7cb131">
+                                    <font>
+                                        <Font size="36.0"/>
+                                    </font>
+                                </Label>
+                                <Label layoutX="301.0" layoutY="77.0" prefHeight="53.0" prefWidth="411.0"
+                                       text="HORAIRES D'OUVERTURE">
+                                    <font>
+                                        <Font size="36.0"/>
+                                    </font>
+                                </Label>
+                                <Label layoutX="284.0" layoutY="109.0" text="Lundi - Samedi" textFill="#7cb131">
+                                    <font>
+                                        <Font size="36.0"/>
+                                    </font>
+                                </Label>
+                                <Label layoutX="541.0" layoutY="109.0" text="de 9h à 20h">
+                                    <font>
+                                        <Font size="36.0"/>
+                                    </font>
+                                </Label>
+                                <Hyperlink layoutY="142.0" text="Visualiser sur le plan">
+                                    <font>
+                                        <Font size="24.0"/>
+                                    </font>
+                                </Hyperlink>
+                                <ImageView fitHeight="74.0" fitWidth="80.0" layoutX="869.0" pickOnBounds="true"
+                                           preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../images/magasin/speech.png"/>
+                                    </image>
+                                </ImageView>
+                                <Label layoutX="823.0" layoutY="77.0" prefHeight="53.0" prefWidth="167.0"
+                                       text="CONTACT">
+                                    <font>
+                                        <Font size="36.0"/>
+                                    </font>
+                                </Label>
+                                <Label layoutX="783.0" layoutY="109.0" text="04.93.31.10.35">
+                                    <font>
+                                        <Font size="36.0"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </Pane>
+                    </children>
+                </Pane>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

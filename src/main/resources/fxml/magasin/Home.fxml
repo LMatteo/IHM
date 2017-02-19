@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0"
+            prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="magasin.Home">
+    <center>
+        <ScrollPane prefHeight="740.0" prefWidth="1057.0" BorderPane.alignment="CENTER">
+            <content>
+                <HBox prefHeight="737.0" prefWidth="1057.0">
+                    <children>
+                        <AnchorPane prefHeight="697.0" prefWidth="1057.0">
+                            <children>
+                                <ImageView fitHeight="443.0" fitWidth="958.0" layoutX="65.0" layoutY="24.0"
+                                           onMouseClicked="#goToActu" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../images/magasin/alaffiche.png"/>
+                                    </image>
+                                </ImageView>
+                                <Slider layoutX="437.0" layoutY="394.0" prefHeight="12.0" prefWidth="208.0"/>
+                                <ImageView fitHeight="230.0" fitWidth="320.0" layoutX="24.0" layoutY="480.0"
+                                           onMouseClicked="#goToCatalog" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../images/magasin/catalogue.png"/>
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="230.0" fitWidth="320.0" layoutX="377.0" layoutY="482.0"
+                                           onMouseClicked="#goToPromo" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../images/magasin/promotion.png"/>
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="230.0" fitWidth="320.0" layoutX="722.0" layoutY="480.0"
+                                           onMouseClicked="#goToBoutique" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../images/magasin/magasin.png"/>
+                                    </image>
+                                </ImageView>
+                                <Label layoutX="114.0" layoutY="610.0" text="Catalogue" textFill="#111010">
+                                    <font>
+                                        <Font name="Blackberries Bold" size="64.0"/>
+                                    </font>
+                                </Label>
+                                <Label layoutX="111.0" layoutY="608.0" text="Catalogue" textFill="WHITE">
+                                    <font>
+                                        <Font name="Blackberries Bold" size="64.0"/>
+                                    </font>
+                                </Label>
+                                <Label layoutX="446.0" layoutY="610.0" text="Promotion" textFill="#030303"
+                                       textOverrun="LEADING_WORD_ELLIPSIS">
+                                    <font>
+                                        <Font name="Blackberries Bold" size="64.0"/>
+                                    </font>
+                                </Label>
+                                <Label layoutX="449.0" layoutY="610.0" text="Promotion" textFill="WHITE"
+                                       textOverrun="LEADING_WORD_ELLIPSIS">
+                                    <font>
+                                        <Font name="Blackberries Bold" size="64.0"/>
+                                    </font>
+                                </Label>
+                                <Label layoutX="761.0" layoutY="610.0"
+                                       style="-text-: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;"
+                                       text="Mon Magasin" textFill="#030303" textOverrun="CENTER_WORD_ELLIPSIS">
+                                    <font>
+                                        <Font name="Blackberries Bold" size="64.0"/>
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="DEFAULT"/>
+                                    </cursor>
+                                </Label>
+                                <Label layoutX="764.0" layoutY="608.0"
+                                       style="-text-: #000000 1px 1px, #000000 -1px 1px, #000000 -1px -1px, #000000 1px -1px;"
+                                       text="Mon Magasin" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
+                                    <font>
+                                        <Font name="Blackberries Bold" size="64.0"/>
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="DEFAULT"/>
+                                    </cursor>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </HBox>
+            </content>
+        </ScrollPane>
+    </center>
+    <top>
+        <HBox prefHeight="100.0" prefWidth="200.0"
+              style="-fx-background-color: #b3d287; -fx-border-color: white; -fx-border-width: 2px;"
+              BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/common/logo/toBeOrToHave.png"/>
+                    </image>
+                </ImageView>
+                <Pane prefHeight="198.0" prefWidth="297.0" style="-fx-border-width: 2px;">
+                    <children>
+                        <Label layoutY="59.0" style="-fx-vertical-align: center;" text="To Be Or To Have"
+                               textFill="WHITE">
+                            <font>
+                                <Font name="Blackberries Bold" size="56.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </Pane>
+                <Pane prefHeight="200.0" prefWidth="267.0" style="-fx-background-color: #7cb131;">
+                    <children>
+                        <Button id="button" layoutY="-2.0" mnemonicParsing="false" onMouseClicked="#goToBook"
+                                prefHeight="204.0" prefWidth="264.0"
+                                style="-fx-background-color: #b3d287; -fx-border-color: white; -fx-border-width: 2px;"
+                                text="LIVRE" textFill="WHITE">
+                            <font>
+                                <Font name="Blackberries Bold" size="48.0"/>
+                            </font>
+                            <effect>
+                                <ColorAdjust/>
+                            </effect>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Button>
+                    </children>
+                </Pane>
+                <Pane prefHeight="200.0" prefWidth="267.0" style="-fx-background-color: #7cb131;">
+                    <children>
+                        <Button id="button" layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false"
+                                onMouseClicked="#goToCD" prefHeight="204.0" prefWidth="264.0"
+                                style="-fx-background-color: #b3d287; -fx-border-color: white; -fx-border-width: 2px;"
+                                text="CD/DVD" textFill="WHITE">
+                            <font>
+                                <Font name="Blackberries Bold" size="48.0"/>
+                            </font>
+                            <effect>
+                                <ColorAdjust/>
+                            </effect>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Button>
+                    </children>
+                </Pane>
+                <Pane prefHeight="200.0" prefWidth="267.0" style="-fx-background-color: #7cb131;">
+                    <children>
+                        <Button id="button" layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false"
+                                onMouseClicked="#goToStage" prefHeight="204.0" prefWidth="264.0"
+                                style="-fx-background-color: #b3d287; -fx-border-color: white; -fx-border-width: 2px;"
+                                text="STAGES" textFill="WHITE">
+                            <font>
+                                <Font name="Blackberries Bold" size="48.0"/>
+                            </font>
+                            <effect>
+                                <ColorAdjust/>
+                            </effect>
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </Button>
+                    </children>
+                </Pane>
+            </children>
+        </HBox>
+    </top>
+    <bottom>
+        <HBox prefHeight="80.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label alignment="CENTER" prefHeight="86.0" prefWidth="200.0" style="-fx-border-color: #000000;"
+                       text=" 13:37">
+                    <font>
+                        <Font size="36.0"/>
+                    </font>
+                </Label>
+                <AnchorPane prefHeight="80.0" prefWidth="1015.0" style="-fx-border-color: #000000;"/>
+                <StackPane prefHeight="80.0" prefWidth="160.0" style="-fx-border-color: #000000;">
+                    <children>
+                        <ImageView fitHeight="80.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../images/common/flags/united-kingdom.png"/>
+                            </image>
+                        </ImageView>
+                    </children>
+                </StackPane>
+            </children>
+        </HBox>
+    </bottom>
+    <left>
+        <Pane prefHeight="758.0" prefWidth="200.0" style="-fx-background-color: #b3d287;" BorderPane.alignment="CENTER">
+            <children>
+                <ImageView fitHeight="52.0" fitWidth="70.0" layoutX="72.0" layoutY="11.0" onMouseClicked="#goToMall"
+                           pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../images/magasin/homepage.png"/>
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+    </left>
+</BorderPane>
