@@ -46,7 +46,7 @@ public class Control {
 
     @FXML
     void goToBoutiques(ActionEvent event) throws IOException {
-        ap = FXMLLoader.load(getClass().getResource("/fxml/centre/boutiques.fxml"));
+        ap = FXMLLoader.load(getClass().getResource("/fxml/centre/boutique.fxml"));
         pane.setContent(ap);
         switchBut(boutiques);
         pane.setVvalue(0);
