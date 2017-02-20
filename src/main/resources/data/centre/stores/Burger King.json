@@ -1,0 +1,13 @@
+{
+  "logoName": "burger-king.png",
+  "enseigneId": "undefined",
+  "magasinId": "undefined",
+  "name": "Burger King",
+  "location": "Niveau 1",
+  "mapId": 5,
+  "categories": [
+    "Alimentation",
+    "Nouveauté"
+  ],
+  "promotionText": "Venez nombreux pour l'ouverture le 25/01"
+}

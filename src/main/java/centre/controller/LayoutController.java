@@ -1,4 +1,4 @@
-package centre;
+package centre.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,7 +9,11 @@ import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
-public class Control {
+/**
+ * Controller for the main layout of the centre screen.
+ */
+public class LayoutController {
+
     private static final String normal = "#4B77BE";
     private static final String active = "#84a5c9";
 
@@ -28,33 +32,56 @@ public class Control {
     private Button previous;
     private AnchorPane ap;
 
+    /**
+     * Starts up the interface in the news screen.
+     *
+     * @throws IOException - if failing to load the fxml
+     */
     @FXML
     public void initialize() throws IOException {
-        ap = FXMLLoader.load(getClass().getResource("/fxml/centre/actu.fxml"));
+        ap = FXMLLoader.load(getClass().getResource("/fxml/centre/news.fxml"));
         switchBut(actualite);
         pane.setVvalue(0);
         pane.setContent(ap);
     }
 
+    /**
+     * Switches to the new screen.
+     *
+     * @param event - the mouse event of the action
+     * @throws IOException - if failing to load the fxml
+     */
     @FXML
     void goToActu(ActionEvent event) throws IOException {
-        ap = FXMLLoader.load(getClass().getResource("/fxml/centre/actu.fxml"));
+        ap = FXMLLoader.load(getClass().getResource("/fxml/centre/news.fxml"));
         pane.setContent(ap);
         switchBut(actualite);
         pane.setContent(ap);
     }
 
+    /**
+     * Switches to the store screen.
+     *
+     * @param event - the mouse event of the action
+     * @throws IOException - if failing to load the fxml
+     */
     @FXML
     void goToBoutiques(ActionEvent event) throws IOException {
-        ap = FXMLLoader.load(getClass().getResource("/fxml/centre/boutique.fxml"));
+        ap = FXMLLoader.load(getClass().getResource("/fxml/centre/store.fxml"));
         pane.setContent(ap);
         switchBut(boutiques);
         pane.setVvalue(0);
     }
 
+    /**
+     * Switches to the info screen.
+     *
+     * @param event - the mouse event of this action
+     * @throws IOException - if failing to load the fxml
+     */
     @FXML
     void goToInfoPratiques(ActionEvent event) throws IOException {
-        ap = FXMLLoader.load(getClass().getResource("/fxml/centre/infopratique.fxml"));
+        ap = FXMLLoader.load(getClass().getResource("/fxml/centre/info.fxml"));
         pane.setContent(ap);
         switchBut(infopratiques);
         pane.setVvalue(0);

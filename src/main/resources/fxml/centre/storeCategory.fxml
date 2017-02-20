@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<TitledPane alignment="CENTER" animated="false" text="CategoryName" xmlns="http://javafx.com/javafx/8.0.111"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="centre.controller.StoreCategoryController">
+    <content>
+        <VBox fx:id="items" prefHeight="200.0" prefWidth="100.0" spacing="40.0"
+              style="-fx-background-color: #ffffff; -fx-border-style: solid; -fx-border-color: #7f8c8d;"/>
+    </content>
+    <padding>
+        <Insets bottom="60.0"/>
+    </padding>
+    <font>
+        <Font size="53.0"/>
+    </font>
+</TitledPane>
