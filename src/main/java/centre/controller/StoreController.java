@@ -2,9 +2,13 @@ package centre.controller;
 
 import centre.SortOrder;
 import centre.Store;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
 import java.io.File;
@@ -14,6 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StoreController {
+
+    private final static int MAX_SUGGESTIONS = 5;
 
     private List<Store> loadedStores;
     private List<SortOrder> sortOrders;
@@ -141,7 +147,51 @@ public class StoreController {
     }
 
     /**
-     * Exits the program.
+     * Updates the search suggestions according to what was typed in the search bar.
+     *
+     * @param event - the key event of the pressed key
+     * @throws IOException - if failing to find the fxml for a suggestion item
+     */
+    @FXML
+    void searchType(KeyEvent event) throws IOException {
+        if (searchBar.getText().equals("")) {
+            return;
+        }
+        List<String> matches = getStoreStartingWith(searchBar.getText());
+        ObservableList<Node> children = search.getChildren();
+        for (int i = children.size() - 1; i > 0; i--) {
+            children.remove(i);
+        }
+        for (String match : matches) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/searchItem.fxml"));
+            AnchorPane ap = loader.load();
+            SearchItemController sic = loader.getController();
+            sic.initializeContent(match);
+            search.getChildren().add(ap);
+        }
+    }
+
+    /**
+     * Returns all stores whose name starts with the requested prefix.
+     *
+     * @param prefix - the prefix to filter stores with
+     * @return a list of all loaded store whose name start with the specified prefix
+     */
+    private List<String> getStoreStartingWith(String prefix) {
+        List<String> result = new ArrayList<>();
+        for (Store store : loadedStores) {
+            if (store.getName().startsWith(prefix)) {
+                result.add(store.getName());
+            }
+            if (result.size() == MAX_SUGGESTIONS) {
+                break;
+            }
+        }
+        return result;
+    }
+
+    /**
+     * Displays an error message.
      *
      * @param message - message to display before quitting
      */

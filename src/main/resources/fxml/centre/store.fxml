@@ -18,15 +18,15 @@
                             <children>
                                 <VBox fx:id="search">
                                     <children>
-                                        <TextArea fx:id="searchBar" prefHeight="65.0" prefWidth="321.0"
-                                                  promptText="Rechercher une boutique...">
+                                        <TextArea fx:id="searchBar" onKeyReleased="#searchType" prefHeight="65.0"
+                                                  prefWidth="321.0" promptText="Rechercher une boutique...">
                                             <font>
                                                 <Font size="20.0"/>
                                             </font>
                                         </TextArea>
                                     </children>
                                 </VBox>
-                                <Button fx:id="searchButton" mnemonicParsing="false" prefHeight="64.0" prefWidth="109.0"
+                                <Button fx:id="searchButton" mnemonicParsing="false" prefHeight="62.0" prefWidth="109.0"
                                         text="Chercher">
                                     <font>
                                         <Font size="20.0"/>
