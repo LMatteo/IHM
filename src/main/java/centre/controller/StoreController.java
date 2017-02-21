@@ -5,6 +5,7 @@ import centre.Store;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
+import javafx.scene.layout.VBox;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,6 +22,9 @@ public class StoreController {
     private TextArea searchBar;
 
     @FXML
+    private VBox search;
+
+    @FXML
     private Button searchButton;
 
     @FXML
@@ -29,6 +33,13 @@ public class StoreController {
     @FXML
     private Accordion accordion;
 
+    /**
+     * Loads store data and sorting order from the data folder.
+     * Loads the first sorting order found by default.
+     *
+     * @throws IOException        - if failing to load one of the files
+     * @throws URISyntaxException - if failing to find one of the folders
+     */
     @FXML
     public void initialize() throws IOException, URISyntaxException {
         initStores();
@@ -39,6 +50,12 @@ public class StoreController {
         }
     }
 
+    /**
+     * Initializes store data.
+     *
+     * @throws IOException        - if failing to load one of the files
+     * @throws URISyntaxException - if failing to find one of the folders
+     */
     private void initStores() throws IOException, URISyntaxException {
         File[] storeFolder = new File(getClass().getClassLoader().getResource("data/centre/stores/").toURI()).listFiles();
         if (storeFolder == null) {
@@ -51,6 +68,12 @@ public class StoreController {
         }
     }
 
+    /**
+     * Initializes sorting order data.
+     *
+     * @throws IOException        - if failing to load one of the files
+     * @throws URISyntaxException - if failing to find one of the folders
+     */
     private void initSort() throws IOException, URISyntaxException {
         File[] sortFolder = new File(getClass().getClassLoader().getResource("data/centre/sort/").toURI()).listFiles();
         if (sortFolder == null) {
@@ -63,6 +86,9 @@ public class StoreController {
         }
     }
 
+    /**
+     * Fills the menuButton "Trier par..." with the loaded sorting orders.
+     */
     private void createMenuItems() {
         for (SortOrder order : sortOrders) {
             MenuItem item = new MenuItem(order.getName());
@@ -81,6 +107,12 @@ public class StoreController {
         }
     }
 
+    /**
+     * Returns the sorting order with the requested name, or null if not found.
+     *
+     * @param name - the name of the sorting order to search
+     * @return the sorting order of the requested name if found, null otherwise
+     */
     private SortOrder getOrder(String name) {
         for (SortOrder so : sortOrders) {
             if (name.equals(so.getName())) {
@@ -90,6 +122,12 @@ public class StoreController {
         return null;
     }
 
+    /**
+     * Loads the categories of the requested sorting order.
+     *
+     * @param order - the sorting order to load
+     * @throws IOException - if failing to find the fxml
+     */
     private void loadCategories(SortOrder order) throws IOException {
         accordion.getPanes().clear();
         for (String category : order.getCategories()) {
@@ -102,6 +140,11 @@ public class StoreController {
         }
     }
 
+    /**
+     * Exits the program.
+     *
+     * @param message - message to display before quitting
+     */
     private void exit(String message) {
         System.out.println(message);
     }
