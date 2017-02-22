@@ -3,12 +3,15 @@ package centre.controller;
 import centre.SortOrder;
 import centre.Store;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.io.File;
@@ -29,6 +32,9 @@ public class StoreController {
 
     @FXML
     private VBox search;
+
+    @FXML
+    private VBox accBox;
 
     @FXML
     private Button searchButton;
@@ -99,6 +105,7 @@ public class StoreController {
         for (SortOrder order : sortOrders) {
             MenuItem item = new MenuItem(order.getName());
             item.setOnAction(event -> {
+                clearSearchResult();
                 sortMenu.setText(order.getName());
                 SortOrder so = getOrder(order.getName());
                 if (so != null) {
@@ -155,19 +162,31 @@ public class StoreController {
     @FXML
     void searchType(KeyEvent event) throws IOException {
         if (searchBar.getText().equals("")) {
+            clearSearchSuggestions();
+            clearSearchResult();
             return;
         }
-        List<String> matches = getStoreStartingWith(searchBar.getText());
+        if (event.getCode() == KeyCode.ENTER) {
+            confirmSearch(null);
+        }
+        List<Store> matches = getStoreStartingWith(searchBar.getText());
+        clearSearchSuggestions();
+        for (Store match : matches) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/searchItem.fxml"));
+            AnchorPane hb = loader.load();
+            SearchItemController sic = loader.getController();
+            sic.initializeContent(match.getName());
+            search.getChildren().add(hb);
+        }
+    }
+
+    /**
+     * Clears all search suggestions for the search bar.
+     */
+    private void clearSearchSuggestions() {
         ObservableList<Node> children = search.getChildren();
         for (int i = children.size() - 1; i > 0; i--) {
             children.remove(i);
-        }
-        for (String match : matches) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/searchItem.fxml"));
-            AnchorPane ap = loader.load();
-            SearchItemController sic = loader.getController();
-            sic.initializeContent(match);
-            search.getChildren().add(ap);
         }
     }
 
@@ -177,17 +196,39 @@ public class StoreController {
      * @param prefix - the prefix to filter stores with
      * @return a list of all loaded store whose name start with the specified prefix
      */
-    private List<String> getStoreStartingWith(String prefix) {
-        List<String> result = new ArrayList<>();
+    private List<Store> getStoreStartingWith(String prefix) {
+        List<Store> result = new ArrayList<>();
         for (Store store : loadedStores) {
             if (store.getName().startsWith(prefix)) {
-                result.add(store.getName());
+                result.add(store);
             }
             if (result.size() == MAX_SUGGESTIONS) {
                 break;
             }
         }
         return result;
+    }
+
+    @FXML
+    void confirmSearch(ActionEvent event) throws IOException {
+        accordion.getPanes().clear();
+        clearSearchResult();
+        for (Store match : getStoreStartingWith(searchBar.getText())) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/categoryItem.fxml"));
+            HBox hb = loader.load();
+            CategoryItemController controller = loader.getController();
+            controller.initializeContent(match);
+            accBox.getChildren().add(hb);
+        }
+    }
+
+    /**
+     * Clears all search results from the store screen.
+     */
+    private void clearSearchResult() {
+        for (int i = accBox.getChildren().size() - 1; i > 1; i--) {
+            accBox.getChildren().remove(i);
+        }
     }
 
     /**

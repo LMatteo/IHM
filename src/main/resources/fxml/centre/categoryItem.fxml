@@ -48,7 +48,8 @@
                 </AnchorPane>
                 <AnchorPane prefHeight="326.0" prefWidth="705.0" style="-fx-background-color: #ffffff;">
                     <children>
-                        <TextField fx:id="promotion" alignment="CENTER" prefHeight="182.0" prefWidth="705.0">
+                        <TextField fx:id="promotion" alignment="CENTER" maxWidth="705.0" minWidth="705.0"
+                                   prefHeight="182.0" prefWidth="705.0">
                             <font>
                                 <Font size="26.0"/>
                             </font>

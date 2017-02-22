@@ -10,7 +10,7 @@
 <AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="centre.controller.StoreController">
     <children>
-        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="1060.0">
+        <VBox fx:id="accBox" alignment="CENTER" prefHeight="200.0" prefWidth="1060.0">
             <children>
                 <HBox alignment="CENTER" prefHeight="52.0" prefWidth="867.0">
                     <children>
@@ -26,8 +26,8 @@
                                         </TextArea>
                                     </children>
                                 </VBox>
-                                <Button fx:id="searchButton" mnemonicParsing="false" prefHeight="62.0" prefWidth="109.0"
-                                        text="Chercher">
+                                <Button fx:id="searchButton" mnemonicParsing="false" onAction="#confirmSearch"
+                                        prefHeight="62.0" prefWidth="109.0" text="Chercher">
                                     <font>
                                         <Font size="20.0"/>
                                     </font>
