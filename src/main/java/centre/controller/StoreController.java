@@ -199,7 +199,7 @@ public class StoreController {
     private List<Store> getStoreStartingWith(String prefix) {
         List<Store> result = new ArrayList<>();
         for (Store store : loadedStores) {
-            if (store.getName().startsWith(prefix)) {
+            if (store.getName().toLowerCase().startsWith(prefix.toLowerCase())) {
                 result.add(store);
             }
             if (result.size() == MAX_SUGGESTIONS) {
