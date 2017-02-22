@@ -49,12 +49,12 @@ public class StoreController {
      * Loads store data and sorting order from the data folder.
      * Loads the first sorting order found by default.
      *
+     * @param loadedStores - the list of stores loaded from the data folder
      * @throws IOException        - if failing to load one of the files
      * @throws URISyntaxException - if failing to find one of the folders
      */
-    @FXML
-    public void initialize() throws IOException, URISyntaxException {
-        initStores();
+    public void initializeContent(List<Store> loadedStores) throws IOException, URISyntaxException {
+        this.loadedStores = loadedStores;
         initSort();
         createMenuItems();
         if (!sortOrders.isEmpty()) {
@@ -62,23 +62,6 @@ public class StoreController {
         }
     }
 
-    /**
-     * Initializes store data.
-     *
-     * @throws IOException        - if failing to load one of the files
-     * @throws URISyntaxException - if failing to find one of the folders
-     */
-    private void initStores() throws IOException, URISyntaxException {
-        File[] storeFolder = new File(getClass().getClassLoader().getResource("data/centre/stores/").toURI()).listFiles();
-        if (storeFolder == null) {
-            exit("Could not find store data.");
-            return;
-        }
-        loadedStores = new ArrayList<>();
-        for (File file : storeFolder) {
-            loadedStores.add(new Store(file));
-        }
-    }
 
     /**
      * Initializes sorting order data.

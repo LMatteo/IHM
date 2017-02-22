@@ -71,5 +71,9 @@ public class Store {
         return promotion;
     }
 
+    public int getMapId() {
+        return mapId;
+    }
+
 
 }
