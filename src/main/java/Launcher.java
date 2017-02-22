@@ -18,7 +18,7 @@ public class Launcher extends Application {
     private static final String INVALID_ARGS = "Invalid arguments. Possible arguments are one of the following : (-a) (--centre | --enseigne |" +
             " --magasin) \nCheck Readme for more information. ";
 
-    private String path = "/fxml/centre/layout.fxml";
+    private static String path = "/fxml/centre/layout.fxml";
     private List<String> styles = new ArrayList<>();
 
     /**

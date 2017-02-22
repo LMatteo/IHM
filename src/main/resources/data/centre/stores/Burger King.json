@@ -3,11 +3,12 @@
   "enseigneId": "undefined",
   "magasinId": "undefined",
   "name": "Burger King",
-  "location": "Niveau 1",
+  "location": "Niveau 0",
   "mapId": 5,
   "categories": [
     "Alimentation",
-    "Nouveauté"
+    "Nouveauté",
+    "A-C"
   ],
   "promotionText": "Venez nombreux pour l'ouverture le 25/01"
 }
