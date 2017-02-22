@@ -3,7 +3,6 @@ package centre.controller;
 import centre.Store;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -23,7 +22,7 @@ public class CategoryItemController {
     private Label name;
 
     @FXML
-    private TextField promotion;
+    private Label promotion;
 
     @FXML
     private Label storePage;
@@ -38,7 +37,6 @@ public class CategoryItemController {
         mapLocation.setText(store.getLocation());
         name.setText(store.getName());
         promotion.setText(store.getPromotion());
-        promotion.setEditable(false);
     }
 
     /**
