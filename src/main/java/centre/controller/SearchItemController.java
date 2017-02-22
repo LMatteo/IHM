@@ -2,12 +2,15 @@ package centre.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 
 /**
  * Controller class for a suggestion in the research field of the store screen.
  */
 public class SearchItemController {
+
+    private TextArea searchBar;
 
     @FXML
     private Label label;
@@ -19,7 +22,7 @@ public class SearchItemController {
      */
     @FXML
     void clickLabel(MouseEvent event) {
-
+        searchBar.setText(label.getText());
     }
 
     /**
@@ -27,8 +30,9 @@ public class SearchItemController {
      *
      * @param name - the name of the suggestion.
      */
-    public void initializeContent(String name) {
+    public void initializeContent(String name, TextArea searchBar) {
         label.setText(name);
+        this.searchBar = searchBar;
     }
 
 }

@@ -167,6 +167,7 @@ public class StoreController {
             return;
         }
         if (event.getCode() == KeyCode.ENTER) {
+            searchBar.setText(searchBar.getText().substring(0, searchBar.getText().length() - 1));
             confirmSearch(null);
         }
         List<Store> matches = getStoreStartingWith(searchBar.getText());
@@ -175,7 +176,7 @@ public class StoreController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/searchItem.fxml"));
             AnchorPane hb = loader.load();
             SearchItemController sic = loader.getController();
-            sic.initializeContent(match.getName());
+            sic.initializeContent(match.getName(), searchBar);
             search.getChildren().add(hb);
         }
     }
@@ -209,6 +210,13 @@ public class StoreController {
         return result;
     }
 
+    /**
+     * Displays all stores whose name starts with the requested search.
+     * Called when the search button is used.
+     *
+     * @param event - the event of this action
+     * @throws IOException - if failing to load the store item fxml
+     */
     @FXML
     void confirmSearch(ActionEvent event) throws IOException {
         accordion.getPanes().clear();
