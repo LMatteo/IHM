@@ -14,10 +14,12 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
+//TODO: refactor this class with LayoutController to avoid code duplication
+
 /**
- * Controller for the main layout of the centre screen.
+ * Controller for the administrator main layout of the centre screen.
  */
-public class LayoutController {
+public class AdminLayoutController {
 
     private static final String normal = "#4B77BE";
     private static final String active = "#84a5c9";
@@ -46,7 +48,8 @@ public class LayoutController {
      */
     @FXML
     public void initialize() throws IOException, URISyntaxException {
-        ap = FXMLLoader.load(getClass().getResource("/fxml/centre/news.fxml"));
+        //TODO: change this to the edit news fxml once implemented
+        ap = FXMLLoader.load(getClass().getResource("/fxml/centre/adminStore.fxml"));
         switchButtonStyle(actualite);
         pane.setVvalue(0);
         pane.setContent(ap);
@@ -72,21 +75,18 @@ public class LayoutController {
     }
 
     /**
-     * Switches to the news screen.
+     * Switches to the new editor screen.
      *
      * @param event - the mouse event of the action
      * @throws IOException - if failing to load the fxml
      */
     @FXML
     void goToActu(ActionEvent event) throws IOException {
-        ap = FXMLLoader.load(getClass().getResource("/fxml/centre/news.fxml"));
-        pane.setContent(ap);
-        switchButtonStyle(actualite);
-        pane.setContent(ap);
+
     }
 
     /**
-     * Switches to the store screen.
+     * Switches to the store editor screen.
      *
      * @param event - the mouse event of the action
      * @throws IOException        - if failing to load the fxml
@@ -94,30 +94,24 @@ public class LayoutController {
      */
     @FXML
     void goToBoutiques(ActionEvent event) throws IOException, URISyntaxException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/store.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/adminStore.fxml"));
         ap = loader.load();
-        StoreController controller = loader.getController();
-        controller.initializeContent(loadedStores);
+        AdminStoreController controller = loader.getController();
+        controller.setLoadedStores(loadedStores);
         pane.setContent(ap);
         switchButtonStyle(boutiques);
         pane.setVvalue(0);
     }
 
     /**
-     * Switches to the info screen.
+     * Switches to the info editor screen.
      *
      * @param event - the mouse event of this action
      * @throws IOException - if failing to load the fxml
      */
     @FXML
     void goToInfoPratiques(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/info.fxml"));
-        ap = loader.load();
-        InfoController controller = loader.getController();
-        controller.initializeContent(loadedStores);
-        pane.setContent(ap);
-        switchButtonStyle(infopratiques);
-        pane.setVvalue(0);
+
     }
 
     /**

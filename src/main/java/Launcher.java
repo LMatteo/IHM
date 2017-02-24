@@ -49,7 +49,7 @@ public class Launcher extends Application {
                 if (!adminMode) {
                     path = "/fxml/centre/layout.fxml";
                 } else {
-
+                    path = "fxml/centre/adminLayout.fxml";
                 }
                 break;
             case "--enseigne":
@@ -89,7 +89,6 @@ public class Launcher extends Application {
      */
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
         Parent rootNode = FXMLLoader.load(getClass().getResource(path));
         Scene scene = new Scene(rootNode, 1280, 1024);
         for (String style : styles) {

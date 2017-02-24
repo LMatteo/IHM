@@ -29,7 +29,7 @@ public class InfoController {
 
     /**
      * Initializes the map indications : displays each store map id and places it
-     * in the correct location in the gridpane containing the map legend.
+     * in the correct location in the gridPane containing the map legend.
      */
     private void initGrid() {
         for (Store store : loadedStores) {
