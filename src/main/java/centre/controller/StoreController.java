@@ -27,23 +27,12 @@ public class StoreController {
     private List<Store> loadedStores;
     private List<SortOrder> sortOrders;
 
-    @FXML
-    private TextArea searchBar;
-
-    @FXML
-    private VBox search;
-
-    @FXML
-    private VBox accBox;
-
-    @FXML
-    private Button searchButton;
-
-    @FXML
-    private MenuButton sortMenu;
-
-    @FXML
-    private Accordion accordion;
+    @FXML private TextArea searchBar;
+    @FXML private VBox search;
+    @FXML private VBox accBox;
+    @FXML private Button searchButton;
+    @FXML private MenuButton sortMenu;
+    @FXML private Accordion accordion;
 
     /**
      * Loads store data and sorting order from the data folder.

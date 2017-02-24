@@ -22,17 +22,10 @@ public class LayoutController {
     private static final String normal = "#4B77BE";
     private static final String active = "#84a5c9";
 
-    @FXML
-    private ScrollPane pane;
-
-    @FXML
-    private Button actualite;
-
-    @FXML
-    private Button boutiques;
-
-    @FXML
-    private Button infopratiques;
+    @FXML private ScrollPane pane;
+    @FXML private Button actualite;
+    @FXML private Button boutiques;
+    @FXML private Button infopratiques;
 
     private Button previous;
     private AnchorPane ap;

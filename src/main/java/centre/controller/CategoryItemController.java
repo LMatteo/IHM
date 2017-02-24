@@ -12,20 +12,11 @@ import javafx.scene.input.MouseEvent;
  */
 public class CategoryItemController {
 
-    @FXML
-    private ImageView logo;
-
-    @FXML
-    private Label mapLocation;
-
-    @FXML
-    private Label name;
-
-    @FXML
-    private Label promotion;
-
-    @FXML
-    private Label storePage;
+    @FXML private ImageView logo;
+    @FXML private Label mapLocation;
+    @FXML private Label name;
+    @FXML private Label promotion;
+    @FXML private Label storePage;
 
     /**
      * Initializes the content of the store in the appropriate fields.
