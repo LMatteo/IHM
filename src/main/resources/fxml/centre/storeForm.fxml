@@ -215,7 +215,7 @@
                                         <Insets bottom="30.0"/>
                                     </VBox.margin>
                                 </HBox>
-                                <VBox prefHeight="206.0" prefWidth="732.0">
+                                <VBox prefHeight="287.0" prefWidth="705.0">
                                     <children>
                                         <Label prefHeight="33.0" prefWidth="424.0" text="Tags de la boutique">
                                             <font>
@@ -225,7 +225,7 @@
                                                 <Insets bottom="10.0"/>
                                             </VBox.margin>
                                         </Label>
-                                        <HBox prefHeight="140.0" prefWidth="768.0">
+                                        <HBox prefHeight="235.0" prefWidth="705.0">
                                             <children>
                                                 <VBox alignment="CENTER" prefHeight="140.0" prefWidth="382.0">
                                                     <children>
@@ -257,41 +257,16 @@
                                                         </Button>
                                                     </children>
                                                 </VBox>
-                                                <VBox fx:id="tagBox" alignment="TOP_CENTER" prefHeight="140.0"
-                                                      prefWidth="380.0"
-                                                      style="-fx-border-style: solid; -fx-border-color: #7f8c8d;">
-                                                    <children>
-                                                        <Label alignment="CENTER" prefHeight="35.0" prefWidth="357.0"
-                                                               text="Tag 1" textAlignment="CENTER">
-                                                            <font>
-                                                                <Font size="17.0"/>
-                                                            </font>
-                                                        </Label>
-                                                        <Label alignment="CENTER" prefHeight="35.0" prefWidth="358.0"
-                                                               style="-fx-background-color: #dcdcdc;" text="Tag 2"
-                                                               textAlignment="CENTER">
-                                                            <font>
-                                                                <Font size="17.0"/>
-                                                            </font>
-                                                        </Label>
-                                                        <Label alignment="CENTER" prefHeight="35.0" prefWidth="364.0"
-                                                               text="Tag 3" textAlignment="CENTER">
-                                                            <font>
-                                                                <Font size="17.0"/>
-                                                            </font>
-                                                        </Label>
-                                                        <Label alignment="CENTER" prefHeight="36.0" prefWidth="371.0"
-                                                               style="-fx-background-color: #dcdcdc;" text="Tag 4"
-                                                               textAlignment="CENTER">
-                                                            <font>
-                                                                <Font size="17.0"/>
-                                                            </font>
-                                                        </Label>
-                                                    </children>
+                                                <ScrollPane hbarPolicy="NEVER" prefHeight="140.0" prefWidth="386.0"
+                                                            style="-fx-border-style: solid; -fx-border-color: #7f8c8d;">
                                                     <HBox.margin>
                                                         <Insets left="20.0" right="20.0"/>
                                                     </HBox.margin>
-                                                </VBox>
+                                                    <content>
+                                                        <VBox fx:id="tagBox" alignment="TOP_CENTER" prefHeight="145.0"
+                                                              prefWidth="341.0"/>
+                                                    </content>
+                                                </ScrollPane>
                                             </children>
                                         </HBox>
                                     </children>

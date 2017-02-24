@@ -2,7 +2,9 @@ package centre.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -32,14 +34,41 @@ public class StoreFormController {
     @FXML private TextField newTag;
     @FXML private VBox tagBox;
 
+    private Label selectedTag;
+
+    /**
+     * Adds a tag to the list of tags of this store.
+     *
+     * @param event - the event of this action
+     */
     @FXML
     void addTag(ActionEvent event) {
-
+        if (newTag.getText().equals("")) {
+            return;
+        }
+        Label tag = new Label(newTag.getText());
+        if (tagBox.getChildren().size() % 2 != 0) {
+            tag.setStyle("-fx-font: 17 System; -fx-background-color: #dcdcdc");
+        } else {
+            tag.setStyle("-fx-font: 17 System;");
+        }
+        tag.setAlignment(Pos.CENTER);
+        tag.setPrefSize(357, 35);
+        tag.setOnMouseClicked(eventTag -> {
+            selectedTag = tag;
+            tag.setStyle(tag.getStyle() + "-fx-background-color: #add8e6");
+        });
+        tagBox.getChildren().add(tag);
     }
 
+    /**
+     * Deletes the selected tag from the list of tags of this store.
+     *
+     * @param event - the event of this action
+     */
     @FXML
     void deleteTag(ActionEvent event) {
-
+        tagBox.getChildren().remove(selectedTag);
     }
 
     @FXML
