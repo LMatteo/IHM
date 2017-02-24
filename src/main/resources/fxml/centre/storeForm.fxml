@@ -124,7 +124,7 @@
                                                                 <Insets right="30.0"/>
                                                             </HBox.margin>
                                                             <children>
-                                                                <Button fx:id="browseButton" mnemonicParsing="false"
+                                                                <Button mnemonicParsing="false" onAction="#browsePic"
                                                                         prefHeight="32.0" prefWidth="136.0"
                                                                         text="Parcourir...">
                                                                     <VBox.margin>

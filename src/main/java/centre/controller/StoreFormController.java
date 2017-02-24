@@ -1,15 +1,22 @@
 package centre.controller;
 
+import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Controller class for the store form.
@@ -23,7 +30,6 @@ public class StoreFormController {
     @FXML private TextArea promoFrench;
     @FXML private TextArea promoEnglish;
     @FXML private VBox logoBox;
-    @FXML private Button browseButton;
     @FXML private ImageView logoPreview;
     @FXML private HBox idMapBox;
     @FXML private TextField idMap;
@@ -35,6 +41,7 @@ public class StoreFormController {
     @FXML private VBox tagBox;
 
     private Label selectedTag;
+    private File image;
 
     /**
      * Adds a tag to the list of tags of this store.
@@ -69,6 +76,25 @@ public class StoreFormController {
     @FXML
     void deleteTag(ActionEvent event) {
         tagBox.getChildren().remove(selectedTag);
+    }
+
+    /**
+     * Opens a window to choose a picture for the new store logo.
+     * Once chosen, the picture is shown in the preview ImageView.
+     *
+     * @param event - the event of this action
+     * @throws IOException - if failing to retrieve the picture once selected
+     */
+    @FXML
+    void browsePic(ActionEvent event) throws IOException {
+        FileChooser chooser = new FileChooser();
+        chooser.setTitle("Ouvrir l'image du logo de la boutique");
+        chooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Images", "*.png", "*.jpg"));
+        image = chooser.showOpenDialog(new Stage());
+        if (image != null) {
+            BufferedImage im = ImageIO.read(image);
+            logoPreview.setImage(SwingFXUtils.toFXImage(im, null));
+        }
     }
 
     @FXML
