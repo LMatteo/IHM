@@ -28,6 +28,12 @@ public class AdminStoreController {
         this.loadedStores = loadedStores;
     }
 
+    /**
+     * Launches the store form to add a boutique.
+     *
+     * @param event - the event of this action
+     * @throws IOException - if failing to load the fxml
+     */
     @FXML
     void addStore(ActionEvent event) throws IOException {
         Parent rootNode = FXMLLoader.load(getClass().getResource("/fxml/centre/storeForm.fxml"));

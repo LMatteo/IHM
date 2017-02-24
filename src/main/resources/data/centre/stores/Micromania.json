@@ -1,0 +1,13 @@
+{
+  "logoName": "logo-mic.jpg",
+  "enseigneId": "undefined",
+  "magasinId": "undefined",
+  "name": "Micromania",
+  "location": "Niveau 0",
+  "mapId": 2,
+  "categories": [
+    "Jeux Vidéo",
+    "H-M"
+  ],
+  "promotionText": "-25% pour la St valentin pour tous les célibataires"
+}
