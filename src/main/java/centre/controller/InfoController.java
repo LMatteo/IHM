@@ -1,18 +1,17 @@
 package centre.controller;
 
 import centre.Store;
+import centre.StoreList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
-
-import java.util.List;
 
 /**
  * Controller for the info screen.
  */
 public class InfoController {
 
-    private List<Store> loadedStores;
+    private StoreList loadedStores;
 
     @FXML
     private GridPane grid;
@@ -22,7 +21,7 @@ public class InfoController {
      *
      * @param loadedStores - the list of loaded stores
      */
-    public void initializeContent(List<Store> loadedStores) {
+    public void initializeContent(StoreList loadedStores) {
         this.loadedStores = loadedStores;
         initGrid();
     }
@@ -32,7 +31,7 @@ public class InfoController {
      * in the correct location in the gridPane containing the map legend.
      */
     private void initGrid() {
-        for (Store store : loadedStores) {
+        for (Store store : loadedStores.getList()) {
             int id = store.getMapId();
             Label label = new Label(Integer.toString(id + 1) + ". " + store.getName());
             label.setPrefSize(141, 54);

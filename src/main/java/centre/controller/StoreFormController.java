@@ -1,6 +1,7 @@
 package centre.controller;
 
 import centre.Store;
+import centre.StoreList;
 import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
@@ -52,9 +53,9 @@ public class StoreFormController {
 
     private Label selectedTag;
     private File image;
-    private List<Store> loadedStores;
+    private StoreList loadedStores;
 
-    public void setLoadedStores(List<Store> loadedStores) {
+    public void setLoadedStores(StoreList loadedStores) {
         this.loadedStores = loadedStores;
     }
 
@@ -175,7 +176,7 @@ public class StoreFormController {
             addErrorLabel(nameBox.getChildren(), "Nom nécéssaire", 2);
             return false;
         }
-        if (isTaken(name.getText())) {
+        if (loadedStores.isTaken(name.getText())) {
             addErrorLabel(nameBox.getChildren(), "Nom déja utilisé", 2);
             return false;
         }
@@ -185,22 +186,6 @@ public class StoreFormController {
         }
         clearErrorMessages(nameBox.getChildren(), 2);
         return true;
-    }
-
-    /**
-     * Checks if a given name for a store is already taken by an existing store or not.
-     * Returns true if the name is taken false otherwise.
-     *
-     * @param name - the name to check
-     * @return true if the name is taken by another store, false otherwise
-     */
-    private boolean isTaken(String name) {
-        for (Store store : loadedStores) {
-            if (store.getName().equals(name)) {
-                return true;
-            }
-        }
-        return false;
     }
 
     /**
@@ -249,7 +234,7 @@ public class StoreFormController {
         }
         try {
             int id = Integer.parseInt(idMap.getText());
-            if (isIdTaken(id)) {
+            if (loadedStores.isIdTaken(id)) {
                 addErrorLabel(idMapBox.getChildren(), "Id map utilisé", 1);
                 return false;
             }
@@ -263,22 +248,6 @@ public class StoreFormController {
         }
         clearErrorMessages(idMapBox.getChildren(), 1);
         return true;
-    }
-
-    /**
-     * Checks if a given map id is already taken by another store.
-     * Returns true if already taken, false otherwise.
-     *
-     * @param id - the map id to search
-     * @return true if this map id is taken, false if available
-     */
-    private boolean isIdTaken(int id) {
-        for (Store store : loadedStores) {
-            if (store.getMapId() == id) {
-                return true;
-            }
-        }
-        return false;
     }
 
     /**

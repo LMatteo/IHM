@@ -1,7 +1,7 @@
 package centre.controller;
 
 
-import centre.Store;
+import centre.StoreList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,21 +10,20 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.List;
 
 /**
  * Controller class for the edit store screen.
  */
 public class AdminStoreController {
 
-    private List<Store> loadedStores;
+    private StoreList loadedStores;
 
     /**
      * Sets the list of loaded stores.
      *
      * @param loadedStores - the list of stores loaded from the data folder
      */
-    public void setLoadedStores(List<Store> loadedStores) {
+    public void setLoadedStores(StoreList loadedStores) {
         this.loadedStores = loadedStores;
     }
 
@@ -52,9 +51,24 @@ public class AdminStoreController {
 
     }
 
+    /**
+     * Opens the window to select a store.
+     *
+     * @param event - the event of this action
+     * @throws IOException - if failing to load the fxml
+     */
     @FXML
-    void editStore(ActionEvent event) {
-
+    void editStore(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/storeSelector.fxml"));
+        Parent rootNode = loader.load();
+        StoreSelectorController controller = loader.getController();
+        controller.setLoadedStores(loadedStores);
+        controller.initializeContent();
+        Scene scene = new Scene(rootNode, 968, 555);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Sélectionner une boutique");
+        stage.show();
     }
 
 }

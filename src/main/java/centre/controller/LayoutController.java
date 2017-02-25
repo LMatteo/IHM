@@ -1,6 +1,6 @@
 package centre.controller;
 
-import centre.Store;
+import centre.StoreList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,11 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Controller for the main layout of the centre screen.
@@ -29,7 +26,7 @@ public class LayoutController {
 
     private Button previous;
     private AnchorPane ap;
-    private List<Store> loadedStores;
+    private StoreList loadedStores;
 
     /**
      * Starts up the interface in the news screen.
@@ -43,25 +40,7 @@ public class LayoutController {
         switchButtonStyle(actualite);
         pane.setVvalue(0);
         pane.setContent(ap);
-        initStores();
-    }
-
-    /**
-     * Initializes store data.
-     *
-     * @throws IOException        - if failing to load one of the files
-     * @throws URISyntaxException - if failing to find one of the folders
-     */
-    private void initStores() throws IOException, URISyntaxException {
-        File[] storeFolder = new File(getClass().getClassLoader().getResource("data/centre/stores/").toURI()).listFiles();
-        if (storeFolder == null) {
-            System.out.println("Could not find store data.");
-            return;
-        }
-        loadedStores = new ArrayList<>();
-        for (File file : storeFolder) {
-            loadedStores.add(new Store(file));
-        }
+        loadedStores = new StoreList();
     }
 
     /**

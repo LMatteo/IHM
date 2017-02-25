@@ -2,6 +2,7 @@ package centre.controller;
 
 import centre.SortOrder;
 import centre.Store;
+import centre.StoreList;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,9 +23,7 @@ import java.util.List;
 
 public class StoreController {
 
-    private final static int MAX_SUGGESTIONS = 5;
-
-    private List<Store> loadedStores;
+    private StoreList loadedStores;
     private List<SortOrder> sortOrders;
 
     @FXML private TextArea searchBar;
@@ -42,7 +41,7 @@ public class StoreController {
      * @throws IOException        - if failing to load one of the files
      * @throws URISyntaxException - if failing to find one of the folders
      */
-    public void initializeContent(List<Store> loadedStores) throws IOException, URISyntaxException {
+    public void initializeContent(StoreList loadedStores) throws IOException, URISyntaxException {
         this.loadedStores = loadedStores;
         initSort();
         createMenuItems();
@@ -142,7 +141,7 @@ public class StoreController {
             searchBar.setText(searchBar.getText().substring(0, searchBar.getText().length() - 1));
             confirmSearch(null);
         }
-        List<Store> matches = getStoreStartingWith(searchBar.getText());
+        List<Store> matches = loadedStores.getStoreStartingWith(searchBar.getText());
         clearSearchSuggestions();
         for (Store match : matches) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/searchItem.fxml"));
@@ -163,24 +162,6 @@ public class StoreController {
         }
     }
 
-    /**
-     * Returns all stores whose name starts with the requested prefix.
-     *
-     * @param prefix - the prefix to filter stores with
-     * @return a list of all loaded store whose name start with the specified prefix
-     */
-    private List<Store> getStoreStartingWith(String prefix) {
-        List<Store> result = new ArrayList<>();
-        for (Store store : loadedStores) {
-            if (store.getName().toLowerCase().startsWith(prefix.toLowerCase())) {
-                result.add(store);
-            }
-            if (result.size() == MAX_SUGGESTIONS) {
-                break;
-            }
-        }
-        return result;
-    }
 
     /**
      * Displays all stores whose name starts with the requested search.
@@ -193,7 +174,7 @@ public class StoreController {
     void confirmSearch(ActionEvent event) throws IOException {
         accordion.getPanes().clear();
         clearSearchResult();
-        for (Store match : getStoreStartingWith(searchBar.getText())) {
+        for (Store match : loadedStores.getStoreStartingWith(searchBar.getText())) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/categoryItem.fxml"));
             HBox hb = loader.load();
             CategoryItemController controller = loader.getController();
