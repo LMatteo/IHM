@@ -83,7 +83,8 @@
                                         <TextArea fx:id="promoFrench" maxHeight="-Infinity" maxWidth="-Infinity"
                                                   minHeight="-Infinity" minWidth="-Infinity" prefHeight="179.0"
                                                   prefWidth="704.0"
-                                                  promptText="Description ou texte promotionnel pour cette boutique en francais">
+                                                  promptText="Description ou texte promotionnel pour cette boutique en francais"
+                                                  wrapText="true">
                                             <font>
                                                 <Font size="26.0"/>
                                             </font>
@@ -104,7 +105,8 @@
                                         <TextArea fx:id="promoEnglish" maxHeight="-Infinity" maxWidth="-Infinity"
                                                   minHeight="-Infinity" minWidth="-Infinity" prefHeight="179.0"
                                                   prefWidth="704.0"
-                                                  promptText="Description ou texte promotionnel pour cette boutique en anglais">
+                                                  promptText="Description ou texte promotionnel pour cette boutique en anglais"
+                                                  wrapText="true">
                                             <font>
                                                 <Font size="26.0"/>
                                             </font>
