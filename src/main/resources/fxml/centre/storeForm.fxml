@@ -20,7 +20,7 @@
                     <children>
                         <VBox alignment="CENTER" prefHeight="1069.0" prefWidth="752.0">
                             <children>
-                                <HBox spacing="105.0">
+                                <HBox spacing="60.0">
                                     <VBox.margin>
                                         <Insets/>
                                     </VBox.margin>
@@ -36,10 +36,13 @@
                                                            minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0"
                                                            prefWidth="300.0" promptText="Nom de la boutique">
                                                     <VBox.margin>
-                                                        <Insets bottom="20.0"/>
+                                                        <Insets/>
                                                     </VBox.margin>
                                                 </TextField>
                                             </children>
+                                            <HBox.margin>
+                                                <Insets bottom="20.0"/>
+                                            </HBox.margin>
                                         </VBox>
                                         <VBox fx:id="areaBox">
                                             <children>
@@ -49,9 +52,22 @@
                                                         <Font name="System Bold" size="19.0"/>
                                                     </font>
                                                 </Label>
-                                                <TextField fx:id="area" maxHeight="-Infinity" maxWidth="-Infinity"
-                                                           minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0"
-                                                           prefWidth="300.0" promptText="Niveau 0, premier étage..."/>
+                                                <HBox prefHeight="30.0" prefWidth="289.0">
+                                                    <children>
+                                                        <TextField fx:id="area" maxHeight="-Infinity"
+                                                                   maxWidth="-Infinity" minHeight="-Infinity"
+                                                                   minWidth="-Infinity" prefHeight="30.0"
+                                                                   prefWidth="167.0" promptText="Version francaise"/>
+                                                        <TextField fx:id="areaEnglish" maxHeight="-Infinity"
+                                                                   maxWidth="-Infinity" minHeight="-Infinity"
+                                                                   minWidth="-Infinity" prefHeight="30.0"
+                                                                   prefWidth="167.0" promptText="Version anglaise">
+                                                            <HBox.margin>
+                                                                <Insets left="10.0"/>
+                                                            </HBox.margin>
+                                                        </TextField>
+                                                    </children>
+                                                </HBox>
                                             </children>
                                         </VBox>
                                     </children>
@@ -173,7 +189,11 @@
                                                         <TextField fx:id="idMap" maxHeight="-Infinity"
                                                                    maxWidth="-Infinity" minHeight="-Infinity"
                                                                    minWidth="-Infinity" prefHeight="30.0"
-                                                                   prefWidth="121.0" promptText="id map"/>
+                                                                   prefWidth="121.0" promptText="id map">
+                                                            <HBox.margin>
+                                                                <Insets right="10.0"/>
+                                                            </HBox.margin>
+                                                        </TextField>
                                                     </children>
                                                 </HBox>
                                                 <Label prefHeight="33.0" prefWidth="424.0" text="Id de l'enseigne ">
@@ -189,7 +209,11 @@
                                                         <TextField fx:id="idEnseigne" maxHeight="-Infinity"
                                                                    maxWidth="-Infinity" minHeight="-Infinity"
                                                                    minWidth="-Infinity" prefHeight="30.0"
-                                                                   prefWidth="121.0" promptText="id enseigne"/>
+                                                                   prefWidth="121.0" promptText="id enseigne">
+                                                            <HBox.margin>
+                                                                <Insets right="10.0"/>
+                                                            </HBox.margin>
+                                                        </TextField>
                                                     </children>
                                                 </HBox>
                                                 <Label prefHeight="33.0" prefWidth="424.0" text="Id du magasin">
@@ -202,7 +226,11 @@
                                                         <TextField fx:id="idMagasin" maxHeight="-Infinity"
                                                                    maxWidth="-Infinity" minHeight="-Infinity"
                                                                    minWidth="-Infinity" prefHeight="30.0"
-                                                                   prefWidth="121.0" promptText="id magasin"/>
+                                                                   prefWidth="121.0" promptText="id magasin">
+                                                            <HBox.margin>
+                                                                <Insets right="10.0"/>
+                                                            </HBox.margin>
+                                                        </TextField>
                                                     </children>
                                                 </HBox>
                                             </children>

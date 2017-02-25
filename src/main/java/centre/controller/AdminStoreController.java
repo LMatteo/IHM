@@ -36,7 +36,10 @@ public class AdminStoreController {
      */
     @FXML
     void addStore(ActionEvent event) throws IOException {
-        Parent rootNode = FXMLLoader.load(getClass().getResource("/fxml/centre/storeForm.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/storeForm.fxml"));
+        Parent rootNode = loader.load();
+        StoreFormController controller = loader.getController();
+        controller.setLoadedStores(loadedStores);
         Scene scene = new Scene(rootNode, 1477, 861);
         Stage stage = new Stage();
         stage.setScene(scene);

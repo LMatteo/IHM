@@ -42,11 +42,8 @@ public class AdminLayoutController {
     @FXML
     public void initialize() throws IOException, URISyntaxException {
         //TODO: change this to the edit news fxml once implemented
-        ap = FXMLLoader.load(getClass().getResource("/fxml/centre/adminStore.fxml"));
-        switchButtonStyle(actualite);
-        pane.setVvalue(0);
-        pane.setContent(ap);
         initStores();
+        goToBoutiques(null);
     }
 
     /**

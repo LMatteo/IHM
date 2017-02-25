@@ -4,10 +4,12 @@
   "magasinId": "undefined",
   "name": "Micromania",
   "location": "Niveau 0",
+  "locationEnglish": "Level 0",
   "mapId": 2,
   "categories": [
     "Jeux Vidéo",
     "H-M"
   ],
-  "promotionText": "-25% pour la St valentin pour tous les célibataires"
+  "promotionText": "-25% pour la St valentin pour tous les célibataires",
+  "promotionEnglish": "-25% for all singles on Valentine's day"
 }

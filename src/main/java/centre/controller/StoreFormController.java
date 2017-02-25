@@ -1,15 +1,19 @@
 package centre.controller;
 
+import centre.Store;
+import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Paint;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
@@ -17,6 +21,11 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Controller class for the store form.
@@ -27,6 +36,7 @@ public class StoreFormController {
     @FXML private TextField name;
     @FXML private VBox areaBox;
     @FXML private TextField area;
+    @FXML private TextField areaEnglish;
     @FXML private TextArea promoFrench;
     @FXML private TextArea promoEnglish;
     @FXML private VBox logoBox;
@@ -42,6 +52,11 @@ public class StoreFormController {
 
     private Label selectedTag;
     private File image;
+    private List<Store> loadedStores;
+
+    public void setLoadedStores(List<Store> loadedStores) {
+        this.loadedStores = loadedStores;
+    }
 
     /**
      * Adds a tag to the list of tags of this store.
@@ -50,7 +65,7 @@ public class StoreFormController {
      */
     @FXML
     void addTag(ActionEvent event) {
-        if (newTag.getText().equals("")) {
+        if (newTag.getText().equals("") || isTag(newTag.getText())) {
             return;
         }
         Label tag = new Label(newTag.getText());
@@ -62,10 +77,35 @@ public class StoreFormController {
         tag.setAlignment(Pos.CENTER);
         tag.setPrefSize(357, 35);
         tag.setOnMouseClicked(eventTag -> {
-            selectedTag = tag;
-            tag.setStyle(tag.getStyle() + "-fx-background-color: #add8e6");
+            if (tag != selectedTag) {
+                if (selectedTag != null) {
+                    if (tagBox.getChildren().indexOf(selectedTag) % 2 != 0) {
+                        selectedTag.setStyle("-fx-font: 17 System; -fx-background-color: #dcdcdc");
+                    } else {
+                        selectedTag.setStyle("-fx-font: 17 System;");
+                    }
+                }
+                selectedTag = tag;
+                tag.setStyle("-fx-font: 17 System; -fx-background-color: #add8e6");
+            }
         });
         tagBox.getChildren().add(tag);
+        newTag.setText("");
+    }
+
+    /**
+     * Checks if a given String is already defined as a Tag for this store.
+     *
+     * @param search - the String to check
+     * @return true if already a tag, false otherwise
+     */
+    private boolean isTag(String search) {
+        for (Node node : tagBox.getChildren()) {
+            if (((Label) node).getText().equals(search)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -97,9 +137,189 @@ public class StoreFormController {
         }
     }
 
+    /**
+     * Adds a new store and saves it with the others if all the required fields are valid.
+     * If the store was successfully saved, closes the window.
+     * Otherwise, displays an appropriate message.
+     *
+     * @param event - the event of this action
+     * @throws IOException - if failing to write the store file or copying the store logo
+     */
     @FXML
-    void confirm(ActionEvent event) {
+    void confirm(ActionEvent event) throws IOException, URISyntaxException {
+        if (checkName() && checkLocation() && checkLogo() && checkMapId()) {
+            Store store = new Store(name.getText(), image.getName(), idEnseigne.getText(), idMagasin.getText(),
+                    getTagList(), area.getText(), areaEnglish.getText(), promoFrench.getText(), promoEnglish.getText(),
+                    Integer.parseInt(idMap.getText()));
+            //TODO: change this to the working directory somehow
+            File newPic = new File("target/classes/images/centre/" + image.getName());
+            newPic.createNewFile();
+            Files.copy(image.toPath(), newPic.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            store.save();
+            loadedStores.add(store);
+            //TODO: proper "successfully added" window
+            Stage stage = (Stage) name.getScene().getWindow();
+            stage.close();
+        }
+    }
 
+    /**
+     * Checks if the name entered in the form is valid or not.
+     * A name is valid if not null and under 40 characters long.
+     * Shows an appropriate message if the name was not valid.
+     *
+     * @return true if the name is valid, false otherwise
+     */
+    private boolean checkName() {
+        if (name.getText().equals("")) {
+            addErrorLabel(nameBox.getChildren(), "Nom nécéssaire", 2);
+            return false;
+        }
+        if (isTaken(name.getText())) {
+            addErrorLabel(nameBox.getChildren(), "Nom déja utilisé", 2);
+            return false;
+        }
+        if (name.getText().length() > 40) {
+            addErrorLabel(nameBox.getChildren(), "40 caractères maximum", 2);
+            return false;
+        }
+        clearErrorMessages(nameBox.getChildren(), 2);
+        return true;
+    }
+
+    /**
+     * Checks if a given name for a store is already taken by an existing store or not.
+     * Returns true if the name is taken false otherwise.
+     *
+     * @param name - the name to check
+     * @return true if the name is taken by another store, false otherwise
+     */
+    private boolean isTaken(String name) {
+        for (Store store : loadedStores) {
+            if (store.getName().equals(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Checks if the area entered in the form is valid.
+     * An area is considered valid if not null.
+     * Shows an appropriate message if the area was not valid.
+     *
+     * @return true if the area is valid, false otherwise
+     */
+    private boolean checkLocation() {
+        if (area.getText().equals("") || areaEnglish.getText().equals("")) {
+            addErrorLabel(areaBox.getChildren(), "Locations nécéssaires", 2);
+            return false;
+        }
+        clearErrorMessages(areaBox.getChildren(), 2);
+        return true;
+    }
+
+    /**
+     * Checks if the provided logo for the store is valid or not.
+     * Shows an appropriate message if the logo was not found.
+     *
+     * @return true if the logo is not null, false otherwise
+     */
+    private boolean checkLogo() {
+        if (image == null) {
+            addErrorLabel(logoBox.getChildren(), "Logo nécéssaire", 2);
+            return false;
+        }
+        clearErrorMessages(logoBox.getChildren(), 2);
+        return true;
+    }
+
+    /**
+     * Checks if the provided map id is valid or not.
+     * The map id is valid if not null, not taken by another store, and is a number
+     * between 0 and 17 (maximum amount of stores in the centre).
+     * Shows an appropriate message if invalid.
+     *
+     * @return true if the id is a number not taken by another store between 0 and 17, false otherwise
+     */
+    private boolean checkMapId() {
+        if (idMap.getText().equals("")) {
+            addErrorLabel(idMapBox.getChildren(), "Id map nécéssaire", 1);
+            return false;
+        }
+        try {
+            int id = Integer.parseInt(idMap.getText());
+            if (isIdTaken(id)) {
+                addErrorLabel(idMapBox.getChildren(), "Id map utilisé", 1);
+                return false;
+            }
+            if (id < 0 || id > 17) {
+                addErrorLabel(idMapBox.getChildren(), "Id entre 0 et 17", 1);
+                return false;
+            }
+        } catch (NumberFormatException e) {
+            addErrorLabel(idMapBox.getChildren(), "Nombre entre 0 et 17", 1);
+            return false;
+        }
+        clearErrorMessages(idMapBox.getChildren(), 1);
+        return true;
+    }
+
+    /**
+     * Checks if a given map id is already taken by another store.
+     * Returns true if already taken, false otherwise.
+     *
+     * @param id - the map id to search
+     * @return true if this map id is taken, false if available
+     */
+    private boolean isIdTaken(int id) {
+        for (Store store : loadedStores) {
+            if (store.getMapId() == id) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Returns a list of all the tags entered.
+     *
+     * @return a list of all provided tags
+     */
+    private List<String> getTagList() {
+        List<String> tags = new ArrayList<>();
+        for (Node node : tagBox.getChildren()) {
+            tags.add(((Label) node).getText());
+        }
+        return tags;
+    }
+
+    /**
+     * Adds an error label with the specified message to the specified Node list.
+     *
+     * @param box        - the node list to place the label into
+     * @param message    - the message displayed in the label
+     * @param normalSize - the normal size of the list, when no extra messages are displayed
+     */
+    private void addErrorLabel(ObservableList<Node> box, String message, int normalSize) {
+        clearErrorMessages(box, normalSize);
+        Label error = new Label(message);
+        error.setAlignment(Pos.CENTER);
+        error.setStyle("-fx-font: 16 System;");
+        error.setTextFill(Paint.valueOf("#ff0000"));
+        box.add(error);
+    }
+
+    /**
+     * Clears the error messages from the specified node list.
+     *
+     * @param box        - the node list to clean
+     * @param normalSize - the normal size of the node list without error messages
+     */
+    private void clearErrorMessages(ObservableList<Node> box, int normalSize) {
+        for (int i = normalSize; i < box.size(); i++) {
+            box.remove(i);
+        }
     }
 
 }

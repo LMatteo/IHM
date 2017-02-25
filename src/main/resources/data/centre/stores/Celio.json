@@ -4,10 +4,12 @@
   "magasinId": "undefined",
   "name": "Celio",
   "location": "Niveau 0",
+  "locationEnglish": "Level 0",
   "mapId": 1,
   "categories": [
     "Mode",
     "A-C"
   ],
-  "promotionText": "Réduction d'hiver le jour de la St-Valentin"
+  "promotionText": "Réduction d'hiver le jour de la St-Valentin",
+  "promotionEnglish": "Winter sale for Valentine's day"
 }
