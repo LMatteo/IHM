@@ -20,6 +20,7 @@ public class Launcher extends Application {
 
     private static String path = "/fxml/centre/layout.fxml";
     private List<String> styles = new ArrayList<>();
+    private static boolean adminMode = false;
 
     /**
      * Analyzes the arguments of the program, and launches the requested fxml.
@@ -34,7 +35,6 @@ public class Launcher extends Application {
         if (args.length > 2) {
             exit();
         }
-        boolean adminMode = false;
         int firstIndex = 0;
         if (args.length == 2) {
             if (args[0].equals("-a")) {
@@ -90,7 +90,7 @@ public class Launcher extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         Parent rootNode = FXMLLoader.load(getClass().getResource(path));
-        Scene scene = new Scene(rootNode, 1280, 1024);
+        Scene scene = adminMode ? new Scene(rootNode, 1600, 900) : new Scene(rootNode, 1280, 1024);
         for (String style : styles) {
             scene.getStylesheets().add(style);
         }

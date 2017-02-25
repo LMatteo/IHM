@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="690.0"
+            prefWidth="1390.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <HBox layoutX="433.0" layoutY="245.0" prefHeight="690.0" prefWidth="1390.0" AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <AnchorPane prefHeight="690.0" prefWidth="1250.0" style="-fx-background-color: #dddddd;">
+                    <children>
+                        <VBox layoutX="526.0" layoutY="193.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <AnchorPane prefHeight="67.0" prefWidth="929.0">
+                                    <children>
+                                        <Label alignment="CENTER" layoutX="429.0" layoutY="34.0" prefHeight="67.0"
+                                               prefWidth="929.0" text="Promotions disponibles"
+                                               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <font>
+                                                <Font size="43.0"/>
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+                <AnchorPane>
+                    <children>
+                        <VBox layoutX="526.0" layoutY="193.0" prefHeight="690.0" prefWidth="929.0"
+                              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                              AnchorPane.topAnchor="0.0">
+                            <children>
+                                <AnchorPane prefHeight="67.0" prefWidth="929.0">
+                                    <children>
+                                        <Label alignment="CENTER" layoutX="429.0" layoutY="34.0" prefHeight="67.0"
+                                               prefWidth="929.0" style="-fx-background-color: #ffffff;"
+                                               text="Prévisualisation" AnchorPane.bottomAnchor="0.0"
+                                               AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                               AnchorPane.topAnchor="0.0">
+                                            <font>
+                                                <Font size="43.0"/>
+                                            </font>
+                                        </Label>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane prefHeight="625.0" prefWidth="535.0" styleClass="drop-zone"
+                                            stylesheets="@../../styles/centre/style.css"/>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

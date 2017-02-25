@@ -52,7 +52,12 @@ public class AdminLayoutController {
      */
     @FXML
     void goToActu(ActionEvent event) throws IOException {
-
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/adminActu.fxml"));
+        ap = loader.load();
+        AdminStoreController controller = loader.getController();
+        pane.setContent(ap);
+        switchButtonStyle(actualite);
+        pane.setVvalue(0);
     }
 
     /**

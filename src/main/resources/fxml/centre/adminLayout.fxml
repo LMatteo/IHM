@@ -6,11 +6,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0"
-            prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0"
+            prefWidth="1600.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="centre.controller.AdminLayoutController">
     <center>
-        <ScrollPane fx:id="pane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER"/>
+        <ScrollPane fx:id="pane" BorderPane.alignment="CENTER"/>
     </center>
     <top>
         <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
@@ -24,12 +24,12 @@
                         </ImageView>
                     </children>
                 </AnchorPane>
-                <Pane prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+                <Pane prefHeight="200.0" prefWidth="1720.0" HBox.hgrow="ALWAYS">
                     <children>
-                        <Pane prefHeight="200.0" prefWidth="360.0">
+                        <Pane prefHeight="200.0" prefWidth="467.0">
                             <children>
                                 <Button fx:id="actualite" mnemonicParsing="false" onAction="#goToActu"
-                                        prefHeight="200.0" prefWidth="360.0"
+                                        prefHeight="200.0" prefWidth="467.0"
                                         style="-fx-background-color: #4B77BE; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;"
                                         text="Editer actualités" textAlignment="CENTER" textFill="WHITE">
                                     <font>
@@ -38,10 +38,10 @@
                                 </Button>
                             </children>
                         </Pane>
-                        <Pane layoutX="360.0" prefHeight="200.0" prefWidth="360.0">
+                        <Pane layoutX="467.0" prefHeight="200.0" prefWidth="467.0">
                             <children>
                                 <Button fx:id="boutiques" mnemonicParsing="false" onAction="#goToBoutiques"
-                                        prefHeight="200.0" prefWidth="360.0"
+                                        prefHeight="200.0" prefWidth="467.0"
                                         style="-fx-background-color: #4B77BE; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;"
                                         text="Editer boutiques" textFill="WHITE">
                                     <font>
@@ -50,10 +50,10 @@
                                 </Button>
                             </children>
                         </Pane>
-                        <Pane layoutX="720.0" prefHeight="200.0" prefWidth="360.0">
+                        <Pane layoutX="941.0" prefHeight="200.0" prefWidth="467.0">
                             <children>
-                                <Button fx:id="infopratiques" mnemonicParsing="false" onAction="#goToInfoPratiques"
-                                        prefHeight="200.0" prefWidth="360.0"
+                                <Button fx:id="infopratiques" layoutX="-7.0" mnemonicParsing="false"
+                                        onAction="#goToInfoPratiques" prefHeight="200.0" prefWidth="467.0"
                                         style="-fx-background-color: #4B77BE; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;"
                                         text="Editer infos pratiques" textAlignment="CENTER" textFill="WHITE"
                                         wrapText="true">
