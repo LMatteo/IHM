@@ -11,6 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -33,6 +34,7 @@ import java.util.List;
  */
 public class StoreFormController {
 
+    @FXML private Label titleLabel;
     @FXML private VBox nameBox;
     @FXML private TextField name;
     @FXML private VBox areaBox;
@@ -53,10 +55,37 @@ public class StoreFormController {
 
     private Label selectedTag;
     private File image;
+    private File oldPic;
     private StoreList loadedStores;
+    private Store edit;
 
     public void setLoadedStores(StoreList loadedStores) {
         this.loadedStores = loadedStores;
+    }
+
+    /**
+     * Loads all fields with a store data. On confirmation, the store old data will be deleted, and the new data will be created.
+     *
+     * @param store - the store to load data from
+     */
+    public void loadStoreData(Store store) {
+        edit = store;
+        titleLabel.setText("Edition d'une boutique");
+        name.setText(store.getName());
+        area.setText(store.getLocation());
+        areaEnglish.setText(store.getLocationEnglish());
+        promoEnglish.setText(store.getPromotionEnglish());
+        promoFrench.setText(store.getPromotion());
+        logoPreview.setImage(new Image(getClass().getClassLoader().getResource("images/centre/" + store.getLogoName()).toString()));
+        //TODO: replace this with the working directory somehow
+        image = new File("target/classes/images/centre/" + store.getLogoName());
+        oldPic = image;
+        idMap.setText(Integer.toString(store.getMapId()));
+        idEnseigne.setText(store.getEnseigneId());
+        idMagasin.setText(store.getMagasinId());
+        for (String tag : store.getCategories()) {
+            addTagWithText(tag);
+        }
     }
 
     /**
@@ -69,7 +98,16 @@ public class StoreFormController {
         if (newTag.getText().equals("") || isTag(newTag.getText())) {
             return;
         }
-        Label tag = new Label(newTag.getText());
+        addTagWithText(newTag.getText());
+    }
+
+    /**
+     * Adds a tag to the list of tags with the specified text inside the label.
+     *
+     * @param text - the text inside the label
+     */
+    private void addTagWithText(String text) {
+        Label tag = new Label(text);
         if (tagBox.getChildren().size() % 2 != 0) {
             tag.setStyle("-fx-font: 17 System; -fx-background-color: #dcdcdc");
         } else {
@@ -148,19 +186,29 @@ public class StoreFormController {
      */
     @FXML
     void confirm(ActionEvent event) throws IOException, URISyntaxException {
+        if (edit != null) {
+            loadedStores.remove(edit);
+        }
         if (checkName() && checkLocation() && checkLogo() && checkMapId()) {
-            Store store = new Store(name.getText(), image.getName(), idEnseigne.getText(), idMagasin.getText(),
-                    getTagList(), area.getText(), areaEnglish.getText(), promoFrench.getText(), promoEnglish.getText(),
-                    Integer.parseInt(idMap.getText()));
+            Store store = new Store(name.getText(), name.getText() + getImageExtension(),
+                    idEnseigne.getText(), idMagasin.getText(), getTagList(), area.getText(), areaEnglish.getText(),
+                    promoFrench.getText(), promoEnglish.getText(), Integer.parseInt(idMap.getText()));
             //TODO: change this to the working directory somehow
-            File newPic = new File("target/classes/images/centre/" + image.getName());
-            newPic.createNewFile();
-            Files.copy(image.toPath(), newPic.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            File newPic = new File("target/classes/images/centre/" + name.getText() + getImageExtension());
+            if (edit != null && oldPic != image) {
+                Files.delete(oldPic.toPath());
+            }
+            if (oldPic != image) {
+                newPic.createNewFile();
+                Files.copy(image.toPath(), newPic.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            }
             store.save();
             loadedStores.add(store);
-            //TODO: proper "successfully added" window
+            //TODO: proper "successfully added or edited" window
             Stage stage = (Stage) name.getScene().getWindow();
             stage.close();
+        } else {
+            loadedStores.add(edit);
         }
     }
 
@@ -289,6 +337,15 @@ public class StoreFormController {
         for (int i = normalSize; i < box.size(); i++) {
             box.remove(i);
         }
+    }
+
+    /**
+     * Returns the extension (.jpg or .png) of the logo picture
+     *
+     * @return the extension of the logo picture
+     */
+    private String getImageExtension() {
+        return image.getName().substring(image.getName().lastIndexOf("."));
     }
 
 }

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * A list of loaded stores, with a few extra methods to retrieve a store
@@ -109,12 +110,37 @@ public class StoreList {
     }
 
     /**
+     * Searches for a store matching the requested map id.
+     * Returns an optional of it if found, or an empty optional otherwise
+     *
+     * @param id - the requested map id
+     * @return an optional of the store matching this id if found, or an empty optional otherwise
+     */
+    public Optional<Store> getStoreWithId(int id) {
+        for (Store store : loadedStores) {
+            if (store.getMapId() == id) {
+                return Optional.of(store);
+            }
+        }
+        return Optional.empty();
+    }
+
+    /**
      * Convenience method equivalent to .getList().add(store)
      *
      * @param store - the store to add to the list
      */
     public void add(Store store) {
         loadedStores.add(store);
+    }
+
+    /**
+     * Convenience method equivalent to .getList().remove(store).
+     *
+     * @param store - the store to remove fom the list
+     */
+    public void remove(Store store) {
+        loadedStores.remove(store);
     }
 
 

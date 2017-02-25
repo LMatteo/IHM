@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
@@ -28,17 +26,6 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
             </rowConstraints>
-            <children>
-                <Label prefHeight="83.0" prefWidth="330.0" style="-fx-background-color: #dcdcdc;"
-                       text="   5. To be or to Have">
-                    <font>
-                        <Font size="20.0"/>
-                    </font>
-                    <GridPane.margin>
-                        <Insets/>
-                    </GridPane.margin>
-                </Label>
-            </children>
         </GridPane>
     </children>
 </VBox>

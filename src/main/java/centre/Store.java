@@ -68,6 +68,46 @@ public class Store {
         this.promotionEnglish = promotionEnglish;
     }
 
+    public String getLogoName() {
+        return logoName;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getLocationEnglish() {
+        return locationEnglish;
+    }
+
+    public String getPromotionEnglish() {
+        return promotionEnglish;
+    }
+
+    public String getEnseigneId() {
+        return enseigneId;
+    }
+
+    public String getMagasinId() {
+        return magasinId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getPromotion() {
+        return promotion;
+    }
+
+    public int getMapId() {
+        return mapId;
+    }
+
+    public List<String> getCategories() {
+        return categories;
+    }
+
     /**
      * Checks if this store belongs to the given category.
      * Returns true if the category was found among this store tags, or false otherwise.
@@ -82,26 +122,6 @@ public class Store {
             }
         }
         return false;
-    }
-
-    public String getLogoName() {
-        return logoName;
-    }
-
-    public String getLocation() {
-        return location;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getPromotion() {
-        return promotion;
-    }
-
-    public int getMapId() {
-        return mapId;
     }
 
     /**
