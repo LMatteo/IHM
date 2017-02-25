@@ -46,9 +46,25 @@ public class AdminStoreController {
         stage.show();
     }
 
+    /**
+     * Opens the window to select a store, and sets it up in delete mode.
+     *
+     * @param event - the event of this action
+     * @throws IOException - if failing to load the fxml
+     */
     @FXML
-    void deleteStore(ActionEvent event) {
-
+    void deleteStore(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/storeSelector.fxml"));
+        Parent rootNode = loader.load();
+        StoreSelectorController controller = loader.getController();
+        controller.setLoadedStores(loadedStores);
+        controller.initializeContent();
+        controller.setDeleteMode();
+        Scene scene = new Scene(rootNode, 968, 555);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Supprimer une boutique");
+        stage.show();
     }
 
     /**

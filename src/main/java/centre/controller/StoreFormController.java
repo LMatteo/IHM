@@ -340,7 +340,7 @@ public class StoreFormController {
     }
 
     /**
-     * Returns the extension (.jpg or .png) of the logo picture
+     * Returns the extension (.jpg or .png) of the logo picture.
      *
      * @return the extension of the logo picture
      */

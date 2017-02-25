@@ -2,6 +2,8 @@ package centre;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 
 /**
@@ -66,6 +68,7 @@ public class Store {
         this.locationEnglish = locationEnglish;
         this.promotion = promotion;
         this.promotionEnglish = promotionEnglish;
+        this.mapId = mapId;
     }
 
     public String getLogoName() {
@@ -142,6 +145,17 @@ public class Store {
         sw.addProperty("promotionEnglish", promotionEnglish);
         sw.addProperty("locationEnglish", locationEnglish);
         sw.write();
+    }
+
+    /**
+     * Deletes this store data.
+     *
+     * @throws IOException - if failing to delete the store files
+     */
+    public void delete() throws IOException {
+        //TODO: change this to the working directory somehow
+        Files.delete(Paths.get("target/classes/data/centre/stores/" + name + ".json"));
+        Files.delete(Paths.get("target/classes/images/centre/" + logoName));
     }
 
 }
