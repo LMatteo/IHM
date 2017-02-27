@@ -58,7 +58,7 @@ public class StoreController {
      * @throws URISyntaxException - if failing to find one of the folders
      */
     private void initSort() throws IOException, URISyntaxException {
-        File[] sortFolder = new File(getClass().getClassLoader().getResource("data/centre/sort/").toURI()).listFiles();
+        File[] sortFolder = new File("data/centre/sort/").listFiles();
         if (sortFolder == null) {
             exit("Could not find sorting data.");
             return;
@@ -135,8 +135,10 @@ public class StoreController {
         if (searchBar.getText().equals("")) {
             clearSearchSuggestions();
             clearSearchResult();
+            loadCategories(sortOrders.get(0));
             return;
         }
+        confirmSearch(null);
         if (event.getCode() == KeyCode.ENTER) {
             searchBar.setText(searchBar.getText().substring(0, searchBar.getText().length() - 1));
             confirmSearch(null);

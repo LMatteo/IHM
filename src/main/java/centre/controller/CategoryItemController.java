@@ -7,6 +7,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
+import java.io.File;
+import java.net.MalformedURLException;
+
 /**
  * Controller class for a store item in one category.
  */
@@ -23,8 +26,8 @@ public class CategoryItemController {
      *
      * @param store - the store for this tem
      */
-    public void initializeContent(Store store) {
-        logo.setImage(new Image(getClass().getClassLoader().getResource("images/centre/" + store.getLogoName()).toString()));
+    public void initializeContent(Store store) throws MalformedURLException {
+        logo.setImage(new Image(new File("data/centre/images/" + store.getLogoName()).toURI().toURL().toString()));
         mapLocation.setText(store.getLocation());
         name.setText(store.getName());
         promotion.setText(store.getPromotion());

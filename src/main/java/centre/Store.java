@@ -153,9 +153,8 @@ public class Store {
      * @throws IOException - if failing to delete the store files
      */
     public void delete() throws IOException {
-        //TODO: change this to the working directory somehow
-        Files.delete(Paths.get("target/classes/data/centre/stores/" + name + ".json"));
-        Files.delete(Paths.get("target/classes/images/centre/" + logoName));
+        Files.delete(Paths.get("data/centre/stores/" + name + ".json"));
+        Files.delete(Paths.get("data/centre/images/" + logoName));
     }
 
 }

@@ -26,8 +26,7 @@ public class StoreWriter {
      * @throws IOException - if failing to create the writer
      */
     public StoreWriter(String filename) throws IOException {
-        //TODO: change this to the working directory somehow
-        bw = new BufferedWriter(new FileWriter(new File("target/classes/data/centre/stores/" + filename + ".json")));
+        bw = new BufferedWriter(new FileWriter(new File("data/centre/stores/" + filename + ".json")));
         json = new JSONObject();
     }
 

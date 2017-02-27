@@ -23,6 +23,7 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
@@ -68,7 +69,7 @@ public class StoreFormController {
      *
      * @param store - the store to load data from
      */
-    public void loadStoreData(Store store) {
+    public void loadStoreData(Store store) throws MalformedURLException {
         edit = store;
         titleLabel.setText("Edition d'une boutique");
         name.setText(store.getName());
@@ -76,9 +77,9 @@ public class StoreFormController {
         areaEnglish.setText(store.getLocationEnglish());
         promoEnglish.setText(store.getPromotionEnglish());
         promoFrench.setText(store.getPromotion());
-        logoPreview.setImage(new Image(getClass().getClassLoader().getResource("images/centre/" + store.getLogoName()).toString()));
+        logoPreview.setImage(new Image(new File("data/centre/images/" + store.getLogoName()).toURI().toURL().toString()));
         //TODO: replace this with the working directory somehow
-        image = new File("target/classes/images/centre/" + store.getLogoName());
+        image = new File("data/centre/images" + store.getLogoName());
         oldPic = image;
         idMap.setText(Integer.toString(store.getMapId()));
         idEnseigne.setText(store.getEnseigneId());
@@ -193,8 +194,7 @@ public class StoreFormController {
             Store store = new Store(name.getText(), name.getText() + getImageExtension(),
                     idEnseigne.getText(), idMagasin.getText(), getTagList(), area.getText(), areaEnglish.getText(),
                     promoFrench.getText(), promoEnglish.getText(), Integer.parseInt(idMap.getText()));
-            //TODO: change this to the working directory somehow
-            File newPic = new File("target/classes/images/centre/" + name.getText() + getImageExtension());
+            File newPic = new File("data/centre/images/" + name.getText() + getImageExtension());
             if (edit != null && oldPic != image) {
                 Files.delete(oldPic.toPath());
             }

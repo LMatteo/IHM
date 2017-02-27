@@ -26,7 +26,7 @@ public class StoreList {
      * @throws URISyntaxException - if failing to find one of the folders
      */
     public StoreList() throws IOException, URISyntaxException {
-        File[] storeFolder = new File(getClass().getClassLoader().getResource("data/centre/stores/").toURI()).listFiles();
+        File[] storeFolder = new File("data/centre/stores/").listFiles();
         if (storeFolder == null) {
             System.out.println("Could not find store data.");
             return;
