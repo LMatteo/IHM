@@ -1,9 +1,6 @@
 package centre;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,12 +32,36 @@ public class SortOrder {
         br.close();
     }
 
+    /**
+     * Creates a new sorting order with a given name and no categories.
+     *
+     * @param name - the name of the sorting order
+     */
+    public SortOrder(String name) {
+        this.name = name;
+        categories = new ArrayList<>();
+    }
+
     public String getName() {
         return name;
     }
 
     public List<String> getCategories() {
         return categories;
+    }
+
+    /**
+     * Saves this sorting order to the save folder
+     *
+     * @throws IOException - if failing to write the file
+     */
+    public void save() throws IOException {
+        BufferedWriter bw = new BufferedWriter(new FileWriter(new File("data/centre/sort/" + name + ".txt")));
+        bw.write(name + "\n");
+        for (String category : categories) {
+            bw.write(category + "\n");
+        }
+        bw.close();
     }
 
 }

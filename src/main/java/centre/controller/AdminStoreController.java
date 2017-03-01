@@ -93,8 +93,16 @@ public class AdminStoreController {
      * @param event - the action event of this action
      */
     @FXML
-    void editSort(ActionEvent event) {
-
+    void editSort(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/editSort.fxml"));
+        Parent rootNode = loader.load();
+        EditSortController controller = loader.getController();
+        controller.setLoadedStores(loadedStores);
+        Scene scene = new Scene(rootNode, 1449, 843);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Editer le tri des boutiques");
+        stage.show();
     }
 
 }
