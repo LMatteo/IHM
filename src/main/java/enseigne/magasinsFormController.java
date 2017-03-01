@@ -1,6 +1,6 @@
 package enseigne;
 
-import enseigne.component.Magasin;
+import enseigne.component.magasin.Magasin;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;

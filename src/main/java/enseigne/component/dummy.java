@@ -1,5 +1,7 @@
 package enseigne.component;
 
+import enseigne.component.magasin.Magasin;
+
 import java.io.IOException;
 import java.util.HashMap;
 
@@ -16,11 +18,17 @@ public class dummy {
         mag.setCentre("centre de sophia");
         mag.setInfoFr("on est la ");
         mag.setInfoEn("there we are");
-        mag.setMaint(10);
+        mag.setMaint(100);
         mag.setNbEmpl(2);
         mag.setPhoto("/home/luqua/IdeaProjects/IHM/src/main/resources/images/common/flags/france.png");
-        mag.setRendu(10);
+        mag.setRendu(500);
         mag.setWeb("salut.fr");
+        HashMap<Integer,Integer> point = new HashMap<>();
+        point.put(10,10);
+        point.put(11,2);
+        mag.setPointe(point);
         mag.write();
+
+        new Magasin("/home/luqua/IdeaProjects/IHM/data/enseigne/stores/salut.fr.json");
     }
 }
