@@ -87,4 +87,14 @@ public class AdminStoreController {
         stage.show();
     }
 
+    /**
+     * Opens the window to edit the sorting of the stores.
+     *
+     * @param event - the action event of this action
+     */
+    @FXML
+    void editSort(ActionEvent event) {
+
+    }
+
 }
