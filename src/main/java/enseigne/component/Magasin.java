@@ -2,8 +2,10 @@ package enseigne.component;
 
 import org.json.JSONObject;
 
-import java.io.*;
-import java.nio.file.Files;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,9 +13,13 @@ public class Magasin {
 
     private String photo;
     private String addr;
+    private String codePostal;
+    private String ville;
     private String web;
     private String centre;
-    private String info;
+    private String infoFr;
+    private String infoEn;
+    private String telephone;
 
     private int chiffreAffaire;
     private int rendu;
@@ -42,6 +48,22 @@ public class Magasin {
     public void setAddr(String addr) {
         this.addr = addr;
     }
+    public String getVille() {
+            return ville;
+        }
+
+        public void setVille(String ville) {
+            this.ville = ville;
+        }
+
+
+    public String getCodePostal() {
+        return codePostal;
+    }
+
+    public void setCodePostal(String cp) {
+        this.codePostal = cp;
+    }
 
     public String getWeb() {
         return web;
@@ -59,12 +81,18 @@ public class Magasin {
         this.centre = centre;
     }
 
-    public String getInfo() {
-        return info;
+    public String getInfoFr() {
+        return infoFr;
+    }
+    public String getInfoEn() {
+        return infoEn;
     }
 
-    public void setInfo(String info) {
-        this.info = info;
+    public void setInfoFr(String info) {
+        this.infoFr = info;
+    }
+    public void setInfoEn(String info) {
+        this.infoEn = info;
     }
 
     public int getChiffreAffaire() {
@@ -81,6 +109,14 @@ public class Magasin {
 
     public void setRendu(int rendu) {
         this.rendu = rendu;
+    }
+
+    public String getTelephone(){
+        return telephone;
+    }
+
+    public void setTelephone(String tel){
+        this.telephone = tel;
     }
 
     public int getNbEmpl() {
@@ -125,7 +161,8 @@ public class Magasin {
         obj.put("addresse",addr);
         obj.put("web",web);
         obj.put("centre",centre);
-        obj.put("info",info);
+        obj.put("infoFr",infoFr);
+        obj.put("infoEn",infoEn);
         obj.put("chiffreAffaire", chiffreAffaire);
         obj.put("rendu",rendu);
         obj.put("nbEmpl",nbEmpl);
