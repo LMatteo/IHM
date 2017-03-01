@@ -1,22 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
 <AnchorPane maxWidth="1060.0" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.102"
             xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <AnchorPane layoutX="64.0" layoutY="51.0" prefHeight="530.0" prefWidth="304.0"
-                    style="-fx-background-color: #4B77BE;"/>
-        <AnchorPane layoutX="439.0" layoutY="51.0" prefHeight="239.0" prefWidth="566.0"
-                    style="-fx-background-color: #4B77BE;"/>
-        <AnchorPane layoutX="64.0" layoutY="632.0" prefHeight="255.0" prefWidth="566.0"
-                    style="-fx-background-color: #4B77BE;"/>
-        <AnchorPane layoutX="439.0" layoutY="339.0" prefHeight="242.0" prefWidth="566.0"
-                    style="-fx-background-color: #90d86d;"/>
-        <AnchorPane layoutX="701.0" layoutY="622.0" prefHeight="530.0" prefWidth="304.0"
-                    style="-fx-background-color: #90d86d;"/>
+        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="162.0" prefWidth="1060.0"
+               text="BIENVENUE À CAP SOPHIA" textFill="#4b77be">
+            <font>
+                <Font size="67.0"/>
+            </font>
+        </Label>
+        <HBox layoutY="162.0" prefHeight="530.0" prefWidth="1060.0" AnchorPane.bottomAnchor="690.0"
+              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="162.0">
+            <children>
+                <ImageView fx:id="v1" fitHeight="530.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                    </image>
+                </ImageView>
+                <Pane prefHeight="200.0" prefWidth="200.0"/>
+                <VBox prefHeight="530.0" prefWidth="568.0">
+                    <children>
+                        <ImageView fx:id="h1" fitHeight="235.0" fitWidth="613.0" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                            </image>
+                        </ImageView>
+                        <Pane prefHeight="200.0" prefWidth="200.0"/>
+                        <ImageView fitHeight="235.0" fitWidth="613.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                            </image>
+                        </ImageView>
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+            </padding>
+        </HBox>
+        <HBox layoutY="752.0" prefHeight="530.0" prefWidth="1060.0">
+            <children>
+                <VBox prefHeight="530.0" prefWidth="568.0">
+                    <children>
+                        <ImageView fitHeight="235.0" fitWidth="613.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                            </image>
+                        </ImageView>
+                        <Pane prefHeight="200.0" prefWidth="200.0"/>
+                        <ImageView fitHeight="235.0" fitWidth="613.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                            </image>
+                        </ImageView>
+                    </children>
+                </VBox>
+                <Pane prefHeight="200.0" prefWidth="200.0"/>
+                <ImageView fitHeight="530.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                    </image>
+                </ImageView>
+            </children>
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+            </padding>
+        </HBox>
     </children>
-    <padding>
-        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
-    </padding>
 </AnchorPane>
