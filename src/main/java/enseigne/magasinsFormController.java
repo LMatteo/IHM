@@ -1,3 +1,5 @@
+package enseigne;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
@@ -6,7 +8,7 @@ import javafx.scene.image.ImageView;
 
 import java.awt.event.ActionEvent;
 
-public class PleaseProvideControllerClassName {
+public class magasinsFormController {
 
     @FXML
     private TextField centreCommercial;
