@@ -56,7 +56,7 @@ public class magasinsFormController {
 
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Ouvrir une image");
-        chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"));
+        chooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Photo Files", "*.png", "*.jpg", "*.gif"));
         File file = chooser.showOpenDialog(new Stage());
         if (file != null) {
             logoPreview.setImage(Image.impl_fromPlatformImage(file));
