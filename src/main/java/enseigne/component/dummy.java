@@ -14,7 +14,8 @@ public class dummy {
         age.put(12,90);
         mag.setAge(age);
         mag.setCentre("centre de sophia");
-        mag.setInfo("on est la ");
+        mag.setInfoFr("on est la ");
+        mag.setInfoEn("there we are");
         mag.setMaint(10);
         mag.setNbEmpl(2);
         mag.setPhoto("/home/luqua/IdeaProjects/IHM/src/main/resources/images/common/flags/france.png");
