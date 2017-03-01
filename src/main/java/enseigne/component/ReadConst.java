@@ -4,6 +4,7 @@ import java.io.*;
 
 public class ReadConst {
     public static final String storePath = "data/enseigne/stores/";
+    public static final String actuPath = "data/enseigne/actu/";
 
 
     public static String  fileToString(String path) throws IOException{

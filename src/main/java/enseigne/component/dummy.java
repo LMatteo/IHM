@@ -28,7 +28,7 @@ public class dummy {
         point.put(11,2);
         mag.setPointe(point);
         mag.write();
-
         new Magasin("/home/luqua/IdeaProjects/IHM/data/enseigne/stores/salut.fr.json");
+        System.out.println("salut");
     }
 }
