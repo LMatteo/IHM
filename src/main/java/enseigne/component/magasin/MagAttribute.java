@@ -36,7 +36,7 @@ public enum MagAttribute implements MagHandler {
             json.put("web",mag.getWeb());
         }
     },
-    chiffreAffaire{
+    ChiffreAffaire{
         @Override
         public void assign(Magasin mag, JSONObject json) {
             mag.setChiffreAffaire(json.getInt("ChiffreAffaire"));
