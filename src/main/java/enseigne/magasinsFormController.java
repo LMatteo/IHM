@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 
 import java.awt.event.ActionEvent;
 import java.io.File;
+import java.io.IOException;
 
 public class magasinsFormController {
 
@@ -48,6 +49,8 @@ public class magasinsFormController {
     @FXML
     private Button ajoutMagasin;
 
+    private String imagePath;
+
     @FXML
     void browsePic(ActionEvent event) {
 
@@ -57,13 +60,14 @@ public class magasinsFormController {
         File file = chooser.showOpenDialog(new Stage());
         if (file != null) {
             logoPreview.setImage(Image.impl_fromPlatformImage(file));
-
+            imagePath = file.getPath();
         }
+
 
     }
 
     @FXML
-    void ajoutMagasin(ActionEvent event) {
+    void ajoutMagasin(ActionEvent event) throws IOException {
         Magasin m = new Magasin();
         m.setAddr(adresse.getPromptText());
         m.setCentre(centreCommercial.getPromptText());
@@ -73,7 +77,9 @@ public class magasinsFormController {
         m.setTelephone(telephone.getPromptText());
         m.setVille(ville.getPromptText());
         m.setCodePostal(codePostal.getPromptText());
+        m.setPhoto(imagePath);
         m.write();
+
     }
 
 }
