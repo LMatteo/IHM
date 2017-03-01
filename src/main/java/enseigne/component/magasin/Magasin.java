@@ -1,11 +1,11 @@
-package enseigne.component;
+package enseigne.component.magasin;
 
+import enseigne.component.ReadConst;
+import enseigne.component.magasin.MagAttribute;
+import enseigne.component.magasin.MagHandler;
 import org.json.JSONObject;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,6 +33,15 @@ public class Magasin {
         age = new HashMap<>();
     }
 
+    public Magasin(String path) throws IOException{
+        JSONObject json = new JSONObject(ReadConst.fileToString(path));
+        for(MagHandler handler : MagAttribute.values()){
+            if(json.has(handler.toString())){
+                handler.assign(this,json);
+            }
+        }
+    }
+
     public String getPhoto() {
         return photo;
     }
@@ -52,9 +61,9 @@ public class Magasin {
             return ville;
         }
 
-        public void setVille(String ville) {
-            this.ville = ville;
-        }
+    public void setVille(String ville) {
+        this.ville = ville;
+    }
 
 
     public String getCodePostal() {
@@ -155,20 +164,11 @@ public class Magasin {
 
         BufferedWriter bf = new BufferedWriter(
                 new FileWriter(
-                        new File("data/enseigne/stores/" + web + ".json")));
+                        new File(ReadConst.storePath + web + ".json")));
         JSONObject obj = new JSONObject();
-        obj.put("photo",photo);
-        obj.put("addresse",addr);
-        obj.put("web",web);
-        obj.put("centre",centre);
-        obj.put("infoFr",infoFr);
-        obj.put("infoEn",infoEn);
-        obj.put("chiffreAffaire", chiffreAffaire);
-        obj.put("rendu",rendu);
-        obj.put("nbEmpl",nbEmpl);
-        obj.put("maintenance",maint);
-        obj.put("poite",pointe);
-        obj.put("age",age);
+        for(MagHandler handler : MagAttribute.values()){
+            handler.put(this,obj);
+        }
         bf.write(obj.toString());
         bf.close();
 
