@@ -16,20 +16,22 @@ public class AccControlAdmin {
     private ScrollPane pane;
 
     @FXML
-    private Button accueil;
+    private Button adminAccueil;
 
     @FXML
-    private Button gallerie;
+    private Button adminGallerie;
 
     @FXML
-    private Button magasins;
+    private Button adminStore;
 
     @FXML
-    private Button infos;
+    private Button adminInfo;
 
     @FXML
     void switchPanel(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/enseigne/admin/" + "adminStore" + ".fxml"));
+        Button source = (Button) event.getSource();
+        String id = source.getId();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/enseigne/admin/" + id + ".fxml"));
         Node box = loader.load();
         pane.setContent(box);
     }
