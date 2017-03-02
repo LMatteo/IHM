@@ -18,33 +18,33 @@ public class Launcher extends Application {
     private static final String INVALID_ARGS = "Invalid arguments. Possible arguments are one of the following : (-a) (--centre | --enseigne |" +
             " --magasin) \nCheck Readme for more information. ";
 
-    private static String path = "/fxml/centre/user/layout.fxml";
+    private String path = "/fxml/centre/user/layout.fxml";
     private List<String> styles = new ArrayList<>();
-    private static boolean adminMode = false;
+    private boolean adminMode = false;
 
     /**
      * Analyzes the arguments of the program, and launches the requested fxml.
      *
-     * @param args - the program arguments
      */
-    public void parseArgs(String[] args) {
-        if (args.length == 0) {
-            launch();
+    @Override
+    public void init() {
+        List<String> args = getParameters().getRaw();
+        if (args.size() == 0) {
             return;
         }
-        if (args.length > 2) {
+        if (args.size() > 2) {
             exit();
         }
         int firstIndex = 0;
-        if (args.length == 2) {
-            if (args[0].equals("-a")) {
+        if (args.size() == 2) {
+            if (args.get(0).equals("-a")) {
                 adminMode = true;
                 firstIndex++;
             } else {
                 exit();
             }
         }
-        switch (args[firstIndex]) {
+        switch (args.get(firstIndex)) {
             case "--centre":
                 if (!adminMode) {
                     path = "/fxml/centre/user/layout.fxml";
@@ -70,11 +70,10 @@ public class Launcher extends Application {
             default:
                 exit();
         }
-        launch();
     }
 
     /**
-     * Quits the program in case wrong arguments were used.
+     * Displays an error message, then quits the program.
      */
     private void exit() {
         System.out.println(INVALID_ARGS);
@@ -84,7 +83,7 @@ public class Launcher extends Application {
     /**
      * Starts up the interface.
      *
-     * @param stage - the stage of the interface
+     * @param stage - the main stage of the application
      * @throws IOException - if failing to open the fxml
      */
     @Override
