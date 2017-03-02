@@ -69,6 +69,9 @@ public class magasinsFormController {
         m.setVille(ville.getText());
         m.setCodePostal(codePostal.getText());
         m.setPhoto(imagePath);
+        m.setVille(ville.getText());
+        m.setTelephone(telephone.getText());
+        m.setCodePostal(codePostal.getText());
         m.write();
         Stage stage = (Stage) ajoutMagasin.getScene().getWindow();
         stage.close();

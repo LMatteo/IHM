@@ -3,6 +3,7 @@ package enseigne.component;
 import enseigne.component.magasin.Magasin;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -54,11 +55,14 @@ public class ReadConst {
 
     }
 
-    public Node storeToNode(Magasin m){
+    public static Node storeToNode(Magasin m){
         HBox hbox1 = new HBox();
-        ImageView p = new ImageView(new File(m.getPhoto()).toURI().toString());
-        p.setFitWidth(200);
-        p.setFitHeight(200);
+        ImageView p = new ImageView();
+        if(m.getPhoto() != null) {
+            p.setImage(new Image(new File(m.getPhoto()).toURI().toString()));
+            p.setFitWidth(200);
+            p.setFitHeight(200);
+        }
         VBox vbox2 = new VBox();
         Label label1 = new Label(m.getVille()+", au centre commercial "+m.getCentre());
         Label label2 = new Label(m.getInfoFr());
