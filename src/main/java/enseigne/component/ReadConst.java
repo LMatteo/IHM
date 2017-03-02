@@ -3,10 +3,10 @@ package enseigne.component;
 import enseigne.component.magasin.Magasin;
 import javafx.scene.Node;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class ReadConst {
     public static final String storePath = "data/enseigne/stores/";
@@ -26,6 +26,32 @@ public class ReadConst {
 
     public static Node storeToNode(Magasin m){
        return null;
+
+    }
+
+    public static List<Magasin> getStoresJson() throws IOException{
+        File folder = new File(storePath);
+        FileFilter filter = new FileFilter() {
+            @Override
+            public boolean accept(File pathname) {
+                String name = pathname.toString();
+                String[] arr = name.split("\\.");
+                String ext = "";
+                if(arr.length>0) {
+                    ext = arr[arr.length - 1];
+                }
+                if(ext.equals("json")){
+                    return true;
+                }
+                return false;
+            }
+        };
+        List<File> files = Arrays.asList(folder.listFiles(filter));
+        List<Magasin> magasins = new ArrayList<>();
+        for(File file : files){
+            magasins.add(new Magasin(file.toString()));
+        }
+        return magasins;
 
     }
 }
