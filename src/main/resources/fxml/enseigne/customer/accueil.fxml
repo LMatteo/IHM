@@ -34,7 +34,7 @@
                 <ImageView fitHeight="176.0" fitWidth="263.0" layoutX="47.0" layoutY="76.0" pickOnBounds="true"
                            preserveRatio="true">
                     <image>
-                        <Image url="@../../images/enseigne/livre1.png"/>
+                        <Image url="@../../../images/enseigne/livre1.png"/>
                     </image>
                 </ImageView>
                 <Text layoutX="317.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0"
@@ -81,22 +81,22 @@
                             <children>
                                 <ImageView fitHeight="175.0" fitWidth="239.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../images/enseigne/swag.jpg"/>
+                                        <Image url="@../../../images/enseigne/swag.jpg"/>
                                     </image>
                                 </ImageView>
                                 <ImageView fitHeight="175.0" fitWidth="274.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../images/enseigne/pitbull.jpg"/>
+                                        <Image url="@../../../images/enseigne/pitbull.jpg"/>
                                     </image>
                                 </ImageView>
                                 <ImageView fitHeight="174.0" fitWidth="282.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../images/enseigne/gims.jpg"/>
+                                        <Image url="@../../../images/enseigne/gims.jpg"/>
                                     </image>
                                 </ImageView>
                                 <ImageView fitHeight="176.0" fitWidth="339.0" pickOnBounds="true" preserveRatio="true">
                                     <image>
-                                        <Image url="@../../images/enseigne/kaaris.jpg"/>
+                                        <Image url="@../../../images/enseigne/kaaris.jpg"/>
                                     </image>
                                 </ImageView>
                             </children>
@@ -125,7 +125,7 @@
                 <ImageView fitHeight="176.0" fitWidth="263.0" layoutX="732.0" layoutY="77.0" pickOnBounds="true"
                            preserveRatio="true">
                     <image>
-                        <Image url="@../../images/enseigne/swag.jpg"/>
+                        <Image url="@../../../images/enseigne/swag.jpg"/>
                     </image>
                 </ImageView>
                 <Text layoutX="43.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0"
