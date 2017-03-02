@@ -56,7 +56,6 @@ public class ReadConst {
 
     public Node storeToNode(Magasin m){
         HBox hbox1 = new HBox();
-        System.out.println(m.getPhoto());
         ImageView p = new ImageView(new File(m.getPhoto()).toURI().toString());
         p.setFitWidth(200);
         p.setFitHeight(200);
