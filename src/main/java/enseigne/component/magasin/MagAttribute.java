@@ -139,5 +139,35 @@ public enum MagAttribute implements MagHandler {
         public void put(Magasin mag, JSONObject json){
             json.put("age",mag.getAge());
         }
+    },
+    ville{
+        @Override
+        public void assign(Magasin mag, JSONObject json) {
+            mag.setVille(json.getString("ville"));
+        }
+        @Override
+        public void put(Magasin mag, JSONObject json){
+            json.put("ville",mag.getVille());
+        }
+    },
+    codePostal{
+        @Override
+        public void assign(Magasin mag, JSONObject json) {
+            mag.setCodePostal(json.getString(this.toString()));
+        }
+        @Override
+        public void put(Magasin mag, JSONObject json){
+            json.put(this.toString(),mag.getCodePostal());
+        }
+    },
+    telephone{
+        @Override
+        public void assign(Magasin mag, JSONObject json) {
+            mag.setTelephone(json.getString(this.toString()));
+        }
+        @Override
+        public void put(Magasin mag, JSONObject json){
+            json.put(this.toString(),mag.getTelephone());
+        }
     }
 }
