@@ -3,6 +3,12 @@ package enseigne.component.magasin;
 import enseigne.component.ReadConst;
 import enseigne.component.magasin.MagAttribute;
 import enseigne.component.magasin.MagHandler;
+import javafx.scene.Node;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import org.json.JSONObject;
 
 import java.io.*;
@@ -172,5 +178,34 @@ public class Magasin {
         bf.write(obj.toString());
         bf.close();
 
+    }
+
+    public Node toNode(){
+        HBox hbox1 = new HBox();
+        ImageView p = new ImageView();
+        if(getPhoto() != null) {
+            p.setImage(new Image(new File(getPhoto()).toURI().toString()));
+            p.setFitWidth(200);
+            p.setFitHeight(200);
+        }
+        VBox vbox2 = new VBox();
+        Label label1 = new Label(getVille()+", au centre commercial "+getCentre());
+        Label label2 = new Label(getInfoFr());
+        Label label3 = new Label("Téléphone : "+getTelephone());
+        Label label4 = new Label("Site web : "+getWeb());
+        Label label5 = new Label("Adresse : "+getAddr()+"\n"+getCodePostal()+" "+getVille());
+        HBox hbox3 = new HBox();
+        hbox3.getChildren().addAll(label3,label4);
+
+        vbox2.getChildren().add(label1);
+        vbox2.getChildren().add(label2);
+        vbox2.getChildren().add(hbox3);
+        vbox2.getChildren().add(label5);
+
+
+        hbox1.getChildren().add(p);
+        hbox1.getChildren().add(vbox2);
+
+        return hbox1;
     }
 }
