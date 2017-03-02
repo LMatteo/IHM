@@ -11,6 +11,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
@@ -42,9 +43,15 @@ public class actuFormController {
     private TextArea contentEn;
 
     @FXML
-    private Button ajoutMagasin;
+    private Button ajoutActu;
 
     private String imagePath;
+
+    @FXML
+    private ToggleButton tailleGrande;
+
+    @FXML
+    private ToggleButton taillePetit;
 
     @FXML
     void browsePic(ActionEvent event) throws FileNotFoundException {
@@ -66,14 +73,15 @@ public class actuFormController {
     }
 
     @FXML
-    void ajoutMagasin(ActionEvent event) {
+    void ajoutActu(ActionEvent event) {
         Actu a = new Actu();
         a.setContentEn(contentEn.getPromptText());
         a.setContentFr(contentFr.getPromptText());
         a.setTitreEn(titreEn.getPromptText());
         a.setTitreFr(titreFr.getPromptText());
         a.setImage(imagePath);
-
+        if(tailleGrande.isSelected())a.setBigSize(true);
+        else a.setBigSize(false);
     }
 
 }

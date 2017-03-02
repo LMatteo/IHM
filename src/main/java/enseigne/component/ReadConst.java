@@ -1,5 +1,6 @@
 package enseigne.component;
 
+import enseigne.component.actu.Actu;
 import enseigne.component.magasin.Magasin;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
@@ -76,6 +77,22 @@ public class ReadConst {
 
         hbox1.getChildren().add(p);
         hbox1.getChildren().add(vbox2);
+
+        return hbox1;
+    }
+
+    public static Node actuToNode(Actu a){
+        HBox hbox1 = new HBox();
+
+
+
+        return hbox1;
+    }
+
+    public Node photoToNode(Photo p){
+        HBox hbox1 = new HBox();
+
+
 
         return hbox1;
     }
