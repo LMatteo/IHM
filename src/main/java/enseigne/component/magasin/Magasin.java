@@ -1,5 +1,6 @@
 package enseigne.component.magasin;
 
+import enseigne.component.Deletable;
 import enseigne.component.ReadConst;
 import enseigne.component.magasin.MagAttribute;
 import enseigne.component.magasin.MagHandler;
@@ -15,7 +16,7 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Magasin {
+public class Magasin extends Deletable {
 
     private String photo;
     private String addr;
@@ -34,12 +35,14 @@ public class Magasin {
     private Map<Integer,Integer> pointe;
     private Map<Integer,Integer> age;
 
-    public Magasin(){
+    public Magasin() {
+        super.setPath(ReadConst.storePath);
         pointe = new HashMap<>();
         age = new HashMap<>();
     }
 
     public Magasin(String path) throws IOException{
+        super.setPath(ReadConst.storePath);
         JSONObject json = new JSONObject(ReadConst.fileToString(path));
         for(MagHandler handler : MagAttribute.values()){
             if(json.has(handler.toString())){
@@ -86,6 +89,7 @@ public class Magasin {
 
     public void setWeb(String web) {
         this.web = web;
+        super.setName(web);
     }
 
     public String getCentre() {

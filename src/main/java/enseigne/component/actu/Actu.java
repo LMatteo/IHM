@@ -1,5 +1,6 @@
 package enseigne.component.actu;
 
+import enseigne.component.Deletable;
 import enseigne.component.ReadConst;
 import org.json.JSONObject;
 
@@ -11,7 +12,7 @@ import java.io.IOException;
 /**
  * Created by Josué on 01/03/2017.
  */
-public class Actu {
+public class Actu  extends Deletable{
 
     private String titreFr;
     private String titreEn;
@@ -21,10 +22,11 @@ public class Actu {
     private boolean bigSize;
 
     public Actu(){
-
+        super.setPath(ReadConst.actuPath);
     }
 
     public Actu(String path) throws IOException{
+        super.setPath(ReadConst.actuPath);
         JSONObject json = new JSONObject(ReadConst.fileToString(path));
         for(ActuHandler handler : ActuAttribute.values()){
             if(json.has(handler.toString())){
@@ -51,6 +53,7 @@ public class Actu {
 
     public void setTitreFr(String titreFr) {
         this.titreFr = titreFr;
+        super.setName(titreFr);
     }
 
     public String getContentEn() {

@@ -1,5 +1,6 @@
 package enseigne.component.photo;
 
+import enseigne.component.Deletable;
 import enseigne.component.ReadConst;
 import org.json.JSONObject;
 
@@ -8,7 +9,7 @@ import java.io.*;
 /**
  * Created by Josué on 01/03/2017.
  */
-public class Photo {
+public class Photo extends Deletable{
 
     private String titreFr;
     private String titreEn;
@@ -18,10 +19,11 @@ public class Photo {
     private String descriptionEn;
 
     public Photo(){
-
+        super.setPath(ReadConst.photoPath);
     }
 
     public Photo(String path) throws IOException{
+        super.setPath(ReadConst.photoPath);
         JSONObject json = new JSONObject(ReadConst.fileToString(path));
         for(PhotoHandler handler : PhotoAttribute.values()){
             if(json.has(handler.toString())) {
@@ -71,6 +73,7 @@ public class Photo {
 
     public void setTitreFr(String title) {
         this.titreFr = title;
+        super.setName(title);
     }
     public void setTitreEn(String title) {
         this.titreEn = title;
@@ -78,7 +81,7 @@ public class Photo {
 
     public void write() throws IOException{
         BufferedWriter bw = new BufferedWriter(new FileWriter(
-                new File(ReadConst.photoPath)
+                new File(ReadConst.photoPath+titreFr+".json")
         ));
 
         JSONObject json = new JSONObject();
