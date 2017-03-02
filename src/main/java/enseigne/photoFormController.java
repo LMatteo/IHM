@@ -18,10 +18,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class imageFormController {
+public class photoFormController {
 
     @FXML
-    private TextField title;
+    private TextField titreFr;
+
+    @FXML
+    private TextField titreEn;
 
     @FXML
     private ChoiceBox<?> category;
@@ -70,7 +73,8 @@ public class imageFormController {
         i.setPhoto(imagePath);
         i.setDescriptionEn(decriptionEn.getPromptText());
         i.setDescriptionFr(descriptionFr.getPromptText());
-        i.setTitle(title.getPromptText());
+        i.setTitreFr(titreFr.getPromptText());
+        i.setTitreEn(titreEn.getPromptText());
         i.write();
     }
 
