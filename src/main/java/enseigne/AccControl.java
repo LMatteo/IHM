@@ -53,7 +53,7 @@ public class AccControl {
     void switchPanel(ActionEvent event) throws IOException {
         Button source = (Button) event.getSource();
         String id = source.getId();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/enseigne/" + id + ".fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/enseigne/customer/" + id + ".fxml"));
         VBox box = loader.load();
         pane.setContent(box);
         switchBut(source);
