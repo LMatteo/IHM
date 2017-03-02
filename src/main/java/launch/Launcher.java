@@ -1,3 +1,5 @@
+package launch;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,14 +11,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Launcher class used to parse the program arguments and starting up the first fxml controller.
+ * launch.Launcher class used to parse the program arguments and starting up the first fxml controller.
  *
  * @author Guillaume Andre
  */
 public class Launcher extends Application {
-
-    private static final String INVALID_ARGS = "Invalid arguments. Possible arguments are one of the following : (-a) (--centre | --enseigne |" +
-            " --magasin) \nCheck Readme for more information. ";
 
     private String path = "/fxml/centre/user/layout.fxml";
     private List<String> styles = new ArrayList<>();
@@ -26,13 +25,13 @@ public class Launcher extends Application {
      * Analyzes the arguments of the program, and launches the requested fxml.
      */
     @Override
-    public void init() {
+    public void init() throws BadArgumentsException {
         List<String> args = getParameters().getRaw();
         if (args.size() == 0) {
             return;
         }
         if (args.size() > 2) {
-            exit();
+            throw new BadArgumentsException();
         }
         int firstIndex = 0;
         if (args.size() == 2) {
@@ -40,7 +39,7 @@ public class Launcher extends Application {
                 adminMode = true;
                 firstIndex++;
             } else {
-                exit();
+                throw new BadArgumentsException();
             }
         }
         switch (args.get(firstIndex)) {
@@ -67,16 +66,8 @@ public class Launcher extends Application {
                 }
                 break;
             default:
-                exit();
+                throw new BadArgumentsException();
         }
-    }
-
-    /**
-     * Displays an error message, then quits the program.
-     */
-    private void exit() {
-        System.out.println(INVALID_ARGS);
-        System.exit(1);
     }
 
     /**
