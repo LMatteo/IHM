@@ -1,9 +1,9 @@
 {
   "date": 14883883,
-  "name": "Réduction Micromania St Valentin",
-  "position": 0,
-  "french": "MicromaniaVal",
-  "english": "undefined",
+  "horizontal": true,
   "magasinId": "undefined",
-  "horizontal": true
+  "name": "Réduction Micromania St Valentin",
+  "english": "undefined",
+  "position": 4,
+  "french": "MicromaniaVal"
 }

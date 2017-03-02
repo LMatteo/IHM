@@ -1,5 +1,6 @@
 package centre.user;
 
+import centre.model.NewsList;
 import centre.model.StoreList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -27,6 +28,7 @@ public class LayoutController {
     private Button previous;
     private AnchorPane ap;
     private StoreList loadedStores;
+    private NewsList newsList;
 
     /**
      * Starts up the interface in the news screen.
@@ -36,11 +38,9 @@ public class LayoutController {
      */
     @FXML
     public void initialize() throws IOException, URISyntaxException {
-        ap = FXMLLoader.load(getClass().getResource("/fxml/centre/user/news.fxml"));
-        switchButtonStyle(actualite);
-        pane.setVvalue(0);
-        pane.setContent(ap);
         loadedStores = new StoreList();
+        newsList = new NewsList();
+        goToActu(null);
     }
 
     /**
@@ -50,11 +50,13 @@ public class LayoutController {
      * @throws IOException - if failing to load the fxml
      */
     @FXML
-    void goToActu(ActionEvent event) throws IOException {
-        ap = FXMLLoader.load(getClass().getResource("/fxml/centre/user/news.fxml"));
+    void goToActu(ActionEvent event) throws IOException, URISyntaxException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/user/news.fxml"));
+        ap = loader.load();
+        NewsController controller = loader.getController();
+        controller.initializeContent(newsList);
         pane.setContent(ap);
         switchButtonStyle(actualite);
-        pane.setContent(ap);
     }
 
     /**

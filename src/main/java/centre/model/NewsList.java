@@ -10,7 +10,7 @@ import java.util.List;
 
 public class NewsList {
 
-    List<News> newsList;
+    private List<News> newsList;
 
     /**
      * Initialize News data from file

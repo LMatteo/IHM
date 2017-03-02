@@ -13,6 +13,7 @@ public class News {
     private String magasinId;
     private boolean horizontal;
     private String name;
+    private String fileName;
 
     /**
      * Creates a news object with the data provided
@@ -22,12 +23,13 @@ public class News {
      */
     public News(File file) throws IOException {
         NewsParser np = new NewsParser(file);
+        fileName = file.getName();
+        name = np.getProperty("name");
         date = np.getDate();
         position = np.getPosition();
         french = np.getProperty("french");
         english = np.getProperty("english");
         magasinId = np.getProperty("magasinId");
-        name = np.getProperty("name");
         horizontal = np.horizontal();
     }
 
@@ -58,4 +60,24 @@ public class News {
     public String getName() {
         return name;
     }
+
+    public void setPosition(int value) {
+        position = value;
+    }
+
+    /**
+     * Saves this news data in a new file in the data folder.
+     */
+    public void save() {
+        NewsWriter nw = new NewsWriter(fileName);
+        nw.addProperty("name", name);
+        nw.addDate(date);
+        nw.addPosition(position);
+        nw.addProperty("french", french);
+        nw.addProperty("english", english);
+        nw.addProperty("magasinId", magasinId);
+        nw.addHorizontal(horizontal);
+        nw.write();
+    }
+
 }

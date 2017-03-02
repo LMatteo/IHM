@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 <AnchorPane maxWidth="1060.0" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.102"
-            xmlns:fx="http://javafx.com/fxml/1">
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="centre.user.NewsController">
     <children>
         <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="162.0" prefWidth="1060.0"
                text="BIENVENUE À CAP SOPHIA" textFill="#4b77be">
@@ -17,22 +17,15 @@
         <HBox layoutY="162.0" prefHeight="530.0" prefWidth="1060.0" AnchorPane.bottomAnchor="690.0"
               AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="162.0">
             <children>
-                <ImageView fx:id="v1" fitHeight="530.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                    </image>
+                <ImageView fx:id="v1" fitHeight="530.0" fitWidth="300.0" pickOnBounds="true">
                 </ImageView>
                 <Pane prefHeight="200.0" prefWidth="200.0"/>
                 <VBox prefHeight="530.0" prefWidth="568.0">
                     <children>
-                        <ImageView fx:id="h1" fitHeight="235.0" fitWidth="613.0" pickOnBounds="true"
-                                   preserveRatio="true">
-                            <image>
-                            </image>
+                        <ImageView fx:id="h2" fitHeight="235.0" fitWidth="613.0" pickOnBounds="true">
                         </ImageView>
                         <Pane prefHeight="200.0" prefWidth="200.0"/>
-                        <ImageView fitHeight="235.0" fitWidth="613.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                            </image>
+                        <ImageView fx:id="h3" fitHeight="235.0" fitWidth="613.0" pickOnBounds="true">
                         </ImageView>
                     </children>
                 </VBox>
@@ -45,21 +38,15 @@
             <children>
                 <VBox prefHeight="530.0" prefWidth="568.0">
                     <children>
-                        <ImageView fitHeight="235.0" fitWidth="613.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                            </image>
+                        <ImageView fx:id="h4" fitHeight="235.0" fitWidth="613.0" pickOnBounds="true">
                         </ImageView>
                         <Pane prefHeight="200.0" prefWidth="200.0"/>
-                        <ImageView fitHeight="235.0" fitWidth="613.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                            </image>
+                        <ImageView fx:id="h5" fitHeight="235.0" fitWidth="613.0" pickOnBounds="true">
                         </ImageView>
                     </children>
                 </VBox>
                 <Pane prefHeight="200.0" prefWidth="200.0"/>
-                <ImageView fitHeight="530.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                    </image>
+                <ImageView fx:id="v6" fitHeight="530.0" fitWidth="300.0" pickOnBounds="true">
                 </ImageView>
             </children>
             <padding>
