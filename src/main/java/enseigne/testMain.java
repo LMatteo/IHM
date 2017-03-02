@@ -6,7 +6,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
@@ -30,10 +31,10 @@ public class testMain extends Application {
             mag.setInfoFr("on est la ");
             mag.setInfoEn("there we are");
             mag.setCodePostal("06600");
+            mag.setPhoto("data\\enseigne\\images\\jcvd.jpg");
             mag.setTelephone("0614772435");
             mag.setMaint(100);
             mag.setNbEmpl(2);
-            mag.setPhoto("/home/luqua/IdeaProjects/IHM/src/main/resources/images/common/flags/france.png");
             mag.setRendu(500);
             mag.setWeb("salut.fr");
 
@@ -46,12 +47,15 @@ public class testMain extends Application {
             launch(args);
         }
 
-        public static Node storeToNode(Magasin m){
+        public Node storeToNode(Magasin m){
             HBox hbox1 = new HBox();
-            AnchorPane p = new AnchorPane();
-            p.setPrefHeight(100);
-            p.setPrefWidth(200);
-            p.setStyle("-fx-background-color: red");
+
+            ImageView p = new ImageView();
+            Image i = new Image(m.getPhoto());
+            p.setImage(i);
+
+
+
             VBox vbox2 = new VBox();
             Label label1 = new Label(m.getVille()+", au centre commercial "+m.getCentre());
             Label label2 = new Label(m.getInfoFr());
