@@ -31,7 +31,7 @@ public class AdminStoreController {
 
         List<Magasin> magasins = ReadConst.getStoresJson();
         for(Magasin mag : magasins){
-            pane.getChildren().add(mag.toNode());
+            pane.getChildren().add(ToNode.magasins(mag));
         }
 
 
