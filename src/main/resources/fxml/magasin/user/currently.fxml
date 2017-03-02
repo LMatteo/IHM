@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+            prefWidth="1060.0" style="-fx-background-color: #ecf0f1;" xmlns="http://javafx.com/javafx/8.0.111"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="magasin.user.LayoutControl">
+    <content>
+        <AnchorPane prefHeight="736.0" prefWidth="1072.0">
+            <children>
+                <HBox layoutX="141.0" layoutY="32.0" prefHeight="332.0" prefWidth="807.0">
+                    <children>
+                        <ImageView fitHeight="360.0" fitWidth="807.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../images/magasin/alaffiche.png"/>
+                            </image>
+                        </ImageView>
+                    </children>
+                </HBox>
+                <HBox layoutX="27.0" layoutY="420.0" prefHeight="41.0" prefWidth="993.0">
+                    <children>
+                        <Label prefHeight="34.0" prefWidth="409.0"
+                               text="Comment choisir le bon cadeau de Saint Valentin ? ">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="10.0" prefHeight="34.0" prefWidth="585.0"
+                               text="Comment trouver l’idée la plus adaptée à son amour ? A la St Valentin ">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox layoutX="27.0" layoutY="445.0" prefHeight="41.0" prefWidth="993.0">
+                    <children>
+                        <Label prefHeight="34.0" prefWidth="978.0"
+                               text="on cherche toujours le cadeau romantique parfait pour faire vraiment plaisir ! Et on se rend compte à quel point cela peut ">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox layoutX="27.0" layoutY="470.0" prefHeight="41.0" prefWidth="993.0">
+                    <children>
+                        <Label prefHeight="34.0" prefWidth="978.0"
+                               text="être difficile de trouver un cadeau personnel et sexy sans risque de se tromper !">
+                            <font>
+                                <Font size="18.0"/>
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
+    </content>
+</ScrollPane>
+

@@ -61,8 +61,8 @@ public class Launcher extends Application {
                 break;
             case "--magasin":
                 if (!adminMode) {
-                    path = "/fxml/magasin/Home.fxml";
-                    styles.add("/styles/magasin/styles.css");
+                    path = "/fxml/magasin/user/layout.fxml";
+                   // styles.add("/styles/magasin/styles.css");
                 } else {
 
                 }
