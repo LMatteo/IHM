@@ -1,4 +1,4 @@
-package enseigne;
+package enseigne.adminController;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

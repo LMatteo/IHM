@@ -1,19 +1,17 @@
-package enseigne;
-
-/**
- * Created by Josué on 01/03/2017.
- */
+package enseigne.adminController;
 
 import enseigne.component.ReadConst;
-import enseigne.component.actu.Actu;
+import enseigne.component.magasin.Magasin;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.control.ToggleButton;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import org.apache.commons.io.FileUtils;
@@ -22,13 +20,19 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class actuFormController {
+public class magasinsFormController {
 
     @FXML
-    private TextField titreFr;
+    private TextField centreCommercial;
 
     @FXML
-    private TextField titreEn;
+    private TextField adresse;
+
+    @FXML
+    private TextField ville;
+
+    @FXML
+    private TextField codePostal;
 
     @FXML
     private Button browsePhoto;
@@ -37,21 +41,41 @@ public class actuFormController {
     private ImageView logoPreview;
 
     @FXML
-    private TextArea contentFr;
+    private TextArea informationsFr;
 
     @FXML
-    private TextArea contentEn;
+    private TextArea informationsEN;
 
     @FXML
-    private Button ajoutActu;
+    private TextField telephone;
+
+    @FXML
+    private TextField web;
+
+    @FXML
+    private Button ajoutMagasin;
 
     private String imagePath;
 
     @FXML
-    private ToggleButton tailleGrande;
-
-    @FXML
-    private ToggleButton taillePetit;
+    void ajoutMag(ActionEvent event) throws IOException{
+        Magasin m = new Magasin();
+        m.setAddr(adresse.getText());
+        m.setCentre(centreCommercial.getText());
+        m.setInfoFr(informationsFr.getText());
+        m.setInfoEn(informationsEN.getText());
+        m.setWeb(web.getText());
+        m.setTelephone(telephone.getText());
+        m.setVille(ville.getText());
+        m.setCodePostal(codePostal.getText());
+        m.setPhoto(imagePath);
+        m.setVille(ville.getText());
+        m.setTelephone(telephone.getText());
+        m.setCodePostal(codePostal.getText());
+        m.write();
+        Stage stage = (Stage) ajoutMagasin.getScene().getWindow();
+        stage.close();
+    }
 
     @FXML
     void browsePic(ActionEvent event) throws FileNotFoundException {
@@ -72,17 +96,4 @@ public class actuFormController {
         }
     }
 
-    @FXML
-    void ajoutActu(ActionEvent event) {
-        Actu a = new Actu();
-        a.setContentEn(contentEn.getPromptText());
-        a.setContentFr(contentFr.getPromptText());
-        a.setTitreEn(titreEn.getPromptText());
-        a.setTitreFr(titreFr.getPromptText());
-        a.setImage(imagePath);
-        if(tailleGrande.isSelected())a.setBigSize(true);
-        else a.setBigSize(false);
-    }
-
 }
-

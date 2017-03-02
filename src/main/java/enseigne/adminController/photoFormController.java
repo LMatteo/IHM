@@ -1,4 +1,4 @@
-package enseigne;
+package enseigne.adminController;
 
 import enseigne.component.photo.Photo;
 import enseigne.component.ReadConst;
@@ -67,7 +67,7 @@ public class photoFormController {
     }
 
     @FXML
-    void ajoutMagasin(ActionEvent event) {
+    void ajoutMagasin(ActionEvent event) throws IOException {
         Photo i = new Photo();
         String c = category.getSelectionModel().toString();
         i.setCategory(c);
