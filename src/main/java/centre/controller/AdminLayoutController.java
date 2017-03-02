@@ -1,5 +1,6 @@
 package centre.controller;
 
+import centre.NewsList;
 import centre.StoreList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -29,6 +30,7 @@ public class AdminLayoutController {
     private Button previous;
     private AnchorPane ap;
     private StoreList loadedStores;
+    private NewsList newsList;
 
     /**
      * Starts up the interface in the news screen.
@@ -38,9 +40,9 @@ public class AdminLayoutController {
      */
     @FXML
     public void initialize() throws IOException, URISyntaxException {
-        //TODO: change this to the edit news fxml once implemented
         loadedStores = new StoreList();
-        goToBoutiques(null);
+        newsList = new NewsList();
+        goToActu(null);
     }
 
 
@@ -51,13 +53,13 @@ public class AdminLayoutController {
      * @throws IOException - if failing to load the fxml
      */
     @FXML
-    void goToActu(ActionEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/adminActu.fxml"));
+    void goToActu(ActionEvent event) throws IOException, URISyntaxException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/adminNews.fxml"));
         ap = loader.load();
-        AdminStoreController controller = loader.getController();
+        AdminNewsController controller = loader.getController();
+        controller.initializeContent(newsList);
         pane.setContent(ap);
         switchButtonStyle(actualite);
-        pane.setVvalue(0);
     }
 
     /**

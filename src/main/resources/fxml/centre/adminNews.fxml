@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1190.0"
+            prefWidth="1390.0" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="centre.controller.AdminNewsController">
+    <children>
+        <HBox layoutX="160.0" prefHeight="530.0" prefWidth="1060.0">
+            <children>
+                <ImageView fx:id="v1" fitHeight="530.0" fitWidth="300.0" onMouseClicked="#modifyPanel"
+                           pickOnBounds="true">
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </ImageView>
+                <Pane prefHeight="530.0" prefWidth="60.0"/>
+                <VBox prefHeight="530.0" prefWidth="568.0">
+                    <children>
+                        <ImageView fx:id="h2" fitHeight="235.0" fitWidth="613.0" onMouseClicked="#modifyPanel"
+                                   pickOnBounds="true">
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </ImageView>
+                        <Pane prefHeight="200.0" prefWidth="200.0"/>
+                        <ImageView fx:id="h3" fitHeight="235.0" fitWidth="613.0" pickOnBounds="true"
+                                   onMouseClicked="#modifyPanel">
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </ImageView>
+                    </children>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+            </padding>
+        </HBox>
+        <HBox layoutX="160.0" layoutY="590.0" prefHeight="530.0" prefWidth="1060.0">
+            <children>
+                <VBox prefHeight="530.0" prefWidth="568.0">
+                    <children>
+                        <ImageView fx:id="h4" fitHeight="235.0" fitWidth="613.0" pickOnBounds="true"
+                                   onMouseClicked="#modifyPanel">
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </ImageView>
+                        <Pane prefHeight="200.0" prefWidth="200.0"/>
+                        <ImageView fx:id="h5" fitHeight="235.0" fitWidth="613.0" pickOnBounds="true"
+                                   onMouseClicked="#modifyPanel">
+                            <cursor>
+                                <Cursor fx:constant="HAND"/>
+                            </cursor>
+                        </ImageView>
+                    </children>
+                </VBox>
+                <Pane prefHeight="530.0" prefWidth="60.0"/>
+                <ImageView fx:id="v6" fitHeight="530.0" fitWidth="300.0" pickOnBounds="true"
+                           onMouseClicked="#modifyPanel">
+                    <cursor>
+                        <Cursor fx:constant="HAND"/>
+                    </cursor>
+                </ImageView>
+            </children>
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0"/>
+            </padding>
+        </HBox>
+    </children>
+</AnchorPane>
