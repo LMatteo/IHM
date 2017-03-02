@@ -24,7 +24,9 @@ public class Photo {
     public Photo(String path) throws IOException{
         JSONObject json = new JSONObject(ReadConst.fileToString(path));
         for(PhotoHandler handler : PhotoAttribute.values()){
-            handler.assign(this,json);
+            if(json.has(handler.toString())) {
+                handler.assign(this, json);
+            }
         }
     }
 
