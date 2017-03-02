@@ -24,7 +24,6 @@ public class Launcher extends Application {
 
     /**
      * Analyzes the arguments of the program, and launches the requested fxml.
-     *
      */
     @Override
     public void init() {

@@ -7,8 +7,14 @@
   "locationEnglish": "Level 0",
   "mapId": 1,
   "categories": [
-    "Mode",
-    "A-C"
+    {
+      "french":"Mode",
+      "english": "Fashion"
+    },
+    {
+      "french": "A-C",
+      "english":"A-C"
+    }
   ],
   "promotionText": "Réduction d'hiver le jour de la St-Valentin",
   "promotionEnglish": "Winter sale for Valentine's day"

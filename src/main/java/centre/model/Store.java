@@ -17,7 +17,7 @@ public class Store {
     private String logoName;
     private String enseigneId;
     private String magasinId;
-    private List<String> categories;
+    private List<Tag> categories;
     private String location;
     private String locationEnglish;
     private String promotion;
@@ -57,7 +57,7 @@ public class Store {
      * @param promotionEnglish - the english version of the promotional text
      * @param mapId            - the map id of the store
      */
-    public Store(String name, String logoName, String enseigneId, String magasinId, List<String> categories,
+    public Store(String name, String logoName, String enseigneId, String magasinId, List<Tag> categories,
                  String location, String locationEnglish, String promotion, String promotionEnglish, int mapId) {
         this.name = name;
         this.logoName = logoName;
@@ -107,7 +107,7 @@ public class Store {
         return mapId;
     }
 
-    public List<String> getCategories() {
+    public List<Tag> getCategories() {
         return categories;
     }
 
@@ -119,8 +119,8 @@ public class Store {
      * @return true if the store belongs to this category, false otherwise
      */
     public boolean matchesCategory(String name) {
-        for (String category : categories) {
-            if (name.equals(category)) {
+        for (Tag category : categories) {
+            if (name.equals(category.getFrench())) {
                 return true;
             }
         }

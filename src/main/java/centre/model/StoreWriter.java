@@ -54,10 +54,13 @@ public class StoreWriter {
      *
      * @param tags - the tags of the future store
      */
-    public void addTags(List<String> tags) {
+    public void addTags(List<Tag> tags) {
         JSONArray array = new JSONArray();
-        for (String tag : tags) {
-            array.put(tag);
+        for (Tag tag : tags) {
+            JSONObject json = new JSONObject();
+            json.put("french", tag.getFrench());
+            json.put("english", tag.getEnglish());
+            array.put(json);
         }
         json.put("categories", array);
     }

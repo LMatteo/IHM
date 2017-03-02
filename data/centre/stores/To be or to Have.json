@@ -7,9 +7,18 @@
   "locationEnglish": "Level 0",
   "mapId": 3,
   "categories": [
-    "Culture",
-    "Bien-etre",
-    "N-T"
+    {
+      "french": "Culture",
+      "english": "Culture"
+    },
+    {
+      "french": "Bien-etre",
+      "english": "Wellness"
+    },
+    {
+      "french": "N-T",
+      "english": "N-T"
+    }
   ],
   "promotionText": "St valentin : venez avec votre moitié au stage de développement personnel !",
   "promotionEnglish": "Come to our store with your soulmate for Valentine's day"

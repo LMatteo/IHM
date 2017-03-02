@@ -3,6 +3,7 @@ package centre.admin.store;
 import centre.CentrePath;
 import centre.model.Store;
 import centre.model.StoreList;
+import centre.model.Tag;
 import javafx.collections.ObservableList;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
@@ -53,6 +54,7 @@ public class StoreFormController {
     @FXML private HBox idMagasinBox;
     @FXML private TextField idMagasin;
     @FXML private TextField newTag;
+    @FXML private TextField newTagEnglish;
     @FXML private VBox tagBox;
 
     private Label selectedTag;
@@ -78,29 +80,15 @@ public class StoreFormController {
         areaEnglish.setText(store.getLocationEnglish());
         promoEnglish.setText(store.getPromotionEnglish());
         promoFrench.setText(store.getPromotion());
-        //TODO: find a better way than this
         logoPreview.setImage(new Image(CentrePath.getLogoPath(store.getLogoName())));
-        image = new File("data/centre/images" + store.getLogoName());
+        image = new File("data/centre/images/logo/" + store.getLogoName());
         oldPic = image;
         idMap.setText(Integer.toString(store.getMapId()));
         idEnseigne.setText(store.getEnseigneId());
         idMagasin.setText(store.getMagasinId());
-        for (String tag : store.getCategories()) {
-            addTagWithText(tag);
+        for (Tag tag : store.getCategories()) {
+            addTagWithText(tag.getFrench() + " = " + tag.getEnglish());
         }
-    }
-
-    /**
-     * Adds a tag to the list of tags of this store.
-     *
-     * @param event - the event of this action
-     */
-    @FXML
-    void addTag(ActionEvent event) {
-        if (newTag.getText().equals("") || isTag(newTag.getText())) {
-            return;
-        }
-        addTagWithText(newTag.getText());
     }
 
     /**
@@ -132,6 +120,20 @@ public class StoreFormController {
         });
         tagBox.getChildren().add(tag);
         newTag.setText("");
+        newTagEnglish.setText("");
+    }
+
+    /**
+     * Adds a tag to the list of tags of this store.
+     *
+     * @param event - the event of this action
+     */
+    @FXML
+    void addTag(ActionEvent event) {
+        if (newTag.getText().equals("") || isTag(newTag.getText()) || newTagEnglish.getText().equals("")) {
+            return;
+        }
+        addTagWithText(newTag.getText() + " = " + newTagEnglish.getText());
     }
 
     /**
@@ -304,10 +306,13 @@ public class StoreFormController {
      *
      * @return a list of all provided tags
      */
-    private List<String> getTagList() {
-        List<String> tags = new ArrayList<>();
+    private List<Tag> getTagList() {
+        List<Tag> tags = new ArrayList<>();
         for (Node node : tagBox.getChildren()) {
-            tags.add(((Label) node).getText());
+            Label label = (Label) node;
+            String french = label.getText().substring(0, label.getText().indexOf('='));
+            String english = label.getText().substring(label.getText().indexOf('='));
+            tags.add(new Tag(french, english));
         }
         return tags;
     }

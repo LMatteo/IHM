@@ -5,15 +5,13 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<ScrollPane prefHeight="861.0" prefWidth="1477.0" xmlns="http://javafx.com/javafx/8.0.111"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="centre.admin.store.StoreFormController">
+<ScrollPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="861.0" prefWidth="1477.0" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="centre.admin.store.StoreFormController">
     <content>
         <VBox alignment="CENTER">
             <children>
-                <Label fx:id="titleLabel" alignment="CENTER" prefHeight="75.0" prefWidth="373.0"
-                       text="Nouvelle boutique" textAlignment="CENTER">
+                <Label fx:id="titleLabel" alignment="CENTER" prefHeight="75.0" prefWidth="373.0" text="Nouvelle boutique" textAlignment="CENTER">
                     <font>
-                        <Font size="33.0"/>
+                        <Font size="33.0" />
                     </font>
                 </Label>
                 <HBox prefHeight="678.0" prefWidth="1467.0" spacing="20.0">
@@ -22,48 +20,39 @@
                             <children>
                                 <HBox spacing="60.0">
                                     <VBox.margin>
-                                        <Insets/>
+                                        <Insets />
                                     </VBox.margin>
                                     <children>
                                         <VBox fx:id="nameBox">
                                             <children>
                                                 <Label prefHeight="33.0" prefWidth="237.0" text="Nom de la boutique">
                                                     <font>
-                                                        <Font name="System Bold" size="19.0"/>
+                                                        <Font name="System Bold" size="19.0" />
                                                     </font>
                                                 </Label>
-                                                <TextField fx:id="name" maxHeight="-Infinity" maxWidth="-Infinity"
-                                                           minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0"
-                                                           prefWidth="300.0" promptText="Nom de la boutique">
+                                                <TextField fx:id="name" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="300.0" promptText="Nom de la boutique">
                                                     <VBox.margin>
-                                                        <Insets/>
+                                                        <Insets />
                                                     </VBox.margin>
                                                 </TextField>
                                             </children>
                                             <HBox.margin>
-                                                <Insets bottom="20.0"/>
+                                                <Insets bottom="20.0" />
                                             </HBox.margin>
                                         </VBox>
                                         <VBox fx:id="areaBox">
                                             <children>
-                                                <Label prefHeight="33.0" prefWidth="424.0"
-                                                       text="Location de la boutique">
+                                                <Label prefHeight="33.0" prefWidth="424.0" text="Location de la boutique">
                                                     <font>
-                                                        <Font name="System Bold" size="19.0"/>
+                                                        <Font name="System Bold" size="19.0" />
                                                     </font>
                                                 </Label>
                                                 <HBox prefHeight="30.0" prefWidth="289.0">
                                                     <children>
-                                                        <TextField fx:id="area" maxHeight="-Infinity"
-                                                                   maxWidth="-Infinity" minHeight="-Infinity"
-                                                                   minWidth="-Infinity" prefHeight="30.0"
-                                                                   prefWidth="167.0" promptText="Version francaise"/>
-                                                        <TextField fx:id="areaEnglish" maxHeight="-Infinity"
-                                                                   maxWidth="-Infinity" minHeight="-Infinity"
-                                                                   minWidth="-Infinity" prefHeight="30.0"
-                                                                   prefWidth="167.0" promptText="Version anglaise">
+                                                        <TextField fx:id="area" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="167.0" promptText="Version francaise" />
+                                                        <TextField fx:id="areaEnglish" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="167.0" promptText="Version anglaise">
                                                             <HBox.margin>
-                                                                <Insets left="10.0"/>
+                                                                <Insets left="10.0" />
                                                             </HBox.margin>
                                                         </TextField>
                                                     </children>
@@ -74,51 +63,41 @@
                                 </HBox>
                                 <VBox>
                                     <children>
-                                        <Label prefHeight="33.0" prefWidth="424.0"
-                                               text="Description/promotion actuelle (francais)">
+                                        <Label prefHeight="33.0" prefWidth="424.0" text="Description/promotion actuelle (francais)">
                                             <font>
-                                                <Font name="System Bold" size="19.0"/>
+                                                <Font name="System Bold" size="19.0" />
                                             </font>
                                         </Label>
-                                        <TextArea fx:id="promoFrench" maxHeight="-Infinity" maxWidth="-Infinity"
-                                                  minHeight="-Infinity" minWidth="-Infinity" prefHeight="179.0"
-                                                  prefWidth="704.0"
-                                                  promptText="Description ou texte promotionnel pour cette boutique en francais"
-                                                  wrapText="true">
+                                        <TextArea fx:id="promoFrench" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="179.0" prefWidth="704.0" promptText="Description ou texte promotionnel pour cette boutique en francais" wrapText="true">
                                             <font>
-                                                <Font size="26.0"/>
+                                                <Font size="26.0" />
                                             </font>
                                             <VBox.margin>
-                                                <Insets bottom="20.0"/>
+                                                <Insets bottom="20.0" />
                                             </VBox.margin>
                                         </TextArea>
                                     </children>
                                 </VBox>
                                 <VBox>
                                     <children>
-                                        <Label prefHeight="33.0" prefWidth="424.0"
-                                               text="Description/promotion actuelle (anglais)">
+                                        <Label prefHeight="33.0" prefWidth="424.0" text="Description/promotion actuelle (anglais)">
                                             <font>
-                                                <Font name="System Bold" size="19.0"/>
+                                                <Font name="System Bold" size="19.0" />
                                             </font>
                                         </Label>
-                                        <TextArea fx:id="promoEnglish" maxHeight="-Infinity" maxWidth="-Infinity"
-                                                  minHeight="-Infinity" minWidth="-Infinity" prefHeight="179.0"
-                                                  prefWidth="704.0"
-                                                  promptText="Description ou texte promotionnel pour cette boutique en anglais"
-                                                  wrapText="true">
+                                        <TextArea fx:id="promoEnglish" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="179.0" prefWidth="704.0" promptText="Description ou texte promotionnel pour cette boutique en anglais" wrapText="true">
                                             <font>
-                                                <Font size="26.0"/>
+                                                <Font size="26.0" />
                                             </font>
                                             <VBox.margin>
-                                                <Insets bottom="20.0"/>
+                                                <Insets bottom="20.0" />
                                             </VBox.margin>
                                         </TextArea>
                                     </children>
                                 </VBox>
                             </children>
                             <padding>
-                                <Insets left="20.0"/>
+                                <Insets left="20.0" />
                             </padding>
                         </VBox>
                         <VBox alignment="CENTER" prefHeight="1069.0" prefWidth="715.0">
@@ -129,46 +108,40 @@
                                             <children>
                                                 <Label prefHeight="33.0" prefWidth="424.0" text="Logo de la boutique">
                                                     <font>
-                                                        <Font name="System Bold" size="19.0"/>
+                                                        <Font name="System Bold" size="19.0" />
                                                     </font>
                                                     <VBox.margin>
-                                                        <Insets bottom="10.0"/>
+                                                        <Insets bottom="10.0" />
                                                     </VBox.margin>
                                                 </Label>
                                                 <HBox alignment="CENTER" prefHeight="72.0" prefWidth="351.0">
                                                     <children>
                                                         <VBox alignment="CENTER" prefHeight="184.0" prefWidth="137.0">
                                                             <HBox.margin>
-                                                                <Insets right="30.0"/>
+                                                                <Insets right="30.0" />
                                                             </HBox.margin>
                                                             <children>
-                                                                <Button mnemonicParsing="false" onAction="#browsePic"
-                                                                        prefHeight="32.0" prefWidth="136.0"
-                                                                        text="Parcourir...">
+                                                                <Button mnemonicParsing="false" onAction="#browsePic" prefHeight="32.0" prefWidth="136.0" text="Parcourir...">
                                                                     <VBox.margin>
-                                                                        <Insets bottom="30.0"/>
+                                                                        <Insets bottom="30.0" />
                                                                     </VBox.margin>
                                                                     <font>
-                                                                        <Font size="17.0"/>
+                                                                        <Font size="17.0" />
                                                                     </font>
                                                                 </Button>
-                                                                <Label prefHeight="34.0" prefWidth="66.0"
-                                                                       text="Aperçu :" textAlignment="RIGHT">
+                                                                <Label prefHeight="34.0" prefWidth="66.0" text="Aperçu :" textAlignment="RIGHT">
                                                                     <VBox.margin>
-                                                                        <Insets left="10.0"/>
+                                                                        <Insets left="10.0" />
                                                                     </VBox.margin>
                                                                     <font>
-                                                                        <Font size="17.0"/>
+                                                                        <Font size="17.0" />
                                                                     </font>
                                                                 </Label>
                                                             </children>
                                                         </VBox>
-                                                        <AnchorPane
-                                                                style="-fx-border-style: solid; -fx-border-color: #7f8c8d;">
+                                                        <AnchorPane style="-fx-border-style: solid; -fx-border-color: #7f8c8d;">
                                                             <children>
-                                                                <ImageView fx:id="logoPreview" fitHeight="184.0"
-                                                                           fitWidth="184.0" pickOnBounds="true"
-                                                                           preserveRatio="true"/>
+                                                                <ImageView fx:id="logoPreview" fitHeight="184.0" fitWidth="184.0" pickOnBounds="true" preserveRatio="true" />
                                                             </children>
                                                         </AnchorPane>
                                                     </children>
@@ -177,82 +150,72 @@
                                         </VBox>
                                         <VBox prefHeight="224.0" prefWidth="322.0">
                                             <children>
-                                                <Label prefHeight="33.0" prefWidth="424.0"
-                                                       text="Id sur la carte de la boutique">
+                                                <Label prefHeight="33.0" prefWidth="424.0" text="Id sur la carte de la boutique">
                                                     <font>
-                                                        <Font name="System Bold" size="19.0"/>
+                                                        <Font name="System Bold" size="19.0" />
                                                     </font>
                                                 </Label>
                                                 <HBox fx:id="idMapBox">
                                                     <VBox.margin>
-                                                        <Insets bottom="20.0"/>
+                                                        <Insets bottom="20.0" />
                                                     </VBox.margin>
                                                     <children>
-                                                        <TextField fx:id="idMap" maxHeight="-Infinity"
-                                                                   maxWidth="-Infinity" minHeight="-Infinity"
-                                                                   minWidth="-Infinity" prefHeight="30.0"
-                                                                   prefWidth="121.0" promptText="id map">
+                                                        <TextField fx:id="idMap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="121.0" promptText="id map">
                                                             <HBox.margin>
-                                                                <Insets right="10.0"/>
+                                                                <Insets right="10.0" />
                                                             </HBox.margin>
                                                         </TextField>
                                                     </children>
                                                 </HBox>
                                                 <Label prefHeight="33.0" prefWidth="424.0" text="Id de l'enseigne ">
                                                     <font>
-                                                        <Font name="System Bold" size="19.0"/>
+                                                        <Font name="System Bold" size="19.0" />
                                                     </font>
                                                 </Label>
                                                 <HBox fx:id="idEnseigneBox">
                                                     <VBox.margin>
-                                                        <Insets bottom="20.0"/>
+                                                        <Insets bottom="20.0" />
                                                     </VBox.margin>
                                                     <children>
-                                                        <TextField fx:id="idEnseigne" maxHeight="-Infinity"
-                                                                   maxWidth="-Infinity" minHeight="-Infinity"
-                                                                   minWidth="-Infinity" prefHeight="30.0"
-                                                                   prefWidth="121.0" promptText="id enseigne">
+                                                        <TextField fx:id="idEnseigne" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="121.0" promptText="id enseigne">
                                                             <HBox.margin>
-                                                                <Insets right="10.0"/>
+                                                                <Insets right="10.0" />
                                                             </HBox.margin>
                                                         </TextField>
                                                     </children>
                                                 </HBox>
                                                 <Label prefHeight="33.0" prefWidth="424.0" text="Id du magasin">
                                                     <font>
-                                                        <Font name="System Bold" size="19.0"/>
+                                                        <Font name="System Bold" size="19.0" />
                                                     </font>
                                                 </Label>
                                                 <HBox fx:id="idMagasinBox">
                                                     <children>
-                                                        <TextField fx:id="idMagasin" maxHeight="-Infinity"
-                                                                   maxWidth="-Infinity" minHeight="-Infinity"
-                                                                   minWidth="-Infinity" prefHeight="30.0"
-                                                                   prefWidth="121.0" promptText="id magasin">
+                                                        <TextField fx:id="idMagasin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="121.0" promptText="id magasin">
                                                             <HBox.margin>
-                                                                <Insets right="10.0"/>
+                                                                <Insets right="10.0" />
                                                             </HBox.margin>
                                                         </TextField>
                                                     </children>
                                                 </HBox>
                                             </children>
                                             <HBox.margin>
-                                                <Insets left="30.0"/>
+                                                <Insets left="30.0" />
                                             </HBox.margin>
                                         </VBox>
                                     </children>
                                     <VBox.margin>
-                                        <Insets bottom="30.0"/>
+                                        <Insets bottom="30.0" />
                                     </VBox.margin>
                                 </HBox>
                                 <VBox prefHeight="287.0" prefWidth="705.0">
                                     <children>
                                         <Label prefHeight="33.0" prefWidth="424.0" text="Tags de la boutique">
                                             <font>
-                                                <Font name="System Bold" size="19.0"/>
+                                                <Font name="System Bold" size="19.0" />
                                             </font>
                                             <VBox.margin>
-                                                <Insets bottom="10.0"/>
+                                                <Insets bottom="10.0" />
                                             </VBox.margin>
                                         </Label>
                                         <HBox prefHeight="235.0" prefWidth="705.0">
@@ -261,40 +224,35 @@
                                                     <children>
                                                         <HBox>
                                                             <children>
-                                                                <TextField fx:id="newTag" maxHeight="-Infinity"
-                                                                           maxWidth="-Infinity" minHeight="-Infinity"
-                                                                           minWidth="-Infinity" prefHeight="41.0"
-                                                                           prefWidth="206.0"
-                                                                           promptText="Nouveau tag...."/>
-                                                                <Button mnemonicParsing="false" onAction="#addTag"
-                                                                        prefHeight="40.0" prefWidth="126.0"
-                                                                        text="Ajouter Tag">
+                                                <VBox>
+                                                   <children>
+                                                                      <TextField fx:id="newTag" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="41.0" prefWidth="206.0" promptText="Version francaise" />
+                                                      <TextField fx:id="newTagEnglish" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="41.0" prefWidth="206.0" promptText="Version anglaise" />
+                                                   </children>
+                                                </VBox>
+                                                                <Button mnemonicParsing="false" onAction="#addTag" prefHeight="81.0" prefWidth="126.0" text="Ajouter Tag">
                                                                     <font>
-                                                                        <Font size="18.0"/>
+                                                                        <Font size="18.0" />
                                                                     </font>
                                                                 </Button>
                                                             </children>
                                                             <VBox.margin>
-                                                                <Insets bottom="30.0"/>
+                                                                <Insets bottom="30.0" />
                                                             </VBox.margin>
                                                         </HBox>
-                                                        <Button mnemonicParsing="false" onAction="#deleteTag"
-                                                                prefHeight="37.0" prefWidth="349.0"
-                                                                text="Supprimer tag sélectionné">
+                                                        <Button mnemonicParsing="false" onAction="#deleteTag" prefHeight="37.0" prefWidth="349.0" text="Supprimer tag sélectionné">
                                                             <font>
-                                                                <Font size="18.0"/>
+                                                                <Font size="18.0" />
                                                             </font>
                                                         </Button>
                                                     </children>
                                                 </VBox>
-                                                <ScrollPane hbarPolicy="NEVER" prefHeight="140.0" prefWidth="386.0"
-                                                            style="-fx-border-style: solid; -fx-border-color: #7f8c8d;">
+                                                <ScrollPane hbarPolicy="NEVER" prefHeight="140.0" prefWidth="386.0" style="-fx-border-style: solid; -fx-border-color: #7f8c8d;">
                                                     <HBox.margin>
-                                                        <Insets left="20.0" right="20.0"/>
+                                                        <Insets left="20.0" right="20.0" />
                                                     </HBox.margin>
                                                     <content>
-                                                        <VBox fx:id="tagBox" alignment="TOP_CENTER" prefHeight="145.0"
-                                                              prefWidth="341.0"/>
+                                                        <VBox fx:id="tagBox" alignment="TOP_CENTER" prefHeight="145.0" prefWidth="341.0" />
                                                     </content>
                                                 </ScrollPane>
                                             </children>
@@ -305,13 +263,12 @@
                         </VBox>
                     </children>
                 </HBox>
-                <Button alignment="CENTER" mnemonicParsing="false" onAction="#confirm" prefHeight="71.0"
-                        prefWidth="384.0" text="Confirmer boutique">
+                <Button alignment="CENTER" mnemonicParsing="false" onAction="#confirm" prefHeight="71.0" prefWidth="384.0" text="Confirmer boutique">
                     <font>
-                        <Font size="33.0"/>
+                        <Font size="33.0" />
                     </font>
                     <VBox.margin>
-                        <Insets bottom="10.0"/>
+                        <Insets bottom="10.0" />
                     </VBox.margin>
                 </Button>
             </children>

@@ -7,9 +7,18 @@
   "locationEnglish": "Level 0",
   "mapId": 5,
   "categories": [
-    "Alimentation",
-    "Nouveauté",
-    "A-C"
+    {
+      "french": "Alimentation",
+      "english": "Food"
+    },
+    {
+      "french": "Nouveauté",
+      "english": "New"
+    },
+    {
+      "french": "A-C",
+      "english": "A-C"
+    }
   ],
   "promotionText": "Venez nombreux pour l'ouverture le 25/01",
   "promotionEnglish": "Grand opening on the 25/01"

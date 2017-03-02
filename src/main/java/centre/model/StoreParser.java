@@ -41,10 +41,11 @@ public class StoreParser {
      *
      * @return the list of the categories of this store
      */
-    public List<String> getCategories() {
-        List<String> result = new ArrayList<>();
+    public List<Tag> getCategories() {
+        List<Tag> result = new ArrayList<>();
         for (Object category : json.getJSONArray("categories")) {
-            result.add(category.toString());
+           JSONObject tag = (JSONObject) category;
+           result.add(new Tag(tag.getString("french"), tag.getString("english")));
         }
         return result;
     }
