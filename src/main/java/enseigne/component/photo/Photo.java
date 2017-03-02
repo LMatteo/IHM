@@ -1,4 +1,9 @@
-package enseigne.component;
+package enseigne.component.photo;
+
+import enseigne.component.ReadConst;
+import org.json.JSONObject;
+
+import java.io.*;
 
 /**
  * Created by Josué on 01/03/2017.
@@ -11,6 +16,17 @@ public class Photo {
     private String photo;
     private String descriptionFr;
     private String descriptionEn;
+
+    public Photo(){
+
+    }
+
+    public Photo(String path) throws IOException{
+        JSONObject json = new JSONObject(ReadConst.fileToString(path));
+        for(PhotoHandler handler : PhotoAttribute.values()){
+            handler.assign(this,json);
+        }
+    }
 
     public String getCategory() {
         return category;
@@ -58,7 +74,17 @@ public class Photo {
         this.titreEn = title;
     }
 
-    public void write(){
-        //tout doux
+    public void write() throws IOException{
+        BufferedWriter bw = new BufferedWriter(new FileWriter(
+                new File(ReadConst.photoPath)
+        ));
+
+        JSONObject json = new JSONObject();
+        for(PhotoHandler handler : PhotoAttribute.values()){
+            handler.put(this,json);
+        }
+
+        bw.write(json.toString());
+        bw.close();
     }
 }
