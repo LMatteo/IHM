@@ -77,7 +77,7 @@ public class Actu {
         this.bigSize = bigSize;
     }
 
-    public boolean getBigSize(){
+    public boolean isBigSize(){
         return bigSize;
     }
 
