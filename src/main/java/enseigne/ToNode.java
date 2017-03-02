@@ -12,7 +12,8 @@ public class ToNode {
     }
 
     public static Node actu(Actu actu){
-        return null;
+
+
     }
 
     public static Node photos(Photo p){
