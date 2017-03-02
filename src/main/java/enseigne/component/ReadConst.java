@@ -1,6 +1,12 @@
 package enseigne.component;
 
-import java.io.*;
+import enseigne.component.magasin.Magasin;
+import javafx.scene.Node;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class ReadConst {
     public static final String storePath = "data/enseigne/stores/";
@@ -15,5 +21,10 @@ public class ReadConst {
             res.append(line);
         }
         return res.toString();
+    }
+
+    public static Node storeToNode(Magasin m){
+       return null;
+
     }
 }
