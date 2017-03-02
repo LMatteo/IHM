@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+      prefHeight="263.0" prefWidth="559.0" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.111"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="centre.admin.sort.SortTitleController">
+    <children>
+        <Label prefHeight="52.0" prefWidth="456.0" text="Indiquez le nom du nouveau tri">
+            <font>
+                <Font size="26.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="titleText" prefHeight="45.0" prefWidth="481.0">
+            <font>
+                <Font size="26.0"/>
+            </font>
+        </TextField>
+        <Button mnemonicParsing="false" onAction="#create" prefHeight="56.0" prefWidth="278.0" text="Créer nouveau tri">
+            <font>
+                <Font size="26.0"/>
+            </font>
+        </Button>
+    </children>
+    <padding>
+        <Insets left="40.0" right="40.0" top="20.0"/>
+    </padding>
+</VBox>

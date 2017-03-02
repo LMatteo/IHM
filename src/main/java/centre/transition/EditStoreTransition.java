@@ -1,8 +1,8 @@
 package centre.transition;
 
-import centre.Store;
-import centre.StoreList;
-import centre.controller.StoreFormController;
+import centre.admin.store.StoreFormController;
+import centre.model.Store;
+import centre.model.StoreList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -26,7 +26,7 @@ public class EditStoreTransition implements Transition {
      */
     @Override
     public void doTransition(Store selectedStore, StoreList loadedStores) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/storeForm.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/admin/store/storeForm.fxml"));
         Parent rootNode = loader.load();
         StoreFormController controller = loader.getController();
         controller.setLoadedStores(loadedStores);

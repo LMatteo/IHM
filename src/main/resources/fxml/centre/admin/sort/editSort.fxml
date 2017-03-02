@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="951.0"
+      prefWidth="1449.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="centre.admin.sort.EditSortController">
+    <children>
+        <VBox alignment="TOP_CENTER" prefHeight="644.0" prefWidth="496.0" spacing="20.0">
+            <children>
+                <Label alignment="CENTER" prefHeight="44.0" prefWidth="266.0" text="Tri">
+                    <font>
+                        <Font size="26.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets top="20.0"/>
+                    </VBox.margin>
+                </Label>
+                <Button mnemonicParsing="false" onAction="#createSort" prefHeight="48.0" prefWidth="350.0"
+                        text="Nouveau tri">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets/>
+                    </VBox.margin>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#loadSort" prefHeight="48.0" prefWidth="350.0"
+                        text="Charger tri">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#deleteSort" prefHeight="48.0" prefWidth="350.0"
+                        text="Supprimer tri chargé">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                </Button>
+                <Label alignment="CENTER" prefHeight="44.0" prefWidth="266.0" text="Catégories">
+                    <font>
+                        <Font size="26.0"/>
+                    </font>
+                </Label>
+                <HBox alignment="CENTER">
+                    <children>
+                        <TextField fx:id="newCategory" prefHeight="48.0" prefWidth="228.0">
+                            <font>
+                                <Font size="20.0"/>
+                            </font>
+                        </TextField>
+                        <Button mnemonicParsing="false" onAction="#addCategory" prefHeight="48.0" prefWidth="127.0"
+                                text="Ajouter">
+                            <font>
+                                <Font size="20.0"/>
+                            </font>
+                        </Button>
+                    </children>
+                </HBox>
+                <Button mnemonicParsing="false" onAction="#editCategory" prefHeight="48.0" prefWidth="350.0"
+                        text="Editer catégorie sélectionnée">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#deleteCategory" prefHeight="48.0" prefWidth="350.0"
+                        text="Supprimer catégorie sélectionnée">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                </Button>
+                <Label alignment="CENTER" prefHeight="44.0" prefWidth="266.0" text="Boutiques">
+                    <font>
+                        <Font size="26.0"/>
+                    </font>
+                </Label>
+                <Button mnemonicParsing="false" onAction="#addStores" prefHeight="48.0" prefWidth="350.0"
+                        text="Ajouter boutiques à la catégorie">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#deleteStores" prefHeight="48.0" prefWidth="350.0"
+                        text="Supprimer boutiques de la catégorie">
+                    <font>
+                        <Font size="20.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="80.0"/>
+                    </VBox.margin>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#confirmChanges" prefHeight="48.0" prefWidth="350.0"
+                        text="Confirmer changements">
+                    <font>
+                        <Font name="System Bold" size="20.0"/>
+                    </font>
+                </Button>
+            </children>
+        </VBox>
+        <VBox alignment="TOP_CENTER" prefHeight="843.0" prefWidth="885.0">
+            <children>
+                <Label fx:id="sortName" alignment="CENTER" prefHeight="44.0" prefWidth="581.0">
+                    <font>
+                        <Font size="26.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="20.0" top="20.0"/>
+                    </VBox.margin>
+                </Label>
+                <ScrollPane hbarPolicy="NEVER">
+                    <content>
+                        <Accordion fx:id="accordion"/>
+                    </content>
+                </ScrollPane>
+            </children>
+            <HBox.margin>
+                <Insets right="60.0"/>
+            </HBox.margin>
+        </VBox>
+    </children>
+</HBox>

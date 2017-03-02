@@ -1,7 +1,7 @@
 package centre.transition;
 
-import centre.Store;
-import centre.StoreList;
+import centre.model.Store;
+import centre.model.StoreList;
 
 import java.io.IOException;
 

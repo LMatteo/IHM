@@ -18,7 +18,7 @@ public class Launcher extends Application {
     private static final String INVALID_ARGS = "Invalid arguments. Possible arguments are one of the following : (-a) (--centre | --enseigne |" +
             " --magasin) \nCheck Readme for more information. ";
 
-    private static String path = "/fxml/centre/layout.fxml";
+    private static String path = "/fxml/centre/user/layout.fxml";
     private List<String> styles = new ArrayList<>();
     private static boolean adminMode = false;
 
@@ -47,9 +47,9 @@ public class Launcher extends Application {
         switch (args[firstIndex]) {
             case "--centre":
                 if (!adminMode) {
-                    path = "/fxml/centre/layout.fxml";
+                    path = "/fxml/centre/user/layout.fxml";
                 } else {
-                    path = "fxml/centre/adminLayout.fxml";
+                    path = "fxml/centre/admin/adminLayout.fxml";
                 }
                 break;
             case "--enseigne":
