@@ -7,14 +7,15 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 /**
  * Controller class for the window to create new sorting order.
  */
 public class SortTitleController {
 
-    @FXML
-    private TextField titleText;
+    @FXML private TextField titleText;
+    @FXML private TextField titleTextEnglish;
 
     private EditSortController parent;
 
@@ -34,12 +35,13 @@ public class SortTitleController {
      * If the text field is empty, does nothing.
      *
      * @param event - the action event of this action
-     * @throws IOException - if failing to load the sort order data
+     * @throws IOException        - if failing to load the sort order data
+     * @throws URISyntaxException - if failing to reload the store logos
      */
     @FXML
-    void create(ActionEvent event) throws IOException {
-        if (!titleText.getText().equals("")) {
-            SortOrder order = new SortOrder(titleText.getText());
+    void create(ActionEvent event) throws IOException, URISyntaxException {
+        if (!titleText.getText().equals("") && !titleTextEnglish.getText().equals("")) {
+            SortOrder order = new SortOrder(titleText.getText(), titleTextEnglish.getText());
             parent.load(order);
             Stage stage = (Stage) titleText.getScene().getWindow();
             stage.close();

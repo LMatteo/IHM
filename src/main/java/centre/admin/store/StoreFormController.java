@@ -197,7 +197,7 @@ public class StoreFormController {
             Store store = new Store(name.getText(), name.getText() + getImageExtension(),
                     idEnseigne.getText(), idMagasin.getText(), getTagList(), area.getText(), areaEnglish.getText(),
                     promoFrench.getText(), promoEnglish.getText(), Integer.parseInt(idMap.getText()));
-            File newPic = new File("data/centre/images/" + name.getText() + getImageExtension());
+            File newPic = new File("data/centre/images/logo/" + name.getText() + getImageExtension());
             if (edit != null && oldPic != image) {
                 Files.delete(oldPic.toPath());
             }
@@ -310,8 +310,8 @@ public class StoreFormController {
         List<Tag> tags = new ArrayList<>();
         for (Node node : tagBox.getChildren()) {
             Label label = (Label) node;
-            String french = label.getText().substring(0, label.getText().indexOf('='));
-            String english = label.getText().substring(label.getText().indexOf('='));
+            String french = label.getText().substring(0, label.getText().indexOf('=')).trim();
+            String english = label.getText().substring(label.getText().indexOf('=')+1).trim();
             tags.add(new Tag(french, english));
         }
         return tags;

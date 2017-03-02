@@ -3,6 +3,7 @@ package centre.user;
 import centre.admin.store.CategoryItemController;
 import centre.model.Store;
 import centre.model.StoreList;
+import centre.model.Tag;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.HBox;
@@ -26,7 +27,7 @@ public class StoreCategoryController {
      * @param category - the name of this category
      * @throws IOException - if failing to load the fxml
      */
-    public void initializeContent(StoreList stores, String category) throws IOException {
+    public void initializeContent(StoreList stores, Tag category) throws IOException {
         List<Store> matching = stores.findMatchingStores(category);
         for (Store store : matching) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/admin/store/categoryItem.fxml"));

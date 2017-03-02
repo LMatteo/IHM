@@ -96,10 +96,10 @@ public class StoreList {
     /**
      * Filters this list of stores, keeping only the stores matching a given category.
      *
-     * @param category - the name of the category to filter with
+     * @param category - the category to filter with
      * @return a filtered list of stores according to the given category
      */
-    public List<Store> findMatchingStores(String category) {
+    public List<Store> findMatchingStores(Tag category) {
         List<Store> result = new ArrayList<>();
         for (Store store : loadedStores) {
             if (store.matchesCategory(category)) {
@@ -127,6 +127,7 @@ public class StoreList {
 
     /**
      * Convenience method equivalent to .getList().add(store)
+     * Adds a store to the list.
      *
      * @param store - the store to add to the list
      */
@@ -135,6 +136,7 @@ public class StoreList {
     }
 
     /**
+     * Removes a store from the list.
      * Convenience method equivalent to .getList().remove(store).
      *
      * @param store - the store to remove fom the list

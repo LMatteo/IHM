@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 
 /**
  * Controller for the sorting order selector screen.
@@ -75,10 +76,11 @@ public class SortSelectorController {
      * sorting editor screen.
      *
      * @param event - the action event of this action
-     * @throws IOException - if failing to load the sorting order data
+     * @throws IOException        - if failing to load the sorting order data
+     * @throws URISyntaxException - if failing to reload the stores data
      */
     @FXML
-    void confirmSort(ActionEvent event) throws IOException {
+    void confirmSort(ActionEvent event) throws IOException, URISyntaxException {
         if (selection != null) {
             parent.load(selection);
             Stage stage = (Stage) sortBox.getScene().getWindow();

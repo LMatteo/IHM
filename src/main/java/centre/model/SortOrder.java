@@ -1,6 +1,7 @@
 package centre.model;
 
-import java.io.*;
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -13,7 +14,8 @@ import java.util.List;
 public class SortOrder {
 
     private String name;
-    private List<String> categories;
+    private String englishName;
+    private List<Tag> categories;
 
     /**
      * Initializes this sort order according to a specifically formatted file.
@@ -24,23 +26,21 @@ public class SortOrder {
      * @throws IOException - if failing to read the file
      */
     public SortOrder(File input) throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader(input));
-        name = br.readLine();
-        categories = new ArrayList<>();
-        String line;
-        while ((line = br.readLine()) != null) {
-            categories.add(line);
-        }
-        br.close();
+        SortOrderParser sp = new SortOrderParser(input);
+        name = sp.getProperty("name");
+        englishName = sp.getProperty("englishName");
+        categories = sp.getCategories();
     }
 
     /**
      * Creates a new sorting order with a given name and no categories.
      *
-     * @param name - the name of the sorting order
+     * @param name        - the name of the sorting order
+     * @param englishName - the english version of the name of the sorting order
      */
-    public SortOrder(String name) {
+    public SortOrder(String name, String englishName) {
         this.name = name;
+        this.englishName = englishName;
         categories = new ArrayList<>();
     }
 
@@ -48,33 +48,46 @@ public class SortOrder {
         return name;
     }
 
-    public List<String> getCategories() {
+    public List<Tag> getCategories() {
         return categories;
     }
 
+
     /**
-     * Saves this sorting order to the save folder
+     * Adds a category to this sorting order.
+     * Does not check for duplicates.
+     *
+     * @param category - the category to add to the sorting order
+     */
+    public void addCategory(Tag category) {
+        categories.add(category);
+    }
+
+    public void removeCategory(Tag category) {
+        categories.remove(category);
+    }
+
+    /**
+     * Saves this sorting order to the save folder.
      *
      * @throws IOException - if failing to write the file
      */
     public void save() throws IOException {
-        String filename = "data/centre/sort/" + name + ".txt";
-        Files.deleteIfExists(Paths.get(filename));
-        BufferedWriter bw = new BufferedWriter(new FileWriter(new File(filename)));
-        bw.write(name + "\n");
-        for (String category : categories) {
-            bw.write(category + "\n");
+        Files.deleteIfExists(Paths.get("/data/centre/sort/" + name + ".json"));
+        SortOrderWriter sw = new SortOrderWriter(name, englishName);
+        for (Tag tag : categories) {
+            sw.addCategory(tag);
         }
-        bw.close();
+        sw.save();
     }
 
     /**
-     * Adds a category to this sorting order.
+     * Deletes the data of this sorting order.
      *
-     * @param category - the category to add to the sorting order
+     * @throws IOException - if failing to delete the sorting order data
      */
-    public void addCategory(String category) {
-        categories.add(category);
+    public void delete() throws IOException {
+        Files.delete(Paths.get("data/centre/sort/" + name + ".json"));
     }
 
 }

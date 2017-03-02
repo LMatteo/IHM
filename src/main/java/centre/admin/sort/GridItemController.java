@@ -21,24 +21,26 @@ public class GridItemController {
 
     private Store store;
     private boolean selected;
-    private String category;
 
     public boolean isSelected() {
         return selected;
     }
 
+    public Store getStore() {
+        return store;
+    }
+
     /**
      * Initializes this store name and logo for this item.
      *
-     * @param store - the store to load data from
+     * @param store    - the store to load data from
      * @throws MalformedURLException - if the image was not found
      */
-    public void initializeContent(Store store, String category) throws MalformedURLException {
-        //TODO: find a better way than this
+    public void initializeContent(Store store) throws MalformedURLException {
+        this.store = store;
         logo.setImage(new Image(CentrePath.getLogoPath(store.getLogoName())));
         storeName.setText(store.getName());
         selected = false;
-        this.category = category;
     }
 
     /**

@@ -115,12 +115,12 @@ public class Store {
      * Checks if this store belongs to the given category.
      * Returns true if the category was found among this store tags, or false otherwise.
      *
-     * @param name - the name of the category to check
+     * @param tag - the category to check
      * @return true if the store belongs to this category, false otherwise
      */
-    public boolean matchesCategory(String name) {
+    public boolean matchesCategory(Tag tag) {
         for (Tag category : categories) {
-            if (name.equals(category.getFrench())) {
+            if (tag.getFrench().equals(category.getFrench())) {
                 return true;
             }
         }
@@ -129,10 +129,12 @@ public class Store {
 
     /**
      * Saves this store data in a new file in the data folder.
+     * Does not save the logo picture of the store.
      *
      * @throws IOException - if failing to write the store file
      */
     public void save() throws IOException {
+        Files.deleteIfExists(Paths.get("/data/centre/stores/" + name + ".json"));
         StoreWriter sw = new StoreWriter(name);
         sw.addMapId(mapId);
         sw.addTags(categories);
@@ -155,6 +157,33 @@ public class Store {
     public void delete() throws IOException {
         Files.delete(Paths.get("data/centre/stores/" + name + ".json"));
         Files.delete(Paths.get("data/centre/images/" + logoName));
+    }
+
+    /**
+     * Adds a new category to this store.
+     * Does not add the category if another category using the same french word is
+     * already present.
+     *
+     * @param newCategory - the new category of the store
+     */
+    public void addCategory(Tag newCategory) {
+        for (Tag tag : categories) {
+            if (newCategory.getFrench().equals(tag.getFrench())) {
+                return;
+            }
+        }
+        categories.add(newCategory);
+    }
+
+    /**
+     * Removes a category from this store.
+     * The category will be removed even if the english translation of the given tag
+     * does not match the original category.
+     *
+     * @param category - the category to remove
+     */
+    public void removeCategory(Tag category) {
+        categories.removeIf(tag -> tag.getFrench().equals(category.getFrench()));
     }
 
 }

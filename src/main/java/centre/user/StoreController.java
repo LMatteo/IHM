@@ -4,6 +4,7 @@ import centre.admin.store.CategoryItemController;
 import centre.model.SortOrder;
 import centre.model.Store;
 import centre.model.StoreList;
+import centre.model.Tag;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -93,6 +94,42 @@ public class StoreController {
     }
 
     /**
+     * Loads the categories of the requested sorting order.
+     *
+     * @param order - the sorting order to load
+     * @throws IOException - if failing to find the fxml
+     */
+    private void loadCategories(SortOrder order) throws IOException {
+        accordion.getPanes().clear();
+        for (Tag category : order.getCategories()) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/user/storeCategory.fxml"));
+            TitledPane tl = loader.load();
+            tl.setText(category.getFrench());
+            StoreCategoryController controller = loader.getController();
+            controller.initializeContent(loadedStores, category);
+            accordion.getPanes().add(tl);
+        }
+    }
+
+    /**
+     * Displays an error message.
+     *
+     * @param message - message to display before quitting
+     */
+    private void exit(String message) {
+        System.out.println(message);
+    }
+
+    /**
+     * Clears all search results from the store screen.
+     */
+    private void clearSearchResult() {
+        for (int i = accBox.getChildren().size() - 1; i > 1; i--) {
+            accBox.getChildren().remove(i);
+        }
+    }
+
+    /**
      * Returns the sorting order with the requested name, or null if not found.
      *
      * @param name - the name of the sorting order to search
@@ -105,24 +142,6 @@ public class StoreController {
             }
         }
         return null;
-    }
-
-    /**
-     * Loads the categories of the requested sorting order.
-     *
-     * @param order - the sorting order to load
-     * @throws IOException - if failing to find the fxml
-     */
-    private void loadCategories(SortOrder order) throws IOException {
-        accordion.getPanes().clear();
-        for (String category : order.getCategories()) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/user/storeCategory.fxml"));
-            TitledPane tl = loader.load();
-            tl.setText(category);
-            StoreCategoryController controller = loader.getController();
-            controller.initializeContent(loadedStores, category);
-            accordion.getPanes().add(tl);
-        }
     }
 
     /**
@@ -165,7 +184,6 @@ public class StoreController {
         }
     }
 
-
     /**
      * Displays all stores whose name starts with the requested search.
      * Called when the search button is used.
@@ -184,24 +202,6 @@ public class StoreController {
             controller.initializeContent(match);
             accBox.getChildren().add(hb);
         }
-    }
-
-    /**
-     * Clears all search results from the store screen.
-     */
-    private void clearSearchResult() {
-        for (int i = accBox.getChildren().size() - 1; i > 1; i--) {
-            accBox.getChildren().remove(i);
-        }
-    }
-
-    /**
-     * Displays an error message.
-     *
-     * @param message - message to display before quitting
-     */
-    private void exit(String message) {
-        System.out.println(message);
     }
 
 
