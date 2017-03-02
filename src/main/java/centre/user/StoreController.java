@@ -62,7 +62,7 @@ public class StoreController {
     private void initSort() throws IOException, URISyntaxException {
         File[] sortFolder = new File("data/centre/sort/").listFiles();
         if (sortFolder == null) {
-            exit("Could not find sorting data.");
+            System.out.println("Could not find sorting data.");
             return;
         }
         sortOrders = new ArrayList<>();
@@ -109,15 +109,6 @@ public class StoreController {
             controller.initializeContent(loadedStores, category);
             accordion.getPanes().add(tl);
         }
-    }
-
-    /**
-     * Displays an error message.
-     *
-     * @param message - message to display before quitting
-     */
-    private void exit(String message) {
-        System.out.println(message);
     }
 
     /**

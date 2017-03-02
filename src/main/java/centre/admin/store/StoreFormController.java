@@ -1,6 +1,6 @@
 package centre.admin.store;
 
-import centre.CentrePath;
+import centre.constant.CentrePaths;
 import centre.model.Store;
 import centre.model.StoreList;
 import centre.model.Tag;
@@ -80,7 +80,7 @@ public class StoreFormController {
         areaEnglish.setText(store.getLocationEnglish());
         promoEnglish.setText(store.getPromotionEnglish());
         promoFrench.setText(store.getPromotion());
-        logoPreview.setImage(new Image(CentrePath.getLogoPath(store.getLogoName())));
+        logoPreview.setImage(new Image(CentrePaths.getLogoPath(store.getLogoName())));
         image = new File("data/centre/images/logo/" + store.getLogoName());
         oldPic = image;
         idMap.setText(Integer.toString(store.getMapId()));

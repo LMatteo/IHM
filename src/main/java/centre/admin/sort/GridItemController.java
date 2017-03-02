@@ -1,6 +1,6 @@
 package centre.admin.sort;
 
-import centre.CentrePath;
+import centre.constant.CentrePaths;
 import centre.model.Store;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -38,7 +38,7 @@ public class GridItemController {
      */
     public void initializeContent(Store store) throws MalformedURLException {
         this.store = store;
-        logo.setImage(new Image(CentrePath.getLogoPath(store.getLogoName())));
+        logo.setImage(new Image(CentrePaths.getLogoPath(store.getLogoName())));
         storeName.setText(store.getName());
         selected = false;
     }

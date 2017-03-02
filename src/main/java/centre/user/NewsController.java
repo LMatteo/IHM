@@ -1,6 +1,6 @@
 package centre.user;
 
-import centre.CentrePath;
+import centre.constant.CentrePaths;
 import centre.model.News;
 import centre.model.NewsList;
 import javafx.fxml.FXML;
@@ -47,7 +47,7 @@ public class NewsController {
             if (newsCorrespondance.containsKey(n.getPosition())) {
                 try {
                     bindedNews.add(newsCorrespondance.get(n.getPosition()));
-                    newsCorrespondance.get(n.getPosition()).setImage(new Image(CentrePath.getNewsPath(n.getFrench() + ".png")));
+                    newsCorrespondance.get(n.getPosition()).setImage(new Image(CentrePaths.getNewsPath(n.getFrench() + ".png")));
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }

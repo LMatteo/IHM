@@ -1,6 +1,6 @@
 package centre.admin.store;
 
-import centre.CentrePath;
+import centre.constant.CentrePaths;
 import centre.model.Store;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -27,7 +27,7 @@ public class CategoryItemController {
      * @param store - the store for this tem
      */
     public void initializeContent(Store store) throws MalformedURLException {
-        logo.setImage(new Image(CentrePath.getLogoPath(store.getLogoName())));
+        logo.setImage(new Image(CentrePaths.getLogoPath(store.getLogoName())));
         mapLocation.setText(store.getLocation());
         name.setText(store.getName());
         promotion.setText(store.getPromotion());
