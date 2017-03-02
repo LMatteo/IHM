@@ -191,7 +191,7 @@
                                  </VBox.margin>
                               </Label>
                               <TextField fx:id="web" />
-                              <Button fx:id="ajoutMagasin" mnemonicParsing="false" onAction="#ajoutMagasin" prefHeight="66.0" prefWidth="325.0" text="AJOUTER CE MAGASIN">
+                              <Button fx:id="ajoutMagasin" mnemonicParsing="false" onAction="#ajoutMag" prefHeight="66.0" prefWidth="325.0" text="AJOUTER CE MAGASIN">
                                  <font>
                                     <Font size="23.0" />
                                  </font>

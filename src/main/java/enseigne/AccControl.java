@@ -33,7 +33,7 @@ public class AccControl {
 
     @FXML
     public void initialize() throws IOException {
-        VBox box = FXMLLoader.load(getClass().getResource("/fxml/enseigne/accueil.fxml"));
+        VBox box = FXMLLoader.load(getClass().getResource("/fxml/enseigne/customer/accueil.fxml"));
         switchBut(accueil);
         pane.setVvalue(0);
         pane.setContent(box);
