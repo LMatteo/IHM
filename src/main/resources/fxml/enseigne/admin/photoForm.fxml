@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -11,11 +12,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="-Infinity" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.magasinsFormController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="-Infinity" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.magasinsFormController">
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="751.0" prefWidth="1060.0">
          <children>
-            <Label prefHeight="103.0" prefWidth="856.0" text="Ajouter un nouveau magasin To Be Or To Have">
+            <Label prefHeight="58.0" prefWidth="333.0" text="Ajouter une photo">
                <font>
                   <Font size="40.0" />
                </font>
@@ -27,7 +28,7 @@
                <children>
                   <VBox prefHeight="177.0" prefWidth="557.0">
                      <children>
-                        <Label text="Nom du centre commercial">
+                        <Label text="Titre (français)">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -35,8 +36,8 @@
                               <Insets bottom="10.0" top="10.0" />
                            </VBox.margin>
                         </Label>
-                        <TextField fx:id="centreCommercial" prefHeight="31.0" prefWidth="379.0" />
-                        <Label text="Adresse">
+                        <TextField fx:id="titreEn" prefHeight="31.0" prefWidth="379.0" />
+                        <Label text="Titre (anglais)">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -44,12 +45,12 @@
                               <Insets bottom="10.0" top="10.0" />
                            </VBox.margin>
                         </Label>
-                        <TextField fx:id="adresse" />
+                        <TextField fx:id="titreEn" />
                         <HBox prefHeight="100.0" prefWidth="200.0">
                            <children>
                               <VBox prefHeight="200.0" prefWidth="250.0">
                                  <children>
-                                    <Label text="Ville">
+                                    <Label text="Catégorie">
                                        <font>
                                           <Font size="25.0" />
                                        </font>
@@ -57,26 +58,10 @@
                                           <Insets bottom="10.0" top="10.0" />
                                        </VBox.margin>
                                     </Label>
-                                    <TextField fx:id="ville" prefWidth="190.0" />
+                                    <ComboBox fx:id="category" prefWidth="150.0" />
                                  </children>
                                  <padding>
                                     <Insets right="10.0" />
-                                 </padding>
-                              </VBox>
-                              <VBox prefHeight="200.0" prefWidth="250.0">
-                                 <children>
-                                    <Label text="Code Postal">
-                                       <font>
-                                          <Font size="25.0" />
-                                       </font>
-                                       <VBox.margin>
-                                          <Insets bottom="10.0" top="10.0" />
-                                       </VBox.margin>
-                                    </Label>
-                                    <TextField fx:id="codePostal" />
-                                 </children>
-                                 <padding>
-                                    <Insets left="10.0" />
                                  </padding>
                               </VBox>
                            </children>
@@ -88,7 +73,7 @@
                   </VBox>
                   <VBox alignment="TOP_CENTER" prefHeight="177.0" prefWidth="557.0">
                      <children>
-                        <Label text="Ajouter une photo du magasin">
+                        <Label text="Sélectionner l'image">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -149,16 +134,7 @@
                                     <Insets bottom="10.0" top="10.0" />
                                  </VBox.margin>
                               </Label>
-                              <TextArea fx:id="informationsFr" prefHeight="200.0" prefWidth="530.0" />
-                              <Label prefHeight="36.0" prefWidth="263.0" text="Informations (anglais)">
-                                 <font>
-                                    <Font size="25.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" top="10.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <TextArea fx:id="informationsEN" prefHeight="200.0" prefWidth="530.0" />
+                              <TextArea fx:id="descriptionFr" prefHeight="200.0" prefWidth="530.0" />
                            </children>
                         </VBox>
                      </children>
@@ -173,7 +149,7 @@
                      <children>
                         <VBox prefHeight="316.0" prefWidth="504.0">
                            <children>
-                              <Label prefHeight="21.0" prefWidth="195.0" text="Téléphone">
+                              <Label prefHeight="36.0" prefWidth="263.0" text="Informations (anglais)">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
@@ -181,24 +157,7 @@
                                     <Insets bottom="10.0" top="10.0" />
                                  </VBox.margin>
                               </Label>
-                              <TextField fx:id="telephone" />
-                              <Label prefHeight="21.0" prefWidth="195.0" text="Site web">
-                                 <font>
-                                    <Font size="25.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" top="10.0" />
-                                 </VBox.margin>
-                              </Label>
-                              <TextField fx:id="web" />
-                              <Button fx:id="ajoutMagasin" mnemonicParsing="false" onAction="#ajoutMag" prefHeight="66.0" prefWidth="325.0" text="AJOUTER CE MAGASIN">
-                                 <font>
-                                    <Font size="23.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets left="100.0" top="40.0" />
-                                 </VBox.margin>
-                              </Button>
+                              <TextArea fx:id="descriptionEn" prefHeight="200.0" prefWidth="530.0" />
                            </children>
                         </VBox>
                      </children>
@@ -208,6 +167,14 @@
                   <Insets bottom="25.0" top="25.0" />
                </VBox.margin>
             </HBox>
+            <Button fx:id="ajoutPhoto" mnemonicParsing="false" onAction="#ajoutPhoto" prefHeight="66.0" prefWidth="325.0" text="PUBLIER">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="25.0" />
+               </VBox.margin>
+            </Button>
          </children>
          <padding>
             <Insets left="30.0" right="30.0" />

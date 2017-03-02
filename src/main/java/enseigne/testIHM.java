@@ -28,6 +28,9 @@ public class testIHM extends Application {
         hbox.getChildren().add(r1);
         hbox.getChildren().add(r2);
         hbox.getChildren().add(r3);
+
+
+
         Scene scene = new Scene(hbox, 320, 112, Color.rgb(0, 0, 0, 0));
         primaryStage.setScene(scene);
         primaryStage.show();
