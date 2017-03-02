@@ -1,6 +1,7 @@
-package enseigne;
+package enseigne.adminController;
 
 import centre.controller.StoreFormController;
+import enseigne.ToNode;
 import enseigne.component.ReadConst;
 import enseigne.component.magasin.Magasin;
 import javafx.event.ActionEvent;
