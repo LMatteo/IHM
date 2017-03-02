@@ -77,8 +77,8 @@ public class StoreFormController {
         areaEnglish.setText(store.getLocationEnglish());
         promoEnglish.setText(store.getPromotionEnglish());
         promoFrench.setText(store.getPromotion());
+        //TODO: find a better way than this
         logoPreview.setImage(new Image(new File("data/centre/images/" + store.getLogoName()).toURI().toURL().toString()));
-        //TODO: replace this with the working directory somehow
         image = new File("data/centre/images" + store.getLogoName());
         oldPic = image;
         idMap.setText(Integer.toString(store.getMapId()));

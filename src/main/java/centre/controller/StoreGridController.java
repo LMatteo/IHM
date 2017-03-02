@@ -5,7 +5,6 @@ import centre.StoreList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TitledPane;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
@@ -23,14 +22,9 @@ public class StoreGridController {
 
     private StoreList loadedStores;
     private List<GridItemController> gridItems;
-    private boolean selected;
 
     public void setLoadedStores(StoreList loadedStores) {
         this.loadedStores = loadedStores;
-    }
-
-    public boolean isSelected() {
-        return selected;
     }
 
     /**
@@ -43,33 +37,16 @@ public class StoreGridController {
         categoryName.setText(category);
         List<Store> matches = loadedStores.findMatchingStores(category);
         gridItems = new ArrayList<>();
-        selected = false;
         for (int i = 0; i < matches.size(); i++) {
             Store store = matches.get(i);
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/gridItem.fxml"));
             VBox item = loader.load();
             GridItemController controller = loader.getController();
-            controller.initializeContent(store);
+            controller.initializeContent(store, category);
             gridItems.add(controller);
             GridPane.setColumnIndex(item, i % 6);
             GridPane.setRowIndex(item, i / 6);
             grid.getChildren().add(item);
-        }
-    }
-
-    /**
-     * Switches this category selected state. When selected, the background color is different.
-     *
-     * @param event - the event of this action
-     */
-    @FXML
-    void selectCategory(MouseEvent event) {
-        if (selected) {
-            selected = false;
-            categoryName.setStyle("-fx-font: System 26; -fx-background-color: #ffffff");
-        } else {
-            selected = true;
-            categoryName.setStyle("-fx-font: System 26; -fx-background-color: #add8e6");
         }
     }
 

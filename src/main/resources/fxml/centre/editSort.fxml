@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="843.0"
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="951.0"
       prefWidth="1449.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
       fx:controller="centre.controller.EditSortController">
     <children>
@@ -86,6 +86,15 @@
                         text="Supprimer boutiques de la catégorie">
                     <font>
                         <Font size="20.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="80.0"/>
+                    </VBox.margin>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#confirmChanges" prefHeight="48.0" prefWidth="350.0"
+                        text="Confirmer changements">
+                    <font>
+                        <Font name="System Bold" size="20.0"/>
                     </font>
                 </Button>
             </children>

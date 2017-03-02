@@ -2,6 +2,8 @@ package centre.controller;
 
 
 import centre.StoreList;
+import centre.transition.DeleteTransition;
+import centre.transition.EditStoreTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -58,8 +60,7 @@ public class AdminStoreController {
         Parent rootNode = loader.load();
         StoreSelectorController controller = loader.getController();
         controller.setLoadedStores(loadedStores);
-        controller.initializeContent();
-        controller.setDeleteMode();
+        controller.initializeContent(new DeleteTransition());
         Scene scene = new Scene(rootNode, 968, 555);
         Stage stage = new Stage();
         stage.setScene(scene);
@@ -79,7 +80,7 @@ public class AdminStoreController {
         Parent rootNode = loader.load();
         StoreSelectorController controller = loader.getController();
         controller.setLoadedStores(loadedStores);
-        controller.initializeContent();
+        controller.initializeContent(new EditStoreTransition());
         Scene scene = new Scene(rootNode, 968, 555);
         Stage stage = new Stage();
         stage.setScene(scene);
@@ -98,7 +99,7 @@ public class AdminStoreController {
         Parent rootNode = loader.load();
         EditSortController controller = loader.getController();
         controller.setLoadedStores(loadedStores);
-        Scene scene = new Scene(rootNode, 1449, 843);
+        Scene scene = new Scene(rootNode, 1449, 951);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.setTitle("Editer le tri des boutiques");

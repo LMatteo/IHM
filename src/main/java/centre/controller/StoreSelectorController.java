@@ -2,12 +2,10 @@ package centre.controller;
 
 import centre.Store;
 import centre.StoreList;
+import centre.transition.Transition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
@@ -28,25 +26,20 @@ public class StoreSelectorController {
     private StoreList loadedStores;
     private Store selectedStore;
     private Label selectedLabel;
-    private boolean deleteMode = false;
+    private Transition transition;
 
     public void setLoadedStores(StoreList loadedStores) {
         this.loadedStores = loadedStores;
     }
 
     /**
-     * Sets up the selector to delete the selected store when confirmed.
-     */
-    public void setDeleteMode() {
-        deleteMode = true;
-        mainButton.setText("Supprimer boutique");
-    }
-
-    /**
      * Initializes the content of the gridPane. The gridPane displays a map id in each cell,
      * followed by the corresponding store if found.
+     *
+     * @param transition - the transition used after the store is selected
      */
-    public void initializeContent() {
+    public void initializeContent(Transition transition) {
+        this.transition = transition;
         for (int i = 0; i <= 17; i++) {
             Optional<Store> store = loadedStores.getStoreWithId(i);
             Label label;
@@ -74,8 +67,8 @@ public class StoreSelectorController {
     }
 
     /**
-     * Confirm the action of the selector : open the store editor with the selected
-     * store data, or delete the selected store.
+     * Confirm the action of the selector, and transitions to the next screen with
+     * the selected store.
      *
      * @param event - the action vent of this action
      * @throws IOException - if failing to load the fxml
@@ -84,21 +77,7 @@ public class StoreSelectorController {
     void confirm(ActionEvent event) throws IOException {
         Stage stage = (Stage) grid.getScene().getWindow();
         stage.close();
-        if (!deleteMode) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/storeForm.fxml"));
-            Parent rootNode = loader.load();
-            StoreFormController controller = loader.getController();
-            controller.setLoadedStores(loadedStores);
-            controller.loadStoreData(selectedStore);
-            Scene scene = new Scene(rootNode, 1477, 861);
-            Stage newStage = new Stage();
-            newStage.setTitle("Edition d'une boutique");
-            newStage.setScene(scene);
-            newStage.show();
-        } else {
-            selectedStore.delete();
-            loadedStores.remove(selectedStore);
-        }
+        transition.doTransition(selectedStore, loadedStores);
     }
 
 }

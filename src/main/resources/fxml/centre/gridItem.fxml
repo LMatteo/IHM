@@ -9,8 +9,7 @@
     <children>
         <ImageView fx:id="logo" fitHeight="130.0" fitWidth="130.0" onMouseClicked="#select" pickOnBounds="true"
                    preserveRatio="true"/>
-        <Label fx:id="storeName" alignment="CENTER" onMouseClicked="#select" prefHeight="21.0" prefWidth="130.0"
-               text="storename">
+        <Label fx:id="storeName" alignment="CENTER" onMouseClicked="#select" prefHeight="21.0" prefWidth="130.0">
             <font>
                 <Font size="13.0"/>
             </font>

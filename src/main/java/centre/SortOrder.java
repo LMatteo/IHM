@@ -1,6 +1,8 @@
 package centre;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,12 +58,23 @@ public class SortOrder {
      * @throws IOException - if failing to write the file
      */
     public void save() throws IOException {
-        BufferedWriter bw = new BufferedWriter(new FileWriter(new File("data/centre/sort/" + name + ".txt")));
+        String filename = "data/centre/sort/" + name + ".txt";
+        Files.deleteIfExists(Paths.get(filename));
+        BufferedWriter bw = new BufferedWriter(new FileWriter(new File(filename)));
         bw.write(name + "\n");
         for (String category : categories) {
             bw.write(category + "\n");
         }
         bw.close();
+    }
+
+    /**
+     * Adds a category to this sorting order.
+     *
+     * @param category - the category to add to the sorting order
+     */
+    public void addCategory(String category) {
+        categories.add(category);
     }
 
 }

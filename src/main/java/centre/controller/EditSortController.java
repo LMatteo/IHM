@@ -61,9 +61,24 @@ public class EditSortController {
         }
     }
 
+    /**
+     * Adds a new category to the sorting order.
+     *
+     * @param event - the action event of this action
+     * @throws IOException - if failing to load the fxml
+     */
     @FXML
-    void addCategory(ActionEvent event) {
-
+    void addCategory(ActionEvent event) throws IOException {
+        if (!newCategory.getText().equals("")) {
+            loadedOrder.addCategory(newCategory.getText());
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/storeGrid.fxml"));
+            TitledPane root = loader.load();
+            StoreGridController controller = loader.getController();
+            controller.setLoadedStores(loadedStores);
+            controller.initializeContent(newCategory.getText());
+            accordion.getPanes().add(root);
+            newCategory.setText("");
+        }
     }
 
     @FXML
@@ -127,6 +142,11 @@ public class EditSortController {
         stage.setScene(scene);
         stage.setTitle("Choisir un mode de tri");
         stage.show();
+    }
+
+    @FXML
+    void confirmChanges(ActionEvent event) {
+
     }
 
 }
