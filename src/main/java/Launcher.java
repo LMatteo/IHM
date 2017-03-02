@@ -53,9 +53,9 @@ public class Launcher extends Application {
                 break;
             case "--enseigne":
                 if (!adminMode) {
-                    path = "/fxml/enseigne/skel.fxml";
+                    path = "/fxml/enseigne/customer/skel.fxml";
                 } else {
-
+                    path = "/fxml/enseigne/admin/skelAdmin.fxml";
                 }
                 break;
             case "--magasin":
