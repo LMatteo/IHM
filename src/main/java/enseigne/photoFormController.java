@@ -1,6 +1,6 @@
 package enseigne;
 
-import enseigne.component.Photo;
+import enseigne.component.photo.Photo;
 import enseigne.component.ReadConst;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
