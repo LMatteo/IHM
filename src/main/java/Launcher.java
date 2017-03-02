@@ -1,5 +1,3 @@
-package launch;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * launch.Launcher class used to parse the program arguments and starting up the first fxml controller.
+ * Class used to parse the program arguments and starting up the first fxml controller.
  *
  * @author Guillaume Andre
  */
