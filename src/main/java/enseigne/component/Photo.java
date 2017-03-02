@@ -5,7 +5,8 @@ package enseigne.component;
  */
 public class Photo {
 
-    private String title;
+    private String titreFr;
+    private String titreEn;
     private String category;
     private String photo;
     private String descriptionFr;
@@ -27,8 +28,11 @@ public class Photo {
         return photo;
     }
 
-    public String getTitle() {
-        return title;
+    public String getTitreFr() {
+        return titreFr;
+    }
+    public String getTitreEn() {
+        return titreEn;
     }
 
     public void setCategory(String category) {
@@ -47,8 +51,11 @@ public class Photo {
         this.photo = photo;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitreFr(String title) {
+        this.titreFr = title;
+    }
+    public void setTitreEn(String title) {
+        this.titreEn = title;
     }
 
     public void write(){
