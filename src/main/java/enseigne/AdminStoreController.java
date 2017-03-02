@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import sun.plugin.javascript.navig.Anchor;
 
@@ -23,16 +24,16 @@ public class AdminStoreController {
     private Button add;
 
     @FXML
-    private AnchorPane pane;
+    private VBox pane;
 
     @FXML
     public void initialize() throws IOException {
-        /*
+
         List<Magasin> magasins = ReadConst.getStoresJson();
         for(Magasin mag : magasins){
             pane.getChildren().add(ReadConst.storeToNode(mag));
         }
-        */
+
 
     }
 
