@@ -1,5 +1,6 @@
 package enseigne.component;
 
+import enseigne.component.actu.Actu;
 import enseigne.component.magasin.Magasin;
 import javafx.scene.Node;
 import javafx.scene.control.Label;

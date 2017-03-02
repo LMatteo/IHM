@@ -1,8 +1,6 @@
 package enseigne.component.actu;
 
 import enseigne.component.ReadConst;
-import enseigne.component.magasin.MagAttribute;
-import enseigne.component.magasin.MagHandler;
 import org.json.JSONObject;
 
 import java.io.BufferedWriter;
@@ -20,6 +18,7 @@ public class Actu {
     private String contentFr;
     private String contentEn;
     private String image;
+    private boolean bigSize;
 
     public Actu(){
 
@@ -72,6 +71,14 @@ public class Actu {
 
     public String getTitreFr() {
         return titreFr;
+    }
+
+    public void setBigSize(boolean bigSize) {
+        this.bigSize = bigSize;
+    }
+
+    public boolean getBigSize(){
+        return bigSize;
     }
 
     public void write() throws IOException{
