@@ -1,6 +1,6 @@
 package enseigne;
 
-import enseigne.component.actu.Actu;
+import enseigne.modele.actu.Actu;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;

@@ -1,4 +1,4 @@
-package enseigne.component.photo;
+package enseigne.modele.photo;
 
 import org.json.JSONObject;
 

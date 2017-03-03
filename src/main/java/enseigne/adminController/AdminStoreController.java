@@ -1,8 +1,8 @@
 package enseigne.adminController;
 
 import enseigne.ToNode;
-import enseigne.component.ReadConst;
-import enseigne.component.magasin.Magasin;
+import enseigne.modele.ReadConst;
+import enseigne.modele.magasin.Magasin;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
