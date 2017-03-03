@@ -5,7 +5,7 @@
     -fx-border-insets: 20px;
     -fx-background-insets: 20px;
     -fx-min-height: 285px;
-    -fx-min-width: 1040px;
+    -fx-min-width: 1030px;
     -fx-effect: dropshadow(three-pass-box, grey, 12, 0, 0, 0);
 
 }
