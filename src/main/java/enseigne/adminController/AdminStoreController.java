@@ -1,6 +1,5 @@
 package enseigne.adminController;
 
-import centre.controller.StoreFormController;
 import enseigne.ToNode;
 import enseigne.component.ReadConst;
 import enseigne.component.magasin.Magasin;
@@ -10,19 +9,20 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import sun.plugin.javascript.navig.Anchor;
 
-import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
 public class AdminStoreController {
 
+
     @FXML
     private Button add;
+
+    @FXML
+    private Button delete;
 
     @FXML
     private VBox pane;
@@ -48,5 +48,8 @@ public class AdminStoreController {
         stage.setTitle("Nouvelle boutique");
         stage.show();
     }
+
+
+
 
 }

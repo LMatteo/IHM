@@ -2,17 +2,12 @@ package enseigne.component.magasin;
 
 import enseigne.component.Deletable;
 import enseigne.component.ReadConst;
-import enseigne.component.magasin.MagAttribute;
-import enseigne.component.magasin.MagHandler;
-import javafx.scene.Node;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import org.json.JSONObject;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -183,4 +178,5 @@ public class Magasin extends Deletable {
         bf.close();
 
     }
+
 }

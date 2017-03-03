@@ -18,7 +18,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="add2" minWidth="200.0" mnemonicParsing="false" onAction="#addStore" text="Supprimer un magasin">
+            <Button fx:id="remove" minWidth="200.0" mnemonicParsing="false" onAction="#removeStore" text="Supprimer un magasin">
                <font>
                   <Font size="20.0" />
                </font>
