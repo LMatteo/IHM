@@ -21,6 +21,7 @@ public class ReadConst {
         while((line = read.readLine()) != null ){
             res.append(line);
         }
+        read.close();
         return res.toString();
     }
 
