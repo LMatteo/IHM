@@ -33,16 +33,16 @@ public class ToNode {
             label1.setText("À "+m.getVille() + ", au centre commercial " + m.getCentre());
         }
 
-        Label label2 = new Label(m.getInfoFr());
+        Label label2 = new Label("Informations complémentaires : "+m.getInfoFr());
         Label label3 = new Label("Téléphone : " + m.getTelephone()+" - Site web : " + m.getWeb());
         Label label5 = new Label("Adresse : " + m.getAddr() + " " + m.getCodePostal() + " " + m.getVille());
         HBox hbox3 = new HBox();
-        hbox3.getChildren().add(label3);
 
         vbox2.getChildren().add(label1);
-        vbox2.getChildren().add(label2);
-        vbox2.getChildren().add(hbox3);
         vbox2.getChildren().add(label5);
+        hbox3.getChildren().add(label3);
+        vbox2.getChildren().add(hbox3);
+        vbox2.getChildren().add(label2);
 
 
         hbox1.getChildren().add(p);
