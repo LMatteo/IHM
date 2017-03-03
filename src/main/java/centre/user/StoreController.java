@@ -1,6 +1,5 @@
 package centre.user;
 
-import centre.admin.store.CategoryItemController;
 import centre.model.SortOrder;
 import centre.model.Store;
 import centre.model.StoreList;
@@ -23,10 +22,17 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StoreController {
+import static centre.constant.ButtonLabels.*;
+
+/**
+ * Controller class for the main store screen.
+ */
+public class StoreController implements LanguageSwitcher {
 
     private StoreList loadedStores;
     private List<SortOrder> sortOrders;
+    private boolean french = true;
+    private List<LanguageSwitcher> children;
 
     @FXML private TextArea searchBar;
     @FXML private VBox search;
@@ -45,6 +51,7 @@ public class StoreController {
      */
     public void initializeContent(StoreList loadedStores) throws IOException, URISyntaxException {
         this.loadedStores = loadedStores;
+        children = new ArrayList<>();
         initSort();
         createMenuItems();
         if (!sortOrders.isEmpty()) {
@@ -75,11 +82,21 @@ public class StoreController {
      * Fills the menuButton "Trier par..." with the loaded sorting orders.
      */
     private void createMenuItems() {
+        sortMenu.getItems().clear();
         for (SortOrder order : sortOrders) {
-            MenuItem item = new MenuItem(order.getName());
+            MenuItem item;
+            if (french) {
+                item = new MenuItem(order.getName());
+            } else {
+                item = new MenuItem(order.getEnglishName());
+            }
             item.setOnAction(event -> {
                 clearSearchResult();
-                sortMenu.setText(order.getName());
+                if (french) {
+                    sortMenu.setText(order.getName());
+                } else {
+                    sortMenu.setText(order.getEnglishName());
+                }
                 SortOrder so = getOrder(order.getName());
                 if (so != null) {
                     try {
@@ -104,9 +121,17 @@ public class StoreController {
         for (Tag category : order.getCategories()) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/user/storeCategory.fxml"));
             TitledPane tl = loader.load();
-            tl.setText(category.getFrench());
+            if (french) {
+                tl.setText(category.getFrench());
+            } else {
+                tl.setText(category.getEnglish());
+            }
             StoreCategoryController controller = loader.getController();
             controller.initializeContent(loadedStores, category);
+            children.add(controller);
+            if (!french) {
+                controller.switchLanguage();
+            }
             accordion.getPanes().add(tl);
         }
     }
@@ -118,6 +143,7 @@ public class StoreController {
         for (int i = accBox.getChildren().size() - 1; i > 1; i--) {
             accBox.getChildren().remove(i);
         }
+        children.clear();
     }
 
     /**
@@ -187,7 +213,7 @@ public class StoreController {
         accordion.getPanes().clear();
         clearSearchResult();
         for (Store match : loadedStores.getStoreStartingWith(searchBar.getText())) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/admin/store/categoryItem.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/user/categoryItem.fxml"));
             HBox hb = loader.load();
             CategoryItemController controller = loader.getController();
             controller.initializeContent(match);
@@ -195,5 +221,33 @@ public class StoreController {
         }
     }
 
+    /**
+     * Switches the language of the screen back and forth between english and french.
+     */
+    @Override
+    public void switchLanguage() {
+        if (french) {
+            french = false;
+            searchBar.setPromptText(SEARCH_EN);
+            searchButton.setText(SEARCH_BUTTON_EN);
+            sortMenu.setText(SORT_EN);
+        } else {
+            french = true;
+            searchBar.setPromptText(SEARCH_FR);
+            searchButton.setText(SEARCH_BUTTON_FR);
+            sortMenu.setText(SORT_FR);
+        }
+        createMenuItems();
+        if (!sortOrders.isEmpty()) {
+            try {
+                loadCategories(sortOrders.get(0));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        for (LanguageSwitcher sw : children) {
+            sw.switchLanguage();
+        }
+    }
 
 }

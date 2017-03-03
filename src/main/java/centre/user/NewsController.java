@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 
 
-public class NewsController {
+public class NewsController implements LanguageSwitcher{
 
     @FXML protected ImageView v1;
     @FXML protected ImageView h2;
@@ -53,5 +53,10 @@ public class NewsController {
                 }
             }
         }
+    }
+
+    @Override
+    public void switchLanguage() {
+
     }
 }

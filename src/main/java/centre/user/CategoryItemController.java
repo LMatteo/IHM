@@ -1,4 +1,4 @@
-package centre.admin.store;
+package centre.user;
 
 import centre.constant.CentrePaths;
 import centre.model.Store;
@@ -10,10 +10,13 @@ import javafx.scene.input.MouseEvent;
 
 import java.net.MalformedURLException;
 
+import static centre.constant.ButtonLabels.ACCESS_EN;
+import static centre.constant.ButtonLabels.ACCESS_FR;
+
 /**
  * Controller class for a store item in one category.
  */
-public class CategoryItemController {
+public class CategoryItemController implements LanguageSwitcher{
 
     @FXML private ImageView logo;
     @FXML private Label mapLocation;
@@ -21,12 +24,16 @@ public class CategoryItemController {
     @FXML private Label promotion;
     @FXML private Label storePage;
 
+    private boolean french = true;
+    private Store store;
+
     /**
      * Initializes the content of the store in the appropriate fields.
      *
      * @param store - the store for this tem
      */
     public void initializeContent(Store store) throws MalformedURLException {
+        this.store = store;
         logo.setImage(new Image(CentrePaths.getLogoPath(store.getLogoName())));
         mapLocation.setText(store.getLocation());
         name.setText(store.getName());
@@ -65,4 +72,21 @@ public class CategoryItemController {
 
     }
 
+    /**
+     * Switches the language of the interface back and forth between french and english.
+     */
+    @Override
+    public void switchLanguage() {
+        if (french) {
+            french = false;
+            storePage.setText(ACCESS_EN);
+            promotion.setText(store.getPromotionEnglish());
+            mapLocation.setText(store.getLocationEnglish());
+        } else {
+            french = true;
+            storePage.setText(ACCESS_FR);
+            promotion.setText(store.getPromotion());
+            mapLocation.setText(store.getLocation());
+        }
+    }
 }

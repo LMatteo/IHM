@@ -9,7 +9,7 @@ import javafx.scene.layout.GridPane;
 /**
  * Controller for the info screen.
  */
-public class InfoController {
+public class InfoController implements LanguageSwitcher {
 
     private StoreList loadedStores;
 
@@ -40,6 +40,11 @@ public class InfoController {
             GridPane.setRowIndex(label, id % 6);
             grid.getChildren().add(label);
         }
+    }
+
+    @Override
+    public void switchLanguage() {
+
     }
 
 }

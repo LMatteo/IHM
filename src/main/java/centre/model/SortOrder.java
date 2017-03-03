@@ -48,6 +48,10 @@ public class SortOrder {
         return name;
     }
 
+    public String getEnglishName() {
+        return englishName;
+    }
+
     public List<Tag> getCategories() {
         return categories;
     }
