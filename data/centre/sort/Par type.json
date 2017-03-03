@@ -1,0 +1,26 @@
+{
+  "name": "Par type",
+  "englishName": "By type",
+  "categories": [
+    {
+      "french": "Alimentation",
+      "english": "Food"
+    },
+    {
+      "french": "Bien-etre",
+      "english": "Wellness"
+    },
+    {
+      "french": "Culture",
+      "english": "Culture"
+    },
+    {
+      "french": "Mode",
+      "english": "Fashion"
+    },
+    {
+      "french": "jeux Video",
+      "english": "Video Games"
+    }
+  ]
+}

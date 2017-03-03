@@ -17,27 +17,27 @@ public class GoToControl {
 
     @FXML
     void goToActu(MouseEvent event) throws IOException {
-        switchScene(event, "/fxml/magasin/Currently.fxml");
+        switchScene(event, "/fxml/magasin/user/currently.fxml");
     }
 
     @FXML
     void goToBook(MouseEvent event) throws IOException {
-        switchScene(event, "/fxml/magasin/Livre.fxml");
+        switchScene(event, "/fxml/magasin/user/book.fxml");
     }
 
     @FXML
     void goToBoutique(MouseEvent event) throws IOException {
-        switchScene(event, "/fxml/magasin/Boutique.fxml");
+        switchScene(event, "/fxml/magasin/user/boutique.fxml");
     }
 
     @FXML
     void goToCD(MouseEvent event) throws IOException {
-        switchScene(event, "/fxml/magasin/Media.fxml");
+        switchScene(event, "/fxml/magasin/user/media.fxml");
     }
 
     @FXML
     void goToCatalog(MouseEvent event) throws IOException {
-        switchScene(event, "/fxml/magasin/Catalogue.fxml");
+        switchScene(event, "/fxml/magasin/user/catalogue.fxml");
     }
 
     @FXML
@@ -47,17 +47,17 @@ public class GoToControl {
 
     @FXML
     void goToPromo(MouseEvent event) throws IOException {
-        switchScene(event, "/fxml/magasin/Catalogue.fxml");
+        switchScene(event, "/fxml/magasin/user/catalogue.fxml");
     }
 
     @FXML
     void goToStage(MouseEvent event) throws IOException {
-        switchScene(event, "/fxml/magasin/Stage.fxml");
+        switchScene(event, "/fxml/magasin/user/stage.fxml");
     }
 
     @FXML
     void goToHomePage(MouseEvent event) throws IOException {
-        switchScene(event, "/fxml/magasin/Home.fxml");
+        switchScene(event, "/fxml/magasin/user/home.fxml");
     }
 
     private void switchScene(MouseEvent event, String location) throws IOException {

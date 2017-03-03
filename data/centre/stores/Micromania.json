@@ -1,15 +1,1 @@
-{
-  "logoName": "Micromania.jpg",
-  "enseigneId": "undefined",
-  "magasinId": "undefined",
-  "name": "Micromania",
-  "location": "Niveau 0",
-  "locationEnglish": "Level 0",
-  "mapId": 2,
-  "categories": [
-    "Jeux Video",
-    "H-M"
-  ],
-  "promotionText": "-25% pour la St valentin pour tous les célibataires",
-  "promotionEnglish": "-25% for all singles on Valentine's day"
-}
+{"logoName":"Micromania.jpg","enseigneId":"undefined","magasinId":"undefined","name":"Micromania","mapId":2,"location":"Niveau 0","categories":[{"english":"Video Games","french":"Jeux Video"},{"english":"H-M","french":"H-M"}],"promotionEnglish":"-25% for all singles on Valentine's day","locationEnglish":"Level 0","promotionText":"-25% pour la St valentin pour tous les célibataires"}
