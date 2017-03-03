@@ -27,7 +27,6 @@ public class ToNode {
         }
         VBox vbox2 = new VBox();
         Label label1 = new Label();
-        System.out.println(m.getVille());
         if (Objects.equals(m.getVille(), null)) {
             label1.setText("Au centre commercial " + m.getCentre());
         } else {
