@@ -1,8 +1,8 @@
 package enseigne;
 
-import enseigne.component.photo.Photo;
-import enseigne.component.actu.Actu;
-import enseigne.component.magasin.Magasin;
+import enseigne.modele.photo.Photo;
+import enseigne.modele.actu.Actu;
+import enseigne.modele.magasin.Magasin;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
