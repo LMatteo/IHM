@@ -17,10 +17,12 @@ public class ToNode {
     public static Node magasins(Magasin m){
         HBox hbox1 = new HBox();
         ImageView p = new ImageView();
+
         if(m.getPhoto() != null) {
             p.setImage(new Image(new File(m.getPhoto()).toURI().toString()));
             p.setFitWidth(200);
             p.setFitHeight(200);
+            p.setStyle("-fx-padding: 20px");
         }
         VBox vbox2 = new VBox();
         Label label1 = new Label(m.getVille()+", au centre commercial "+m.getCentre());
@@ -40,6 +42,9 @@ public class ToNode {
         hbox1.getChildren().add(p);
         hbox1.getChildren().add(vbox2);
 
+        hbox1.setId("hbox1");
+        vbox2.setId("vbox2");
+        label1.setId("title");
         return hbox1;
     }
 
