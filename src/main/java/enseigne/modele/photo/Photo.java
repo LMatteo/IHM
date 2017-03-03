@@ -1,7 +1,7 @@
-package enseigne.component.photo;
+package enseigne.modele.photo;
 
-import enseigne.component.Deletable;
-import enseigne.component.ReadConst;
+import enseigne.modele.Deletable;
+import enseigne.modele.ReadConst;
 import org.json.JSONObject;
 
 import java.io.*;

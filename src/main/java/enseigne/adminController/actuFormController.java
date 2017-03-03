@@ -4,8 +4,8 @@ package enseigne.adminController;
  * Created by Josué on 01/03/2017.
  */
 
-import enseigne.component.ReadConst;
-import enseigne.component.actu.Actu;
+import enseigne.modele.ReadConst;
+import enseigne.modele.actu.Actu;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

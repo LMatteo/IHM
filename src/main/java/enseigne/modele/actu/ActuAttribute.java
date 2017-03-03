@@ -1,4 +1,4 @@
-package enseigne.component.actu;
+package enseigne.modele.actu;
 
 import org.json.JSONObject;
 

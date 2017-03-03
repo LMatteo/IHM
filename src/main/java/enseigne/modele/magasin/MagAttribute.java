@@ -1,4 +1,4 @@
-package enseigne.component.magasin;
+package enseigne.modele.magasin;
 
 import org.json.JSONObject;
 

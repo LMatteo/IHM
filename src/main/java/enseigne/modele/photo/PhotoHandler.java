@@ -1,6 +1,5 @@
-package enseigne.component.photo;
+package enseigne.modele.photo;
 
-import enseigne.component.magasin.Magasin;
 import org.json.JSONObject;
 
 public interface PhotoHandler {

@@ -1,4 +1,4 @@
-package enseigne.component;
+package enseigne.modele;
 
 import java.io.File;
 import java.io.IOException;

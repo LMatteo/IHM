@@ -1,6 +1,6 @@
-package enseigne.component;
+package enseigne.modele;
 
-import enseigne.component.magasin.Magasin;
+import enseigne.modele.magasin.Magasin;
 
 import java.io.*;
 import java.util.ArrayList;

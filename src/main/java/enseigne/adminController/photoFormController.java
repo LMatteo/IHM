@@ -1,7 +1,7 @@
 package enseigne.adminController;
 
-import enseigne.component.photo.Photo;
-import enseigne.component.ReadConst;
+import enseigne.modele.photo.Photo;
+import enseigne.modele.ReadConst;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
