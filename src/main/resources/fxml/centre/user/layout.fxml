@@ -6,7 +6,9 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="centre.user.LayoutController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0"
+            prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="centre.user.LayoutController">
     <center>
         <ScrollPane fx:id="pane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
     </center>
@@ -78,7 +80,8 @@
                 </AnchorPane>
                 <StackPane onMouseClicked="#switchLanguage" prefHeight="150.0" prefWidth="200.0">
                     <children>
-                        <ImageView fitHeight="67.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="mainLogo" fitHeight="67.0" fitWidth="126.0" pickOnBounds="true"
+                                   preserveRatio="true">
                             <image>
                                 <Image url="@../../../images/common/flags/united-kingdom.png" />
                             </image>

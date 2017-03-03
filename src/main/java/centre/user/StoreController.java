@@ -227,16 +227,15 @@ public class StoreController implements LanguageSwitcher {
     @Override
     public void switchLanguage() {
         if (french) {
-            french = false;
             searchBar.setPromptText(SEARCH_EN);
             searchButton.setText(SEARCH_BUTTON_EN);
             sortMenu.setText(SORT_EN);
         } else {
-            french = true;
             searchBar.setPromptText(SEARCH_FR);
             searchButton.setText(SEARCH_BUTTON_FR);
             sortMenu.setText(SORT_FR);
         }
+        french = !french;
         createMenuItems();
         if (!sortOrders.isEmpty()) {
             try {
@@ -244,9 +243,6 @@ public class StoreController implements LanguageSwitcher {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        for (LanguageSwitcher sw : children) {
-            sw.switchLanguage();
         }
     }
 

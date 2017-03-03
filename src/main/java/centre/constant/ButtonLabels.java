@@ -12,7 +12,7 @@ public class ButtonLabels {
     //------------------------------------------
 
     public static String NEWS_FR = "ACTUALITES";
-    public static String NEWS_EN = "BOUTIQUES";
+    public static String NEWS_EN = "NEWS";
     public static String STORE_FR = "BOUTIQUES";
     public static String STORE_EN = "STORES";
     public static String INFO_FR = "INFOS PRATIQUES";

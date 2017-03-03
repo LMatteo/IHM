@@ -7,10 +7,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 
 import static centre.constant.ButtonLabels.*;
@@ -27,6 +30,7 @@ public class LayoutController {
     @FXML private Button actualite;
     @FXML private Button boutiques;
     @FXML private Button infopratiques;
+    @FXML private ImageView mainLogo;
 
     private Button previous;
     private AnchorPane ap;
@@ -132,21 +136,23 @@ public class LayoutController {
      * Switches the language of the interface.
      *
      * @param event - the event of this action
+     * @throws MalformedURLException - if failing to find the flag
      */
     @FXML
-    void switchLanguage(MouseEvent event) {
+    void switchLanguage(MouseEvent event) throws MalformedURLException, URISyntaxException {
         loadedController.switchLanguage();
         if (french) {
-            french = false;
+            mainLogo.setImage(new Image(getClass().getResourceAsStream("/images/common/flags/france.png")));
             actualite.setText(NEWS_EN);
             boutiques.setText(STORE_EN);
             infopratiques.setText(INFO_EN);
         } else {
-            french = true;
+            mainLogo.setImage(new Image(getClass().getResourceAsStream("/images/common/flags/united-kingdom.png")));
             actualite.setText(NEWS_FR);
             boutiques.setText(STORE_FR);
             infopratiques.setText(INFO_FR);
         }
+        french = !french;
     }
 
 }
