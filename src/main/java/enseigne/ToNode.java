@@ -1,8 +1,11 @@
 package enseigne;
 
+import enseigne.adminController.AdminStoreController;
+import enseigne.customerController.MagControl;
 import enseigne.modele.photo.Photo;
 import enseigne.modele.actu.Actu;
 import enseigne.modele.magasin.Magasin;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -11,47 +14,19 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Objects;
 
 public class ToNode {
 
-    public static Node magasins(Magasin m) {
-        HBox hbox1 = new HBox();
-        ImageView p = new ImageView();
+    public static Node magasins(Magasin m, AdminStoreController controller) throws IOException {
+        FXMLLoader loader = new FXMLLoader(ToNode.class.getResource("/fxml/enseigne/customer/magDisplay.fxml"));
+        Node node = loader.load();
+        MagControl ctrl  = (MagControl)loader.getController();
+        ctrl.setMagasin(m);
+        ctrl.setController(controller);
+        return node;
 
-        if (m.getPhoto() != null) {
-            p.setImage(new Image(new File(m.getPhoto()).toURI().toString()));
-            p.setFitWidth(200);
-            p.setFitHeight(200);
-            p.setStyle("-fx-padding: 20px");
-        }
-        VBox vbox2 = new VBox();
-        Label label1 = new Label();
-        if (Objects.equals(m.getVille(), null)) {
-            label1.setText("Au centre commercial " + m.getCentre());
-        } else {
-            label1.setText("À "+m.getVille() + ", au centre commercial " + m.getCentre());
-        }
-
-        Label label2 = new Label("Informations complémentaires : "+m.getInfoFr());
-        Label label3 = new Label("Téléphone : " + m.getTelephone()+" - Site web : " + m.getWeb());
-        Label label5 = new Label("Adresse : " + m.getAddr() + " " + m.getCodePostal() + " " + m.getVille());
-        HBox hbox3 = new HBox();
-
-        vbox2.getChildren().add(label1);
-        vbox2.getChildren().add(label5);
-        hbox3.getChildren().add(label3);
-        vbox2.getChildren().add(hbox3);
-        vbox2.getChildren().add(label2);
-
-
-        hbox1.getChildren().add(p);
-        hbox1.getChildren().add(vbox2);
-
-        hbox1.setId("hbox1");
-        vbox2.setId("vbox2");
-        label1.setId("title");
-        return hbox1;
     }
 
     public static Node actu(Actu a) {

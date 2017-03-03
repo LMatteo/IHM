@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Cursor;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
@@ -31,12 +32,21 @@ public class AccControl {
 
     private Button previous;
 
+    private Node accueilPane;
+    private Node galeriePane;
+    private Node magasinPane;
+    private Node infoPane;
+
+
     @FXML
     public void initialize() throws IOException {
-        VBox box = FXMLLoader.load(getClass().getResource("/fxml/enseigne/customer/accueil.fxml"));
+        accueilPane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/customer/accueil.fxml"));
+        galeriePane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/customer/gallerie.fxml"));
+        magasinPane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/customer/magasins.fxml"));
+        infoPane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/customer/infos.fxml"));
         switchBut(accueil);
         pane.setVvalue(0);
-        pane.setContent(box);
+        pane.setContent(accueilPane);
         accueil.setCursor(Cursor.HAND);
     }
 
@@ -50,14 +60,38 @@ public class AccControl {
     }
 
     @FXML
-    void switchPanel(ActionEvent event) throws IOException {
+    void switchAccueil(ActionEvent event) throws IOException {
         Button source = (Button) event.getSource();
-        String id = source.getId();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/enseigne/customer/" + id + ".fxml"));
-        VBox box = loader.load();
-        pane.setContent(box);
+        pane.setContent(accueilPane);
         switchBut(source);
         pane.setVvalue(0);
     }
+
+    @FXML
+    void switchGallerie(ActionEvent event) throws IOException {
+        Button source = (Button) event.getSource();
+        pane.setContent(galeriePane);
+        switchBut(source);
+        pane.setVvalue(0);
+    }
+
+    @FXML
+    void switchMagasins(ActionEvent event) throws IOException {
+        Button source = (Button) event.getSource();
+        pane.setContent(magasinPane);
+        switchBut(source);
+        pane.setVvalue(0);
+    }
+
+    @FXML
+    void switchInfos(ActionEvent event) throws IOException {
+        Button source = (Button) event.getSource();
+        pane.setContent(infoPane);
+        switchBut(source);
+        pane.setVvalue(0);
+    }
+
+
+
 
 }

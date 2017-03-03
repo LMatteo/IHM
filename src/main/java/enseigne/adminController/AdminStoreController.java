@@ -31,12 +31,14 @@ public class AdminStoreController {
     @FXML
     private VBox pane;
 
+    private Magasin selectedMag;
+
     @FXML
     public void initialize() throws IOException {
 
         List<Magasin> magasins = ReadConst.getStoresJson();
         for(Magasin mag : magasins){
-            pane.getChildren().add(ToNode.magasins(mag));
+            pane.getChildren().add(ToNode.magasins(mag,this));
         }
 
 
@@ -92,6 +94,11 @@ public class AdminStoreController {
             }
         }
         w.hide();
+    }
+
+    public void selectMag(Magasin m ){
+        selectedMag = m;
+        System.out.print(selectedMag);
     }
 
 

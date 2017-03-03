@@ -15,4 +15,7 @@ public class MagFilter {
 
     }
 
+    public List<Magasin> toDisplay(){
+        return mags;
+    }
 }
