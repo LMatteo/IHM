@@ -1,6 +1,9 @@
 package enseigne.modele;
 
+import enseigne.modele.actu.Actu;
 import enseigne.modele.magasin.Magasin;
+import enseigne.modele.modele.ActuFilter;
+import enseigne.modele.photo.Photo;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -12,6 +15,21 @@ public class ReadConst {
     public static final String actuPath = "data/enseigne/actu/";
     public static  final String imagePath = "data/enseigne/images";
     public static final String photoPath = "data/enseigne/photo";
+    public static final FileFilter filter = new FileFilter() {
+        @Override
+        public boolean accept(File pathname) {
+            String name = pathname.toString();
+            String[] arr = name.split("\\.");
+            String ext = "";
+            if(arr.length>0) {
+                ext = arr[arr.length - 1];
+            }
+            if(ext.equals("json")){
+                return true;
+            }
+            return false;
+        }
+    };
 
 
     public static String  fileToString(String path) throws IOException{
@@ -25,27 +43,34 @@ public class ReadConst {
         return res.toString();
     }
 
-    public static List<Magasin> getStoresJson() throws IOException{
+    public static List<Magasin> getStoreFromJson() throws IOException{
         File folder = new File(storePath);
-        FileFilter filter = new FileFilter() {
-            @Override
-            public boolean accept(File pathname) {
-                String name = pathname.toString();
-                String[] arr = name.split("\\.");
-                String ext = "";
-                if(arr.length>0) {
-                    ext = arr[arr.length - 1];
-                }
-                if(ext.equals("json")){
-                    return true;
-                }
-                return false;
-            }
-        };
         List<File> files = Arrays.asList(folder.listFiles(filter));
         List<Magasin> magasins = new ArrayList<>();
         for(File file : files){
             magasins.add(new Magasin(file.toString()));
+        }
+        return magasins;
+
+    }
+
+    public static List<Actu> getActuFromJson() throws IOException{
+        File folder = new File(actuPath);
+        List<File> files = Arrays.asList(folder.listFiles(filter));
+        List<Actu> magasins = new ArrayList<>();
+        for(File file : files){
+            magasins.add(new Actu(file.toString()));
+        }
+        return magasins;
+
+    }
+
+    public static List<Photo> getPhotoFromJson() throws IOException{
+        File folder = new File(photoPath);
+        List<File> files = Arrays.asList(folder.listFiles(filter));
+        List<Photo> magasins = new ArrayList<>();
+        for(File file : files){
+            magasins.add(new Photo(file.toString()));
         }
         return magasins;
 
@@ -58,7 +83,7 @@ public class ReadConst {
     public static Magasin getStoreByCenter(String center){
         List<Magasin> mags = new ArrayList<>();
         try{
-            mags = getStoresJson();
+            mags = getStoreFromJson();
         } catch (IOException e) {
             e.printStackTrace();
         }

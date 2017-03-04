@@ -11,7 +11,7 @@ public class MagFilter {
     List<Magasin> mags;
 
     public MagFilter() throws IOException {
-        mags = ReadConst.getStoresJson();
+        mags = ReadConst.getStoreFromJson();
 
     }
 

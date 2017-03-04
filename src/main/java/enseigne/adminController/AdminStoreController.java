@@ -36,7 +36,7 @@ public class AdminStoreController {
     @FXML
     public void initialize() throws IOException {
 
-        List<Magasin> magasins = ReadConst.getStoresJson();
+        List<Magasin> magasins = ReadConst.getStoreFromJson();
         for(Magasin mag : magasins){
             pane.getChildren().add(ToNode.magasins(mag,this));
         }
@@ -61,7 +61,7 @@ public class AdminStoreController {
         root.setStyle("-fx-padding: 20px");
         root.setSpacing(10);
         List<CheckBox> boxes = new ArrayList<>();
-        for(Magasin m : ReadConst.getStoresJson()){
+        for(Magasin m : ReadConst.getStoreFromJson()){
             CheckBox c = new CheckBox(m.getCentre());
             c.setStyle("-fx-font-size: 25px;-fx-padding: 5px");
             boxes.add(c);
