@@ -20,12 +20,15 @@ public class MagFilter {
     }
 
     public void delete(Magasin m){
-        m.delete();
-        mags.remove(m);
+        if(m != null) {
+            mags.remove(m);
+            m.delete();
+        }
     }
 
     public void add(Magasin m) throws IOException{
         mags.add(m);
         m.write();
+
     }
 }

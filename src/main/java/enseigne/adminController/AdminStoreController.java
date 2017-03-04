@@ -65,6 +65,11 @@ public class AdminStoreController {
     }
 
     @FXML
+    void delOne(ActionEvent event) throws IOException {
+        filter.delete(selectedMag);
+        update();
+    }
+    @FXML
     void removeStore(ActionEvent event) throws IOException {
         VBox root = new VBox();
         root.setStyle("-fx-padding: 20px");
@@ -107,17 +112,11 @@ public class AdminStoreController {
 
     public void selectMag(Magasin m ){
         selectedMag = m;
-        System.out.print(selectedMag);
     }
 
     public void addMag(Magasin m) throws IOException{
         filter.add(m);
         update();
     }
-
-
-
-
-
 
 }
