@@ -65,6 +65,19 @@ public class AdminLayoutController {
     }
 
     /**
+     * Switches the style of the top buttons so that the selected screen appears highlighted.
+     *
+     * @param current - the last button used
+     */
+    private void switchButtonStyle(Button current) {
+        if (previous != null) {
+            previous.setStyle("-fx-background-color: " + normal + "; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;");
+        }
+        current.setStyle("-fx-background-color: " + active + "; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;");
+        previous = current;
+    }
+
+    /**
      * Switches to the store editor screen.
      *
      * @param event - the mouse event of the action
@@ -90,21 +103,11 @@ public class AdminLayoutController {
      */
     @FXML
     void goToInfoPratiques(ActionEvent event) throws IOException {
-
-    }
-
-    /**
-     * Switches the style of the top buttons so that the selected screen appears highlighted.
-     *
-     * @param current - the last button used
-     */
-    private void switchButtonStyle(Button current) {
-        if (previous != null) {
-            previous.setStyle("-fx-background-color: " + normal + "; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;");
-        }
-        current.setStyle("-fx-background-color: " + active + "; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;");
-        previous = current;
-
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/admin/info/editInfo.fxml"));
+        ap = loader.load();
+        pane.setContent(ap);
+        switchButtonStyle(infopratiques);
+        pane.setVvalue(0);
     }
 
 }

@@ -13,7 +13,7 @@ public class CentrePaths {
      * Returns the path of a store logo with the given filename.
      *
      * @param logoName - the filename of the logo
-     * @return a file containing the logo
+     * @return the path of the logo
      * @throws MalformedURLException - if failing to find the file
      */
     public static String getLogoPath(String logoName) throws MalformedURLException {
@@ -25,10 +25,20 @@ public class CentrePaths {
      *
      * @param promoName - the filename of the news
      * @return a file containing the news
-      * @throws MalformedURLException - if failing to find the file
+     * @throws MalformedURLException - if failing to find the file
      */
     public static String getNewsPath(String promoName) throws MalformedURLException {
         return new File("data/centre/images/promo/" + promoName).toURI().toURL().toString();
+    }
+
+    /**
+     * Returns the path of the map picture.
+     *
+     * @return the path of the map
+     * @throws MalformedURLException - if failing to find the file
+     */
+    public static String getMapPath() throws MalformedURLException {
+        return new File("data/centre/images/map/map.png").toURI().toURL().toString();
     }
 
 }
