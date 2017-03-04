@@ -55,7 +55,7 @@ public class AccControlAdmin {
     }
 
     @FXML
-    void switchAccueil(ActionEvent event){
+    void switchAccueil(ActionEvent event) {
         Button source = (Button) event.getSource();
         pane.setContent(accueilPane);
         switchBut(source);
