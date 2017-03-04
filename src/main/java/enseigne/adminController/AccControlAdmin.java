@@ -1,8 +1,10 @@
 package enseigne.adminController;
 
+import enseigne.modele.modele.MagFilter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
@@ -11,6 +13,9 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 
 public class AccControlAdmin {
+
+    public static final String color = "#a3d35f";
+    public static final String foncey = "#7cb131";
 
     @FXML
     private ScrollPane pane;
@@ -27,13 +32,64 @@ public class AccControlAdmin {
     @FXML
     private Button adminInfo;
 
+    private Button previous;
+
+    private Node accueilPane;
+    private Node galeriePane;
+    private Node magasinPane;
+    private Node infoPane;
+
     @FXML
-    void switchPanel(ActionEvent event) throws IOException {
+    public void initialize() throws IOException {
+        infoPane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/admin/adminInfo.fxml"));
+        accueilPane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/admin/adminAccueil.fxml"));
+        galeriePane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/admin/adminGallerie.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/enseigne/admin/adminStore.fxml"));
+        magasinPane = loader.load();
+        AdminStoreController ctrl = loader.getController();
+        ctrl.setFilter(new MagFilter());
+
+    }
+
+    @FXML
+    void switchAccueil(ActionEvent event){
         Button source = (Button) event.getSource();
-        String id = source.getId();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/enseigne/admin/" + id + ".fxml"));
-        Node box = loader.load();
-        pane.setContent(box);
+        pane.setContent(accueilPane);
+        switchBut(source);
+        pane.setVvalue(0);
+    }
+
+    @FXML
+    void switchGallerie(ActionEvent event) {
+        Button source = (Button) event.getSource();
+        pane.setContent(galeriePane);
+        switchBut(source);
+        pane.setVvalue(0);
+    }
+
+    @FXML
+    void switchMagasins(ActionEvent event) {
+        Button source = (Button) event.getSource();
+        pane.setContent(magasinPane);
+        switchBut(source);
+        pane.setVvalue(0);
+    }
+
+    @FXML
+    void switchInfos(ActionEvent event) {
+        Button source = (Button) event.getSource();
+        pane.setContent(infoPane);
+        switchBut(source);
+        pane.setVvalue(0);
+    }
+
+    private void switchBut(Button bigButt) {
+        if (previous != null) {
+            previous.setStyle("-fx-background-color: " + color + "; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;");
+        }
+        bigButt.setStyle("-fx-background-color: " + foncey + "; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;");
+        previous = bigButt;
+
     }
 
 }

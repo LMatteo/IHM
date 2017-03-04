@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.adminController.AccControlAdmin">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.adminController.AccControlAdmin">
     <center>
         <ScrollPane fx:id="pane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
     </center>
@@ -30,7 +30,7 @@
                         </ImageView>
                     </children>
                 </AnchorPane>
-                <Button fx:id="adminAccueil" mnemonicParsing="false" onAction="#switchPanel" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #a3d35f; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Accueil" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                <Button fx:id="adminAccueil" mnemonicParsing="false" onAction="#switchAccueil" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #a3d35f; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Accueil" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                     <font>
                         <Font size="35.0" />
                     </font>
@@ -38,7 +38,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button fx:id="adminGallerie" mnemonicParsing="false" onAction="#switchPanel" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #a3d35f; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Gallerie" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                <Button fx:id="adminGallerie" mnemonicParsing="false" onAction="#switchGallerie" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #a3d35f; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Gallerie" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                     <font>
                         <Font size="35.0" />
                     </font>
@@ -46,7 +46,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button fx:id="adminStore" mnemonicParsing="false" onAction="#switchPanel" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #a3d35f; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Nos Magasins" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                <Button fx:id="adminStore" mnemonicParsing="false" onAction="#switchMagasins" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #a3d35f; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Nos Magasins" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                     <font>
                         <Font size="35.0" />
                     </font>
@@ -54,7 +54,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button fx:id="adminInfo" mnemonicParsing="false" onAction="#switchPanel" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #a3d35f; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Infos pratiques" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                <Button fx:id="adminInfo" mnemonicParsing="false" onAction="#switchInfos" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #a3d35f; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Infos pratiques" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                     <font>
                         <Font size="35.0" />
                     </font>
@@ -62,7 +62,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-            <Button fx:id="adminInfo1" mnemonicParsing="false" onAction="#switchPanel" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #a3d35f; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Overview" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+            <Button fx:id="adminInfo1" mnemonicParsing="false" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #a3d35f; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Overview" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                <font>
                   <Font size="35.0" />
                </font>

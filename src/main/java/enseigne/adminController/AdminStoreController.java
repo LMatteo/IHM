@@ -3,6 +3,7 @@ package enseigne.adminController;
 import enseigne.ToNode;
 import enseigne.modele.ReadConst;
 import enseigne.modele.magasin.Magasin;
+import enseigne.modele.modele.MagFilter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -32,11 +33,12 @@ public class AdminStoreController {
     private VBox pane;
 
     private Magasin selectedMag;
+    private MagFilter filter;
 
-    @FXML
-    public void initialize() throws IOException {
 
-        List<Magasin> magasins = ReadConst.getStoreFromJson();
+    public void update() throws IOException {
+        pane.getChildren().clear();
+        List<Magasin> magasins = filter.toDisplay();
         for(Magasin mag : magasins){
             pane.getChildren().add(ToNode.magasins(mag,this));
         }
@@ -44,10 +46,17 @@ public class AdminStoreController {
 
     }
 
+    public void setFilter(MagFilter mag) throws IOException{
+        this.filter = mag;
+        update();
+    }
+
     @FXML
     void addStore(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/enseigne/admin/magasinForm.fxml"));
         Parent rootNode = loader.load();
+        magasinsFormController ctrl = loader.getController();
+        ctrl.setPrevCtrl(this);
         Scene scene = new Scene(rootNode);
         Stage stage = new Stage();
         stage.setScene(scene);
@@ -99,6 +108,11 @@ public class AdminStoreController {
     public void selectMag(Magasin m ){
         selectedMag = m;
         System.out.print(selectedMag);
+    }
+
+    public void addMag(Magasin m) throws IOException{
+        filter.add(m);
+        update();
     }
 
 

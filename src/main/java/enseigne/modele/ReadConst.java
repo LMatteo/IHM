@@ -48,7 +48,8 @@ public class ReadConst {
         List<File> files = Arrays.asList(folder.listFiles(filter));
         List<Magasin> magasins = new ArrayList<>();
         for(File file : files){
-            magasins.add(new Magasin(file.toString()));
+            Magasin mag = new Magasin(file.toString());
+            magasins.add(mag);
         }
         return magasins;
 

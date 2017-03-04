@@ -53,6 +53,7 @@ public class magasinsFormController {
     private Button ajoutMagasin;
 
     private String imagePath;
+    private AdminStoreController prevCtrl;
 
     @FXML
     void ajoutMag(ActionEvent event) throws IOException{
@@ -69,7 +70,7 @@ public class magasinsFormController {
         m.setVille(ville.getText());
         m.setTelephone(telephone.getText());
         m.setCodePostal(codePostal.getText());
-        m.write();
+        prevCtrl.addMag(m);
         Stage stage = (Stage) ajoutMagasin.getScene().getWindow();
         stage.close();
     }
@@ -91,6 +92,10 @@ public class magasinsFormController {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void setPrevCtrl(AdminStoreController ctrl){
+        this.prevCtrl = ctrl;
     }
 
 }

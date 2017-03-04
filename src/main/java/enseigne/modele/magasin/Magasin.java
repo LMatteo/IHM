@@ -179,4 +179,14 @@ public class Magasin extends Deletable {
 
     }
 
+    @Override
+    public boolean equals(Object mag){
+        return mag instanceof Magasin &&
+                ((Magasin) mag).web.equals(this.web);
+    }
+
+    @Override
+    public int hashCode(){
+        return web.hashCode();
+    }
 }

@@ -18,4 +18,14 @@ public class MagFilter {
     public List<Magasin> toDisplay(){
         return mags;
     }
+
+    public void delete(Magasin m){
+        m.delete();
+        mags.remove(m);
+    }
+
+    public void add(Magasin m) throws IOException{
+        mags.add(m);
+        m.write();
+    }
 }
