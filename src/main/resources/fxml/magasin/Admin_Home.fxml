@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="1060.0" minHeight="-Infinity" minWidth="1060.0" prefHeight="800.0" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <HBox prefHeight="798.0" prefWidth="1058.0">
+         <children>
+            <AnchorPane prefHeight="797.0" prefWidth="1059.0">
+               <children>
+                  <Label layoutX="32.0" layoutY="14.0" text="ALERTES" textAlignment="JUSTIFY" wrapText="true">
+                     <font>
+                        <Font name="Aaargh Normal" size="36.0" />
+                     </font>
+                  </Label>
+                  <VBox layoutX="32.0" layoutY="86.0">
+                     <children>
+                        <VBox>
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label contentDisplay="TEXT_ONLY" text="32">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text=" commandes à préparer aujourd'hui">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <TableView prefHeight="169.0" prefWidth="996.0">
+                                <columns>
+                                  <TableColumn prefWidth="84.0" text="Etat" />
+                                  <TableColumn prefWidth="167.0" text="Client" />
+                                    <TableColumn minWidth="0.0" prefWidth="151.0" text="# Commande" />
+                                    <TableColumn prefWidth="398.0" text="Items" />
+                                    <TableColumn prefWidth="203.0" text="Contact" />
+                                </columns>
+                              </TableView>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label contentDisplay="TEXT_ONLY" text="12">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text=" items en quantité limité">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <TableView prefHeight="169.0" prefWidth="996.0">
+                                 <columns>
+                                    <TableColumn prefWidth="192.0" text="Référence" />
+                                    <TableColumn prefWidth="620.0" text="Item" />
+                                    <TableColumn minWidth="0.0" prefWidth="191.0" text="Quantité" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" />
+                           </VBox.margin>
+                        </VBox>
+                        <AnchorPane prefHeight="200.0" prefWidth="1004.0">
+                           <children>
+                              <Label text="CETTE SEMAINE">
+                                 <font>
+                                    <Font name="Aaargh Normal" size="36.0" />
+                                 </font>
+                              </Label>
+                              <VBox layoutY="55.0">
+                                 <children>
+                                    <HBox>
+                                       <children>
+                                          <Label text="Le livre le plus populaire cette semaine est ">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Hyperlink text="Apprendre le vélo">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Hyperlink>
+                                          <Label text=" 27">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text=" ventes">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Label text="Le CD/DVD le plus populaire cette semaine est ">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Hyperlink text="Apprendre le vélo">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Hyperlink>
+                                          <Label text=" 27">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text=" ventes">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                    <HBox>
+                                       <children>
+                                          <Label text="Le stage le plus populaire cette semaine est ">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Hyperlink text="Apprendre le vélo">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Hyperlink>
+                                          <Label text=" 27">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                          <Label text=" ventes">
+                                             <font>
+                                                <Font size="18.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </content>
+</ScrollPane>
