@@ -4,11 +4,9 @@ import enseigne.modele.modele.MagFilter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
@@ -32,11 +30,15 @@ public class AccControlAdmin {
     @FXML
     private Button adminInfo;
 
+    @FXML
+    private Button adminOverview;
+
     private Button previous;
 
     private Node accueilPane;
     private Node galeriePane;
     private Node magasinPane;
+    private Node overviewPane;
     private Node infoPane;
 
     @FXML
@@ -44,6 +46,7 @@ public class AccControlAdmin {
         infoPane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/admin/adminInfo.fxml"));
         accueilPane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/admin/adminAccueil.fxml"));
         galeriePane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/admin/adminGallerie.fxml"));
+        overviewPane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/admin/adminOverview.fxml"));
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/enseigne/admin/adminStore.fxml"));
         magasinPane = loader.load();
         AdminStoreController ctrl = loader.getController();
@@ -79,6 +82,14 @@ public class AccControlAdmin {
     void switchInfos(ActionEvent event) {
         Button source = (Button) event.getSource();
         pane.setContent(infoPane);
+        switchBut(source);
+        pane.setVvalue(0);
+    }
+
+    @FXML
+    void switchOverview(ActionEvent event) {
+        Button source = (Button) event.getSource();
+        pane.setContent(overviewPane);
         switchBut(source);
         pane.setVvalue(0);
     }
