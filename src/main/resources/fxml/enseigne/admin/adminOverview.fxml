@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="paneOld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="700.0" minWidth="-Infinity" prefWidth="1380.0" stylesheets="@style/storeStyle.css" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.adminController.AdminStoreController">
+<VBox fx:id="paneOld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="700.0" minWidth="-Infinity" prefWidth="1380.0" stylesheets="@style/storeStyle.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.adminController.overviewController">
    <children>
       <HBox alignment="TOP_CENTER">
          <children>

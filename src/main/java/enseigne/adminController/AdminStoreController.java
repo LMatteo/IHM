@@ -32,7 +32,6 @@ public class AdminStoreController {
     @FXML
     private VBox pane;
 
-    private Magasin selectedMag;
     private MagFilter filter;
 
 
@@ -66,7 +65,7 @@ public class AdminStoreController {
 
     @FXML
     void delOne(ActionEvent event) throws IOException {
-        filter.delete(selectedMag);
+        filter.delete();
         update();
     }
     @FXML
@@ -111,7 +110,7 @@ public class AdminStoreController {
     }
 
     public void selectMag(Magasin m ){
-        selectedMag = m;
+        filter.onClick(m);
     }
 
     public void addMag(Magasin m) throws IOException{
