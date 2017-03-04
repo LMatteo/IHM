@@ -3,7 +3,7 @@
   "horizontal": true,
   "magasinId": "undefined",
   "name": "Ouverture Burger king",
-  "english": "undefined",
-  "position": 2,
-  "french": "BK"
+  "english": "BKen.png",
+  "position": 3,
+  "french": "BK.png"
 }

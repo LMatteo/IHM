@@ -1,5 +1,6 @@
 package centre.admin.news;
 
+import centre.constant.AlertMessage;
 import centre.model.News;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -14,9 +15,10 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
- * Controller for the sorting order selector screen.
+ * Controller for the selection or deselection of highlighted news
  */
 public class NewsSelectorController {
 
@@ -28,7 +30,7 @@ public class NewsSelectorController {
     private AdminNewsController controller;
 
 
-    public void initializeContents(AdminNewsController controller, List<News> newsList, int sourceId) throws IOException {
+    public void initializeContents(AdminNewsController controller, List<News> newsList, int sourceId, List<News> current) throws IOException {
         this.newsList = newsList;
         this.sourceId = sourceId;
         this.controller = controller;
@@ -46,6 +48,9 @@ public class NewsSelectorController {
             }
             ++i;
             label.setOnMouseClicked((event) -> {
+                for (News news : current) {
+                    news.setPosition(0);
+                }
                 n.setPosition(sourceId);
                 n.save();
                 controller.placeNews();
@@ -58,15 +63,15 @@ public class NewsSelectorController {
 
     @FXML
     public void removeCurrentPromotion(Event event) {
-        News sourceNews = newsList.stream().filter(news -> news.getPosition() == sourceId).findFirst().orElse(null);
-        if (sourceNews == null) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Attention");
-            alert.setContentText("Il n'y a pas de promotion à supprimmer içi");
-            alert.showAndWait();
+        List<News> sourceNews = newsList.stream().filter(news -> news.getPosition() == sourceId).collect(Collectors.toList());
+        ;
+        if (sourceNews.isEmpty()) {
+            AlertMessage.alert(Alert.AlertType.INFORMATION, "Attention", "Il n'y a pas de promotion à supprimer içi");
         } else {
-            sourceNews.setPosition(0);
-            sourceNews.save();
+            for (News n : sourceNews) {
+                n.setPosition(0);
+                n.save();
+            }
             controller.placeNews();
             Stage stage = (Stage) list.getScene().getWindow();
             stage.close();
