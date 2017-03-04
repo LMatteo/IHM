@@ -30,14 +30,17 @@ public class overviewController {
     @FXML
     private BarChart<?, ?> clienteleChart;
 
+
+    public void update(){
+    }
+
     @FXML
     void updateStore(ActionEvent event) {
-        System.out.println("salut update");
+        update();
     }
 
     @FXML
     void visualizeStore(ActionEvent event) {
-        System.out.println("salut visu");
 
     }
 
