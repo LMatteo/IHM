@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="centre.admin.AdminLayoutController">
+    <center>
+        <ScrollPane fx:id="pane" hbarPolicy="NEVER" BorderPane.alignment="CENTER" />
+    </center>
+    <top>
+        <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+            <children>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #84a5c9;">
+                    <children>
+                        <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../images/centre/logoCentre.png" />
+                            </image>
+                        </ImageView>
+                    </children>
+                </AnchorPane>
+                <Pane prefHeight="200.0" prefWidth="1720.0" HBox.hgrow="ALWAYS">
+                    <children>
+                        <Pane prefHeight="200.0" prefWidth="467.0">
+                            <children>
+                                <Button fx:id="actualite" mnemonicParsing="false" onAction="#goToActu" prefHeight="200.0" prefWidth="467.0" style="-fx-background-color: #4B77BE; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Editer actualités" textAlignment="CENTER" textFill="WHITE">
+                                    <font>
+                                        <Font size="40.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Pane>
+                        <Pane layoutX="467.0" prefHeight="200.0" prefWidth="467.0">
+                            <children>
+                                <Button fx:id="boutiques" mnemonicParsing="false" onAction="#goToBoutiques" prefHeight="200.0" prefWidth="467.0" style="-fx-background-color: #4B77BE; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Editer boutiques" textFill="WHITE">
+                                    <font>
+                                        <Font size="40.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Pane>
+                        <Pane layoutX="941.0" prefHeight="200.0" prefWidth="467.0">
+                            <children>
+                                <Button fx:id="infopratiques" layoutX="-7.0" mnemonicParsing="false" onAction="#goToInfoPratiques" prefHeight="200.0" prefWidth="467.0" style="-fx-background-color: #4B77BE; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Editer infos pratiques" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                                    <font>
+                                        <Font size="40.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Pane>
+                    </children>
+                </Pane>
+            </children>
+        </HBox>
+    </top>
+    <left>
+        <Pane maxHeight="1.7976931348623157E308" prefHeight="552.0" prefWidth="200.0" style="-fx-background-color: #4B77BE; -fx-border-color: #ffffff; -fx-border-width: 2 0 0 0;" BorderPane.alignment="CENTER" />
+    </left>
+</BorderPane>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<TitledPane xmlns:fx="http://javafx.com/fxml/1" fx:id="categoryName" alignment="CENTER" animated="false" minWidth="-Infinity" prefWidth="885.0" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="centre.admin.sort.StoreGridController">
+    <font>
+        <Font size="26.0" />
+    </font>
+    <content>
+        <GridPane fx:id="grid" hgap="10.0" vgap="10.0">
+            <columnConstraints>
+                <ColumnConstraints fillWidth="false" hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="-Infinity" minHeight="10.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+        </GridPane>
+    </content>
+</TitledPane>

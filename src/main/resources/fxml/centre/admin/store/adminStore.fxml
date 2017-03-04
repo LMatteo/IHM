@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="650.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="centre.admin.store.AdminStoreController">
+    <children>
+        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="650.0" prefWidth="1400.0" spacing="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#addStore" prefHeight="89.0" prefWidth="769.0" text="Ajouter une boutique">
+                    <font>
+                        <Font size="39.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#editStore" prefHeight="89.0" prefWidth="769.0" text="Modifier une boutique">
+                    <font>
+                        <Font size="39.0" />
+                    </font>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#deleteStore" prefHeight="89.0" prefWidth="769.0" text="Supprimer une boutique">
+                    <font>
+                        <Font size="39.0" />
+                    </font>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#editSort" prefHeight="89.0" prefWidth="769.0" text="Modifier le tri des boutiques">
+                    <font>
+                        <Font size="39.0" />
+                    </font>
+                </Button>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

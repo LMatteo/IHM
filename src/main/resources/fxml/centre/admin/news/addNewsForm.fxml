@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0"
+            prefWidth="781.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="centre.admin.news.addNewsFormController">
+    <children>
+        <VBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="458.0" prefWidth="781.0"
+              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="0.0">
+            <children>
+                <Label alignment="CENTER" prefHeight="75.0" prefWidth="570.0" text="Ajouter une nouvelle promotion"
+                       textAlignment="CENTER">
+                    <font>
+                        <Font size="33.0"/>
+                    </font>
+                </Label>
+                <HBox prefHeight="566.0" prefWidth="1245.0" spacing="20.0">
+                    <children>
+                        <VBox alignment="CENTER" prefHeight="279.0" prefWidth="410.0">
+                            <children>
+                                <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="45.0"
+                                       prefWidth="391.0" text="Nom de la promotion">
+                                    <font>
+                                        <Font name="System Bold" size="19.0"/>
+                                    </font>
+                                </Label>
+                                <TextField fx:id="name" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+                                           minWidth="-Infinity" prefHeight="30.0" prefWidth="300.0"
+                                           promptText="Nom de la promotion"/>
+                                <Separator prefHeight="53.0" prefWidth="391.0"/>
+                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="384.0"
+                                       text="Orientation de la promotion">
+                                    <font>
+                                        <Font name="System Bold" size="19.0"/>
+                                    </font>
+                                </Label>
+                                <AnchorPane prefHeight="0.0" prefWidth="391.0" VBox.vgrow="NEVER">
+                                    <children>
+                                        <RadioButton fx:id="horizontal" layoutX="83.0" layoutY="5.0"
+                                                     mnemonicParsing="false" selected="true" text="Horizontal">
+                                            <toggleGroup>
+                                                <ToggleGroup fx:id="orientation"/>
+                                            </toggleGroup>
+                                            <font>
+                                                <Font size="17.0"/>
+                                            </font>
+                                        </RadioButton>
+                                        <RadioButton fx:id="vertical" layoutX="203.0" layoutY="5.0"
+                                                     mnemonicParsing="false" text="Vertical" toggleGroup="$orientation">
+                                            <font>
+                                                <Font size="17.0"/>
+                                            </font>
+                                        </RadioButton>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </VBox>
+                        <Separator orientation="VERTICAL" prefHeight="200.0"/>
+                        <HBox prefHeight="279.0" prefWidth="378.0">
+                            <children>
+                                <VBox alignment="CENTER" prefHeight="581.0" prefWidth="781.0">
+                                    <children>
+                                        <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="40.0"
+                                               prefWidth="359.0" text="Image de la promotion FR">
+                                            <font>
+                                                <Font name="System Bold" size="19.0"/>
+                                            </font>
+                                        </Label>
+                                        <Button fx:id="fr" mnemonicParsing="false" onAction="#browsePic"
+                                                prefHeight="32.0" prefWidth="136.0" text="Parcourir...">
+                                            <font>
+                                                <Font size="17.0"/>
+                                            </font>
+                                        </Button>
+                                        <Separator prefHeight="57.0" prefWidth="359.0"/>
+                                        <Label alignment="TOP_CENTER" contentDisplay="CENTER" prefHeight="28.0"
+                                               prefWidth="810.0" text="Image de la promotion EN">
+                                            <font>
+                                                <Font name="System Bold" size="19.0"/>
+                                            </font>
+                                            <VBox.margin>
+                                                <Insets bottom="10.0"/>
+                                            </VBox.margin>
+                                        </Label>
+                                        <Button fx:id="en" mnemonicParsing="false" onAction="#browsePic"
+                                                prefHeight="32.0" prefWidth="136.0" text="Parcourir...">
+                                            <font>
+                                                <Font size="17.0"/>
+                                            </font>
+                                        </Button>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+                <Button alignment="CENTER" mnemonicParsing="false" onAction="#confirm" prefHeight="71.0"
+                        prefWidth="384.0" text="Confirmer">
+                    <font>
+                        <Font size="33.0"/>
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="10.0"/>
+                    </VBox.margin>
+                </Button>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0"/>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
