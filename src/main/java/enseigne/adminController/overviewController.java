@@ -6,11 +6,15 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import org.apache.commons.lang.math.RandomUtils;
 
 import java.io.IOException;
@@ -77,7 +81,7 @@ public class overviewController {
     private ObservableList<PieChart.Data> getChiffreAffaireDatas(List<Magasin> magasins){
         List<PieChart.Data> datas= new ArrayList<>();
         for(Magasin m : magasins){
-            m.setChiffreAffaire(RandomUtils.nextInt());
+            m.setChiffreAffaire(Math.abs(RandomUtils.nextInt()));
             PieChart.Data data = new PieChart.Data(m.getCentre(),m.getChiffreAffaire());
             datas.add(data);
         }
@@ -87,7 +91,7 @@ public class overviewController {
     private ObservableList<PieChart.Data> getEmployesDatas(List<Magasin> magasins){
         List<PieChart.Data> datas= new ArrayList<>();
         for(Magasin m : magasins){
-            m.setNbEmpl(RandomUtils.nextInt());
+            m.setNbEmpl(Math.abs(RandomUtils.nextInt()));
             PieChart.Data data = new PieChart.Data(m.getCentre(),m.getNbEmpl());
             datas.add(data);
         }
@@ -97,7 +101,7 @@ public class overviewController {
     private ObservableList<PieChart.Data> getProduitsRenduDatas(List<Magasin> magasins){
         List<PieChart.Data> datas= new ArrayList<>();
         for(Magasin m : magasins){
-            m.setRendu(RandomUtils.nextInt());
+            m.setRendu(Math.abs(RandomUtils.nextInt()));
             PieChart.Data data = new PieChart.Data( m.getCentre(),m.getRendu());
             datas.add(data);
         }
@@ -109,7 +113,16 @@ public class overviewController {
     }
 
     @FXML
-    void visualizeStore(ActionEvent event) {
+    void visualizeStore(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/enseigne/admin/visualizerOverview.fxml"));
+        Parent rootNode = loader.load();
+        overviewVisualizerController ctrl = loader.getController();
+        ctrl.update();
+        Scene scene = new Scene(rootNode);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("To Be or To Have - Données statistiques");
+        stage.show();
 
     }
 
