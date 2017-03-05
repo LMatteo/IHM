@@ -39,7 +39,11 @@ public class ButtonLabels {
     public static String ACCESS_EN = "Access store page";
 
 
-
+    //------------------------------------------
+    // Info screen
+    //------------------------------------------
+    public static String LEGEND_FR = "Légende";
+    public static String LEGEND_EN = "Legend";
 
 
 }

@@ -11,8 +11,10 @@ import java.util.List;
 public class Informations {
 
     public static String MAP_PATH = "/data/centre/images/map/map.png";
+
     private List<String> french;
     private List<String> english;
+
     /**
      * Loads the informational text from the data folder.
      *
@@ -22,6 +24,17 @@ public class Informations {
         InfoParser parser = new InfoParser();
         french = parser.getFrench();
         english = parser.getEnglish();
+    }
+
+    /**
+     * Creates new Informations with the given lines of informational text.
+     *
+     * @param french  - the french lines of the informational text
+     * @param english - the english lines of the informational text
+     */
+    public Informations(List<String> french, List<String> english) {
+        this.french = french;
+        this.english = english;
     }
 
     public static String getMapPath() {
@@ -34,6 +47,16 @@ public class Informations {
 
     public List<String> getEnglish() {
         return english;
+    }
+
+    /**
+     * Writs the content of the information text to the data folder.
+     *
+     * @throws IOException - if failing to write the file
+     */
+    public void save() throws IOException {
+        InfoWriter iw = new InfoWriter(french, english);
+        iw.write();
     }
 
 }

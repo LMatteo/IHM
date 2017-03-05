@@ -1,5 +1,6 @@
 package centre.user;
 
+import centre.constant.ButtonLabels;
 import centre.constant.CentrePaths;
 import centre.model.Informations;
 import centre.model.Store;
@@ -30,6 +31,7 @@ public class InfoController implements LanguageSwitcher {
     @FXML private Label line3;
     @FXML private Label line4;
     @FXML private ImageView mapPic;
+    @FXML private Label legend;
 
     /**
      * Initializes the store data required to fill the map indications.
@@ -72,8 +74,10 @@ public class InfoController implements LanguageSwitcher {
     private void initText() {
         List<String> text;
         if (french) {
+            legend.setText(ButtonLabels.LEGEND_FR);
             text = infos.getFrench();
         } else {
+            legend.setText(ButtonLabels.LEGEND_EN);
             text = infos.getEnglish();
         }
         for (int i = 0; i < text.size(); i++) {

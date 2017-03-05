@@ -1,5 +1,6 @@
 package centre.admin;
 
+import centre.admin.info.EditInfoController;
 import centre.admin.news.AdminNewsController;
 import centre.admin.store.AdminStoreController;
 import centre.model.NewsList;
@@ -105,6 +106,8 @@ public class AdminLayoutController {
     void goToInfoPratiques(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/admin/info/editInfo.fxml"));
         ap = loader.load();
+        EditInfoController controller = loader.getController();
+        controller.initializeContent();
         pane.setContent(ap);
         switchButtonStyle(infopratiques);
         pane.setVvalue(0);

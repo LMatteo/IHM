@@ -19,7 +19,7 @@
             <children>
                 <VBox prefHeight="325.0" prefWidth="425.0">
                     <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="4.0" prefWidth="425.0" text="Légende">
+                        <Label fx:id="legend" alignment="CENTER" contentDisplay="CENTER" prefHeight="4.0" prefWidth="425.0" text="Légende">
                             <font>
                                 <Font size="28.0" />
                             </font>
