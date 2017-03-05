@@ -109,7 +109,16 @@ public class overviewController {
     }
 
     @FXML
-    void updateStore(ActionEvent event) {
+    void updateStore(ActionEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/enseigne/admin/updaterOverview.fxml"));
+        Parent rootNode = loader.load();
+        overviewUpdatedController ctrl = loader.getController();
+        ctrl.update();
+        Scene scene = new Scene(rootNode);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.setTitle("Modification des données");
+        stage.show();
     }
 
     @FXML
@@ -121,7 +130,7 @@ public class overviewController {
         Scene scene = new Scene(rootNode);
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.setTitle("To Be or To Have - Données statistiques");
+        stage.setTitle("Données statistiques");
         stage.show();
 
     }
