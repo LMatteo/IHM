@@ -107,6 +107,7 @@ public class LayoutController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/user/store.fxml"));
         ap = loader.load();
         StoreController controller = loader.getController();
+        controller.setLayout(this);
         controller.initializeContent(loadedStores);
         switchCurrentController(controller);
         pane.setContent(ap);
