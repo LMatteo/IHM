@@ -38,6 +38,7 @@ public class MagControl {
 
     private Magasin m ;
     private AdminStoreController controller;
+    private boolean selected;
 
     public void setMagasin(Magasin m ){
         this.m = m;
@@ -57,14 +58,28 @@ public class MagControl {
         info.setText("Informations complémentaires : "+m.getInfoFr());
         tel.setText("Téléphone : " + m.getTelephone()+" - Site web : " + m.getWeb());
         addresse.setText("Adresse : " + m.getAddr() + " " + m.getCodePostal() + " " + m.getVille());
-
+        hbox1.setStyle("-fx-background-color: #d0d0d0");
     }
 
     @FXML
     void selected(MouseEvent event) {
         if(controller != null){
             controller.selectMag(m);
+            changeStyle();
         }
+    }
+
+    public void changeStyle(){
+        String style = hbox1.getStyle();
+        if(!selected){
+            style = style.replace("#d0d0d0","white");
+
+            hbox1.setStyle(style);
+        } else {
+            style = style.replaceAll("white","#d0d0d0");
+            hbox1.setStyle(style);
+        }
+        selected = !selected;
     }
 
     public void setController(AdminStoreController controller){
