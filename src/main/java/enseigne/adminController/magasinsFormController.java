@@ -54,10 +54,14 @@ public class magasinsFormController {
 
     private String imagePath;
     private AdminStoreController prevCtrl;
+    private Magasin m;
 
     @FXML
+    public void initialize(){
+        m = new Magasin();
+    }
+    @FXML
     void ajoutMag(ActionEvent event) throws IOException{
-        Magasin m = new Magasin();
         m.setAddr(adresse.getText());
         m.setCentre(centreCommercial.getText());
         m.setInfoFr(informationsFr.getText());
@@ -99,6 +103,22 @@ public class magasinsFormController {
 
     public void setPrevCtrl(AdminStoreController ctrl){
         this.prevCtrl = ctrl;
+    }
+
+    public void setMag(Magasin m){
+        this.m = m ;
+        centreCommercial.setText(m.getCentre());
+        adresse.setText(m.getAddr());
+        ville.setText(m.getVille());
+        codePostal.setText(m.getCodePostal());
+        try {
+            logoPreview.setImage(new Image(m.getPhoto()));
+        }catch (Exception e){}
+        informationsFr.setText(m.getInfoFr());
+        informationsEN.setText(m.getInfoEn());
+        telephone.setText(m.getTelephone());
+        web.setText(m.getWeb());
+        imagePath = m.getPhoto();
     }
 
 }
