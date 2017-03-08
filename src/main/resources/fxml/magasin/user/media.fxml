@@ -5,8 +5,7 @@
 <?import javafx.scene.text.*?>
 
 <ScrollPane prefHeight="748.0" prefWidth="1080.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.111"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="magasin.GoToControl">
+            xmlns:fx="http://javafx.com/fxml/1">
     <content>
         <AnchorPane prefHeight="737.0" prefWidth="1076.0">
             <children>
