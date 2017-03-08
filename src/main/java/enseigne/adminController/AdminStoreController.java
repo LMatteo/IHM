@@ -5,6 +5,7 @@ import enseigne.modele.ReadConst;
 import enseigne.modele.magasin.Magasin;
 import enseigne.modele.modele.MagFilter;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -23,11 +24,7 @@ import java.util.List;
 public class AdminStoreController {
 
 
-    @FXML
-    private Button add;
 
-    @FXML
-    private Button delete;
 
     @FXML
     private VBox pane;
@@ -64,49 +61,18 @@ public class AdminStoreController {
     }
 
     @FXML
-    void delOne(ActionEvent event) throws IOException {
-        filter.delete();
-        update();
-    }
-    @FXML
-    void removeStore(ActionEvent event) throws IOException {
-        VBox root = new VBox();
-        root.setStyle("-fx-padding: 20px");
-        root.setSpacing(10);
-        List<CheckBox> boxes = new ArrayList<>();
-        for(Magasin m : ReadConst.getStoreFromJson()){
-            CheckBox c = new CheckBox(m.getCentre());
-            c.setStyle("-fx-font-size: 25px;-fx-padding: 5px");
-            boxes.add(c);
-            root.getChildren().add(c);
-        }
-
-        Button b = new Button("Supprimer les magasins sélectionnés");
-        b.setStyle("-fx-font-size: 25px");
-        root.getChildren().add(b);
-        b.setOnAction(event1 -> removeSelected(boxes));
-        ScrollPane scroll = new ScrollPane();
-        scroll.setContent(root);
-        Scene scene = new Scene(scroll,500,500);
+    void modifyStore(ActionEvent event) throws IOException {
+        if(filter.selected() == null) return ;
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/enseigne/admin/magasinForm.fxml"));
+        Parent rootNode = loader.load();
+        magasinsFormController ctrl = loader.getController();
+        ctrl.setPrevCtrl(this);
+        ctrl.setMag(filter.selected());
+        Scene scene = new Scene(rootNode);
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.setTitle("Suppression");
+        stage.setTitle("Nouvelle boutique");
         stage.show();
-    }
-
-    private void removeSelected(List<CheckBox> list){
-        Window w = list.get(0).getScene().getWindow();
-        for(CheckBox c : list){
-            if(c.isSelected()){
-                Magasin m = ReadConst.getStoreByCenter(c.getText());
-                if(m != null){
-                    m.setPath(ReadConst.storePath);
-                    m.setName(m.getWeb());
-                    m.delete();
-                }
-            }
-        }
-        w.hide();
     }
 
     public void selectMag(Magasin m ){
@@ -116,6 +82,11 @@ public class AdminStoreController {
     public void addMag(Magasin m) throws IOException{
         filter.add(m);
         update();
+    }
+
+    @FXML
+    public void delOne(ActionEvent event){
+        filter.delete();
     }
 
 }

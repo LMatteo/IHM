@@ -19,6 +19,13 @@ public class MagFilter {
 
     }
 
+    public Magasin selected(){
+        if(selected.size() ==1){
+            return selected.get(0);
+        }
+        return null;
+    }
+
     public List<Magasin> toDisplay(){
         return mags;
     }
