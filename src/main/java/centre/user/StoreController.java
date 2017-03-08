@@ -52,8 +52,7 @@ public class StoreController implements LanguageSwitcher {
      * @throws IOException        - if failing to load one of the files
      * @throws URISyntaxException - if failing to find one of the folders
      */
-    @FXML
-    public void initialize() throws IOException, URISyntaxException {
+    public void initializeContent() throws IOException, URISyntaxException {
         loadedStores = new StoreList();
         initSort();
         createMenuItems();

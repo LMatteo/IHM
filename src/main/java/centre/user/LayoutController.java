@@ -114,6 +114,7 @@ public class LayoutController {
         ap = loader.load();
         StoreController controller = loader.getController();
         controller.setLayout(this);
+        controller.initializeContent();
         switchCurrentController(controller);
         pane.setContent(ap);
         switchButtonStyle(boutiques);

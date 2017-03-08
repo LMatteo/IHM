@@ -1,26 +1,26 @@
 {
-  "name": "Alphabetiquement",
   "englishName": "Alphabetically",
+  "name": "Alphabetiquement",
   "categories": [
     {
-      "french": "A-C",
-      "english": "A-C"
+      "english": "A-C",
+      "french": "A-C"
     },
     {
-      "french": "D-G",
-      "english":"D-G"
+      "english": "D-G",
+      "french": "D-G"
     },
     {
-      "french": "H-M",
-      "english": "H-M"
+      "english": "H-M",
+      "french": "H-M"
     },
     {
-      "french": "N-T",
-      "english": "N-T"
+      "english": "N-T",
+      "french": "N-T"
     },
     {
-      "french": "U-Z",
-      "english": "U-Z"
+      "english": "U-Z",
+      "french": "U-Z"
     }
   ]
 }

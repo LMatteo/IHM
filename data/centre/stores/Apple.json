@@ -1,0 +1,21 @@
+{
+  "logoName": "Apple.jpg",
+  "enseigneId": "",
+  "magasinId": "",
+  "name": "Apple",
+  "mapId": 13,
+  "location": "Niveau 1",
+  "categories": [
+    {
+      "english": "Telecommunications",
+      "french": "Téléphonie"
+    },
+    {
+      "english": "A-C",
+      "french": "A-C"
+    }
+  ],
+  "promotionEnglish": "Get a free 3 months Apple music gift card with the purchase of Sonos speakers ! You can use it to subscribe to Apple music or to buy other apple products.",
+  "locationEnglish": "Level 1",
+  "promotionText": "Recevez une Carte Cadeau Apple Music de 3 mois à l\u2019achat d\u2019une enceinte Sonos éligible ! Vous pourrez l\u2019utiliser pour souscrire un abonnement Apple Music ou pour acheter d\u2019autres produits et services Apple."
+}
