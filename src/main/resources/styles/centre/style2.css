@@ -1,0 +1,100 @@
+.active {
+    -fx-background-color : #DB0A5B !important;
+}
+
+.root{
+    -fx-accent: #F1A9A0;
+    -fx-focus-color: #F1A9A0;
+}
+
+.border {
+    -fx-background-color : linear-gradient(#F64747, #F1A9A0);
+}
+
+.border-down,
+.border-down-full{
+    -fx-text-fill : #ffffff;
+    -fx-background-color : #F1A9A0;
+}
+
+.border-up {
+    -fx-background-color : #F64747;
+}
+
+.button-top {
+    -fx-background-color: #F64747;
+    -fx-background-radius: 20;
+    -fx-background-insets: 0,1,2,3,0;
+    -fx-font: 35 "Berlin Sans FB";
+}
+.title {
+    -fx-text-fill: #DB0A5B;
+    -fx-effect: dropshadow( one-pass-box , rgba(0,0,0,0.9) , 1, 0.0 , 0 , 5);
+}
+
+.sort-button,
+.search-button {
+    -fx-background-color : #DB0A5B;
+    -fx-text-fill: WHITE;
+}
+
+.sort-button .label {
+    -fx-text-fill: WHITE;
+}
+
+.search-button:pressed,
+.sort-button:pressed {
+    -fx-background-color : derive( #DB0A5B, -40% )
+}
+
+.context-menu .label{
+    -fx-text-fill: BLACK;
+}
+
+.titled-pane > .title > .arrow-button .arrow {
+    -fx-background-color: #F64747, #F64747;
+    -fx-background-insets: 1 0 -1 0, 0;
+    -fx-padding: 0.25em 0.3125em 0.25em 0.3125em;
+    -fx-shape: "M 0 0 h 7 l -3.5 4 z";
+}
+
+.titled-pane:focused > .title > .arrow-button .arrow {
+    -fx-border-color: red
+}
+
+.logo-bout {
+    -fx-background-color : #ffffff;
+    -fx-border-color:  #ffffff;
+    -fx-border-width : 0 1 0 0;
+}
+
+.nom-bout,
+.page-bout {
+   -fx-background-color : #f64747;
+}
+
+.nom-bout > .label,
+.page-bout > .label {
+   -fx-text-fill: WHITE;
+}
+
+.info-container-bout {
+    -fx-border-color:  #f64747;
+    -fx-border-width : 2 2 2 2;
+}
+
+.container-info {
+    -fx-background-color: #f64747;
+    text-fill-color : WHITE;
+}
+
+.container-info .label {
+    -fx-background-color: #f64747;
+    text-fill-color : WHITE;
+    -fx-font: 32 "Berlin Sans FB";
+}
+
+.legend {
+    -fx-border-color:  #f64747;
+    -fx-border-width : 2 2 2 2;
+}

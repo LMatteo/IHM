@@ -4,7 +4,9 @@
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
-<TitledPane xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER" animated="false" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="centre.user.StoreCategoryController">
+<TitledPane alignment="CENTER" style="-fx-background-color: ;" styleClass="tilted-panel"
+            xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="centre.user.StoreCategoryController">
     <content>
         <VBox fx:id="items" prefHeight="200.0" prefWidth="100.0" spacing="40.0" style="-fx-background-color: #ffffff; -fx-border-style: solid; -fx-border-color: #7f8c8d;" />
     </content>

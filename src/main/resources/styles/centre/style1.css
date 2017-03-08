@@ -1,0 +1,81 @@
+.active {
+    -fx-background-color: #84a5c9 !important;
+}
+
+.border {
+    -fx-background-color : #4B77BE;
+    -fx-border-color : #ffffff;
+    -fx-border-width : 2 0 0 0;
+}
+
+.border-down {
+    -fx-background-color : #dddddd;
+    -fx-border-style  : solid;
+    -fx-border-color : white;
+    -fx-border-width : 0 2 0 2;
+}
+
+.border-down-full {
+    -fx-background-color : #dddddd;
+}
+
+.border-up {
+    -fx-background-color : #84a5c9;
+}
+
+.button-top {
+    -fx-background-color: #4B77BB;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 0 0 0 2;
+}
+
+.title {
+    -fx-text-fill: #4b77be
+}
+
+.sort-button,
+.search-button {
+    -fx-background-color : #4B77BE;
+    -fx-text-fill: WHITE;
+    -fx-background-radius: 0;
+}
+
+.sort-button .label {
+    -fx-text-fill: WHITE;
+}
+
+.search-button:pressed,
+.sort-button:pressed {
+ -fx-background-color : derive( #4B77BE, -40% )
+}
+
+.logo-bout {
+    -fx-background-color : #ffffff;
+    -fx-border-color:  #7f8c8d;
+    -fx-border-width : 0 1 0 0;
+}
+
+.location-bout {
+    -fx-background-color : #ffffff;
+    -fx-border-color:  #7f8c8d;
+    -fx-border-width : 1 1 0 0;
+}
+
+.nom_bout {
+    -fx-border-color:  #7f8c8d;
+    -fx-border-width : 0 0 1 0;
+}
+
+.descr-bout {
+    -fx-background-color : #ffffff;
+}
+
+.page-bout {
+    -fx-border-color:  #7f8c8d;
+    -fx-border-width : 1 0 0 0;
+}
+
+.container-info {
+    -fx-background-color: #84a5c9
+    text-fill-colo : WHITE;
+}

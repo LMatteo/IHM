@@ -9,6 +9,8 @@ import java.net.MalformedURLException;
  */
 public class CentrePaths {
 
+    public static String PATHTOLOGO = "/images/centre/logoCentre.png";
+
     /**
      * Returns the path of a store logo with the given filename.
      *

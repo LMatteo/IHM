@@ -1,4 +1,5 @@
 import centre.constant.AlertMessage;
+import centre.constant.CentrePaths;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -7,7 +8,6 @@ import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,7 +37,7 @@ public class Launcher extends Application {
     }
 
     private String part = "--centre";
-    private List<String> styles = new ArrayList<>();
+    private String style = "/styles/centre/style1.css";
     private boolean adminMode = false;
 
     /**
@@ -50,6 +50,10 @@ public class Launcher extends Application {
             switch (arg) {
                 case "-a":
                     adminMode = true;
+                    break;
+                case "--alternate":
+                    style = "/styles/centre/style2.css";
+                    CentrePaths.PATHTOLOGO = "/images/centre/logoCentre2.png";
                     break;
                 case "--centre":
                 case "--enseigne":
@@ -89,9 +93,7 @@ public class Launcher extends Application {
         }
         Parent rootNode = FXMLLoader.load(getClass().getResource(path));
         Scene scene = adminMode ? new Scene(rootNode, 1600, 900) : new Scene(rootNode, 1280, 1024);
-        for (String style : styles) {
-            scene.getStylesheets().add(style);
-        }
+        scene.getStylesheets().add(style);
         stage.setTitle("Borne");
         stage.setScene(scene);
         stage.show();
