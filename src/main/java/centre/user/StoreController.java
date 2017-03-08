@@ -86,12 +86,16 @@ public class StoreController implements LanguageSwitcher {
     private void createMenuItems() {
         sortMenu.getItems().clear();
         for (SortOrder order : sortOrders) {
-            MenuItem item;
+            MenuItem item = new MenuItem();
+            Label size = new Label();
+            size.setStyle("-fx-font: 20 System");
+            size.setPrefSize(207, 50);
             if (french) {
-                item = new MenuItem(order.getName());
+                size.setText(order.getName());
             } else {
-                item = new MenuItem(order.getEnglishName());
+                size.setText(order.getEnglishName());
             }
+            item.setGraphic(size);
             item.setOnAction(event -> {
                 clearSearchResult();
                 if (french) {

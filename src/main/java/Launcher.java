@@ -1,7 +1,9 @@
+import centre.constant.AlertMessage;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -65,6 +67,9 @@ public class Launcher extends Application {
      */
     private void exit() {
         System.out.println(INVALID_ARGS);
+        AlertMessage.alert(Alert.AlertType.ERROR, "Mauvais arguments utilisés", "Par défaut, la vue client du" +
+                " centre sera chargée. Veuillez vous référer au readme pour plus d'informations sur les " +
+                "arguments disponibles.");
         System.exit(1);
     }
 
