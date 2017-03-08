@@ -34,7 +34,7 @@ public class StoreController implements LanguageSwitcher {
     private boolean french = true;
     private LayoutController layout;
 
-    @FXML private TextArea searchBar;
+    @FXML private TextField searchBar;
     @FXML private VBox search;
     @FXML private VBox accBox;
     @FXML private Button searchButton;
