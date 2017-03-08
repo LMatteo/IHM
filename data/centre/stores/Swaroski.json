@@ -1,0 +1,21 @@
+{
+  "logoName": "Swaroski.jpg",
+  "enseigneId": "",
+  "magasinId": "",
+  "name": "Swaroski",
+  "mapId": 10,
+  "location": "RDC, entrée sud",
+  "categories": [
+    {
+      "english": "Beauty",
+      "french": "Beauté"
+    },
+    {
+      "english": "Fashion",
+      "french": "Mode"
+    }
+  ],
+  "promotionEnglish": "Come discover our spring collection",
+  "locationEnglish": "Level 0, south",
+  "promotionText": "Venez découvrir la collection du printemps"
+}
