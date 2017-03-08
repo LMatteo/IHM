@@ -16,7 +16,6 @@ public class NewsWriter {
      * Creates a new news writer
      *
      * @param filename - the requested file name
-     * @throws IOException - if failing to create the writer
      */
     public NewsWriter(String filename) {
         try {

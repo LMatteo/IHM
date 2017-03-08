@@ -24,7 +24,7 @@ public class News {
      */
     public News(File file) throws IOException {
         NewsParser np = new NewsParser(file);
-        fileName = file.getName();
+        fileName = file.getName().substring(0, file.getName().lastIndexOf('.'));
         name = np.getProperty("name");
         date = np.getDate();
         position = np.getPosition();
