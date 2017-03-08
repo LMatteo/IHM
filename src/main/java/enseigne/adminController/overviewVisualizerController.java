@@ -57,6 +57,11 @@ public class overviewVisualizerController {
     }
 
     @FXML
+    void closeWindow(){
+        mainBox.getScene().getWindow().hide();
+    }
+
+    @FXML
     void displaySelected(ActionEvent event) {
         mainBox.setVisible(true);
         Magasin m = ReadConst.getStoreByCenter(choiceBox.getSelectionModel().getSelectedItem());

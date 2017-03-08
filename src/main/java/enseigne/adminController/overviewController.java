@@ -32,8 +32,6 @@ public class overviewController {
     @FXML
     private Button updateStore;
 
-    @FXML
-    private Button updateBtn;
 
     @FXML
     private PieChart chiffreAffaireChart;
@@ -66,8 +64,7 @@ public class overviewController {
     private MagFilter filter;
 
 
-    @FXML
-    public void update(ActionEvent event) throws IOException {
+    public void update() throws IOException {
         filter = new MagFilter();
         List<Magasin> magasins = filter.toDisplay();
         chiffreAffaireChart.setData(getChiffreAffaireDatas(magasins));
