@@ -68,7 +68,9 @@ public class magasinsFormController {
         m.setCodePostal(codePostal.getText());
         String path = "data/enseigne/images";
         String[] imageName = imagePath.split("/");
-        path = path + imageName[imageName.length-1];
+        if(imageName.length>0) {
+            path = path + imageName[imageName.length - 1];
+        }
         m.setPhoto(path);
         m.setVille(ville.getText());
         m.setTelephone(telephone.getText());

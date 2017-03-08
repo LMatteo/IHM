@@ -8,7 +8,9 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Magasin extends Deletable {
@@ -27,12 +29,12 @@ public class Magasin extends Deletable {
     private int rendu;
     private int nbEmpl;
     private int maint;
-    private Map<Integer,Integer> pointe;
+    private List<Integer> pointe;
     private Map<Integer,Integer> age;
 
     public Magasin() {
         super.setPath(ReadConst.storePath);
-        pointe = new HashMap<>();
+        pointe = new ArrayList<>();
         age = new HashMap<>();
     }
 
@@ -149,11 +151,11 @@ public class Magasin extends Deletable {
         this.maint = maint;
     }
 
-    public Map<Integer, Integer> getPointe() {
+    public List<Integer> getPointe() {
         return pointe;
     }
 
-    public void setPointe(Map<Integer, Integer> pointe) {
+    public void setPointe(List<Integer> pointe) {
         this.pointe = pointe;
     }
 

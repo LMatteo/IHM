@@ -5,6 +5,7 @@
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -13,12 +14,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <ScrollPane hbarPolicy="NEVER" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.adminController.overviewVisualizerController">
    <content>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="700.0" minWidth="-Infinity" prefHeight="800.0" prefWidth="650.0">
          <children>
-            <VBox alignment="TOP_CENTER" layoutX="-8.0" prefHeight="764.0" prefWidth="652.0">
+            <VBox alignment="TOP_CENTER" layoutX="-8.0" prefHeight="735.0" prefWidth="652.0">
                <children>
                   <VBox alignment="TOP_CENTER" prefHeight="78.0" prefWidth="200.0">
                      <children>
@@ -45,7 +45,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </padding>
                   </ComboBox>
-                  <VBox fx:id="mainBox">
+                  <VBox fx:id="mainBox" alignment="TOP_CENTER">
                      <children>
                         <HBox alignment="TOP_CENTER" prefHeight="42.0" prefWidth="640.0">
                            <children>
@@ -153,6 +153,11 @@
                   <Insets left="30.0" right="30.0" />
                </padding>
             </VBox>
+            <Button layoutX="269.0" layoutY="735.0" mnemonicParsing="false" onAction="#closeWindow" text="Fermer" textAlignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </content>

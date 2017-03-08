@@ -40,13 +40,15 @@ public class AccControlAdmin {
     private Node magasinPane;
     private Node overviewPane;
     private Node infoPane;
+    private FXMLLoader overviewPaneLoader;
 
     @FXML
     public void initialize() throws IOException {
         infoPane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/admin/adminInfo.fxml"));
         accueilPane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/admin/adminAccueil.fxml"));
         galeriePane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/admin/adminGallerie.fxml"));
-        overviewPane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/admin/adminOverview.fxml"));
+        overviewPaneLoader = new FXMLLoader(getClass().getResource("/fxml/enseigne/admin/adminOverview.fxml"));
+        overviewPane = overviewPaneLoader.load();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/enseigne/admin/adminStore.fxml"));
         magasinPane = loader.load();
         AdminStoreController ctrl = loader.getController();
@@ -90,6 +92,12 @@ public class AccControlAdmin {
     void switchOverview(ActionEvent event) {
         Button source = (Button) event.getSource();
         pane.setContent(overviewPane);
+        overviewController ctrl = overviewPaneLoader.getController();
+        try {
+            ctrl.update();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         switchBut(source);
         pane.setVvalue(0);
     }

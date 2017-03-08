@@ -2,7 +2,9 @@ package enseigne.modele.magasin;
 
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public enum MagAttribute implements MagHandler {
@@ -70,13 +72,13 @@ public enum MagAttribute implements MagHandler {
         @Override
         public void assign(Magasin mag, JSONObject json) {
             json = json.getJSONObject("pointe");
-            Map<Integer,Integer> map = new HashMap<>();
-            for(int i = 0;i<25;i++){
+            List<Integer> list = new ArrayList<>();
+            for(int i = 0;i<5;i++){
                 if(json.has(Integer.toString(i))){
-                    map.put(i,json.getInt(Integer.toString(i)));
+                    list.add(json.getInt(Integer.toString(i)));
                 }
             }
-            mag.setPointe(map);
+            mag.setPointe(list);
         }
         @Override
         public void put(Magasin mag, JSONObject json){

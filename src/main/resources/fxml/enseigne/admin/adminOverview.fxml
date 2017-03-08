@@ -18,14 +18,6 @@
    <children>
       <HBox alignment="TOP_CENTER">
          <children>
-            <Button fx:id="updateBtn" minWidth="250.0" mnemonicParsing="false" onAction="#update" text="update">
-               <font>
-                  <Font size="20.0" />
-               </font>
-               <HBox.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </HBox.margin>
-            </Button>
             <Button fx:id="visualizeStore" minWidth="250.0" mnemonicParsing="false" onAction="#visualizeStore" text="Visualiser les statistiques d'un magasin">
                <font>
                   <Font size="20.0" />

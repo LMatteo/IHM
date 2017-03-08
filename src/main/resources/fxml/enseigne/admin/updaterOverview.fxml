@@ -26,7 +26,7 @@
                               <Font size="27.0" />
                            </font>
                         </Label>
-                        <Label text="pour modifier les données">
+                        <Label fx:id="minus0" text="pour modifier les données">
                            <font>
                               <Font size="27.0" />
                            </font>
@@ -76,12 +76,12 @@
                                     <Insets left="15.0" />
                                  </HBox.margin>
                                  <children>
-                                    <TextField prefWidth="250.0">
+                                    <TextField fx:id="chiffreAffaireLabel" prefWidth="250.0">
                                        <VBox.margin>
                                           <Insets top="10.0" />
                                        </VBox.margin>
                                     </TextField>
-                                    <TextField prefWidth="250.0">
+                                    <TextField fx:id="employesLabel" prefWidth="250.0">
                                        <VBox.margin>
                                           <Insets top="10.0" />
                                        </VBox.margin>
@@ -152,7 +152,7 @@
                                                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                                          </padding>
                                                       </Button>
-                                                      <TextField prefHeight="41.0" prefWidth="155.0">
+                                                      <TextField fx:id="age0" prefHeight="41.0" prefWidth="155.0">
                                                          <padding>
                                                             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                          </padding>
@@ -180,7 +180,7 @@
                                                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                                          </padding>
                                                       </Button>
-                                                      <TextField prefHeight="41.0" prefWidth="155.0">
+                                                      <TextField fx:id="age15" prefHeight="41.0" prefWidth="155.0">
                                                          <padding>
                                                             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                          </padding>
@@ -208,7 +208,7 @@
                                                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                                          </padding>
                                                       </Button>
-                                                      <TextField prefHeight="41.0" prefWidth="155.0">
+                                                      <TextField fx:id="age30" prefHeight="41.0" prefWidth="155.0">
                                                          <padding>
                                                             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                          </padding>
@@ -236,7 +236,7 @@
                                                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                                          </padding>
                                                       </Button>
-                                                      <TextField prefHeight="41.0" prefWidth="155.0">
+                                                      <TextField fx:id="age45" prefHeight="41.0" prefWidth="155.0">
                                                          <padding>
                                                             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                          </padding>
@@ -264,7 +264,7 @@
                                                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                                          </padding>
                                                       </Button>
-                                                      <TextField prefHeight="41.0" prefWidth="155.0">
+                                                      <TextField fx:id="age60" prefHeight="41.0" prefWidth="155.0">
                                                          <padding>
                                                             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                          </padding>
@@ -346,7 +346,7 @@
                                              <children>
                                                 <HBox>
                                                    <children>
-                                                      <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="-">
+                                                      <Button mnemonicParsing="false" onAction="#minusHoraire0" prefHeight="30.0" prefWidth="50.0" text="-">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -354,12 +354,12 @@
                                                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                                          </padding>
                                                       </Button>
-                                                      <TextField prefHeight="41.0" prefWidth="155.0">
+                                                      <TextField fx:id="horaire8" prefHeight="41.0" prefWidth="155.0">
                                                          <padding>
                                                             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                          </padding>
                                                       </TextField>
-                                                      <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="+" textAlignment="CENTER">
+                                                      <Button mnemonicParsing="false" onAction="#plusHoraire8" prefHeight="30.0" prefWidth="50.0" text="+" textAlignment="CENTER">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -374,7 +374,7 @@
                                                 </HBox>
                                                 <HBox>
                                                    <children>
-                                                      <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="-">
+                                                      <Button mnemonicParsing="false" onAction="#minusHoraire10" prefHeight="30.0" prefWidth="50.0" text="-">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -382,12 +382,12 @@
                                                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                                          </padding>
                                                       </Button>
-                                                      <TextField prefHeight="41.0" prefWidth="155.0">
+                                                      <TextField fx:id="horaire10" prefHeight="41.0" prefWidth="155.0">
                                                          <padding>
                                                             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                          </padding>
                                                       </TextField>
-                                                      <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="+" textAlignment="CENTER">
+                                                      <Button mnemonicParsing="false" onAction="#plusHoraire10" prefHeight="30.0" prefWidth="50.0" text="+" textAlignment="CENTER">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -402,7 +402,7 @@
                                                 </HBox>
                                                 <HBox>
                                                    <children>
-                                                      <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="-">
+                                                      <Button mnemonicParsing="false" onAction="#minusHoraire12" prefHeight="30.0" prefWidth="50.0" text="-">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -410,12 +410,12 @@
                                                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                                          </padding>
                                                       </Button>
-                                                      <TextField prefHeight="41.0" prefWidth="155.0">
+                                                      <TextField fx:id="horaire12" prefHeight="41.0" prefWidth="155.0">
                                                          <padding>
                                                             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                          </padding>
                                                       </TextField>
-                                                      <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="+" textAlignment="CENTER">
+                                                      <Button mnemonicParsing="false" onAction="#plusHoraire12" prefHeight="30.0" prefWidth="50.0" text="+" textAlignment="CENTER">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -430,7 +430,7 @@
                                                 </HBox>
                                                 <HBox>
                                                    <children>
-                                                      <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="-">
+                                                      <Button mnemonicParsing="false" onAction="#minusHoraire14" prefHeight="30.0" prefWidth="50.0" text="-">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -438,12 +438,12 @@
                                                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                                          </padding>
                                                       </Button>
-                                                      <TextField prefHeight="41.0" prefWidth="155.0">
+                                                      <TextField fx:id="horaire14" prefHeight="41.0" prefWidth="155.0">
                                                          <padding>
                                                             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                          </padding>
                                                       </TextField>
-                                                      <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="+" textAlignment="CENTER">
+                                                      <Button mnemonicParsing="false" onAction="#plusHoraire14" prefHeight="30.0" prefWidth="50.0" text="+" textAlignment="CENTER">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -458,7 +458,7 @@
                                                 </HBox>
                                                 <HBox>
                                                    <children>
-                                                      <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="-">
+                                                      <Button mnemonicParsing="false" onAction="#minusHoraire16" prefHeight="30.0" prefWidth="50.0" text="-">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -466,12 +466,12 @@
                                                             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                                                          </padding>
                                                       </Button>
-                                                      <TextField prefHeight="41.0" prefWidth="155.0">
+                                                      <TextField fx:id="horaire16" prefHeight="41.0" prefWidth="155.0">
                                                          <padding>
                                                             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                          </padding>
                                                       </TextField>
-                                                      <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="+" textAlignment="CENTER">
+                                                      <Button mnemonicParsing="false" onAction="#plusHoraire16" prefHeight="30.0" prefWidth="50.0" text="+" textAlignment="CENTER">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -501,7 +501,7 @@
                               <Insets top="20.0" />
                            </VBox.margin>
                         </Accordion>
-                        <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" text="Valider">
+                        <Button mnemonicParsing="false" onAction="#validate" prefHeight="60.0" prefWidth="200.0" text="Valider">
                            <font>
                               <Font size="27.0" />
                            </font>
