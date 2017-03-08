@@ -1,0 +1,21 @@
+{
+  "logoName": "Jean Michel's Ice cream.png",
+  "enseigneId": "",
+  "magasinId": "",
+  "name": "Jean Michel's Ice cream",
+  "mapId": 9,
+  "location": "RDC",
+  "categories": [
+    {
+      "english": "H-M",
+      "french": "H-M"
+    },
+    {
+      "english": "Food",
+      "french": "Alimentation"
+    }
+  ],
+  "promotionEnglish": "Liquidation of stocks ! Everything must go !",
+  "locationEnglish": "Level 0",
+  "promotionText": "Liquidation de stock ! Tout doit partir !"
+}

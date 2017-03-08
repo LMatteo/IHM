@@ -1,0 +1,21 @@
+{
+  "logoName": "Dolce & Galbanna.jpg",
+  "enseigneId": "",
+  "magasinId": "",
+  "name": "Dolce & Galbanna",
+  "mapId": 0,
+  "location": "Niveau 1",
+  "categories": [
+    {
+      "english": "D-G",
+      "french": "D-G"
+    },
+    {
+      "english": "Fashion",
+      "french": "Mode"
+    }
+  ],
+  "promotionEnglish": "50% reduction on all our glasses",
+  "locationEnglish": "Level 1",
+  "promotionText": "En ce moment, promotion de 50% sur toutes nos lunettes"
+}

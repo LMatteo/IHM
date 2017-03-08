@@ -1,0 +1,21 @@
+{
+  "logoName": "Frank Provost.jpg",
+  "enseigneId": "",
+  "magasinId": "",
+  "name": "Frank Provost",
+  "mapId": 4,
+  "location": "RDC, entrée est",
+  "categories": [
+    {
+      "english": "Hairdressing",
+      "french": "Coiffure"
+    },
+    {
+      "english": "Beauty",
+      "french": "Beauté"
+    }
+  ],
+  "promotionEnglish": "Discover 2 new hair coloration techniques : gold and silver",
+  "locationEnglish": "Level 0, eastern entrance",
+  "promotionText": "2 nouvelles techniques de coloration exclusives en salon : balayages doré et argenté"
+}
