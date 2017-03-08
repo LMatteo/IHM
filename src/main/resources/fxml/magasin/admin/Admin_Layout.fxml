@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="magasin.user.LayoutControl">
+   <center>
+      <ScrollPane fx:id="pane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <top>
+      <HBox prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #b3d287; -fx-border-color: white;         -fx-border-width: 2px;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/common/logo/toBeOrToHave.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="home" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onMouseClicked="#goToHomePage" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #b3d287; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="STOCK" textFill="WHITE">
+               <font>
+                  <Font name="Blackberries Bold" size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="book" mnemonicParsing="false" onMouseClicked="#goToBook" prefHeight="200.0" prefWidth="209.0" style="-fx-background-color: #b3d287; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="COMMANDES" textFill="WHITE">
+               <font>
+                  <Font name="Blackberries Bold" size="36.0" />
+               </font>
+               <effect>
+                  <ColorAdjust />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="media" layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false" onMouseClicked="#goToCD" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #b3d287; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="STATS" textFill="WHITE">
+               <font>
+                  <Font name="Blackberries Bold" size="36.0" />
+               </font>
+               <effect>
+                  <ColorAdjust />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="stage" layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false" onMouseClicked="#goToStage" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #b3d287; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="MAGASINS" textFill="WHITE">
+               <font>
+                  <Font name="Blackberries Bold" size="36.0" />
+               </font>
+               <effect>
+                  <ColorAdjust />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="stage1" mnemonicParsing="false" onMouseClicked="#goToStage" prefHeight="200.0" prefWidth="253.0" style="-fx-background-color: #b3d287; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="INFOS BOUTIQUE" textFill="WHITE">
+               <font>
+                  <Font name="Blackberries Bold" size="36.0" />
+               </font>
+               <effect>
+                  <ColorAdjust />
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>
