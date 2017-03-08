@@ -8,6 +8,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 
 import static centre.constant.ButtonLabels.ACCESS_EN;
@@ -16,7 +17,7 @@ import static centre.constant.ButtonLabels.ACCESS_FR;
 /**
  * Controller class for a store item in one category.
  */
-public class CategoryItemController implements LanguageSwitcher{
+public class CategoryItemController implements LanguageSwitcher {
 
     @FXML private ImageView logo;
     @FXML private Label mapLocation;
@@ -26,6 +27,11 @@ public class CategoryItemController implements LanguageSwitcher{
 
     private boolean french = true;
     private Store store;
+    private LayoutController layout;
+
+    public void setLayout(LayoutController layout) {
+        this.layout = layout;
+    }
 
     /**
      * Initializes the content of the store in the appropriate fields.
@@ -45,10 +51,11 @@ public class CategoryItemController implements LanguageSwitcher{
      * Redirects to the info screen.
      *
      * @param event - the mouse event of the action
+     * @throws IOException - if failing to load the info fxml
      */
     @FXML
-    void locationClick(MouseEvent event) {
-
+    void locationClick(MouseEvent event) throws IOException {
+        layout.goToInfoPratiques(null);
     }
 
     /**

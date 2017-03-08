@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="842.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="centre.admin.info.EditInfoController">
+   <children>
+      <HBox prefHeight="854.0" prefWidth="1400.0" spacing="40.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="766.0" prefWidth="463.0" spacing="20.0">
+               <children>
+                  <Label text="Map du centre">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="mapPic" fitHeight="620.0" fitWidth="425.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../../../../data/centre/images/map/map.png" />
+                     </image>
+                  </ImageView>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#editPic" prefHeight="60.0" prefWidth="206.0" text="Modifier ...">
+                           <font>
+                              <Font size="29.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#confirmPic" prefHeight="48.0" prefWidth="187.0" text="Confirmer">
+                           <font>
+                              <Font size="29.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="700.0" prefWidth="724.0" spacing="40.0">
+               <children>
+                  <Label text="Texte informatif du centre">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Label>
+                  <HBox>
+                     <children>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <Label text="Version francaise">
+                                 <font>
+                                    <Font size="29.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="40.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="lineFrench1" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="82.0" prefWidth="428.0">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="lineFrench2" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="82.0" prefWidth="428.0">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="lineFrench3" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="82.0" prefWidth="428.0">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="lineFrench4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="428.0">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER">
+                           <children>
+                              <Label text="Version anglaise">
+                                 <font>
+                                    <Font size="29.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="40.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <TextField fx:id="lineEnglish1" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="82.0" prefWidth="428.0">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="lineEnglish2" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="82.0" prefWidth="428.0">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="lineEnglish3" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="82.0" prefWidth="428.0">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </TextField>
+                              <TextField fx:id="lineEnglish4" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="82.0" prefWidth="428.0">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                              </TextField>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <Button mnemonicParsing="false" onAction="#undoText" prefHeight="63.0" prefWidth="436.0" text="Annuler modifications">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#confirmText" prefHeight="63.0" prefWidth="436.0" text="Confirmer nouveau texte">
+                     <font>
+                        <Font size="29.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

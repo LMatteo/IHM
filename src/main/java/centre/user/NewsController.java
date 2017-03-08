@@ -27,6 +27,7 @@ public class NewsController implements LanguageSwitcher{
 
     protected NewsList listNews;
     protected List<ImageView> bindedNews;
+    protected boolean french = true;
 
     protected Map<Integer, ImageView> newsCorrespondance = new HashMap<>();
 
@@ -47,7 +48,7 @@ public class NewsController implements LanguageSwitcher{
             if (newsCorrespondance.containsKey(n.getPosition())) {
                 try {
                     bindedNews.add(newsCorrespondance.get(n.getPosition()));
-                    newsCorrespondance.get(n.getPosition()).setImage(new Image(CentrePaths.getNewsPath(n.getFrench() + ".png")));
+                    newsCorrespondance.get(n.getPosition()).setImage(new Image(CentrePaths.getNewsPath((french) ? n.getFrench() : n.getEnglish())));
                 } catch (MalformedURLException e) {
                     e.printStackTrace();
                 }
@@ -57,6 +58,7 @@ public class NewsController implements LanguageSwitcher{
 
     @Override
     public void switchLanguage() {
-
+        french = !french;
+        placeNews();
     }
 }

@@ -33,6 +33,7 @@ public class StoreController implements LanguageSwitcher {
     private List<SortOrder> sortOrders;
     private boolean french = true;
     private List<LanguageSwitcher> children;
+    private LayoutController layout;
 
     @FXML private TextArea searchBar;
     @FXML private VBox search;
@@ -40,6 +41,10 @@ public class StoreController implements LanguageSwitcher {
     @FXML private Button searchButton;
     @FXML private MenuButton sortMenu;
     @FXML private Accordion accordion;
+
+    public void setLayout(LayoutController layout) {
+        this.layout = layout;
+    }
 
     /**
      * Loads store data and sorting order from the data folder.
@@ -127,6 +132,7 @@ public class StoreController implements LanguageSwitcher {
                 tl.setText(category.getEnglish());
             }
             StoreCategoryController controller = loader.getController();
+            controller.setLayout(layout);
             controller.initializeContent(loadedStores, category);
             children.add(controller);
             if (!french) {
@@ -216,6 +222,7 @@ public class StoreController implements LanguageSwitcher {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/user/categoryItem.fxml"));
             HBox hb = loader.load();
             CategoryItemController controller = loader.getController();
+            controller.setLayout(layout);
             controller.initializeContent(match);
             accBox.getChildren().add(hb);
         }

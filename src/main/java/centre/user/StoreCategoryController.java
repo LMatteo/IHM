@@ -21,6 +21,11 @@ public class StoreCategoryController implements LanguageSwitcher {
     private VBox items;
 
     private List<LanguageSwitcher> children;
+    private LayoutController layout;
+
+    public void setLayout(LayoutController layout) {
+        this.layout = layout;
+    }
 
     /**
      * Initializes the content of this category.
@@ -36,6 +41,7 @@ public class StoreCategoryController implements LanguageSwitcher {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/user/categoryItem.fxml"));
             HBox hb = loader.load();
             CategoryItemController controller = loader.getController();
+            controller.setLayout(layout);
             controller.initializeContent(store);
             children.add(controller);
             items.getChildren().add(hb);

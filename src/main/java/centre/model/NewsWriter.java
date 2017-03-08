@@ -20,7 +20,7 @@ public class NewsWriter {
      */
     public NewsWriter(String filename) {
         try {
-            bw = new BufferedWriter(new FileWriter(new File("data/centre/news/" + filename.substring(0, filename.lastIndexOf('.')) + ".json")));
+            bw = new BufferedWriter(new FileWriter(new File("data/centre/news/" + filename + ".json")));
         } catch (IOException e) {
             e.printStackTrace();
         }

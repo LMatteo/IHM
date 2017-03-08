@@ -44,18 +44,18 @@ public class NewsParser {
     }
 
     /**
-     * Returns the position of the news in the feed or 0.
+     * Returns the date of the news in the feed.
      *
-     * @return the position of this news
+     * @return the date of this news
      */
     public long getDate() {
         return json.getLong("date");
     }
 
     /**
-     * Returns the position of the news in the feed or 0.
+     * Returns whether this position is horizontal or not.
      *
-     * @return the position of this news
+     * @return true if horizontal, false otherwise
      */
     public boolean horizontal() {
         return json.getBoolean("horizontal");

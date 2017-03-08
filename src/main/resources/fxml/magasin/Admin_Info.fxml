@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.TextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="598.0" prefWidth="1065.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane prefHeight="598.0" prefWidth="1065.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="Français">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <HBox>
+                           <children>
+                              <VBox prefHeight="108.0" prefWidth="438.0">
+                                 <children>
+                                    <Label prefHeight="37.0" prefWidth="246.0" text="Heure d'ouverture">
+                                       <font>
+                                          <Font name="Aaargh Normal" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField prefHeight="31.0" prefWidth="398.0">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </TextField>
+                                 </children>
+                                 <padding>
+                                    <Insets top="40.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets left="50.0" right="50.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="82.0" prefWidth="419.0">
+                                 <children>
+                                    <Label prefHeight="37.0" prefWidth="243.0" text="Heure de fermeture">
+                                       <font>
+                                          <Font name="Aaargh Normal" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField prefHeight="31.0" prefWidth="396.0">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </TextField>
+                                 </children>
+                                 <padding>
+                                    <Insets top="40.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <TextArea layoutX="53.0" layoutY="169.0" prefHeight="185.0" prefWidth="912.0" />
+                        <Label layoutX="53.0" layoutY="132.0" text="Description du magasin">
+                           <font>
+                              <Font name="Aaargh Normal" size="24.0" />
+                           </font>
+                        </Label>
+                        <HBox layoutX="53.0" layoutY="370.0">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets right="35.0" />
+                                 </HBox.margin>
+                                 <image>
+                                    <Image url="@../../images/magasin/preview150200.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets right="35.0" />
+                                 </HBox.margin>
+                                 <image>
+                                    <Image url="@../../images/magasin/preview150200.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets right="35.0" />
+                                 </HBox.margin>
+                                 <image>
+                                    <Image url="@../../images/magasin/preview150200.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/magasin/preview150200.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+            <Tab text="Anglais">
+               <content>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <HBox>
+                           <children>
+                              <VBox prefHeight="108.0" prefWidth="438.0">
+                                 <children>
+                                    <Label prefHeight="37.0" prefWidth="246.0" text="Heure d'ouverture">
+                                       <font>
+                                          <Font name="Aaargh Normal" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField prefHeight="31.0" prefWidth="398.0">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </TextField>
+                                 </children>
+                                 <padding>
+                                    <Insets top="40.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets left="50.0" right="50.0" />
+                                 </HBox.margin>
+                              </VBox>
+                              <VBox prefHeight="82.0" prefWidth="419.0">
+                                 <children>
+                                    <Label prefHeight="37.0" prefWidth="243.0" text="Heure de fermeture">
+                                       <font>
+                                          <Font name="Aaargh Normal" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField prefHeight="31.0" prefWidth="396.0">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </TextField>
+                                 </children>
+                                 <padding>
+                                    <Insets top="40.0" />
+                                 </padding>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <TextArea layoutX="53.0" layoutY="169.0" prefHeight="185.0" prefWidth="912.0" />
+                        <Label layoutX="53.0" layoutY="132.0" text="Description du magasin (anglais)">
+                           <font>
+                              <Font name="Aaargh Normal" size="24.0" />
+                           </font>
+                        </Label>
+                        <HBox layoutX="53.0" layoutY="370.0">
+                           <children>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets right="35.0" />
+                                 </HBox.margin>
+                                 <image>
+                                    <Image url="@../../images/magasin/preview150200.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets right="35.0" />
+                                 </HBox.margin>
+                                 <image>
+                                    <Image url="@../../images/magasin/preview150200.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <HBox.margin>
+                                    <Insets right="35.0" />
+                                 </HBox.margin>
+                                 <image>
+                                    <Image url="@../../images/magasin/preview150200.jpg" />
+                                 </image>
+                              </ImageView>
+                              <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../images/magasin/preview150200.jpg" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

@@ -32,10 +32,10 @@
       </ScrollPane>
       <AnchorPane layoutY="398.0" prefHeight="100.0" prefWidth="600.0">
          <children>
-            <Button layoutX="190.0" layoutY="35.0" mnemonicParsing="false" onAction="#removeCurrentPromotion"
-                    prefHeight="31.0" prefWidth="221.0" text="Enlever promotion actuelle">
+            <Button layoutX="175.0" layoutY="30.0" mnemonicParsing="false" onAction="#removeCurrentPromotion"
+                    prefHeight="40.0" prefWidth="250.0" text="Enlever promotion actuelle">
                <font>
-                  <Font size="15.0"/>
+                  <Font size="17.0"/>
                </font>
             </Button>
          </children>

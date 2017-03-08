@@ -31,6 +31,10 @@ public class NewsList {
         sort();
     }
 
+    public void add(News n) {
+        newsList.add(n);
+    }
+
     public List<News> getNewsList() {
         return newsList;
     }
@@ -49,6 +53,25 @@ public class NewsList {
             if (!n.isHorizontal()) res.add(n);
         }
         return res;
+    }
+
+    public List<News> getByPosition(int pos) {
+        List<News> res = new ArrayList<>();
+        for (News n : newsList) {
+            if (n.getPosition() == pos) {
+                res.add(n);
+            }
+        }
+        return res;
+    }
+
+    public boolean nameExists(String name) {
+        for (News n : newsList) {
+            if (n.getName().equals(name)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private void sort() {

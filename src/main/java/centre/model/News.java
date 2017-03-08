@@ -3,6 +3,7 @@ package centre.model;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Instant;
 
 public class News {
 
@@ -31,6 +32,18 @@ public class News {
         english = np.getProperty("english");
         magasinId = np.getProperty("magasinId");
         horizontal = np.horizontal();
+    }
+
+
+    public News(String name, String extensionFR, String extensionEN, boolean horizontal) {
+        this.fileName = name.trim();
+        this.name = name;
+        this.date = (Instant.now().toEpochMilli()) / 1000;
+        this.position = 0;
+        this.french = fileName + "FR" + extensionFR;
+        this.english = fileName + "EN" + extensionEN;
+        this.magasinId = "undefined";
+        this.horizontal = horizontal;
     }
 
     public boolean isUsed() {
