@@ -1,1 +1,25 @@
-{"logoName":"To be or to Have.png","enseigneId":"undefined","magasinId":"undefined","name":"To be or to Have","mapId":3,"location":"Niveau 0","categories":[{"english":"Culture","french":"Culture"},{"english":"Wellness","french":"Bien-etre"},{"english":"N-T","french":"N-T"}],"promotionEnglish":"Come to our store with your soulmate for Valentine's day","locationEnglish":"Level 0","promotionText":"St valentin : venez avec votre moitié au stage de développement personnel !"}
+{
+  "logoName": "To be or to Have.png",
+  "enseigneId": "undefined",
+  "magasinId": "undefined",
+  "name": "To be or to Have",
+  "mapId": 3,
+  "location": "Niveau 0",
+  "categories": [
+    {
+      "english": "Culture",
+      "french": "Culture"
+    },
+    {
+      "english": "Wellness",
+      "french": "Bien-etre"
+    },
+    {
+      "english": "N-T",
+      "french": "N-T"
+    }
+  ],
+  "promotionEnglish": "Come to our store with your soulmate for Valentine's day",
+  "locationEnglish": "Level 0",
+  "promotionText": "St valentin : venez avec votre moitié au stage de développement personnel !"
+}

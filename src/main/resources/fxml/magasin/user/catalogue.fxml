@@ -1,198 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.effect.ColorAdjust?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0"
-            prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="magasin.GoToControl">
-    <center>
-        <ScrollPane prefHeight="748.0" prefWidth="1080.0" BorderPane.alignment="CENTER">
-            <content>
-                <AnchorPane prefHeight="737.0" prefWidth="1076.0">
+
+<ScrollPane fx:id="paneCatalogue" prefHeight="748.0" prefWidth="1080.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.111"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <content>
+        <AnchorPane fx:id="apCatalogue" prefHeight="737.0" prefWidth="1076.0">
+            <children>
+                <HBox layoutX="60.0" layoutY="37.0" prefHeight="57.0" prefWidth="967.0">
                     <children>
-                        <HBox layoutX="60.0" layoutY="37.0" prefHeight="57.0" prefWidth="967.0">
+                        <HBox prefHeight="57.0" prefWidth="730.0">
                             <children>
-                                <HBox prefHeight="57.0" prefWidth="730.0">
-                                    <children>
-                                        <TextArea minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0"
-                                                  prefWidth="273.0">
-                                            <font>
-                                                <Font size="24.0"/>
-                                            </font>
-                                        </TextArea>
-                                        <Button mnemonicParsing="false" prefHeight="57.0" prefWidth="155.0"
-                                                text="Chercher">
-                                            <font>
-                                                <Font size="24.0"/>
-                                            </font>
-                                        </Button>
-                                    </children>
-                                </HBox>
-                                <MenuButton mnemonicParsing="false" prefHeight="57.0" prefWidth="309.0"
-                                            text="Trier par...">
-                                    <items>
-                                        <MenuItem mnemonicParsing="false" text="Disponibilité"/>
-                                        <MenuItem mnemonicParsing="false" text="Ordre Alphabétique"/>
-                                        <MenuItem mnemonicParsing="false" text="Prix"/>
-                                        <MenuItem mnemonicParsing="false" text="Type de produit"/>
-                                    </items>
+                                <TextArea minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0"
+                                          prefWidth="273.0">
                                     <font>
                                         <Font size="24.0"/>
                                     </font>
-                                </MenuButton>
+                                </TextArea>
+                                <Button mnemonicParsing="false" prefHeight="57.0" prefWidth="155.0"
+                                        text="Chercher">
+                                    <font>
+                                        <Font size="24.0"/>
+                                    </font>
+                                </Button>
                             </children>
                         </HBox>
-                        <GridPane layoutX="125.0" layoutY="138.0" prefHeight="568.0" prefWidth="840.0">
-                            <columnConstraints>
-                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
-                            </columnConstraints>
-                            <rowConstraints>
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
-                            </rowConstraints>
-                            <children>
-                                <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #7cb131;"/>
-                                <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #b3d287;"
-                                      GridPane.columnIndex="1"/>
-                                <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #7cb131;"
-                                      GridPane.columnIndex="2"/>
-                                <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #b3d287;"
-                                      GridPane.rowIndex="1"/>
-                                <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #7cb131;"
-                                      GridPane.columnIndex="1" GridPane.rowIndex="1"/>
-                                <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #b3d287;"
-                                      GridPane.columnIndex="2" GridPane.rowIndex="1"/>
-                                <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #7cb131;"
-                                      GridPane.rowIndex="2"/>
-                                <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #b3d287;"
-                                      GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-                                <Pane prefHeight="157.0" prefWidth="216.0" style="-fx-background-color: #7cb131;"
-                                      GridPane.columnIndex="2" GridPane.rowIndex="2"/>
-                            </children>
-                        </GridPane>
-                    </children>
-                </AnchorPane>
-            </content>
-        </ScrollPane>
-    </center>
-    <top>
-        <HBox prefHeight="100.0" prefWidth="200.0"
-              style="-fx-background-color: #b3d287; -fx-border-color: white; -fx-border-width: 2px;"
-              BorderPane.alignment="CENTER">
-            <children>
-                <ImageView fitHeight="200.0" fitWidth="200.0" onMouseClicked="#goToHomePage" pickOnBounds="true"
-                           preserveRatio="true">
-                    <image>
-                        <Image url="@../../../images/common/logo/toBeOrToHave.png"/>
-                    </image>
-                </ImageView>
-                <Pane onMouseClicked="#goToHomePage" prefHeight="198.0" prefWidth="297.0"
-                      style="-fx-border-width: 2px;">
-                    <children>
-                        <Label layoutY="59.0" onMouseClicked="#goToHomePage" style="-fx-vertical-align: center;"
-                               text="To Be Or To Have" textFill="WHITE">
+                        <MenuButton mnemonicParsing="false" prefHeight="57.0" prefWidth="309.0"
+                                    text="Trier par...">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Disponibilité"/>
+                                <MenuItem mnemonicParsing="false" text="Ordre Alphabétique"/>
+                                <MenuItem mnemonicParsing="false" text="Prix"/>
+                                <MenuItem mnemonicParsing="false" text="Type de produit"/>
+                            </items>
                             <font>
-                                <Font name="Blackberries Bold" size="56.0"/>
+                                <Font size="24.0"/>
                             </font>
-                        </Label>
+                        </MenuButton>
                     </children>
-                </Pane>
-                <Pane prefHeight="200.0" prefWidth="267.0" style="-fx-background-color: #7cb131;">
+                </HBox>
+                <GridPane layoutX="125.0" layoutY="138.0" prefHeight="568.0" prefWidth="840.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                    </rowConstraints>
                     <children>
-                        <Button id="button" layoutY="-2.0" mnemonicParsing="false" onMouseClicked="#goToBook"
-                                prefHeight="204.0" prefWidth="264.0"
-                                style="-fx-background-color: #b3d287; -fx-border-color: white; -fx-border-width: 2px;"
-                                text="LIVRE" textFill="WHITE">
-                            <font>
-                                <Font name="Blackberries Bold" size="48.0"/>
-                            </font>
-                            <effect>
-                                <ColorAdjust/>
-                            </effect>
-                            <cursor>
-                                <Cursor fx:constant="HAND"/>
-                            </cursor>
-                        </Button>
+                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #7cb131;"/>
+                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #b3d287;"
+                              GridPane.columnIndex="1"/>
+                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #7cb131;"
+                              GridPane.columnIndex="2"/>
+                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #b3d287;"
+                              GridPane.rowIndex="1"/>
+                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #7cb131;"
+                              GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #b3d287;"
+                              GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #7cb131;"
+                              GridPane.rowIndex="2"/>
+                        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #b3d287;"
+                              GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                        <Pane prefHeight="157.0" prefWidth="216.0" style="-fx-background-color: #7cb131;"
+                              GridPane.columnIndex="2" GridPane.rowIndex="2"/>
                     </children>
-                </Pane>
-                <Pane prefHeight="200.0" prefWidth="267.0" style="-fx-background-color: #7cb131;">
-                    <children>
-                        <Button id="button" layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false"
-                                onMouseClicked="#goToCD" prefHeight="204.0" prefWidth="264.0"
-                                style="-fx-background-color: #b3d287; -fx-border-color: white; -fx-border-width: 2px;"
-                                text="CD/DVD" textFill="WHITE">
-                            <font>
-                                <Font name="Blackberries Bold" size="48.0"/>
-                            </font>
-                            <effect>
-                                <ColorAdjust/>
-                            </effect>
-                            <cursor>
-                                <Cursor fx:constant="HAND"/>
-                            </cursor>
-                        </Button>
-                    </children>
-                </Pane>
-                <Pane prefHeight="200.0" prefWidth="267.0" style="-fx-background-color: #7cb131;">
-                    <children>
-                        <Button id="button" layoutX="-1.0" layoutY="-2.0" mnemonicParsing="false"
-                                onMouseClicked="#goToStage" prefHeight="204.0" prefWidth="264.0"
-                                style="-fx-background-color: #b3d287; -fx-border-color: white; -fx-border-width: 2px;"
-                                text="STAGES" textFill="WHITE">
-                            <font>
-                                <Font name="Blackberries Bold" size="48.0"/>
-                            </font>
-                            <effect>
-                                <ColorAdjust/>
-                            </effect>
-                            <cursor>
-                                <Cursor fx:constant="HAND"/>
-                            </cursor>
-                        </Button>
-                    </children>
-                </Pane>
+                </GridPane>
             </children>
-        </HBox>
-    </top>
-    <bottom>
-        <HBox prefHeight="80.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-            <children>
-                <Label alignment="CENTER" prefHeight="87.0" prefWidth="200.0" style="-fx-border-color: #000000;"
-                       text=" 13:37">
-                    <font>
-                        <Font size="36.0"/>
-                    </font>
-                </Label>
-                <AnchorPane prefHeight="80.0" prefWidth="1015.0" style="-fx-border-color: #000000;"/>
-                <StackPane prefHeight="80.0" prefWidth="160.0" style="-fx-border-color: #000000;">
-                    <children>
-                        <ImageView fitHeight="80.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../../images/common/flags/united-kingdom.png"/>
-                            </image>
-                        </ImageView>
-                    </children>
-                </StackPane>
-            </children>
-        </HBox>
-    </bottom>
-    <left>
-        <Pane prefHeight="758.0" prefWidth="200.0" style="-fx-background-color: #b3d287;" BorderPane.alignment="CENTER">
-            <children>
-                <ImageView fitHeight="52.0" fitWidth="70.0" layoutX="72.0" layoutY="11.0" onMouseClicked="#goToMall"
-                           pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../../../images/magasin/homepage.png"/>
-                    </image>
-                </ImageView>
-            </children>
-        </Pane>
-    </left>
-</BorderPane>
+        </AnchorPane>
+    </content>
+</ScrollPane>

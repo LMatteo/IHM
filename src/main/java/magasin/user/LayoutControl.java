@@ -6,6 +6,7 @@ import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -17,7 +18,7 @@ public class LayoutControl {
     public static final String bright = "#b3d287";
     public static final String dark = "#7cb131";
 
-    @FXML private ScrollPane pane;
+    @FXML protected ScrollPane paneLayout;
     @FXML private Button book;
     @FXML private Button media;
     @FXML private Button stage;
@@ -26,17 +27,26 @@ public class LayoutControl {
     private Button previous;
     private ScrollPane sp;
 
+    /**
+     * Constructor which loads the homepage directly in the layout when we launch
+     * the program
+     * @throws IOException
+     * @throws URISyntaxException
+     */
+
     @FXML
     public void initialize() throws IOException, URISyntaxException {
-        sp = FXMLLoader.load(getClass().getResource("/fxml/magasin/user/home.fxml"));
-        switchButtonStyle(home);
-        pane.setVvalue(0);
-        pane.setContent(sp);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/user/home.fxml"));
+        sp = loader.load();
+        HomeControl homeControl = loader.getController();
+        homeControl.setLayoutControl(this);
+        paneLayout.setVvalue(0);
+        paneLayout.setContent(sp);
         home.setCursor(Cursor.HAND);
     }
 
     /**
-     * Switches the style of the top buttons so that the selected screen appears highlighted.
+     * Switches the style of the top buttons so that the selected screen appears darker.
      *
      * @param current - the last button used
      */
@@ -48,26 +58,26 @@ public class LayoutControl {
         previous = current;
     }
 
-
+    /**
+     * Methods which loads views from the layout's buttons
+     */
     @FXML
     void goToBook(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/user/book.fxml"));
         ScrollPane sp = loader.load();
-        pane.setContent(sp);
+        paneLayout.setContent(sp);
         switchButtonStyle(book);
-        pane.setVvalue(0);
+        paneLayout.setVvalue(0);
     }
-
 
     @FXML
     void goToCD(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/user/media.fxml"));
         ScrollPane sp = loader.load();
-        pane.setContent(sp);
+        paneLayout.setContent(sp);
         switchButtonStyle(media);
-        pane.setVvalue(0);    }
-
-
+        paneLayout.setVvalue(0);
+    }
 
     @FXML
     void goToMall(MouseEvent event) throws IOException {
@@ -78,17 +88,47 @@ public class LayoutControl {
     void goToStage(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/user/stage.fxml"));
         ScrollPane sp = loader.load();
-        pane.setContent(sp);
+        paneLayout.setContent(sp);
         switchButtonStyle(stage);
-        pane.setVvalue(0);
+        paneLayout.setVvalue(0);
     }
 
     @FXML
     void goToHomePage(MouseEvent event) throws IOException {
-        sp = FXMLLoader.load(getClass().getResource("/fxml/magasin/user/home.fxml"));
-        pane.setContent(sp);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/user/home.fxml"));
+        sp = loader.load();
+        HomeControl homeControl = loader.getController();
+        homeControl.setLayoutControl(this);
+        paneLayout.setContent(sp);
         switchButtonStyle(home);
-        pane.setContent(sp);
+        paneLayout.setVvalue(0);
+    }
+
+    /**
+     * Methods which load some views from the client homepage
+     */
+    @FXML
+    void goToCatalogue(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/user/catalogue.fxml"));
+        ScrollPane sp = loader.load();
+        paneLayout.setContent(sp);
+        paneLayout.setVvalue(0);
+    }
+
+    @FXML
+    void goToBoutique(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/user/boutique.fxml"));
+        ScrollPane sp = loader.load();
+        paneLayout.setContent(sp);
+        paneLayout.setVvalue(0);
+    }
+
+    @FXML
+    void goToActu(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/user/currently.fxml"));
+        ScrollPane sp = loader.load();
+        paneLayout.setContent(sp);
+        paneLayout.setVvalue(0);
     }
 
 
