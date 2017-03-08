@@ -18,7 +18,7 @@
                             <children>
                                 <VBox fx:id="search" alignment="CENTER" prefHeight="0.0" prefWidth="321.0">
                                     <children>
-                                        <TextField prefHeight="52.0" prefWidth="304.0">
+                                        <TextField fx:id="searchBar" prefHeight="52.0" prefWidth="304.0">
                                             <font>
                                                 <Font size="20.0"/>
                                             </font>
@@ -34,7 +34,7 @@
                             </children>
                         </HBox>
                         <MenuButton fx:id="sortMenu" mnemonicParsing="false" prefHeight="50.0" prefWidth="227.0"
-                                    text="Trier par...">
+                                    styleClass="sort-button" text="Trier par...">
                             <font>
                                 <Font size="20.0"/>
                             </font>
