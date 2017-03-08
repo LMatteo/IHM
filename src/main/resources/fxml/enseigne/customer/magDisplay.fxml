@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<HBox fx:id="hbox1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#selected" prefHeight="184.0" prefWidth="917.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.customerController.MagControl">
+   <children>
+      <ImageView fx:id="image" fitHeight="186.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      <VBox fx:id="vbox2" prefHeight="400.0" prefWidth="414.0">
+         <children>
+            <Label fx:id="title" prefHeight="15.0" prefWidth="384.0" text="VIlle, au centre commercial " />
+            <Label fx:id="info" prefHeight="15.0" prefWidth="396.0" text="Informations Complémentaire " />
+            <Label fx:id="tel" prefHeight="15.0" prefWidth="400.0" text="Télephone , site Web" />
+            <Label fx:id="addresse" prefHeight="15.0" prefWidth="437.0" text="addresse" />
+         </children>
+      </VBox>
+   </children>
+</HBox>

@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="-Infinity" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="-Infinity" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.adminController.magasinsFormController">
    <children>
       <VBox alignment="TOP_CENTER" prefHeight="751.0" prefWidth="1060.0">
          <children>
@@ -192,7 +191,7 @@
                                  </VBox.margin>
                               </Label>
                               <TextField fx:id="web" />
-                              <Button mnemonicParsing="false" prefHeight="66.0" prefWidth="325.0" text="AJOUTER CE MAGASIN">
+                              <Button fx:id="ajoutMagasin" mnemonicParsing="false" onAction="#ajoutMag" prefHeight="66.0" prefWidth="325.0" text="AJOUTER CE MAGASIN">
                                  <font>
                                     <Font size="23.0" />
                                  </font>

@@ -33,7 +33,7 @@
                 <ImageView fitHeight="252.0" fitWidth="290.0" layoutX="729.0" layoutY="22.0" pickOnBounds="true"
                            preserveRatio="true">
                     <image>
-                        <Image url="@../../images/enseigne/france.jpg"/>
+                        <Image url="@../../../images/enseigne/france.jpg"/>
                     </image>
                 </ImageView>
                 <Text layoutX="50.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0"
@@ -89,7 +89,7 @@
                 <ImageView fitHeight="252.0" fitWidth="290.0" layoutX="751.0" layoutY="10.0" pickOnBounds="true"
                            preserveRatio="true">
                     <image>
-                        <Image url="@../../images/enseigne/pouce.png"/>
+                        <Image url="@../../../images/enseigne/pouce.png"/>
                     </image>
                 </ImageView>
                 <Text layoutX="41.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fermé le jeudi">
@@ -135,7 +135,7 @@
                 <ImageView fitHeight="252.0" fitWidth="290.0" layoutX="751.0" layoutY="10.0" pickOnBounds="true"
                            preserveRatio="true">
                     <image>
-                        <Image url="@../../images/enseigne/phone.png"/>
+                        <Image url="@../../../images/enseigne/phone.png"/>
                     </image>
                 </ImageView>
                 <Text layoutX="41.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0"

@@ -1,0 +1,25 @@
+
+#hbox1{
+    -fx-background-color: #d0d0d0;
+    -fx-padding:40px 20px 20px 40px;
+    -fx-border-insets: 20px;
+    -fx-background-insets: 20px;
+    -fx-min-height: 285px;
+    -fx-min-width: 1030px;
+    -fx-effect: dropshadow(three-pass-box, grey, 12, 0, 0, 0);
+
+}
+
+#vbox2{
+    -fx-padding: 20px;
+    -fx-font-size: 25px;
+}
+
+
+
+#title{
+    -fx-font-weight:bold;
+    -fx-padding: -10px 0px 10px 0px;
+    -fx-text-alignment: center;
+    -fx-font-size: 28px;
+}
