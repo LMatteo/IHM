@@ -32,7 +32,6 @@ public class StoreController implements LanguageSwitcher {
     private StoreList loadedStores;
     private List<SortOrder> sortOrders;
     private boolean french = true;
-    private List<LanguageSwitcher> children;
     private LayoutController layout;
 
     @FXML private TextArea searchBar;
@@ -50,13 +49,12 @@ public class StoreController implements LanguageSwitcher {
      * Loads store data and sorting order from the data folder.
      * Loads the first sorting order found by default.
      *
-     * @param loadedStores - the list of stores loaded from the data folder
      * @throws IOException        - if failing to load one of the files
      * @throws URISyntaxException - if failing to find one of the folders
      */
-    public void initializeContent(StoreList loadedStores) throws IOException, URISyntaxException {
-        this.loadedStores = loadedStores;
-        children = new ArrayList<>();
+    @FXML
+    public void initialize() throws IOException, URISyntaxException {
+        loadedStores = new StoreList();
         initSort();
         createMenuItems();
         if (!sortOrders.isEmpty()) {
@@ -134,7 +132,6 @@ public class StoreController implements LanguageSwitcher {
             StoreCategoryController controller = loader.getController();
             controller.setLayout(layout);
             controller.initializeContent(loadedStores, category);
-            children.add(controller);
             if (!french) {
                 controller.switchLanguage();
             }
@@ -149,7 +146,6 @@ public class StoreController implements LanguageSwitcher {
         for (int i = accBox.getChildren().size() - 1; i > 1; i--) {
             accBox.getChildren().remove(i);
         }
-        children.clear();
     }
 
     /**
