@@ -72,6 +72,7 @@ public enum MagAttribute implements MagHandler {
         @Override
         public void assign(Magasin mag, JSONObject json) {
             json = json.getJSONObject("pointe");
+            Map<Integer,Integer> map = new HashMap<>();
             List<Integer> list = new ArrayList<>();
             for(int i = 0;i<5;i++){
                 if(json.has(Integer.toString(i))){
