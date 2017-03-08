@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,11 +37,11 @@ public class InfoController implements LanguageSwitcher {
     /**
      * Initializes the store data required to fill the map indications.
      *
-     * @param loadedStores - the list of loaded stores
      * @throws IOException - if failing to read the informations
      */
-    public void initializeContent(StoreList loadedStores) throws IOException {
-        this.loadedStores = loadedStores;
+    @FXML
+    public void initialize() throws IOException, URISyntaxException {
+        this.loadedStores = new StoreList();
         mapPic.setImage(new Image(CentrePaths.getMapPath()));
         initGrid();
         infos = new Informations();

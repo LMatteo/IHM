@@ -1,7 +1,6 @@
 package centre.user;
 
 import centre.model.NewsList;
-import centre.model.StoreList;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -42,7 +41,6 @@ public class LayoutController {
 
     private Button previous;
     private AnchorPane ap;
-    private StoreList loadedStores;
     private NewsList newsList;
     private boolean french = true;
     private LanguageSwitcher loadedController;
@@ -55,7 +53,6 @@ public class LayoutController {
      */
     @FXML
     public void initialize() throws IOException, URISyntaxException {
-        loadedStores = new StoreList();
         newsList = new NewsList();
         bindToTime();
         goToActu(null);
@@ -117,7 +114,6 @@ public class LayoutController {
         ap = loader.load();
         StoreController controller = loader.getController();
         controller.setLayout(this);
-        controller.initializeContent(loadedStores);
         switchCurrentController(controller);
         pane.setContent(ap);
         switchButtonStyle(boutiques);
@@ -135,7 +131,6 @@ public class LayoutController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/user/info.fxml"));
         ap = loader.load();
         InfoController controller = loader.getController();
-        controller.initializeContent(loadedStores);
         switchCurrentController(controller);
         pane.setContent(ap);
         switchButtonStyle(infopratiques);
