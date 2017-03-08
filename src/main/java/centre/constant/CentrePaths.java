@@ -4,8 +4,8 @@ import java.io.File;
 import java.net.MalformedURLException;
 
 /**
- * Class used to store paths to the data folder, and to get files from the same
- * folder.
+ * Class used to store image paths to the data folder, and to get files from the
+ * same folder.
  */
 public class CentrePaths {
 

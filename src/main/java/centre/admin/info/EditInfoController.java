@@ -118,7 +118,7 @@ public class EditInfoController {
      * Saves the changes done to the informational text.
      *
      * @param event - the event of this action
-     * @throws IOException - if failing to write the info file
+     * @throws IOException - if failing to save the info file
      */
     @FXML
     void confirmText(ActionEvent event) throws IOException {

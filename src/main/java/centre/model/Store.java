@@ -1,5 +1,8 @@
 package centre.model;
 
+import centre.model.json.parser.StoreParser;
+import centre.model.json.writer.StoreWriter;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -41,7 +44,7 @@ public class Store {
         locationEnglish = sp.getProperty("locationEnglish");
         promotion = sp.getProperty("promotionText");
         promotionEnglish = sp.getProperty("promotionEnglish");
-        mapId = sp.getMapID();
+        mapId = sp.getInt("mapId");
     }
 
     /**
@@ -131,12 +134,11 @@ public class Store {
      * Saves this store data in a new file in the data folder.
      * Does not save the logo picture of the store.
      *
-     * @throws IOException - if failing to write the store file
+     * @throws IOException - if failing to save the store file
      */
     public void save() throws IOException {
-        Files.deleteIfExists(Paths.get("/data/centre/stores/" + name + ".json"));
         StoreWriter sw = new StoreWriter(name);
-        sw.addMapId(mapId);
+        sw.addInt("mapId", mapId);
         sw.addTags(categories);
         sw.addProperty("name", name);
         sw.addProperty("logoName", logoName);
@@ -146,7 +148,7 @@ public class Store {
         sw.addProperty("promotionText", promotion);
         sw.addProperty("promotionEnglish", promotionEnglish);
         sw.addProperty("locationEnglish", locationEnglish);
-        sw.write();
+        sw.save();
     }
 
     /**

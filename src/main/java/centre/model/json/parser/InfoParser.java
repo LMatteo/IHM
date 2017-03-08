@@ -1,4 +1,4 @@
-package centre.model;
+package centre.model.json.parser;
 
 import org.json.JSONObject;
 

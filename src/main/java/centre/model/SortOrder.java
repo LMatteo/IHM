@@ -1,5 +1,8 @@
 package centre.model;
 
+import centre.model.json.parser.SortOrderParser;
+import centre.model.json.writer.SortOrderWriter;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -74,7 +77,7 @@ public class SortOrder {
     /**
      * Saves this sorting order to the save folder.
      *
-     * @throws IOException - if failing to write the file
+     * @throws IOException - if failing to save the file
      */
     public void save() throws IOException {
         Files.deleteIfExists(Paths.get("/data/centre/sort/" + name + ".json"));
