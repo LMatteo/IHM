@@ -103,7 +103,6 @@ public class magasinsFormController {
         m.setAge(map1);
         m.setPointe(map2);
         //end of  TO DELETE//
-        System.out.println(map1);
         prevCtrl.addMag(m);
         Stage stage = (Stage) ajoutMagasin.getScene().getWindow();
         stage.close();

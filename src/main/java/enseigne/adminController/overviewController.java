@@ -16,7 +16,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import org.apache.commons.lang.math.RandomUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -82,13 +81,11 @@ public class overviewController {
         clienteleChart.setData(getClientele(magasins));
         clienteleChart.getXAxis().setLabel("Magasins");
         clienteleChart.getYAxis().setLabel("Nombre de clients");
-        System.out.println("salut");
     }
 
     private ObservableList<PieChart.Data> getChiffreAffaireDatas(List<Magasin> magasins) {
         List<PieChart.Data> datas = new ArrayList<>();
         for (Magasin m : magasins) {
-            m.setChiffreAffaire(Math.abs(RandomUtils.nextInt()));
             PieChart.Data data = new PieChart.Data(m.getCentre(), m.getChiffreAffaire());
             datas.add(data);
         }
@@ -98,7 +95,6 @@ public class overviewController {
     private ObservableList<PieChart.Data> getEmployesDatas(List<Magasin> magasins) {
         List<PieChart.Data> datas = new ArrayList<>();
         for (Magasin m : magasins) {
-            m.setNbEmpl(Math.abs(RandomUtils.nextInt()));
             PieChart.Data data = new PieChart.Data(m.getCentre(), m.getNbEmpl());
             datas.add(data);
         }
@@ -124,8 +120,9 @@ public class overviewController {
     void updateStore(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/enseigne/admin/updaterOverview.fxml"));
         Parent rootNode = loader.load();
-        overviewUpdatedController ctrl = loader.getController();
+        overviewUpdaterController ctrl = loader.getController();
         ctrl.update();
+        ctrl.setOriginController(this);
         Scene scene = new Scene(rootNode);
         Stage stage = new Stage();
         stage.setScene(scene);

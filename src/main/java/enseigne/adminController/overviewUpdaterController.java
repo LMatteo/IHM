@@ -12,9 +12,11 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
-public class overviewUpdatedController {
+public class overviewUpdaterController {
 
     @FXML
     private ComboBox<String> choiceBox;
@@ -58,6 +60,8 @@ public class overviewUpdatedController {
     @FXML
     private TextField horaire16;
 
+    private overviewController originController;
+
 
     @FXML
     private VBox mainBox;
@@ -72,6 +76,15 @@ public class overviewUpdatedController {
         chiffreAffaireLabel.setText(String.valueOf(selectedMagasin.getChiffreAffaire()));
         employesLabel.setText(String.valueOf(selectedMagasin.getNbEmpl()));
         horaire8.setText(String.valueOf(selectedMagasin.getPointe().get(0)));
+        horaire10.setText(String.valueOf(selectedMagasin.getPointe().get(1)));
+        horaire12.setText(String.valueOf(selectedMagasin.getPointe().get(2)));
+        horaire14.setText(String.valueOf(selectedMagasin.getPointe().get(3)));
+        horaire16.setText(String.valueOf(selectedMagasin.getPointe().get(4)));
+        age0.setText(String.valueOf(selectedMagasin.getAge().get(0)));
+        age15.setText(String.valueOf(selectedMagasin.getAge().get(1)));
+        age30.setText(String.valueOf(selectedMagasin.getAge().get(2)));
+        age45.setText(String.valueOf(selectedMagasin.getAge().get(3)));
+        age60.setText(String.valueOf(selectedMagasin.getAge().get(4)));
 
     }
 
@@ -91,15 +104,30 @@ public class overviewUpdatedController {
     void validate(ActionEvent event) throws IOException {
         selectedMagasin.setChiffreAffaire(Integer.parseInt(chiffreAffaireLabel.getText()));
         selectedMagasin.setNbEmpl(Integer.parseInt(employesLabel.getText()));
-        List<Integer> horaires = new ArrayList<>();
-        horaires.add(Integer.parseInt(horaire8.getText()));
+
+        Map<Integer,Integer> mapHoraires = new HashMap<>();
+        mapHoraires.put(0, Integer.valueOf(horaire8.getText()));
+        mapHoraires.put(1, Integer.valueOf(horaire10.getText()));
+        mapHoraires.put(2, Integer.valueOf(horaire12.getText()));
+        mapHoraires.put(3, Integer.valueOf(horaire14.getText()));
+        mapHoraires.put(4, Integer.valueOf(horaire16.getText()));
+        selectedMagasin.setPointe(mapHoraires);
+
+        Map<Integer,Integer> mapClientele = new HashMap<>();
+        mapClientele.put(0, Integer.valueOf(age0.getText()));
+        mapClientele.put(1, Integer.valueOf(age15.getText()));
+        mapClientele.put(2, Integer.valueOf(age30.getText()));
+        mapClientele.put(3, Integer.valueOf(age45.getText()));
+        mapClientele.put(4, Integer.valueOf(age60.getText()));
+        selectedMagasin.setAge(mapClientele);
         selectedMagasin.write();
         mainBox.getScene().getWindow().hide();
+        originController.update();
     }
 
     @FXML
     void minusHoraire0(ActionEvent event) {
-
+        System.out.println("salut");
     }
 
     @FXML
@@ -147,6 +175,9 @@ public class overviewUpdatedController {
 
     }
 
+    public void setOriginController(overviewController o){
+        this.originController = o;
+    }
 
 
 }
