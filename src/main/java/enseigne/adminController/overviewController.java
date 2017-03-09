@@ -33,15 +33,20 @@ public class overviewController {
     @FXML
     private Button updateStore;
 
+    @FXML
+    private Label nbMags;
+
+    @FXML
+    private Label ChiffreAffaireTotal;
+
+    @FXML
+    private Label nbEmployesTotal;
 
     @FXML
     private PieChart chiffreAffaireChart;
 
     @FXML
     private PieChart employesChart;
-
-    @FXML
-    private PieChart produitsChart;
 
     @FXML
     private BarChart<String, Integer> clienteleChart;
@@ -58,8 +63,6 @@ public class overviewController {
     @FXML
     private Label clientsTitle;
 
-    @FXML
-    private Label produitsTitle;
 
 
     private MagFilter filter;
@@ -69,13 +72,16 @@ public class overviewController {
     public void update() throws IOException {
         filter = new MagFilter();
         List<Magasin> magasins = filter.toDisplay();
+        nbMags.setText(String.valueOf(magasins.size()));
+        ChiffreAffaireTotal.setText(getTotalChiffreAffaire(magasins)+" €");
+        nbEmployesTotal.setText(String.valueOf(getTotalEmployes(magasins)));
         chiffreAffaireChart.setData(getChiffreAffaireDatas(magasins));
         chiffreAffairesTitle.setText("Chiffre d'affaires (total : " + getTotalChiffreAffaire(magasins) + " €)");
         employesChart.setData(getEmployesDatas(magasins));
         employesTitle.setText("Effectifs (total : " + getTotalEmployes(magasins) + " employés)");
-        produitsChart.setData(getProduitsRenduDatas(magasins));
-        produitsTitle.setText("Produits renvoyés (total : " + getTotalProduitsRendus(magasins) + ")");
         clienteleChart.setData(getClientele(magasins));
+        clienteleChart.getXAxis().setLabel("Magasins");
+        clienteleChart.getYAxis().setLabel("Nombre de clients");
     }
 
     private ObservableList<PieChart.Data> getChiffreAffaireDatas(List<Magasin> magasins) {
@@ -98,16 +104,6 @@ public class overviewController {
         return FXCollections.observableList(datas);
     }
 
-    private ObservableList<PieChart.Data> getProduitsRenduDatas(List<Magasin> magasins) {
-        List<PieChart.Data> datas = new ArrayList<>();
-        for (Magasin m : magasins) {
-            m.setRendu(Math.abs(RandomUtils.nextInt()));
-            PieChart.Data data = new PieChart.Data(m.getCentre(), m.getRendu());
-            datas.add(data);
-        }
-        return FXCollections.observableList(datas);
-    }
-
     private ObservableList<XYChart.Series<String,Integer>> getClientele(List<Magasin> magasins) {
         ObservableList<XYChart.Series<String,Integer>> list = FXCollections.observableArrayList();
         for(Magasin m : magasins){
@@ -115,6 +111,7 @@ public class overviewController {
             series.setName(m.getCentre());
             for(int i=0;i<5;i++){
                 String title = Integer.toString(i*15)+" - "+Integer.toString((i+1)*15-1)+" ans";
+                if(i==4) title = Integer.toString(i*15)+" ans et plus";
                 series.getData().add(new XYChart.Data<String,Integer>(title,m.getAge().get(i)));
             }
             list.add(series);
