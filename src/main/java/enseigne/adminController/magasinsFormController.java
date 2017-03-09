@@ -4,6 +4,7 @@ import enseigne.modele.ReadConst;
 import enseigne.modele.magasin.Magasin;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -16,6 +17,9 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 
 public class magasinsFormController {
 
@@ -60,6 +64,14 @@ public class magasinsFormController {
     public void initialize(){
         m = new Magasin();
     }
+
+    public void showAlert(String message){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
     @FXML
     void ajoutMag(ActionEvent event) throws IOException{
         m.setAddr(adresse.getText());
@@ -79,6 +91,19 @@ public class magasinsFormController {
         m.setVille(ville.getText());
         m.setTelephone(telephone.getText());
         m.setCodePostal(codePostal.getText());
+
+        // filling a map - TO DELETE when lucas aura fait son taf
+        Random r = new Random();
+        Map<Integer,Integer> map1 = new HashMap<>();
+        Map<Integer,Integer> map2 = new HashMap<>();
+        for(int i = 0;i<5;i++){
+            map1.put(i,r.nextInt(100)+1);
+            map2.put(i,r.nextInt(100)+1);
+        }
+        m.setAge(map1);
+        m.setPointe(map2);
+        //end of  TO DELETE//
+        System.out.println(map1);
         prevCtrl.addMag(m);
         Stage stage = (Stage) ajoutMagasin.getScene().getWindow();
         stage.close();
