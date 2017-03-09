@@ -64,7 +64,90 @@
             </VBox>
             <VBox alignment="TOP_CENTER" GridPane.columnIndex="1">
                <children>
-                  <Label fx:id="employesTitle" text="Nombre d'employés">
+                  <Label fx:id="mainDatas" text="Données générales">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="mainDatas1" text="TO BE OR TO HAVE">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="288.0" prefWidth="689.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="288.0" prefWidth="325.0">
+                           <children>
+                              <Label text="Nombre de magasins">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Chiffre d'affaire total">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Nombre d'employés">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets top="32.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="288.0" prefWidth="325.0">
+                           <children>
+                              <Label fx:id="nbMags" alignment="TOP_CENTER" prefWidth="150.0" style="-fx-background-color: lightgrey;" text="..." textAlignment="CENTER">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="ChiffreAffaireTotal" alignment="TOP_CENTER" prefWidth="150.0" style="-fx-background-color: lightgrey;" text="...">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="nbEmployesTotal" alignment="TOP_CENTER" prefWidth="150.0" style="-fx-background-color: lightgrey;" text="...">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets top="32.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="employesTitle" text="Employés">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -75,22 +158,9 @@
                   <PieChart fx:id="employesChart" prefHeight="249.0" prefWidth="319.0" />
                </children>
             </VBox>
-            <VBox alignment="TOP_CENTER" GridPane.rowIndex="1">
-               <children>
-                  <Label fx:id="produitsTitle" text="Produits renvoyés">
-                     <font>
-                        <Font size="25.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="15.0" />
-                     </VBox.margin>
-                  </Label>
-                  <PieChart fx:id="produitsChart" prefHeight="249.0" prefWidth="319.0" />
-               </children>
-            </VBox>
             <VBox alignment="TOP_CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <Label fx:id="clientsTitle" text="Clientèle">
+                  <Label fx:id="employesTitle1" text="Clientèle">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -98,7 +168,7 @@
                         <Insets top="15.0" />
                      </VBox.margin>
                   </Label>
-                  <BarChart fx:id="clienteleChart" prefHeight="303.0" prefWidth="649.0">
+                  <BarChart fx:id="clienteleChart">
                     <xAxis>
                       <CategoryAxis side="BOTTOM" />
                     </xAxis>
