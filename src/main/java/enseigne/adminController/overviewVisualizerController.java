@@ -91,7 +91,8 @@ public class overviewVisualizerController {
         XYChart.Series series = new XYChart.Series();
         series.setName(m.getCentre());
         for (int i = 0; i < 5; i++) {
-            String title = Integer.toString((i*2)+8)+"h-" + Integer.toString((i*2)+10) + "h";
+            String title = Integer.toString((i*2)+8)+"h " + Integer.toString((i*2)+10) + "h";
+            System.out.println(title);
             series.getData().add(new XYChart.Data<String, Integer>(title, m.getPointe().get(i)));
         }
         list.add(series);
