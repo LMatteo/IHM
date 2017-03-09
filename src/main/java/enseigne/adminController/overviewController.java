@@ -82,6 +82,7 @@ public class overviewController {
         clienteleChart.setData(getClientele(magasins));
         clienteleChart.getXAxis().setLabel("Magasins");
         clienteleChart.getYAxis().setLabel("Nombre de clients");
+        System.out.println("salut");
     }
 
     private ObservableList<PieChart.Data> getChiffreAffaireDatas(List<Magasin> magasins) {
