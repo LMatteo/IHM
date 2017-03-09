@@ -51,7 +51,7 @@
          <children>
             <VBox alignment="TOP_CENTER">
                <children>
-                  <Label fx:id="chiffreAffairesTitle" text="Chiffres d'affaires">
+                  <Label fx:id="chiffreAffairesTitle" text="Chiffres d'affaires annuels">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -89,7 +89,7 @@
                                     <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                  </VBox.margin>
                               </Label>
-                              <Label text="Chiffre d'affaire total">
+                              <Label text="Chiffre d'affaire total (/an)">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
