@@ -1,6 +1,6 @@
 package enseigne.customerController;
 
-import enseigne.adminController.AdminStoreController;
+import enseigne.adminController.store.AdminStoreController;
 import enseigne.modele.magasin.Magasin;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

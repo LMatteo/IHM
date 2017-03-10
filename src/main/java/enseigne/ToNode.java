@@ -1,6 +1,6 @@
 package enseigne;
 
-import enseigne.adminController.AdminStoreController;
+import enseigne.adminController.store.AdminStoreController;
 import enseigne.customerController.MagControl;
 import enseigne.modele.photo.Photo;
 import enseigne.modele.actu.Actu;
@@ -15,7 +15,6 @@ import javafx.scene.layout.VBox;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Objects;
 
 public class ToNode {
 

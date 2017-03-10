@@ -1,4 +1,4 @@
-package enseigne.adminController;
+package enseigne.adminController.store;
 
 import enseigne.ToNode;
 import enseigne.modele.magasin.Magasin;
