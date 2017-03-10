@@ -33,7 +33,7 @@ public class Launcher extends Application {
         PATHS_ADMIN = new HashMap<>();
         PATHS_ADMIN.put("--centre", "/fxml/centre/admin/adminLayout.fxml");
         PATHS_ADMIN.put("--enseigne", "/fxml/enseigne/admin/skelAdmin.fxml");
-        PATHS_ADMIN.put("--magasin", "/fxml/magasin/admin/Admin_Home.fxml");
+        PATHS_ADMIN.put("--magasin", "/fxml/magasin/admin/Admin_Layout.fxml");
     }
 
     private String part = "--centre";
