@@ -14,6 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.TextField?>
 <AnchorPane prefHeight="598.0" prefWidth="1065.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TabPane prefHeight="598.0" prefWidth="1065.0" tabClosingPolicy="UNAVAILABLE">
@@ -107,7 +108,7 @@
                            <children>
                               <ImageView fitHeight="400.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../images/magasin/imagePreview.png" />
+                                    <Image url="@/images/magasin/imagePreview.png" />
                                  </image>
                                  <HBox.margin>
                                     <Insets right="30.0" />
@@ -218,7 +219,7 @@
                            <children>
                               <ImageView fitHeight="400.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../images/magasin/imagePreview.png" />
+                                    <Image url="@/images/magasin/imagePreview.png" />
                                  </image>
                                  <HBox.margin>
                                     <Insets right="30.0" />
