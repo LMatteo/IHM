@@ -28,6 +28,9 @@ public class MagControl {
     private Label title;
 
     @FXML
+    private Label web;
+
+    @FXML
     private Label info;
 
     @FXML
@@ -56,7 +59,8 @@ public class MagControl {
         }
 
         info.setText("Informations complémentaires : "+m.getInfoFr());
-        tel.setText("Téléphone : " + m.getTelephone()+" - Site web : " + m.getWeb());
+        tel.setText(m.getTelephone());
+        web.setText(m.getWeb());
         addresse.setText("Adresse : " + m.getAddr() + " " + m.getCodePostal() + " " + m.getVille());
         hbox1.setStyle("-fx-background-color: #d0d0d0");
     }
