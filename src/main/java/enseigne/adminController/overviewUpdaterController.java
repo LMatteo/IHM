@@ -105,7 +105,7 @@ public class overviewUpdaterController {
         selectedMagasin.setChiffreAffaire(Integer.parseInt(chiffreAffaireLabel.getText()));
         selectedMagasin.setNbEmpl(Integer.parseInt(employesLabel.getText()));
 
-        Map<Integer,Integer> mapHoraires = new HashMap<>();
+        Map<Integer, Integer> mapHoraires = new HashMap<>();
         mapHoraires.put(0, Integer.valueOf(horaire8.getText()));
         mapHoraires.put(1, Integer.valueOf(horaire10.getText()));
         mapHoraires.put(2, Integer.valueOf(horaire12.getText()));
@@ -113,7 +113,7 @@ public class overviewUpdaterController {
         mapHoraires.put(4, Integer.valueOf(horaire16.getText()));
         selectedMagasin.setPointe(mapHoraires);
 
-        Map<Integer,Integer> mapClientele = new HashMap<>();
+        Map<Integer, Integer> mapClientele = new HashMap<>();
         mapClientele.put(0, Integer.valueOf(age0.getText()));
         mapClientele.put(1, Integer.valueOf(age15.getText()));
         mapClientele.put(2, Integer.valueOf(age30.getText()));
@@ -127,56 +127,110 @@ public class overviewUpdaterController {
 
     @FXML
     void minusHoraire0(ActionEvent event) {
-        System.out.println("salut");
+        horaire8.setText(String.valueOf(Integer.parseInt(horaire8.getText()) - 1));
+
     }
 
     @FXML
     void minusHoraire10(ActionEvent event) {
+        horaire10.setText(String.valueOf(Integer.parseInt(horaire10.getText()) - 1));
 
     }
 
     @FXML
     void minusHoraire12(ActionEvent event) {
+        horaire12.setText(String.valueOf(Integer.parseInt(horaire12.getText()) - 1));
 
     }
 
     @FXML
     void minusHoraire14(ActionEvent event) {
+        horaire14.setText(String.valueOf(Integer.parseInt(horaire14.getText()) - 1));
 
     }
 
     @FXML
     void minusHoraire16(ActionEvent event) {
-
+        horaire16.setText(String.valueOf(Integer.parseInt(horaire16.getText()) - 1));
     }
 
     @FXML
     void plusHoraire10(ActionEvent event) {
-
+        horaire10.setText(String.valueOf(Integer.parseInt(horaire10.getText()) + 1));
     }
 
     @FXML
     void plusHoraire12(ActionEvent event) {
-
+        horaire12.setText(String.valueOf(Integer.parseInt(horaire12.getText()) + 1));
     }
 
     @FXML
     void plusHoraire14(ActionEvent event) {
-
+        horaire14.setText(String.valueOf(Integer.parseInt(horaire14.getText()) + 1));
     }
 
     @FXML
     void plusHoraire16(ActionEvent event) {
-
+        horaire16.setText(String.valueOf(Integer.parseInt(horaire16.getText()) + 1));
     }
 
     @FXML
     void plusHoraire8(ActionEvent event) {
-
+        horaire8.setText(String.valueOf(Integer.parseInt(horaire8.getText()) + 1));
     }
 
-    public void setOriginController(overviewController o){
+    public void setOriginController(overviewController o) {
         this.originController = o;
+    }
+
+    @FXML
+    void client0minus(ActionEvent event) {
+        age0.setText(String.valueOf(Integer.parseInt(age0.getText()) - 1));
+    }
+
+    @FXML
+    void client0plus(ActionEvent event) {
+        age0.setText(String.valueOf(Integer.parseInt(age0.getText()) + 1));
+    }
+
+    @FXML
+    void client1minus(ActionEvent event) {
+        age15.setText(String.valueOf(Integer.parseInt(age15.getText()) - 1));
+    }
+
+    @FXML
+    void client1plus(ActionEvent event) {
+        age15.setText(String.valueOf(Integer.parseInt(age15.getText()) + 1));
+    }
+
+    @FXML
+    void client2minus(ActionEvent event) {
+        age30.setText(String.valueOf(Integer.parseInt(age30.getText()) - 1));
+    }
+
+    @FXML
+    void client2plus(ActionEvent event) {
+        age30.setText(String.valueOf(Integer.parseInt(age30.getText()) + 1));
+    }
+
+    @FXML
+    void client3minus(ActionEvent event) {
+        age45.setText(String.valueOf(Integer.parseInt(age45.getText()) - 1));
+    }
+
+    @FXML
+    void client3plus(ActionEvent event) {
+        age45.setText(String.valueOf(Integer.parseInt(age45.getText()) + 1));
+    }
+
+    @FXML
+    void client4minus(ActionEvent event) {
+        age60.setText(String.valueOf(Integer.parseInt(age60.getText()) - 1));
+    }
+
+    @FXML
+    void client4plus(ActionEvent event) {
+        age60.setText(String.valueOf(Integer.parseInt(age60.getText()) + 1));
     }
 
 
