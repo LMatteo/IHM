@@ -45,6 +45,4 @@ public class HomeControl {
         layoutControl.goToBoutique(null);
 
     }
-
-
 }
