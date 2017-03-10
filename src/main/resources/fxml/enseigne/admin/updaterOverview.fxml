@@ -144,7 +144,7 @@
                                              <children>
                                                 <HBox>
                                                    <children>
-                                                      <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="-">
+                                                      <Button mnemonicParsing="false" onAction="#client0minus" prefHeight="30.0" prefWidth="50.0" text="-">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -157,7 +157,7 @@
                                                             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                          </padding>
                                                       </TextField>
-                                                      <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="+" textAlignment="CENTER">
+                                                      <Button mnemonicParsing="false" onAction="#client0plus" prefHeight="30.0" prefWidth="50.0" text="+" textAlignment="CENTER">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -172,7 +172,7 @@
                                                 </HBox>
                                                 <HBox>
                                                    <children>
-                                                      <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="-">
+                                                      <Button mnemonicParsing="false" onAction="#client1minus" prefHeight="30.0" prefWidth="50.0" text="-">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -185,7 +185,7 @@
                                                             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                          </padding>
                                                       </TextField>
-                                                      <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="+" textAlignment="CENTER">
+                                                      <Button mnemonicParsing="false" onAction="#client1plus" prefHeight="30.0" prefWidth="50.0" text="+" textAlignment="CENTER">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -200,7 +200,7 @@
                                                 </HBox>
                                                 <HBox>
                                                    <children>
-                                                      <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="-">
+                                                      <Button mnemonicParsing="false" onAction="#client2minus" prefHeight="30.0" prefWidth="50.0" text="-">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -213,7 +213,7 @@
                                                             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                          </padding>
                                                       </TextField>
-                                                      <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="+" textAlignment="CENTER">
+                                                      <Button mnemonicParsing="false" onAction="#client2plus" prefHeight="30.0" prefWidth="50.0" text="+" textAlignment="CENTER">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -228,7 +228,7 @@
                                                 </HBox>
                                                 <HBox>
                                                    <children>
-                                                      <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="-">
+                                                      <Button mnemonicParsing="false" onAction="#client3minus" prefHeight="30.0" prefWidth="50.0" text="-">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -241,7 +241,7 @@
                                                             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                          </padding>
                                                       </TextField>
-                                                      <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="+" textAlignment="CENTER">
+                                                      <Button mnemonicParsing="false" onAction="#client3plus" prefHeight="30.0" prefWidth="50.0" text="+" textAlignment="CENTER">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -256,7 +256,7 @@
                                                 </HBox>
                                                 <HBox>
                                                    <children>
-                                                      <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="-">
+                                                      <Button mnemonicParsing="false" onAction="#client4minus" prefHeight="30.0" prefWidth="50.0" text="-">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
@@ -269,7 +269,7 @@
                                                             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                                                          </padding>
                                                       </TextField>
-                                                      <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="50.0" text="+" textAlignment="CENTER">
+                                                      <Button mnemonicParsing="false" onAction="#client4plus" prefHeight="30.0" prefWidth="50.0" text="+" textAlignment="CENTER">
                                                          <HBox.margin>
                                                             <Insets />
                                                          </HBox.margin>
