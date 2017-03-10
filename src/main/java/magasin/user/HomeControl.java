@@ -32,18 +32,19 @@ public class HomeControl {
     @FXML
     void goToCatalogue(MouseEvent event) throws IOException {
         layoutControl.goToCatalogue(null);
+        paneLayout.setFocusTraversable(false);
     }
-
 
     @FXML
     void goToActu(MouseEvent event) throws IOException {
         layoutControl.goToActu(null);
+        paneLayout.setFocusTraversable(false);
     }
 
     @FXML
     void goToBoutique(MouseEvent event) throws IOException {
         layoutControl.goToBoutique(null);
-
+        paneLayout.setFocusTraversable(false);
     }
 
 
