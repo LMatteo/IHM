@@ -39,6 +39,12 @@ public class Launcher extends Application {
     private String part = "--centre";
     private String style = "/styles/centre/style1.css";
     private boolean adminMode = false;
+    private double adminWidth = 1600;
+    private double adminHeight = 900;
+
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
 
     /**
      * Analyzes the arguments of the program.
@@ -55,9 +61,13 @@ public class Launcher extends Application {
                     style = "/styles/centre/style2.css";
                     CentrePaths.PATHTOLOGO = "/images/centre/logoCentre2.png";
                     break;
+                case "--magasin":
+                    if (adminMode) {
+                        adminHeight = 800;
+                        adminWidth = 1060;
+                    }
                 case "--centre":
                 case "--enseigne":
-                case "--magasin":
                     part = arg;
                     break;
                 default:
@@ -92,15 +102,11 @@ public class Launcher extends Application {
             path = PATHS.get(part);
         }
         Parent rootNode = FXMLLoader.load(getClass().getResource(path));
-        Scene scene = adminMode ? new Scene(rootNode, 1600, 900) : new Scene(rootNode, 1280, 1024);
+        Scene scene = adminMode ? new Scene(rootNode, adminWidth, adminHeight) : new Scene(rootNode, 1280, 1024);
         scene.getStylesheets().add(style);
         stage.setTitle("Borne");
         stage.setScene(scene);
         stage.show();
-    }
-
-    public static void main(String[] args) {
-        Application.launch(args);
     }
 
 
