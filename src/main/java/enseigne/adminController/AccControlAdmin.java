@@ -1,5 +1,6 @@
 package enseigne.adminController;
 
+import enseigne.adminController.store.AdminStoreController;
 import enseigne.modele.modele.MagFilter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
