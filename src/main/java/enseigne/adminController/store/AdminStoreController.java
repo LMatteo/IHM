@@ -1,24 +1,17 @@
-package enseigne.adminController;
+package enseigne.adminController.store;
 
 import enseigne.ToNode;
-import enseigne.modele.ReadConst;
 import enseigne.modele.magasin.Magasin;
 import enseigne.modele.modele.MagFilter;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class AdminStoreController {

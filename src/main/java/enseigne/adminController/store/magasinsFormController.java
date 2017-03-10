@@ -1,5 +1,6 @@
-package enseigne.adminController;
+package enseigne.adminController.store;
 
+import enseigne.adminController.store.AdminStoreController;
 import enseigne.modele.ReadConst;
 import enseigne.modele.magasin.Magasin;
 import javafx.event.ActionEvent;
@@ -82,12 +83,8 @@ public class magasinsFormController {
         m.setTelephone(telephone.getText());
         m.setVille(ville.getText());
         m.setCodePostal(codePostal.getText());
-        String path = "data/enseigne/images";
-        String[] imageName = imagePath.split("/");
-        if(imageName.length>0) {
-            path = path + imageName[imageName.length - 1];
-        }
-        m.setPhoto(path);
+        File image = new File(imagePath);
+        m.setPhoto(ReadConst.imagePath+'/'+image.getName());
         m.setVille(ville.getText());
         m.setTelephone(telephone.getText());
         m.setCodePostal(codePostal.getText());
