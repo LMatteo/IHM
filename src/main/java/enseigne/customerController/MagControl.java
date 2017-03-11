@@ -62,7 +62,7 @@ public class MagControl {
         tel.setText(m.getTelephone());
         web.setText(m.getWeb());
         addresse.setText("Adresse : " + m.getAddr() + " " + m.getCodePostal() + " " + m.getVille());
-        hbox1.setStyle("-fx-background-color: #d0d0d0");
+
     }
 
     @FXML
@@ -76,12 +76,9 @@ public class MagControl {
     public void changeStyle(){
         String style = hbox1.getStyle();
         if(!selected){
-            style = style.replace("#d0d0d0","white");
-
-            hbox1.setStyle(style);
+            hbox1.setStyle("-fx-effect: dropshadow(three-pass-box, red, 10, 10, 0, 0);-fx-background-color: #fff");
         } else {
-            style = style.replaceAll("white","#d0d0d0");
-            hbox1.setStyle(style);
+            hbox1.setStyle("-fx-effect: dropshadow(three-pass-box, grey, 12, 0, 0, 0);\n;-fx-background-color: #fff");
         }
         selected = !selected;
     }
