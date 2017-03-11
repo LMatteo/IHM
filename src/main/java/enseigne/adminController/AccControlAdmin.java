@@ -1,6 +1,5 @@
 package enseigne.adminController;
 
-import enseigne.adminController.photo.AdminGalerieController;
 import enseigne.adminController.store.AdminStoreController;
 import enseigne.modele.modele.MagFilter;
 import javafx.event.ActionEvent;
@@ -72,12 +71,6 @@ public class AccControlAdmin {
     void switchGallerie(ActionEvent event) {
         Button source = (Button) event.getSource();
         pane.setContent(galeriePane);
-        AdminGalerieController ctrl = galeriePaneLoader.getController();
-        try {
-            ctrl.update();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         switchBut(source);
         pane.setVvalue(0);
     }

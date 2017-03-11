@@ -21,7 +21,7 @@ public class GallerieController {
         update();
     }
 
-    public void update(){
+    public void update() throws IOException {
         pane.getChildren().clear();
         List<Photo> photos = filter.toDisplay();
         for(Photo photo : photos){
