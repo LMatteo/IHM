@@ -13,7 +13,9 @@
 <?import javafx.scene.text.Font?>
 
 <?import javafx.scene.control.TextField?>
-<ScrollPane maxHeight="-Infinity" maxWidth="1060.0" minHeight="-Infinity" minWidth="1060.0" prefHeight="600.0" prefWidth="1060.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.102">
+<ScrollPane maxHeight="-Infinity" maxWidth="1060.0" minHeight="-Infinity" minWidth="1060.0"
+            prefHeight="600.0" prefWidth="1060.0" xmlns:fx="http://javafx.com/fxml/1"
+            xmlns="http://javafx.com/javafx/8.0.102" fx:controller="magasin.admin.OrderControl">
    <content>
       <HBox prefHeight="598.0" prefWidth="1058.0">
          <children>
