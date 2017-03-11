@@ -1,5 +1,6 @@
 package enseigne.adminController;
 
+import enseigne.adminController.photo.AdminGalerieController;
 import enseigne.adminController.store.AdminStoreController;
 import enseigne.modele.modele.MagFilter;
 import javafx.event.ActionEvent;
@@ -42,12 +43,14 @@ public class AccControlAdmin {
     private Node overviewPane;
     private Node infoPane;
     private FXMLLoader overviewPaneLoader;
+    private FXMLLoader galeriePaneLoader;
 
     @FXML
     public void initialize() throws IOException {
         infoPane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/admin/adminInfo.fxml"));
         accueilPane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/admin/adminAccueil.fxml"));
-        galeriePane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/admin/adminGallerie.fxml"));
+        galeriePaneLoader = new FXMLLoader(getClass().getResource("/fxml/enseigne/admin/adminGallerie.fxml"));
+        galeriePane = galeriePaneLoader.load();
         overviewPaneLoader = new FXMLLoader(getClass().getResource("/fxml/enseigne/admin/adminOverview.fxml"));
         overviewPane = overviewPaneLoader.load();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/enseigne/admin/adminStore.fxml"));
@@ -69,6 +72,12 @@ public class AccControlAdmin {
     void switchGallerie(ActionEvent event) {
         Button source = (Button) event.getSource();
         pane.setContent(galeriePane);
+        AdminGalerieController ctrl = galeriePaneLoader.getController();
+        try {
+            ctrl.update();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         switchBut(source);
         pane.setVvalue(0);
     }

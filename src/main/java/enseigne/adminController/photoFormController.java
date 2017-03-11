@@ -28,7 +28,6 @@ public class photoFormController {
 
     @FXML
     private ChoiceBox<?> category;
-    //http://stackoverflow.com/questions/35260061/combobox-items-via-scene-builder
 
     @FXML
     private Button browsePhoto;
