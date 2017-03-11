@@ -2,7 +2,6 @@ package enseigne.modele;
 
 import enseigne.modele.actu.Actu;
 import enseigne.modele.magasin.Magasin;
-import enseigne.modele.modele.ActuFilter;
 import enseigne.modele.photo.Photo;
 
 import java.io.*;
@@ -14,7 +13,7 @@ public class ReadConst {
     public static final String storePath = "data/enseigne/stores/";
     public static final String actuPath = "data/enseigne/actu/";
     public static  final String imagePath = "data/enseigne/images";
-    public static final String photoPath = "data/enseigne/photo";
+    public static final String photoPath = "data/enseigne/photos/";
     public static final FileFilter filter = new FileFilter() {
         @Override
         public boolean accept(File pathname) {
