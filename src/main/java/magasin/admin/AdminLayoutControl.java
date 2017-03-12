@@ -38,7 +38,7 @@ public class AdminLayoutControl {
     public void initialize() throws IOException, URISyntaxException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/admin/Admin_Home.fxml"));
         sp = loader.load();
-       /* HomeControl homeControl = loader.getController();
+       /*HomeControl homeControl = loader.getController();
         homeControl.setLayoutControl(this);*/
         paneLayout.setVvalue(0);
         paneLayout.setContent(sp);
@@ -74,8 +74,10 @@ public class AdminLayoutControl {
 
     @FXML
     void goToStock(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/admin/Admin_Catalogue.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/admin/Admin_Stock.fxml"));
         sp = loader.load();
+        OrderControl homeControl = loader.getController();
+        homeControl.setAdminLayoutControl(this);
         paneLayout.setContent(sp);
         switchButtonStyle(stock);
         paneLayout.setVvalue(0);
@@ -91,11 +93,6 @@ public class AdminLayoutControl {
     }
 
     @FXML
-    void goToMall(MouseEvent event) throws IOException {
-        //switchScene(event, System.getProperty("user.dir")+ File.separator +"IHM/centre/src/resources/fxml/Actu.fxml");
-    }
-
-    @FXML
     void goToStats(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/admin/Admin_Stats.fxml"));
         sp = loader.load();
@@ -108,8 +105,6 @@ public class AdminLayoutControl {
     void goToBoutiques(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/admin/Admin_Map.fxml"));
         sp = loader.load();
-        //HomeControl homeControl = loader.getController();
-        //homeControl.setLayoutControl(this);
         paneLayout.setContent(sp);
         switchButtonStyle(boutiques);
         paneLayout.setVvalue(0);
@@ -119,41 +114,21 @@ public class AdminLayoutControl {
     void goToInfo(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/admin/Admin_Info.fxml"));
         sp = loader.load();
-        //HomeControl homeControl = loader.getController();
-        //homeControl.setLayoutControl(this);
         paneLayout.setContent(sp);
         switchButtonStyle(info);
         paneLayout.setVvalue(0);
     }
 
     /**
-     * Methods which load some views from the client homepage
+     * Methods to acces views from other view already loaded in the layout
      */
+
     @FXML
-    void goToCatalogue(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/user/catalogue.fxml"));
+    void goToNewOrder(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/admin/Admin_newOrder.fxml"));
         ScrollPane sp = loader.load();
         paneLayout.setContent(sp);
         paneLayout.setVvalue(0);
     }
-
-    @FXML
-    void goToBoutique(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/user/boutique.fxml"));
-        ScrollPane sp = loader.load();
-        paneLayout.setContent(sp);
-        paneLayout.setVvalue(0);
-    }
-
-    @FXML
-    void goToActu(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/user/currently.fxml"));
-        ScrollPane sp = loader.load();
-        paneLayout.setContent(sp);
-        paneLayout.setVvalue(0);
-    }
-
-
-
 
 }
