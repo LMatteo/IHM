@@ -17,15 +17,17 @@ import java.util.Observable;
  */
 public class HomeControl {
 
-    @FXML private ScrollPane paneHome;
-    @FXML private AnchorPane apHome;
+    @FXML
+    private ScrollPane paneHome;
+    @FXML
+    private AnchorPane apHome;
 
     private AnchorPane apCatalogue;
     private ScrollPane paneCatalogue;
     private ScrollPane paneLayout;
     private LayoutControl layoutControl;
 
-    public void setLayoutControl(LayoutControl layoutControl){
+    public void setLayoutControl(LayoutControl layoutControl) {
         this.layoutControl = layoutControl;
     }
 
@@ -46,6 +48,5 @@ public class HomeControl {
         layoutControl.goToBoutique(null);
         paneLayout.setFocusTraversable(false);
     }
-
 
 }
