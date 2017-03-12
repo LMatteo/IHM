@@ -29,7 +29,7 @@
     -fx-border-width: 0 0 0 2;
 }
 
-    .button-top:pressed {
+.button-top:pressed {
 -fx-background-color: derive( #4B77BB, -40% );
 }
 
@@ -46,6 +46,12 @@
 
 .sort-button .label {
     -fx-text-fill: WHITE;
+}
+
+.context-menu {
+    -fx-skin: "com.sun.javafx.scene.control.skin.ContextMenuSkin";
+    -fx-text-fill: BLACK !important;
+    -fx-background-color: #4B77BE;
 }
 
 .search-button:pressed,
