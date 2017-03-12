@@ -1,4 +1,4 @@
-package enseigne.customerController;
+package enseigne.customerController.news;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

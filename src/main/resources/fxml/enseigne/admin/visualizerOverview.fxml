@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane hbarPolicy="NEVER" prefHeight="856.0" prefWidth="652.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.adminController.overviewVisualizerController">
+<ScrollPane hbarPolicy="NEVER" prefHeight="856.0" prefWidth="652.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.adminController.overview.overviewVisualizerController">
    <content>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="700.0" minWidth="-Infinity" prefHeight="849.0" prefWidth="650.0">
          <children>

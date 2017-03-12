@@ -1,4 +1,4 @@
-package enseigne.customerController;
+package enseigne.customerController.galerie;
 
 import enseigne.ToNode;
 import enseigne.modele.modele.PhotoFilter;
@@ -21,7 +21,7 @@ public class GallerieController {
         update();
     }
 
-    public void update(){
+    public void update() throws IOException {
         pane.getChildren().clear();
         List<Photo> photos = filter.toDisplay();
         for(Photo photo : photos){

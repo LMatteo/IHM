@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox fx:id="hbox1" alignment="TOP_CENTER" onMouseClicked="#selected" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.customerController.MagControl">
+<HBox fx:id="hbox1" alignment="TOP_CENTER" onMouseClicked="#selected" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.customerController.store.MagControl">
    <children>
       <ImageView fx:id="image" fitHeight="186.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
       <VBox fx:id="vbox2" prefHeight="184.0" prefWidth="763.0">
