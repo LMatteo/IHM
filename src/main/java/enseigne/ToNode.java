@@ -57,7 +57,7 @@ public class ToNode {
     public static Node photos(Photo p) throws IOException {
         FXMLLoader loader = new FXMLLoader(ToNode.class.getResource("/fxml/enseigne/customer/photoDisplay.fxml"));
         Node node = loader.load();
-        HBox.setMargin(node,new Insets(20,70,20,70));
+        HBox.setMargin(node,new Insets(20,20,20,20));
         PhotoControl ctrl  = (PhotoControl) loader.getController();
         ctrl.setPhoto(p);
         return node;
