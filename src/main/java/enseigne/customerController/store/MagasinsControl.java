@@ -1,10 +1,11 @@
 package enseigne.customerController.store;
 
 import enseigne.ToNode;
+import enseigne.adminController.store.MagCell;
 import enseigne.modele.magasin.Magasin;
 import enseigne.modele.modele.MagFilter;
 import javafx.fxml.FXML;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.ListView;
 
 import java.io.IOException;
 import java.util.List;
@@ -12,22 +13,15 @@ import java.util.List;
 public class MagasinsControl {
 
     @FXML
-    private VBox pane;
+    ListView<Magasin> view;
 
-    private MagFilter filter;
+    MagFilter filter;
 
     @FXML
     public void initialize() throws IOException {
         filter = new MagFilter();
-        update();
-    }
+        view.setItems(filter.toDisplay());
+        view.setCellFactory((ListView<Magasin> mag ) -> new MagCell());
 
-    public void update() throws IOException{
-        pane.getChildren().clear();
-        List<Magasin> mags = filter.toDisplay();
-        for(Magasin mag : mags){
-            pane.getChildren().add(ToNode.magasins(mag,null));
-        }
     }
-
 }
