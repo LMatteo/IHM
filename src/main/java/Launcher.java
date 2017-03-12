@@ -87,14 +87,18 @@ public class Launcher extends Application {
      */
     @Override
     public void start(Stage stage) throws IOException {
-        Parent rootNode = FXMLLoader.load(getClass().getResource(path));
-        Scene scene = adminMode ? new Scene(rootNode, 1600, 900) : new Scene(rootNode, 1280, 1024);
-        for (String style : styles) {
-            scene.getStylesheets().add(style);
+        try {
+            Parent rootNode = FXMLLoader.load(getClass().getResource(path));
+            Scene scene = adminMode ? new Scene(rootNode, 1600, 900) : new Scene(rootNode, 1280, 1024);
+            for (String style : styles) {
+                scene.getStylesheets().add(style);
+            }
+            stage.setTitle("Borne");
+            stage.setScene(scene);
+            stage.show();
+        } catch(Exception e){
+            e.printStackTrace();
         }
-        stage.setTitle("Borne");
-        stage.setScene(scene);
-        stage.show();
     }
 
 
