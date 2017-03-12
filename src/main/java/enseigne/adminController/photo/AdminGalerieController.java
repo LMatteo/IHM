@@ -27,14 +27,14 @@ public class AdminGalerieController {
 
     private List<Photo> allPhotos;
     private Set<String> categories ;
-    String defaultCategory = "Sélectionner une catégorie";
+    String defaultCategory = "Toutes les catégories";
 
     @FXML
     public void initialize() throws IOException {
         allPhotos = getPhotoList();
         categories = new HashSet<>();
-        categoriesBox.setPromptText(defaultCategory);
-        categoriesBox.getItems().add("Filtrer");
+        categoriesBox.setPromptText("Filtrer...");
+        categoriesBox.getItems().add(defaultCategory);
         displayPhotos(allPhotos);
         displayCategories(allPhotos);
 
@@ -42,11 +42,14 @@ public class AdminGalerieController {
 
     public void displayPhotos(List<Photo> list) throws IOException {
         displayPane.getChildren().clear();
-        for(int i=0;i<list.size();i+=2){
+        for(int i=0;i<list.size();i+=3){
             HBox hbox = new HBox();
             hbox.getChildren().add(ToNode.photos(list.get(i)));
             if((i+1)<list.size()){
                 hbox.getChildren().add(ToNode.photos(list.get(i+1)));
+            }
+            if((i+2)<list.size()){
+                hbox.getChildren().add(ToNode.photos(list.get(i+2)));
             }
             displayPane.getChildren().add(hbox);
         }
@@ -64,11 +67,6 @@ public class AdminGalerieController {
     }
 
     @FXML
-    void searchButton(ActionEvent event) {
-
-    }
-
-    @FXML
     void categorySelected(ActionEvent event) throws IOException {
         List<Photo> photosFiltered = new ArrayList<>();
         String selected = categoriesBox.getSelectionModel().getSelectedItem();
@@ -82,6 +80,22 @@ public class AdminGalerieController {
             }
         }
         displayPhotos(photosFiltered);
+    }
+
+
+    @FXML
+    void searchButton(ActionEvent event) throws IOException {
+        String request = searchField.getText();
+        List<Photo> toDisplay = new ArrayList<>();
+        for(Photo p : allPhotos){
+            if(p.getTitreFr().contains(request) ||
+                    p.getTitreEn().contains(request) ||
+                    p.getDescriptionFr().contains(request) ||
+                    p.getDescriptionEn().contains(request)){
+                toDisplay.add(p);
+            }
+        }
+        displayPhotos(toDisplay);
     }
 
 
