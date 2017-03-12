@@ -8,12 +8,15 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.control.TextField?>
-<ScrollPane maxHeight="-Infinity" maxWidth="1060.0" minHeight="-Infinity" minWidth="1060.0" prefHeight="600.0" prefWidth="1060.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.102">
+<ScrollPane fx:id="stockPane" maxHeight="-Infinity" maxWidth="1060.0" minHeight="-Infinity" minWidth="1060.0" prefHeight="600.0"
+            prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="magasin.admin.OrderControl">
    <content>
       <HBox prefHeight="598.0" prefWidth="1058.0">
          <children>
@@ -37,20 +40,14 @@
                         </MenuButton>
                         <TextField prefHeight="31.0" prefWidth="344.0" />
                         <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="84.0" text="Envoyer" />
-                        <MenuButton mnemonicParsing="false" prefHeight="31.0" prefWidth="176.0" text="Trier par" textAlignment="RIGHT">
-                          <items>
-                            <MenuItem mnemonicParsing="false" text="Référence" />
-                            <MenuItem mnemonicParsing="false" text="Nom" />
-                              <MenuItem mnemonicParsing="false" text="Prix" />
-                              <MenuItem mnemonicParsing="false" text="Disponibilité" />
-                          </items>
-                           <HBox.margin>
-                              <Insets left="70.0" />
-                           </HBox.margin>
-                        </MenuButton>
+                        <Pane maxHeight="-Infinity" minHeight="-Infinity" prefHeight="31.0" prefWidth="213.0">
+                           <children>
+                              <Button layoutX="84.0" maxHeight="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onMouseClicked="#goToNewOrder" prefHeight="31.0" prefWidth="130.0" text="Passer commande" />
+                           </children>
+                        </Pane>
                      </children>
                   </HBox>
-                  <TableView layoutX="14.0" layoutY="55.0" prefHeight="518.0" prefWidth="1018.0">
+                  <TableView fx:id="newOrder" layoutX="14.0" layoutY="55.0" prefHeight="518.0" prefWidth="1018.0">
                     <columns>
                       <TableColumn prefWidth="75.0" text="Dispo" />
                       <TableColumn prefWidth="87.0" text="Image" />

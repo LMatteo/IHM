@@ -13,6 +13,7 @@
 <?import javafx.scene.text.Font?>
 
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <ScrollPane maxHeight="-Infinity" maxWidth="1060.0" minHeight="-Infinity" minWidth="1060.0"
             prefHeight="600.0" prefWidth="1060.0" xmlns:fx="http://javafx.com/fxml/1"
             xmlns="http://javafx.com/javafx/8.0.102" fx:controller="magasin.admin.OrderControl">
@@ -51,13 +52,33 @@
                         </MenuButton>
                      </children>
                   </HBox>
-                  <TableView layoutX="14.0" layoutY="55.0" prefHeight="518.0" prefWidth="1018.0">
+                  <TableView layoutX="14.0" layoutY="55.0" prefHeight="518.0" prefWidth="1018.0" fx:id="orderTab">
                     <columns>
-                      <TableColumn prefWidth="75.0" text="Etat" />
-                      <TableColumn prefWidth="168.0" text="Client" />
-                        <TableColumn prefWidth="150.0" text="# Commande" />
-                        <TableColumn prefWidth="444.0" text="Items" />
-                        <TableColumn prefWidth="180.0" text="Conctact" />
+                      <TableColumn prefWidth="75.0" text="Etat">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="state" />
+                          </cellValueFactory>
+                      </TableColumn>
+                      <TableColumn prefWidth="168.0" text="Client">
+                          <cellValueFactory>
+                              <PropertyValueFactory property="clientName" />
+                          </cellValueFactory>
+                      </TableColumn>
+                        <TableColumn prefWidth="150.0" text="n° Commande">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="orderNumber" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="444.0" text="Items">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="dunno" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="180.0" text="Conctact">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="link" />
+                            </cellValueFactory>
+                        </TableColumn>
                     </columns>
                   </TableView>
                </children>
