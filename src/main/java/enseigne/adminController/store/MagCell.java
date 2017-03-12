@@ -10,17 +10,14 @@ public final class MagCell extends ListCell<Magasin>{
     @Override
     protected void updateItem(Magasin item, boolean empty) {
         super.updateItem(item, empty);
-        if(empty || item== null) {
-            this.setGraphic(null);
-            this.setText(null);
-        }
-        else {
+        if(item!=null) {
             try {
-                Node listElement = ToNode.magasins(item,null);
+                Node listElement = ToNode.magasins(item, null);
                 this.setGraphic(listElement);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         }
+
     }
 }

@@ -9,6 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 import java.io.File;
 import java.util.Objects;
@@ -25,19 +26,19 @@ public class MagControl {
     private VBox vbox2;
 
     @FXML
-    private Label title;
+    private Text title;
 
     @FXML
-    private Label web;
+    private Text web;
 
     @FXML
-    private Label info;
+    private Text info;
 
     @FXML
-    private Label tel;
+    private Text tel;
 
     @FXML
-    private Label addresse;
+    private Text addresse;
 
     private Magasin m ;
     private AdminStoreController controller;
