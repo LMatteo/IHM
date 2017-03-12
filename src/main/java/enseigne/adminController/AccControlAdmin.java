@@ -47,7 +47,7 @@ public class AccControlAdmin {
 
     @FXML
     public void initialize() throws IOException {
-        infoPane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/admin/adminInfo.fxml"));
+        infoPane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/customer/infos.fxml"));
         accueilPane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/admin/adminAccueil.fxml"));
         galeriePaneLoader = new FXMLLoader(getClass().getResource("/fxml/enseigne/admin/adminGallerie.fxml"));
         galeriePane = galeriePaneLoader.load();
@@ -87,6 +87,7 @@ public class AccControlAdmin {
     @FXML
     void switchInfos(ActionEvent event) {
         Button source = (Button) event.getSource();
+        infoPane.setStyle("-fx-padding: 20px 20px 20px 150px");
         pane.setContent(infoPane);
         switchBut(source);
         pane.setVvalue(0);
