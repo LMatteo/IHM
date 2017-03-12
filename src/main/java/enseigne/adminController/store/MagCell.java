@@ -2,12 +2,8 @@ package enseigne.adminController.store;
 
 import enseigne.ToNode;
 import enseigne.modele.magasin.Magasin;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.control.ListCell;
-
-import java.io.IOException;
 
 public final class MagCell extends ListCell<Magasin>{
 
