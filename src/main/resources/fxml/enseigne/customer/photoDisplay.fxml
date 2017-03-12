@@ -13,7 +13,7 @@
    <center>
       <Pane prefHeight="311.0" prefWidth="406.0" style="-fx-background-color: #fff;">
          <children>
-            <ImageView fx:id="image" fitHeight="265.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="image" fitHeight="265.0" fitWidth="410.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../images/enseigne/pitbull.jpg" />
                </image>
