@@ -1,10 +1,8 @@
-package enseigne.customerController;
+package enseigne.customerController.store;
 
 import enseigne.ToNode;
 import enseigne.modele.magasin.Magasin;
 import enseigne.modele.modele.MagFilter;
-import enseigne.modele.modele.PhotoFilter;
-import enseigne.modele.photo.Photo;
 import javafx.fxml.FXML;
 import javafx.scene.layout.VBox;
 

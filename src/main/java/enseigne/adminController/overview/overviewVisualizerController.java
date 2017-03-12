@@ -1,4 +1,4 @@
-package enseigne.adminController;
+package enseigne.adminController.overview;
 
 import enseigne.modele.ReadConst;
 import enseigne.modele.magasin.Magasin;

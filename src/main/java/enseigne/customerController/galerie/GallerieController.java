@@ -1,4 +1,4 @@
-package enseigne.customerController;
+package enseigne.customerController.galerie;
 
 import enseigne.ToNode;
 import enseigne.modele.modele.PhotoFilter;
