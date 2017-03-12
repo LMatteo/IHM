@@ -34,20 +34,13 @@ public class AdminStoreController {
 
     @FXML
     private ListView<Magasin> view;
-
-
-    private VBox pane;
-
     private MagFilter filter;
-
-    IntegerProperty selected = new SimpleIntegerProperty();
 
 
     public void setFilter(MagFilter m){
         this.filter = m ;
         view.setItems(m.toDisplay());
         view.setCellFactory((ListView<Magasin> mag ) -> new MagCell());
-        selected.bind(view.getSelectionModel().selectedIndexProperty());
         view.getSelectionModel().getSelectedItems().addListener(new ListChangeListener<Magasin>() {
             @Override
             public void onChanged(Change<? extends Magasin> c) {
