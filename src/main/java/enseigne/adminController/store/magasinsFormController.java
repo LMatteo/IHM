@@ -83,8 +83,10 @@ public class magasinsFormController {
         m.setTelephone(telephone.getText());
         m.setVille(ville.getText());
         m.setCodePostal(codePostal.getText());
-        File image = new File(imagePath);
-        m.setPhoto(ReadConst.imagePath+'/'+image.getName());
+        if(imagePath != null) {
+            File image = new File(imagePath);
+            m.setPhoto(ReadConst.imagePath + '/' + image.getName());
+        }
         m.setVille(ville.getText());
         m.setTelephone(telephone.getText());
         m.setCodePostal(codePostal.getText());
@@ -142,6 +144,10 @@ public class magasinsFormController {
         telephone.setText(m.getTelephone());
         web.setText(m.getWeb());
         imagePath = m.getPhoto();
+    }
+
+    public void setModif(){
+        ajoutMagasin.setText("MODIFIER CE MAGASIN");
     }
 
 }
