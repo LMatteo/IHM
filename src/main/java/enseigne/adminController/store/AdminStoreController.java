@@ -3,14 +3,26 @@ package enseigne.adminController.store;
 import enseigne.ToNode;
 import enseigne.modele.magasin.Magasin;
 import enseigne.modele.modele.MagFilter;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ListCell;
+import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 import java.io.IOException;
 import java.util.List;
@@ -21,24 +33,28 @@ public class AdminStoreController {
 
 
     @FXML
+    private ListView<Magasin> view;
+
+
     private VBox pane;
 
     private MagFilter filter;
 
-
-    public void update() throws IOException {
-        pane.getChildren().clear();
-        List<Magasin> magasins = filter.toDisplay();
-        for(Magasin mag : magasins){
-            pane.getChildren().add(ToNode.magasins(mag,this));
-        }
+    IntegerProperty selected = new SimpleIntegerProperty();
 
 
-    }
+    public void setFilter(MagFilter m){
+        this.filter = m ;
+        view.setItems(m.toDisplay());
+        view.setCellFactory((ListView<Magasin> mag ) -> new MagCell());
+        selected.bind(view.getSelectionModel().selectedIndexProperty());
+        view.getSelectionModel().getSelectedItems().addListener(new ListChangeListener<Magasin>() {
+            @Override
+            public void onChanged(Change<? extends Magasin> c) {
+                filter.onClick(view.getSelectionModel().getSelectedItem());
+            }
+        });
 
-    public void setFilter(MagFilter mag) throws IOException{
-        this.filter = mag;
-        update();
     }
 
     @FXML
@@ -54,6 +70,19 @@ public class AdminStoreController {
         stage.show();
     }
 
+    public void selectMag(Magasin m ){
+        filter.onClick(m);
+    }
+
+    public void addMag(Magasin m) throws IOException{
+        filter.add(m);
+    }
+
+    @FXML
+    public void delOne(ActionEvent event){
+        filter.delete();
+    }
+
     @FXML
     void modifyStore(ActionEvent event) throws IOException {
         if(filter.selected() == null) {
@@ -65,24 +94,12 @@ public class AdminStoreController {
         magasinsFormController ctrl = loader.getController();
         ctrl.setPrevCtrl(this);
         ctrl.setMag(filter.selected());
+        ctrl.setModif();
         Scene scene = new Scene(rootNode);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.setTitle("Nouvelle boutique");
         stage.show();
-    }
-
-    public void selectMag(Magasin m ){
-        filter.onClick(m);
-    }
-
-    public void addMag(Magasin m) throws IOException{
-        filter.add(m);
-        update();
-    }
-
-    @FXML
-    public void delOne(ActionEvent event){
         filter.delete();
     }
 

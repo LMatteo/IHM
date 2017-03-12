@@ -2,39 +2,34 @@ package enseigne.modele.modele;
 
 import enseigne.modele.ReadConst;
 import enseigne.modele.magasin.Magasin;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class MagFilter {
-    List<Magasin> mags;
-    List<Magasin> selected;
+    ObservableList<Magasin> mags;
+    Magasin selected;
 
     public MagFilter() throws IOException {
-        mags = ReadConst.getStoreFromJson();
-        selected = new ArrayList<>();
+        mags = FXCollections.observableList(ReadConst.getStoreFromJson());
 
     }
 
     public Magasin selected(){
-        if(selected.size() ==1){
-            return selected.get(0);
-        }
-        return null;
+        return selected;
     }
 
-    public List<Magasin> toDisplay(){
+    public ObservableList<Magasin> toDisplay(){
         return mags;
     }
 
     public void delete(){
-        for(Magasin m : selected){
-            m.delete();
-            mags.remove(m);
-        }
+        selected.delete();
+        mags.remove(selected);
     }
 
     public void add(Magasin m) throws IOException{
@@ -44,10 +39,6 @@ public class MagFilter {
     }
 
     public void onClick(Magasin m){
-        if(selected.contains(m)){
-            selected.remove(m);
-            return;
-        }
-        selected.add(m);
+        selected =  m;
     }
 }
