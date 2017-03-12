@@ -1,8 +1,8 @@
 package enseigne;
 
 import enseigne.adminController.store.AdminStoreController;
-import enseigne.customerController.MagControl;
-import enseigne.customerController.PhotoControl;
+import enseigne.customerController.store.MagControl;
+import enseigne.customerController.galerie.PhotoControl;
 import enseigne.modele.photo.Photo;
 import enseigne.modele.actu.Actu;
 import enseigne.modele.magasin.Magasin;

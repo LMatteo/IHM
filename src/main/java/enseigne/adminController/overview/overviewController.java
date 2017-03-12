@@ -1,4 +1,4 @@
-package enseigne.adminController;
+package enseigne.adminController.overview;
 
 import enseigne.modele.magasin.Magasin;
 import enseigne.modele.modele.MagFilter;

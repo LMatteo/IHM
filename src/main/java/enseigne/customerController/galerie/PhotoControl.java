@@ -1,4 +1,4 @@
-package enseigne.customerController;
+package enseigne.customerController.galerie;
 
 import enseigne.modele.photo.Photo;
 import javafx.fxml.FXML;

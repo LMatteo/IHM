@@ -27,13 +27,14 @@ public class AdminGalerieController {
 
     private List<Photo> allPhotos;
     private Set<String> categories ;
-    String defaultCategory = "Toutes les catégories";
+    String defaultCategory;
 
     @FXML
     public void initialize() throws IOException {
         allPhotos = getPhotoList();
         categories = new HashSet<>();
         categoriesBox.setPromptText("Filtrer...");
+        defaultCategory = "Toutes les catégories";
         categoriesBox.getItems().add(defaultCategory);
         displayPhotos(allPhotos);
         displayCategories(allPhotos);
