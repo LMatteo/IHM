@@ -77,95 +77,95 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TabPane prefHeight="598.0" prefWidth="1065.0" tabClosingPolicy="UNAVAILABLE">
-                           <tabs>
-                              <Tab text="Français">
-                                 <content>
-                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <VBox AnchorPane.leftAnchor="850.0" AnchorPane.topAnchor="50.0">
+                                 <children>
+                                    <VBox>
                                        <children>
-                                          <VBox AnchorPane.leftAnchor="850.0" AnchorPane.topAnchor="50.0">
+                                          <CheckBox fx:id="exhibit" mnemonicParsing="false" text="Mettre à l'affiche" />
+                                          <CheckBox fx:id="newProduct" mnemonicParsing="false" text="Nouveauté">
+                                             <VBox.margin>
+                                                <Insets top="10.0" />
+                                             </VBox.margin>
+                                          </CheckBox>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="30.0" />
+                                       </VBox.margin>
+                                    </VBox>
+                                    <VBox prefHeight="72.0" prefWidth="171.0">
+                                       <children>
+                                          <Pane>
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" />
+                                             </VBox.margin>
                                              <children>
-                                                <VBox>
-                                                   <children>
-                                                      <CheckBox fx:id="exhibit" mnemonicParsing="false" text="Mettre à l'affiche" />
-                                                      <CheckBox fx:id="newProduct" mnemonicParsing="false" text="Nouveauté">
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </CheckBox>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="30.0" />
-                                                   </VBox.margin>
-                                                </VBox>
-                                                <VBox prefHeight="72.0" prefWidth="171.0">
-                                                   <children>
-                                                      <Pane>
-                                                         <VBox.margin>
-                                                            <Insets bottom="10.0" />
-                                                         </VBox.margin>
-                                                         <children>
-                                                            <Label text="Prix" />
-                                                            <TextField fx:id="price" layoutX="37.0" prefHeight="31.0" prefWidth="120.0" />
-                                                         </children>
-                                                      </Pane>
-                                                      <Pane>
-                                                         <children>
-                                                            <Label text="Solde" />
-                                                            <TextField fx:id="promotion" layoutX="37.0" layoutY="-1.0" prefHeight="31.0" prefWidth="120.0" />
-                                                         </children>
-                                                      </Pane>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="275.0" />
-                                                   </VBox.margin>
-                                                </VBox>
-                                                <Button fx:id="addProduct" mnemonicParsing="false" onMouseClicked="#addProduct" text="Ajouter le produit" />
+                                                <Label text="Prix" />
+                                                <TextField fx:id="price" layoutX="37.0" prefHeight="31.0" prefWidth="120.0" />
+                                             </children>
+                                          </Pane>
+                                          <Pane>
+                                             <children>
+                                                <Label text="Solde" />
+                                                <TextField fx:id="promotion" layoutX="37.0" layoutY="-1.0" prefHeight="31.0" prefWidth="120.0" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets bottom="275.0" />
+                                       </VBox.margin>
+                                    </VBox>
+                                    <Button fx:id="addProduct" mnemonicParsing="false" onMouseClicked="#addProduct" text="Ajouter le produit" />
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="82.0" prefWidth="419.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="5.0">
+                                 <children>
+                                    <Label prefHeight="49.0" prefWidth="209.0" text="Nom du produit">
+                                       <font>
+                                          <Font name="Aaargh Normal" size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="name" prefHeight="31.0" prefWidth="405.0">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <HBox>
+                                       <children>
+                                          <VBox>
+                                             <children>
+                                                <Label text="Référence" />
+                                                <TextField fx:id="ref" prefHeight="31.0" prefWidth="176.0" />
                                              </children>
                                           </VBox>
-                                          <VBox prefHeight="82.0" prefWidth="419.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="5.0">
+                                          <VBox>
                                              <children>
-                                                <Label prefHeight="49.0" prefWidth="209.0" text="Nom du produit">
-                                                   <font>
-                                                      <Font name="Aaargh Normal" size="24.0" />
-                                                   </font>
-                                                </Label>
-                                                <TextField fx:id="name" prefHeight="31.0" prefWidth="405.0">
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                </TextField>
-                                                <HBox>
-                                                   <children>
-                                                      <VBox>
-                                                         <children>
-                                                            <Label text="Référence" />
-                                                            <TextField fx:id="ref" prefHeight="31.0" prefWidth="176.0" />
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox>
-                                                         <children>
-                                                            <Label text="Type de produit" />
-                                                            <TextField fx:id="type" prefHeight="31.0" prefWidth="322.0" />
-                                                         </children>
-                                                      </VBox>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets top="10.0" />
-                                                   </VBox.margin>
-                                                </HBox>
+                                                <Label text="Type de produit" />
+                                                <TextField fx:id="type" prefHeight="31.0" prefWidth="322.0" />
                                              </children>
                                           </VBox>
-                                          <HBox AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="150.0">
-                                             <children>
-                                                <ImageView fitHeight="400.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@/images/magasin/imagePreview.png" />
-                                                   </image>
-                                                   <HBox.margin>
-                                                      <Insets right="30.0" />
-                                                   </HBox.margin>
-                                                </ImageView>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <HBox AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="150.0">
+                                 <children>
+                                    <ImageView fx:id="productPicture" fitHeight="400.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@/images/magasin/imagePreview.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets right="30.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <TabPane>
+                                       <tabs>
+                                          <Tab text="Français">
+                                             <content>
                                                 <VBox>
                                                    <children>
                                                       <Label text="Description du produit ">
@@ -173,102 +173,13 @@
                                                             <Font name="Aaargh Normal" size="18.0" />
                                                          </font>
                                                       </Label>
-                                                      <TextArea fx:id="description" prefHeight="368.0" prefWidth="460.0" />
+                                                      <TextArea fx:id="descriptionFr" prefHeight="368.0" prefWidth="460.0" />
                                                    </children>
                                                 </VBox>
-                                             </children>
-                                          </HBox>
-                                       </children>
-                                    </AnchorPane>
-                                 </content>
-                              </Tab>
-                              <Tab text="Anglais">
-                                 <content>
-                                    <AnchorPane prefHeight="200.0" prefWidth="200.0">
-                                       <children>
-                                          <VBox AnchorPane.leftAnchor="850.0" AnchorPane.topAnchor="50.0">
-                                             <children>
-                                                <VBox>
-                                                   <children>
-                                                      <CheckBox mnemonicParsing="false" text="Mettre à l'affiche" />
-                                                      <CheckBox mnemonicParsing="false" text="Nouveauté">
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </CheckBox>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="30.0" />
-                                                   </VBox.margin>
-                                                </VBox>
-                                                <VBox prefHeight="72.0" prefWidth="171.0">
-                                                   <children>
-                                                      <Pane>
-                                                         <VBox.margin>
-                                                            <Insets bottom="10.0" />
-                                                         </VBox.margin>
-                                                         <children>
-                                                            <Label text="Prix" />
-                                                            <TextField layoutX="51.0" layoutY="-1.0" prefHeight="31.0" prefWidth="120.0" />
-                                                         </children>
-                                                      </Pane>
-                                                      <Pane>
-                                                         <children>
-                                                            <Label text="Solde" />
-                                                            <TextField layoutX="51.0" layoutY="2.0" prefHeight="31.0" prefWidth="120.0" />
-                                                         </children>
-                                                      </Pane>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets bottom="275.0" />
-                                                   </VBox.margin>
-                                                </VBox>
-                                                <Button mnemonicParsing="false" text="Ajouter le produit" />
-                                             </children>
-                                          </VBox>
-                                          <VBox prefHeight="82.0" prefWidth="419.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="5.0">
-                                             <children>
-                                                <Label prefHeight="49.0" prefWidth="209.0" text="Nom du produit">
-                                                   <font>
-                                                      <Font name="Aaargh Normal" size="24.0" />
-                                                   </font>
-                                                </Label>
-                                                <TextField prefHeight="31.0" prefWidth="405.0">
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                </TextField>
-                                                <HBox>
-                                                   <children>
-                                                      <VBox>
-                                                         <children>
-                                                            <Label text="Référence" />
-                                                            <TextField prefHeight="31.0" prefWidth="176.0" />
-                                                         </children>
-                                                      </VBox>
-                                                      <VBox>
-                                                         <children>
-                                                            <Label text="Type de produit" />
-                                                            <TextField prefHeight="31.0" prefWidth="322.0" />
-                                                         </children>
-                                                      </VBox>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets top="10.0" />
-                                                   </VBox.margin>
-                                                </HBox>
-                                             </children>
-                                          </VBox>
-                                          <HBox AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="150.0">
-                                             <children>
-                                                <ImageView fitHeight="400.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
-                                                   <image>
-                                                      <Image url="@/images/magasin/imagePreview.png" />
-                                                   </image>
-                                                   <HBox.margin>
-                                                      <Insets right="30.0" />
-                                                   </HBox.margin>
-                                                </ImageView>
+                                             </content>
+                                          </Tab>
+                                          <Tab fx:id="descriptionEng" text="Anglais">
+                                             <content>
                                                 <VBox>
                                                    <children>
                                                       <Label text="Description du produit ">
@@ -276,17 +187,17 @@
                                                             <Font name="Aaargh Normal" size="18.0" />
                                                          </font>
                                                       </Label>
-                                                      <TextArea prefHeight="326.0" prefWidth="460.0" />
+                                                      <TextArea fx:id="description" prefHeight="309.0" prefWidth="460.0" />
                                                    </children>
                                                 </VBox>
-                                             </children>
-                                          </HBox>
-                                       </children>
-                                    </AnchorPane>
-                                 </content>
-                              </Tab>
-                           </tabs>
-                        </TabPane>
+                                             </content>
+                                          </Tab>
+                                       </tabs>
+                                    </TabPane>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </AnchorPane>
                      </children>
                   </AnchorPane>
               </content>
