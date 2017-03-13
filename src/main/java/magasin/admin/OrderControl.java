@@ -24,4 +24,9 @@ public class OrderControl {
         adminLayoutControl.goToNewOrder(null);
     }
 
+    @FXML
+    void addProduct(MouseEvent event) throws IOException{
+
+    }
+
 }
