@@ -19,7 +19,7 @@
         <ScrollPane fx:id="pane" prefWidth="280.0" BorderPane.alignment="CENTER" />
     </center>
     <top>
-        <HBox prefHeight="100.0" prefWidth="200.0" stylesheets="@style/buttonStyle.css" BorderPane.alignment="CENTER">
+        <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
             <children>
                 <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #a3d35f;">
                     <children>
