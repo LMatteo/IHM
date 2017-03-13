@@ -154,14 +154,20 @@
                               </VBox>
                               <HBox AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="150.0">
                                  <children>
-                                    <ImageView fx:id="productPicture" fitHeight="400.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@/images/magasin/imagePreview.png" />
-                                       </image>
-                                       <HBox.margin>
-                                          <Insets right="30.0" />
-                                       </HBox.margin>
-                                    </ImageView>
+                                    <VBox>
+                                       <children>
+                                          <ImageView fx:id="imagePreview" fitHeight="400.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@/images/magasin/imagePreview.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Pane>
+                                             <children>
+                                                <Button fx:id="addPicture" layoutX="214.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" onMouseClicked="#browsePicture" text="Parcourir" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
                                     <TabPane>
                                        <tabs>
                                           <Tab text="Français">
