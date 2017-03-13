@@ -1,6 +1,7 @@
 package enseigne.adminController.store;
 
 import enseigne.ToNode;
+import enseigne.modele.magasin.MagAttribute;
 import enseigne.modele.magasin.Magasin;
 import enseigne.modele.modele.MagFilter;
 import javafx.beans.property.IntegerProperty;
@@ -16,15 +17,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
 import java.io.IOException;
+import java.nio.file.NoSuchFileException;
 import java.util.List;
 
 public class AdminStoreController {
@@ -34,6 +34,9 @@ public class AdminStoreController {
 
     @FXML
     private ListView<Magasin> view;
+    @FXML
+    private TextField filterText;
+
     private MagFilter filter;
 
 
@@ -47,7 +50,6 @@ public class AdminStoreController {
                 filter.onClick(view.getSelectionModel().getSelectedItem());
             }
         });
-
 
     }
 
@@ -69,6 +71,7 @@ public class AdminStoreController {
     }
 
     public void addMag(Magasin m) throws IOException{
+        filter.delete(m);
         filter.add(m);
     }
 
@@ -94,7 +97,6 @@ public class AdminStoreController {
         stage.setScene(scene);
         stage.setTitle("Nouvelle boutique");
         stage.show();
-        filter.delete();
     }
 
     public void showAlert(String message){
@@ -104,6 +106,12 @@ public class AdminStoreController {
         alert.setContentText(message);
 
         alert.showAndWait();
+    }
+
+    @FXML
+    void setFilter(ActionEvent event) {
+        filter.setFilter(filterText.getText());
+        filter.filter();
     }
 
 }
