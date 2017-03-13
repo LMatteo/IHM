@@ -87,8 +87,8 @@
                                              <children>
                                                 <VBox>
                                                    <children>
-                                                      <CheckBox mnemonicParsing="false" text="Mettre à l'affiche" />
-                                                      <CheckBox mnemonicParsing="false" text="Nouveauté">
+                                                      <CheckBox fx:id="exhibit" mnemonicParsing="false" text="Mettre à l'affiche" />
+                                                      <CheckBox fx:id="newProduct" mnemonicParsing="false" text="Nouveauté">
                                                          <VBox.margin>
                                                             <Insets top="10.0" />
                                                          </VBox.margin>
@@ -100,35 +100,27 @@
                                                 </VBox>
                                                 <VBox prefHeight="72.0" prefWidth="171.0">
                                                    <children>
-                                                      <HBox prefHeight="31.0" prefWidth="162.0">
-                                                         <children>
-                                                            <Label text="Prix">
-                                                               <HBox.margin>
-                                                                  <Insets right="20.0" />
-                                                               </HBox.margin>
-                                                            </Label>
-                                                            <TextField prefHeight="31.0" prefWidth="120.0" />
-                                                         </children>
+                                                      <Pane>
                                                          <VBox.margin>
                                                             <Insets bottom="10.0" />
                                                          </VBox.margin>
-                                                      </HBox>
-                                                      <HBox>
                                                          <children>
-                                                            <Label text="Solde">
-                                                               <HBox.margin>
-                                                                  <Insets right="7.0" />
-                                                               </HBox.margin>
-                                                            </Label>
-                                                            <TextField prefHeight="31.0" prefWidth="120.0" />
+                                                            <Label text="Prix" />
+                                                            <TextField fx:id="price" layoutX="37.0" prefHeight="31.0" prefWidth="120.0" />
                                                          </children>
-                                                      </HBox>
+                                                      </Pane>
+                                                      <Pane>
+                                                         <children>
+                                                            <Label text="Solde" />
+                                                            <TextField fx:id="promotion" layoutX="37.0" layoutY="-1.0" prefHeight="31.0" prefWidth="120.0" />
+                                                         </children>
+                                                      </Pane>
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="275.0" />
                                                    </VBox.margin>
                                                 </VBox>
-                                                <Button mnemonicParsing="false" text="Ajouter le produit" />
+                                                <Button fx:id="addProduct" mnemonicParsing="false" onMouseClicked="#addProduct" text="Ajouter le produit" />
                                              </children>
                                           </VBox>
                                           <VBox prefHeight="82.0" prefWidth="419.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="5.0">
@@ -138,7 +130,7 @@
                                                       <Font name="Aaargh Normal" size="24.0" />
                                                    </font>
                                                 </Label>
-                                                <TextField prefHeight="31.0" prefWidth="405.0">
+                                                <TextField fx:id="name" prefHeight="31.0" prefWidth="405.0">
                                                    <VBox.margin>
                                                       <Insets />
                                                    </VBox.margin>
@@ -148,13 +140,13 @@
                                                       <VBox>
                                                          <children>
                                                             <Label text="Référence" />
-                                                            <TextField prefHeight="31.0" prefWidth="176.0" />
+                                                            <TextField fx:id="ref" prefHeight="31.0" prefWidth="176.0" />
                                                          </children>
                                                       </VBox>
                                                       <VBox>
                                                          <children>
                                                             <Label text="Type de produit" />
-                                                            <TextField prefHeight="31.0" prefWidth="322.0" />
+                                                            <TextField fx:id="type" prefHeight="31.0" prefWidth="322.0" />
                                                          </children>
                                                       </VBox>
                                                    </children>
@@ -181,7 +173,7 @@
                                                             <Font name="Aaargh Normal" size="18.0" />
                                                          </font>
                                                       </Label>
-                                                      <TextArea prefHeight="368.0" prefWidth="460.0" />
+                                                      <TextArea fx:id="description" prefHeight="368.0" prefWidth="460.0" />
                                                    </children>
                                                 </VBox>
                                              </children>
@@ -211,29 +203,21 @@
                                                 </VBox>
                                                 <VBox prefHeight="72.0" prefWidth="171.0">
                                                    <children>
-                                                      <HBox prefHeight="31.0" prefWidth="162.0">
-                                                         <children>
-                                                            <Label text="Prix">
-                                                               <HBox.margin>
-                                                                  <Insets right="20.0" />
-                                                               </HBox.margin>
-                                                            </Label>
-                                                            <TextField prefHeight="31.0" prefWidth="120.0" />
-                                                         </children>
+                                                      <Pane>
                                                          <VBox.margin>
                                                             <Insets bottom="10.0" />
                                                          </VBox.margin>
-                                                      </HBox>
-                                                      <HBox>
                                                          <children>
-                                                            <Label text="Solde">
-                                                               <HBox.margin>
-                                                                  <Insets right="7.0" />
-                                                               </HBox.margin>
-                                                            </Label>
-                                                            <TextField prefHeight="31.0" prefWidth="120.0" />
+                                                            <Label text="Prix" />
+                                                            <TextField layoutX="51.0" layoutY="-1.0" prefHeight="31.0" prefWidth="120.0" />
                                                          </children>
-                                                      </HBox>
+                                                      </Pane>
+                                                      <Pane>
+                                                         <children>
+                                                            <Label text="Solde" />
+                                                            <TextField layoutX="51.0" layoutY="2.0" prefHeight="31.0" prefWidth="120.0" />
+                                                         </children>
+                                                      </Pane>
                                                    </children>
                                                    <VBox.margin>
                                                       <Insets bottom="275.0" />
