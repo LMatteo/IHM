@@ -1,10 +1,10 @@
-package centre.model;
+package centre.model.json.parser;
 
+import centre.model.Tag;
 import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,9 +13,7 @@ import java.util.List;
  *
  * @author Guillaume André
  */
-public class SortOrderParser {
-
-    private JSONObject json;
+public class SortOrderParser extends JsonParser {
 
     /**
      * Creates a new sorting order parser with the file containing the order data.
@@ -24,17 +22,7 @@ public class SortOrderParser {
      * @throws IOException - if failing to read the file
      */
     public SortOrderParser(File file) throws IOException {
-        json = new JSONObject(new String(Files.readAllBytes(file.toPath())));
-    }
-
-    /**
-     * Gets a property of the sorting order.
-     *
-     * @param key - the name of the property
-     * @return the property contained within the order file
-     */
-    public String getProperty(String key) {
-        return json.getString(key);
+        super(file);
     }
 
     /**

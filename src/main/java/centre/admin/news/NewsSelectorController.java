@@ -29,7 +29,15 @@ public class NewsSelectorController {
     private int sourceId;
     private AdminNewsController controller;
 
-
+    /**
+     * Sets up the content of the news selector.
+     *
+     * @param controller - the parent controller
+     * @param newsList   - the list of all available news
+     * @param sourceId   - the id of this emplacement
+     * @param current    - the list of the news that are currently displayed
+     * @throws IOException - if failing to load the news data
+     */
     public void initializeContents(AdminNewsController controller, List<News> newsList, int sourceId, List<News> current) throws IOException {
         this.newsList = newsList;
         this.sourceId = sourceId;
@@ -52,7 +60,11 @@ public class NewsSelectorController {
                     news.setPosition(0);
                 }
                 n.setPosition(sourceId);
-                n.save();
+                try {
+                    n.save();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
                 controller.placeNews();
                 Stage stage = (Stage) list.getScene().getWindow();
                 stage.close();
@@ -61,10 +73,15 @@ public class NewsSelectorController {
         }
     }
 
+    /**
+     * Removes the news from the selected area.
+     *
+     * @param event - the event of this action
+     * @throws IOException - if failing to save the news new configuration
+     */
     @FXML
-    public void removeCurrentPromotion(Event event) {
+    public void removeCurrentPromotion(Event event) throws IOException {
         List<News> sourceNews = newsList.stream().filter(news -> news.getPosition() == sourceId).collect(Collectors.toList());
-        ;
         if (sourceNews.isEmpty()) {
             AlertMessage.alert(Alert.AlertType.INFORMATION, "Attention", "Il n'y a pas de promotion à supprimer içi");
         } else {
@@ -77,5 +94,6 @@ public class NewsSelectorController {
             stage.close();
         }
     }
+
 }
 

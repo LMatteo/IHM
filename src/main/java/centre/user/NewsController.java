@@ -4,6 +4,7 @@ import centre.constant.CentrePaths;
 import centre.model.News;
 import centre.model.NewsList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
@@ -15,6 +16,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static centre.constant.ButtonLabels.WELCOME_EN;
+import static centre.constant.ButtonLabels.WELCOME_FR;
+
 
 public class NewsController implements LanguageSwitcher{
 
@@ -24,6 +28,8 @@ public class NewsController implements LanguageSwitcher{
     @FXML protected ImageView h4;
     @FXML protected ImageView h5;
     @FXML protected ImageView v6;
+
+    @FXML private Label label;
 
     protected NewsList listNews;
     protected List<ImageView> bindedNews;
@@ -59,6 +65,11 @@ public class NewsController implements LanguageSwitcher{
     @Override
     public void switchLanguage() {
         french = !french;
+        if (french) {
+            label.setText(WELCOME_FR);
+        } else {
+            label.setText(WELCOME_EN);
+        }
         placeNews();
     }
 }

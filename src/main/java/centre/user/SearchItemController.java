@@ -2,7 +2,7 @@ package centre.user;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
 /**
@@ -10,7 +10,7 @@ import javafx.scene.input.MouseEvent;
  */
 public class SearchItemController {
 
-    private TextArea searchBar;
+    private TextField searchBar;
 
     @FXML
     private Label label;
@@ -30,7 +30,7 @@ public class SearchItemController {
      *
      * @param name - the name of the suggestion.
      */
-    public void initializeContent(String name, TextArea searchBar) {
+    public void initializeContent(String name, TextField searchBar) {
         label.setText(name);
         this.searchBar = searchBar;
     }

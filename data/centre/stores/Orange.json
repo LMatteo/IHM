@@ -1,0 +1,17 @@
+{
+  "logoName": "Orange.png",
+  "enseigneId": "",
+  "magasinId": "",
+  "name": "Orange",
+  "mapId": 8,
+  "location": "RDC, entrée sud",
+  "categories": [
+    {
+      "english": "H-M",
+      "french": "H-M"
+    }
+  ],
+  "promotionEnglish": "Up to 100\u20ac off the latest Samsung Galaxy S7",
+  "locationEnglish": "Level 0, south",
+  "promotionText": "Jusqu'à 100\u20ac remboursés sur le dernier Samsung Galaxy S7"
+}

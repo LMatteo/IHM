@@ -3,84 +3,102 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="598.0" prefWidth="1065.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <HBox layoutY="14.0" prefHeight="49.0" prefWidth="1065.0">
+<ScrollPane fx:id="newOrderPane" maxHeight="-Infinity" maxWidth="1060.0" minHeight="-Infinity" minWidth="1060.0" prefHeight="600.0"
+            prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="magasin.admin.OrderControl">
+   <content>
+      <AnchorPane prefHeight="598.0" prefWidth="1065.0">
          <children>
-            <Label text="Passer une commande à ">
+            <VBox layoutX="36.0" layoutY="76.0">
+               <children>
+                  <HBox prefHeight="12.0" prefWidth="953.0">
+                     <children>
+                        <Label text="Référence">
+                           <HBox.margin>
+                              <Insets right="50.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label text="   Nom du produit">
+                           <HBox.margin>
+                              <Insets right="300.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label text="      Quantité" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="41.0" prefWidth="953.0">
+                     <children>
+                        <TextField prefHeight="31.0" prefWidth="112.0" />
+                        <TextField prefHeight="31.0" prefWidth="299.0" />
+                        <Label text="x">
+                           <HBox.margin>
+                              <Insets left="50.0" right="50.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField />
+                        <Button mnemonicParsing="false" text="Ajouter" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox layoutX="712.0" layoutY="258.0" prefHeight="88.0" prefWidth="252.0" AnchorPane.rightAnchor="101.0">
+               <children>
+                  <AnchorPane>
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="57.0" text="Total H.T" />
+                        <Label layoutX="158.0" text="000.00€">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane>
+                     <children>
+                        <HBox>
+                           <children>
+                              <Label prefHeight="17.0" prefWidth="68.0" text="Total T.T.C" />
+                           </children>
+                        </HBox>
+                        <Label layoutX="158.0" text="000.00€">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="39.0" prefWidth="252.0">
+                     <children>
+                        <Button layoutX="126.0" layoutY="13.0" mnemonicParsing="false" text="Commander" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+            <TableView layoutX="30.0" layoutY="179.0" prefHeight="347.0" prefWidth="542.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="Ref. " />
+                <TableColumn prefWidth="217.0" text="Nom du produit" />
+                  <TableColumn prefWidth="106.0" text="Prix H.T (unitaire)" />
+                  <TableColumn prefWidth="47.0" text="Qte." />
+                  <TableColumn prefWidth="96.0" text="Prix H.T (total)" />
+              </columns>
+            </TableView>
+            <Label layoutX="30.0" layoutY="26.0" text="Passer une commande auprès de l'Enseigne">
                <font>
                   <Font name="Aaargh Normal" size="18.0" />
                </font>
-               <HBox.margin>
-                  <Insets left="30.0" />
-               </HBox.margin>
             </Label>
-            <Label text="Nom du fournisseur">
-               <font>
-                  <Font name="Aaargh Normal" size="18.0" />
-               </font>
-            </Label>
-            <Button mnemonicParsing="false" text="Contacter le fournisseur">
-               <HBox.margin>
-                  <Insets left="200.0" />
-               </HBox.margin>
-            </Button>
+            <Button layoutX="881.0" layoutY="27.0" mnemonicParsing="false" text="Contacter l'enseigne" />
          </children>
-      </HBox>
-      <HBox layoutX="36.0" layoutY="97.0" prefHeight="41.0" prefWidth="953.0">
-         <children>
-            <TextField prefHeight="31.0" prefWidth="112.0" />
-            <TextField prefHeight="31.0" prefWidth="299.0" />
-            <Label text="x">
-               <HBox.margin>
-                  <Insets left="50.0" right="50.0" />
-               </HBox.margin>
-            </Label>
-            <TextField />
-            <Button mnemonicParsing="false" text="Envoyer" />
-         </children>
-      </HBox>
-      <HBox layoutX="36.0" layoutY="76.0" prefHeight="12.0" prefWidth="953.0">
-         <children>
-            <Label text="Référence">
-               <HBox.margin>
-                  <Insets right="50.0" />
-               </HBox.margin>
-            </Label>
-            <Label text="Nom du produit">
-               <HBox.margin>
-                  <Insets right="300.0" />
-               </HBox.margin>
-            </Label>
-            <Label text="Quantité" />
-         </children>
-      </HBox>
-      <VBox layoutX="567.0" layoutY="202.0" AnchorPane.rightAnchor="251.0">
-         <children>
-            <HBox>
-               <children>
-                  <Label text="Prix H.T">
-                     <HBox.margin>
-                        <Insets right="10.0" />
-                     </HBox.margin>
-                  </Label>
-                  <TextField />
-               </children>
-            </HBox>
-            <HBox>
-               <children>
-                  <Label text="Prix T.T.C" />
-                  <TextField />
-               </children>
-            </HBox>
-         </children>
-      </VBox>
-      <Button layoutX="712.0" layoutY="327.0" mnemonicParsing="false" text="Commander" />
-   </children>
-</AnchorPane>
+      </AnchorPane>
+   </content>
+</ScrollPane>

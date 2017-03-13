@@ -23,20 +23,19 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import static centre.constant.ButtonLabels.*;
+import static centre.constant.CentrePaths.PATHTOLOGO;
 
 /**
  * Controller for the main layout of the centre screen.
  */
 public class LayoutController {
 
-    private static final String normal = "#4B77BE";
-    private static final String active = "#84a5c9";
-
     @FXML private ScrollPane pane;
     @FXML private Button actualite;
     @FXML private Button boutiques;
     @FXML private Button infopratiques;
     @FXML private ImageView mainLogo;
+    @FXML private ImageView logo;
     @FXML private Label timeLabel;
 
     private Button previous;
@@ -54,6 +53,7 @@ public class LayoutController {
     @FXML
     public void initialize() throws IOException, URISyntaxException {
         newsList = new NewsList();
+        logo.setImage(new Image(getClass().getResourceAsStream(PATHTOLOGO)));
         bindToTime();
         goToActu(null);
     }
@@ -94,9 +94,9 @@ public class LayoutController {
      */
     private void switchButtonStyle(Button current) {
         if (previous != null) {
-            previous.setStyle("-fx-background-color: " + normal + "; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;");
+            previous.getStyleClass().remove("active");
         }
-        current.setStyle("-fx-background-color: " + active + "; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;");
+        current.getStyleClass().add("active");
         previous = current;
 
     }
@@ -114,6 +114,7 @@ public class LayoutController {
         ap = loader.load();
         StoreController controller = loader.getController();
         controller.setLayout(this);
+        controller.initializeContent();
         switchCurrentController(controller);
         pane.setContent(ap);
         switchButtonStyle(boutiques);

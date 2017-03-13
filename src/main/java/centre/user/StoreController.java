@@ -34,7 +34,7 @@ public class StoreController implements LanguageSwitcher {
     private boolean french = true;
     private LayoutController layout;
 
-    @FXML private TextArea searchBar;
+    @FXML private TextField searchBar;
     @FXML private VBox search;
     @FXML private VBox accBox;
     @FXML private Button searchButton;
@@ -52,8 +52,7 @@ public class StoreController implements LanguageSwitcher {
      * @throws IOException        - if failing to load one of the files
      * @throws URISyntaxException - if failing to find one of the folders
      */
-    @FXML
-    public void initialize() throws IOException, URISyntaxException {
+    public void initializeContent() throws IOException, URISyntaxException {
         loadedStores = new StoreList();
         initSort();
         createMenuItems();
@@ -87,12 +86,16 @@ public class StoreController implements LanguageSwitcher {
     private void createMenuItems() {
         sortMenu.getItems().clear();
         for (SortOrder order : sortOrders) {
-            MenuItem item;
+            MenuItem item = new MenuItem();
+            Label size = new Label();
+            size.setStyle("-fx-font: 20 System");
+            size.setPrefSize(207, 50);
             if (french) {
-                item = new MenuItem(order.getName());
+                size.setText(order.getName());
             } else {
-                item = new MenuItem(order.getEnglishName());
+                size.setText(order.getEnglishName());
             }
+            item.setGraphic(size);
             item.setOnAction(event -> {
                 clearSearchResult();
                 if (french) {

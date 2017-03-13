@@ -1,17 +1,12 @@
-package centre.model;
-
-import org.json.JSONObject;
+package centre.model.json.parser;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 
 /**
  * A parser used to read the JSON files used to store store data.
  */
-public class NewsParser {
-
-    private JSONObject json;
+public class NewsParser extends JsonParser {
 
     /**
      * Initializes this news parser. Reads the content of the json file,
@@ -21,26 +16,7 @@ public class NewsParser {
      * @throws IOException - if failing to read the file
      */
     public NewsParser(File input) throws IOException {
-        json = new JSONObject(new String(Files.readAllBytes(input.toPath())));
-    }
-
-    /**
-     * Returns the data associated to the requested key.
-     *
-     * @param key - the key of the store data to retrieve
-     * @return the data corresponding to this key
-     */
-    public String getProperty(String key) {
-        return json.getString(key);
-    }
-
-    /**
-     * Returns the position of the news in the feed or 0.
-     *
-     * @return the position of this news
-     */
-    public int getPosition() {
-        return json.getInt("position");
+        super(input);
     }
 
     /**

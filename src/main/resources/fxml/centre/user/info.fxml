@@ -5,19 +5,20 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="690.0" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="centre.user.InfoController">
+<AnchorPane prefHeight="690.0" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.102"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="centre.user.InfoController">
     <padding>
         <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
     </padding>
     <children>
-        <AnchorPane layoutX="78.0" layoutY="60.0" prefHeight="620.0" prefWidth="425.0" style="-fx-background-color: #ffffff;">
+        <AnchorPane layoutX="78.0" layoutY="60.0" prefHeight="620.0" prefWidth="425.0">
             <children>
                 <ImageView fx:id="mapPic" fitHeight="620.0" fitWidth="425.0" pickOnBounds="true" preserveRatio="true" />
             </children>
         </AnchorPane>
         <AnchorPane layoutX="563.0" layoutY="380.0" prefHeight="300.0" prefWidth="425.0" style="-fx-background-color: #ffffff;">
             <children>
-                <VBox prefHeight="325.0" prefWidth="425.0">
+                <VBox prefHeight="325.0" prefWidth="425.0" styleClass="legend">
                     <children>
                         <Label fx:id="legend" alignment="CENTER" contentDisplay="CENTER" prefHeight="4.0" prefWidth="425.0" text="Légende">
                             <font>
@@ -46,7 +47,7 @@
                 </VBox>
             </children>
         </AnchorPane>
-        <AnchorPane layoutX="563.0" layoutY="60.0" prefHeight="300.0" prefWidth="425.0" style="-fx-background-color: #84a5c9;">
+        <AnchorPane layoutX="563.0" layoutY="60.0" prefHeight="300.0" prefWidth="425.0" styleClass="container-info">
             <children>
                 <GridPane alignment="CENTER" layoutX="-19.0" layoutY="60.0" prefHeight="300.0" prefWidth="425.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columnConstraints>

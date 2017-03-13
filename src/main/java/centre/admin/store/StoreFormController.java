@@ -186,7 +186,7 @@ public class StoreFormController {
      * Otherwise, displays an appropriate message.
      *
      * @param event - the event of this action
-     * @throws IOException - if failing to write the store file or copying the store logo
+     * @throws IOException - if failing to save the store file or copying the store logo
      */
     @FXML
     void confirm(ActionEvent event) throws IOException, URISyntaxException {

@@ -54,7 +54,9 @@ public class LayoutControl {
         if (previous != null) {
             previous.setStyle("-fx-background-color: " + bright + "; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;");
         }
-        current.setStyle("-fx-background-color: " + dark + "; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;");
+        if(current != null){
+            current.setStyle("-fx-background-color: " + dark + "; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;");
+        }
         previous = current;
     }
 
@@ -112,6 +114,7 @@ public class LayoutControl {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/user/catalogue.fxml"));
         ScrollPane sp = loader.load();
         paneLayout.setContent(sp);
+        switchButtonStyle(null);
         paneLayout.setVvalue(0);
     }
 
@@ -120,6 +123,7 @@ public class LayoutControl {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/user/boutique.fxml"));
         ScrollPane sp = loader.load();
         paneLayout.setContent(sp);
+        switchButtonStyle(null);
         paneLayout.setVvalue(0);
     }
 
@@ -128,6 +132,7 @@ public class LayoutControl {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/user/currently.fxml"));
         ScrollPane sp = loader.load();
         paneLayout.setContent(sp);
+        switchButtonStyle(null);
         paneLayout.setVvalue(0);
     }
 

@@ -1,0 +1,21 @@
+{
+  "logoName": "Maison de la presse.jpg",
+  "enseigneId": "",
+  "magasinId": "",
+  "name": "Maison de la presse",
+  "mapId": 11,
+  "location": "RDC",
+  "categories": [
+    {
+      "english": "Culture",
+      "french": "Culture"
+    },
+    {
+      "english": "H-M",
+      "french": "H-M"
+    }
+  ],
+  "promotionEnglish": "For every 3 books purchased, get a 4th one for free.",
+  "locationEnglish": "Level 0",
+  "promotionText": "3 livres acheté, le 4ème offert"
+}

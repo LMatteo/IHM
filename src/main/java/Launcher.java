@@ -1,11 +1,13 @@
+import centre.constant.AlertMessage;
+import centre.constant.CentrePaths;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,12 +33,18 @@ public class Launcher extends Application {
         PATHS_ADMIN = new HashMap<>();
         PATHS_ADMIN.put("--centre", "/fxml/centre/admin/adminLayout.fxml");
         PATHS_ADMIN.put("--enseigne", "/fxml/enseigne/admin/skelAdmin.fxml");
-        PATHS_ADMIN.put("--magasin", "/fxml/magasin/admin/Admin_Home.fxml");
+        PATHS_ADMIN.put("--magasin", "/fxml/magasin/admin/Admin_Layout.fxml");
     }
 
     private String part = "--centre";
-    private List<String> styles = new ArrayList<>();
+    private String style = "/styles/centre/style1.css";
     private boolean adminMode = false;
+    private double adminWidth = 1600;
+    private double adminHeight = 900;
+
+    public static void main(String[] args) {
+        Application.launch(args);
+    }
 
     /**
      * Analyzes the arguments of the program.
@@ -49,9 +57,17 @@ public class Launcher extends Application {
                 case "-a":
                     adminMode = true;
                     break;
+                case "--alternate":
+                    style = "/styles/centre/style2.css";
+                    CentrePaths.PATHTOLOGO = "/images/centre/logoCentre2.png";
+                    break;
+                case "--magasin":
+                    if (adminMode) {
+                        adminHeight = 800;
+                        adminWidth = 1060;
+                    }
                 case "--centre":
                 case "--enseigne":
-                case "--magasin":
                     part = arg;
                     break;
                 default:
@@ -65,6 +81,9 @@ public class Launcher extends Application {
      */
     private void exit() {
         System.out.println(INVALID_ARGS);
+        AlertMessage.alert(Alert.AlertType.ERROR, "Mauvais arguments utilisés", "Par défaut, la vue client du" +
+                " centre sera chargée. Veuillez vous référer au readme pour plus d'informations sur les " +
+                "arguments disponibles.");
         System.exit(1);
     }
 
@@ -83,17 +102,11 @@ public class Launcher extends Application {
             path = PATHS.get(part);
         }
         Parent rootNode = FXMLLoader.load(getClass().getResource(path));
-        Scene scene = adminMode ? new Scene(rootNode, 1600, 900) : new Scene(rootNode, 1280, 1024);
-        for (String style : styles) {
-            scene.getStylesheets().add(style);
-        }
+        Scene scene = adminMode ? new Scene(rootNode, adminWidth, adminHeight) : new Scene(rootNode, 1280, 1024);
+        scene.getStylesheets().add(style);
         stage.setTitle("Borne");
         stage.setScene(scene);
         stage.show();
-    }
-
-    public static void main(String[] args) {
-        Application.launch(args);
     }
 
 
