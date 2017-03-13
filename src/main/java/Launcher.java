@@ -91,6 +91,7 @@ public class Launcher extends Application {
      */
     @Override
     public void start(Stage stage) throws IOException {
+        AquaFx.style();
         try {
             Parent rootNode = FXMLLoader.load(getClass().getResource(path));
             Scene scene = adminMode ? new Scene(rootNode, 1600, 900) : new Scene(rootNode, 1280, 1024);

@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.ToggleButton;
 
 import java.io.IOException;
 
@@ -21,19 +22,19 @@ public class AccControlAdmin {
     private ScrollPane pane;
 
     @FXML
-    private Button adminAccueil;
+    private ToggleButton adminAccueil;
 
     @FXML
-    private Button adminGallerie;
+    private ToggleButton adminGallerie;
 
     @FXML
-    private Button adminStore;
+    private ToggleButton adminStore;
 
     @FXML
-    private Button adminInfo;
+    private ToggleButton adminInfo;
 
     @FXML
-    private Button adminOverview;
+    private ToggleButton adminOverview;
 
     private Button previous;
 
@@ -62,40 +63,31 @@ public class AccControlAdmin {
 
     @FXML
     void switchAccueil(ActionEvent event) {
-        Button source = (Button) event.getSource();
         pane.setContent(accueilPane);
-        switchBut(source);
         pane.setVvalue(0);
     }
 
     @FXML
     void switchGallerie(ActionEvent event) {
-        Button source = (Button) event.getSource();
         pane.setContent(galeriePane);
-        switchBut(source);
         pane.setVvalue(0);
     }
 
     @FXML
     void switchMagasins(ActionEvent event) {
-        Button source = (Button) event.getSource();
         pane.setContent(magasinPane);
-        switchBut(source);
         pane.setVvalue(0);
     }
 
     @FXML
     void switchInfos(ActionEvent event) {
-        Button source = (Button) event.getSource();
         infoPane.setStyle("-fx-padding: 20px 20px 20px 150px");
         pane.setContent(infoPane);
-        switchBut(source);
         pane.setVvalue(0);
     }
 
     @FXML
     void switchOverview(ActionEvent event) {
-        Button source = (Button) event.getSource();
         pane.setContent(overviewPane);
         overviewController ctrl = overviewPaneLoader.getController();
         try {
@@ -103,17 +95,6 @@ public class AccControlAdmin {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        switchBut(source);
         pane.setVvalue(0);
     }
-
-    private void switchBut(Button bigButt) {
-        if (previous != null) {
-            previous.setStyle("-fx-background-color: " + color + "; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;");
-        }
-        bigButt.setStyle("-fx-background-color: " + foncey + "; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;");
-        previous = bigButt;
-
-    }
-
 }

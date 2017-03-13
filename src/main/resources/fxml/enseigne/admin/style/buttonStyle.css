@@ -1,0 +1,12 @@
+.toggle-button{
+    -fx-border-color:  #ffffff;
+    -fx-background-color:  #a3d35f;
+    -fx-border-width:  0 0 0 2;
+    -fx-text-fill: white;
+
+}
+
+.toggle-button:focused{
+    -fx-background-color:  #7cb131;
+    -fx-border-color: white;
+}
