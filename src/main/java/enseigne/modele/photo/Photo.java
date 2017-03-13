@@ -4,7 +4,10 @@ import enseigne.modele.Deletable;
 import enseigne.modele.ReadConst;
 import org.json.JSONObject;
 
-import java.io.*;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  * Created by Josué on 01/03/2017.
@@ -92,4 +95,5 @@ public class Photo extends Deletable{
         bw.write(json.toString());
         bw.close();
     }
+
 }

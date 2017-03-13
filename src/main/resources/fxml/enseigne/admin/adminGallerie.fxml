@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" />
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.adminController.photo.AdminGalerieController">
+   <children>
+      <AnchorPane prefHeight="159.0" prefWidth="1060.0">
+         <children>
+            <Label layoutX="125.0" layoutY="37.0" text="Découvrez notre galerie !">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="categoriesBox" layoutX="629.0" layoutY="41.0" onAction="#categorySelected" prefHeight="43.0" prefWidth="235.0" />
+            <HBox layoutX="1012.0" layoutY="42.0" prefHeight="51.0" prefWidth="281.0">
+               <children>
+                  <TextField fx:id="searchField" prefHeight="42.0" prefWidth="187.0" />
+                  <Button mnemonicParsing="false" onAction="#searchButton" prefHeight="43.0" prefWidth="94.0" text="Rechercher" />
+               </children>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+      </AnchorPane>
+      <VBox fx:id="displayPane" prefHeight="200.0" prefWidth="100.0">
+         <VBox.margin>
+            <Insets left="50.0" right="50.0" />
+         </VBox.margin>
+      </VBox>
+   </children>
+</VBox>

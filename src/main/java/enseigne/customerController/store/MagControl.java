@@ -1,6 +1,6 @@
-package enseigne.customerController;
+package enseigne.customerController.store;
 
-import enseigne.adminController.AdminStoreController;
+import enseigne.adminController.store.AdminStoreController;
 import enseigne.modele.magasin.Magasin;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -9,6 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 
 import java.io.File;
 import java.util.Objects;
@@ -25,16 +26,19 @@ public class MagControl {
     private VBox vbox2;
 
     @FXML
-    private Label title;
+    private Text title;
 
     @FXML
-    private Label info;
+    private Text web;
 
     @FXML
-    private Label tel;
+    private Text info;
 
     @FXML
-    private Label addresse;
+    private Text tel;
+
+    @FXML
+    private Text addresse;
 
     private Magasin m ;
     private AdminStoreController controller;
@@ -56,9 +60,10 @@ public class MagControl {
         }
 
         info.setText("Informations complémentaires : "+m.getInfoFr());
-        tel.setText("Téléphone : " + m.getTelephone()+" - Site web : " + m.getWeb());
+        tel.setText(m.getTelephone());
+        web.setText(m.getWeb());
         addresse.setText("Adresse : " + m.getAddr() + " " + m.getCodePostal() + " " + m.getVille());
-        hbox1.setStyle("-fx-background-color: #d0d0d0");
+
     }
 
     @FXML
@@ -72,12 +77,9 @@ public class MagControl {
     public void changeStyle(){
         String style = hbox1.getStyle();
         if(!selected){
-            style = style.replace("#d0d0d0","white");
-
-            hbox1.setStyle(style);
+            hbox1.setStyle("-fx-effect: dropshadow(three-pass-box, red, 10, 10, 0, 0);-fx-background-color: #fff");
         } else {
-            style = style.replaceAll("white","#d0d0d0");
-            hbox1.setStyle(style);
+            hbox1.setStyle("-fx-effect: dropshadow(three-pass-box, grey, 12, 0, 0, 0);\n;-fx-background-color: #fff");
         }
         selected = !selected;
     }

@@ -1,5 +1,7 @@
 package enseigne.adminController;
 
+import enseigne.adminController.overview.overviewController;
+import enseigne.adminController.store.AdminStoreController;
 import enseigne.modele.modele.MagFilter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -40,13 +42,17 @@ public class AccControlAdmin {
     private Node magasinPane;
     private Node overviewPane;
     private Node infoPane;
+    private FXMLLoader overviewPaneLoader;
+    private FXMLLoader galeriePaneLoader;
 
     @FXML
     public void initialize() throws IOException {
-        infoPane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/admin/adminInfo.fxml"));
+        infoPane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/customer/infos.fxml"));
         accueilPane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/admin/adminAccueil.fxml"));
-        galeriePane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/admin/adminGallerie.fxml"));
-        overviewPane = FXMLLoader.load(getClass().getResource("/fxml/enseigne/admin/adminOverview.fxml"));
+        galeriePaneLoader = new FXMLLoader(getClass().getResource("/fxml/enseigne/admin/adminGallerie.fxml"));
+        galeriePane = galeriePaneLoader.load();
+        overviewPaneLoader = new FXMLLoader(getClass().getResource("/fxml/enseigne/admin/adminOverview.fxml"));
+        overviewPane = overviewPaneLoader.load();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/enseigne/admin/adminStore.fxml"));
         magasinPane = loader.load();
         AdminStoreController ctrl = loader.getController();
@@ -81,6 +87,7 @@ public class AccControlAdmin {
     @FXML
     void switchInfos(ActionEvent event) {
         Button source = (Button) event.getSource();
+        infoPane.setStyle("-fx-padding: 20px 20px 20px 150px");
         pane.setContent(infoPane);
         switchBut(source);
         pane.setVvalue(0);
@@ -90,6 +97,12 @@ public class AccControlAdmin {
     void switchOverview(ActionEvent event) {
         Button source = (Button) event.getSource();
         pane.setContent(overviewPane);
+        overviewController ctrl = overviewPaneLoader.getController();
+        try {
+            ctrl.update();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         switchBut(source);
         pane.setVvalue(0);
     }
