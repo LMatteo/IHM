@@ -85,7 +85,7 @@ public class Product extends Deletable {
 
         BufferedWriter bf = new BufferedWriter(
                 new FileWriter(
-                        new File("/data/magasin/product/" + nom + ".json")));
+                        new File("data/magasin/product/" + nom + ".json")));
 
         JSONObject obj = new JSONObject();
         for(ProductHandler handler : ProductAttribute.values()){

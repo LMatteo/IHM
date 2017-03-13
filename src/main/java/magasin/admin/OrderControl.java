@@ -1,7 +1,6 @@
 package magasin.admin;
 
 
-import enseigne.modele.ReadConst;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
@@ -60,8 +59,9 @@ public class OrderControl {
         product.setDescription(description.getText());
         if(imagePath != null) {
             File image = new File(imagePath);
-            product.setPhoto("/data/magasin/images/" + image.getName());
+            product.setPhoto("data/magasin/images/" + image.getName());
         }
+        product.write();
     }
 
     @FXML
@@ -73,7 +73,7 @@ public class OrderControl {
         if (file != null) {
             Image image = new Image(file.toURI().toString());
             imagePreview.setImage(image);
-            File out = new File(ReadConst.imagePath+"/"+file.getName());
+            File out = new File("data/magasin/images"+"/"+file.getName());
             try {
                 FileUtils.copyFile(file,out);
                 imagePath = out.getPath();
