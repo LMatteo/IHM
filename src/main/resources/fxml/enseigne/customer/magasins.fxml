@@ -3,4 +3,4 @@
 <?import javafx.scene.control.ListView?>
 
 
-<ListView fx:id="view" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.customerController.store.MagasinsControl" />
+<ListView fx:id="view" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.customerController.store.MagasinsControl" />
