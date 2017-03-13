@@ -21,6 +21,8 @@ public class Launcher extends Application {
     private String path = "/fxml/centre/user/layout.fxml";
     private List<String> styles = new ArrayList<>();
     private boolean adminMode = false;
+    private double adminWidth = 1600;
+    private double adminHeight = 900;
 
     /**
      * Analyzes the arguments of the program, and launches the requested fxml.
@@ -61,9 +63,11 @@ public class Launcher extends Application {
             case "--magasin":
                 if (!adminMode) {
                     path = "/fxml/magasin/user/layout.fxml";
-                   // styles.add("/styles/magasin/styles.css");
+                    // styles.add("/styles/magasin/styles.css");
                 } else {
-
+                    path = "/fxml/magasin/admin/Admin_Layout.fxml";
+                    adminHeight = 800;
+                    adminWidth = 1060;
                 }
                 break;
             default:
@@ -89,17 +93,17 @@ public class Launcher extends Application {
     public void start(Stage stage) throws IOException {
         try {
             Parent rootNode = FXMLLoader.load(getClass().getResource(path));
-            Scene scene = adminMode ? new Scene(rootNode, 1600, 900) : new Scene(rootNode, 1280, 1024);
+            Scene scene = adminMode ? new Scene(rootNode, adminWidth, adminHeight) : new Scene(rootNode, 1280, 1024);
+
             for (String style : styles) {
                 scene.getStylesheets().add(style);
             }
             stage.setTitle("Borne");
             stage.setScene(scene);
             stage.show();
-        } catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
 
 }
