@@ -31,10 +31,9 @@
         </VBox>
         <VBox prefHeight="150.0" prefWidth="791.0" styleClass="info-container-bout">
             <children>
-                <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
-                            prefHeight="50.0" prefWidth="705.0" styleClass="nom-bout">
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="nom-bout">
                     <children>
-                        <Label fx:id="name" alignment="CENTER" prefHeight="44.0" prefWidth="704.0"
+                        <Label fx:id="name" alignment="CENTER" prefHeight="44.0" prefWidth="705.0"
                                text="Du sale mamène">
                             <font>
                                 <Font size="27.0"/>
