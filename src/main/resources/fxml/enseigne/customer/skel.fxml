@@ -14,9 +14,9 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.customerController.AccControl">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.customerController.AccControl">
     <center>
-        <ScrollPane fx:id="pane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+        <ScrollPane fx:id="pane" hbarPolicy="NEVER" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
     </center>
     <top>
         <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
@@ -38,7 +38,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button fx:id="gallerie" mnemonicParsing="false" onAction="#switchGallerie" prefHeight="200.0" prefWidth="244.0" style="-fx-background-color: #a3d35f; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Gallerie" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+                <Button fx:id="gallerie" mnemonicParsing="false" onAction="#switchGallerie" prefHeight="200.0" prefWidth="244.0" style="-fx-background-color: #a3d35f; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="Galerie" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                     <font>
                         <Font size="40.0" />
                     </font>

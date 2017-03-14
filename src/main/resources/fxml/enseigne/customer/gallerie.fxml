@@ -1,6 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-
-<VBox fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.customerController.GallerieController" />
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.customerController.galerie.GallerieController">
+   <children>
+      <AnchorPane prefHeight="159.0" prefWidth="1060.0">
+         <children>
+            <VBox alignment="CENTER" layoutX="74.0" layoutY="26.0" prefHeight="133.0" prefWidth="803.0">
+               <children>
+                  <Label text="Découvrez notre galerie de photos !">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <ComboBox fx:id="categoriesBox" onAction="#categorySelected" prefHeight="43.0" prefWidth="235.0">
+                           <HBox.margin>
+                              <Insets right="50.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                        <HBox prefHeight="51.0" prefWidth="281.0">
+                           <children>
+                              <TextField fx:id="searchField" prefHeight="42.0" prefWidth="187.0" />
+                              <Button mnemonicParsing="false" onAction="#searchButton" prefHeight="43.0" prefWidth="94.0" text="Rechercher" />
+                           </children>
+                           <HBox.margin>
+                              <Insets left="50.0" top="5.0" />
+                           </HBox.margin>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+      </AnchorPane>
+      <VBox fx:id="displayPane" prefHeight="200.0" prefWidth="100.0">
+         <VBox.margin>
+            <Insets left="50.0" right="50.0" />
+         </VBox.margin>
+      </VBox>
+   </children>
+   <padding>
+      <Insets left="50.0" />
+   </padding>
+</VBox>

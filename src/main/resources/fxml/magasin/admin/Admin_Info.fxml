@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
@@ -11,194 +12,149 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<ScrollPane xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="magasin.admin.BoutiqueInfoControl">
    <content>
       <AnchorPane prefHeight="598.0" prefWidth="1065.0">
          <children>
-            <TabPane prefHeight="598.0" prefWidth="1065.0" tabClosingPolicy="UNAVAILABLE">
+            <HBox>
+               <children>
+                  <VBox prefHeight="108.0" prefWidth="237.0">
+                     <children>
+                        <Label prefHeight="37.0" prefWidth="246.0" text="Heure d'ouverture">
+                           <font>
+                              <Font name="Aaargh Normal" size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="openTime" prefHeight="31.0" prefWidth="251.0">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <padding>
+                        <Insets top="40.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets left="50.0" right="50.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="108.0" prefWidth="237.0">
+                     <children>
+                        <Label prefHeight="37.0" prefWidth="243.0" text="Heure de fermeture">
+                           <font>
+                              <Font name="Aaargh Normal" size="24.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="closeTime" prefHeight="31.0" prefWidth="396.0">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <padding>
+                        <Insets top="40.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <TabPane layoutX="53.0" layoutY="132.0" prefHeight="319.0" prefWidth="595.0">
                <tabs>
                   <Tab text="Français">
                      <content>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                        <Pane>
                            <children>
-                              <HBox>
-                                 <children>
-                                    <VBox prefHeight="108.0" prefWidth="438.0">
-                                       <children>
-                                          <Label prefHeight="37.0" prefWidth="246.0" text="Heure d'ouverture">
-                                             <font>
-                                                <Font name="Aaargh Normal" size="24.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField prefHeight="31.0" prefWidth="398.0">
-                                             <VBox.margin>
-                                                <Insets />
-                                             </VBox.margin>
-                                          </TextField>
-                                       </children>
-                                       <padding>
-                                          <Insets top="40.0" />
-                                       </padding>
-                                       <HBox.margin>
-                                          <Insets left="50.0" right="50.0" />
-                                       </HBox.margin>
-                                    </VBox>
-                                    <VBox prefHeight="82.0" prefWidth="419.0">
-                                       <children>
-                                          <Label prefHeight="37.0" prefWidth="243.0" text="Heure de fermeture">
-                                             <font>
-                                                <Font name="Aaargh Normal" size="24.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField prefHeight="31.0" prefWidth="396.0">
-                                             <VBox.margin>
-                                                <Insets />
-                                             </VBox.margin>
-                                          </TextField>
-                                       </children>
-                                       <padding>
-                                          <Insets top="40.0" />
-                                       </padding>
-                                    </VBox>
-                                 </children>
-                              </HBox>
-                              <TextArea layoutX="53.0" layoutY="169.0" prefHeight="185.0" prefWidth="912.0" />
-                              <Label layoutX="53.0" layoutY="132.0" text="Description du magasin">
+                              <TextArea fx:id="descrFr" layoutY="37.0" prefHeight="251.0" prefWidth="595.0" />
+                              <Label text="Description du magasin">
                                  <font>
                                     <Font name="Aaargh Normal" size="24.0" />
                                  </font>
                               </Label>
-                              <HBox layoutX="53.0" layoutY="370.0">
-                                 <children>
-                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <HBox.margin>
-                                          <Insets right="35.0" />
-                                       </HBox.margin>
-                                       <image>
-                                          <Image url="@/images/magasin/preview150200.jpg" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <HBox.margin>
-                                          <Insets right="35.0" />
-                                       </HBox.margin>
-                                       <image>
-                                          <Image url="@/images/magasin/preview150200.jpg" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <HBox.margin>
-                                          <Insets right="35.0" />
-                                       </HBox.margin>
-                                       <image>
-                                          <Image url="@/images/magasin/preview150200.jpg" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@/images/magasin/preview150200.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </HBox>
                            </children>
-                        </AnchorPane>
+                        </Pane>
                      </content>
                   </Tab>
                   <Tab text="Anglais">
                      <content>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                        <Pane prefHeight="290.0" prefWidth="595.0">
                            <children>
-                              <HBox>
-                                 <children>
-                                    <VBox prefHeight="108.0" prefWidth="438.0">
-                                       <children>
-                                          <Label prefHeight="37.0" prefWidth="246.0" text="Heure d'ouverture">
-                                             <font>
-                                                <Font name="Aaargh Normal" size="24.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField prefHeight="31.0" prefWidth="398.0">
-                                             <VBox.margin>
-                                                <Insets />
-                                             </VBox.margin>
-                                          </TextField>
-                                       </children>
-                                       <padding>
-                                          <Insets top="40.0" />
-                                       </padding>
-                                       <HBox.margin>
-                                          <Insets left="50.0" right="50.0" />
-                                       </HBox.margin>
-                                    </VBox>
-                                    <VBox prefHeight="82.0" prefWidth="419.0">
-                                       <children>
-                                          <Label prefHeight="37.0" prefWidth="243.0" text="Heure de fermeture">
-                                             <font>
-                                                <Font name="Aaargh Normal" size="24.0" />
-                                             </font>
-                                          </Label>
-                                          <TextField prefHeight="31.0" prefWidth="396.0">
-                                             <VBox.margin>
-                                                <Insets />
-                                             </VBox.margin>
-                                          </TextField>
-                                       </children>
-                                       <padding>
-                                          <Insets top="40.0" />
-                                       </padding>
-                                    </VBox>
-                                 </children>
-                              </HBox>
-                              <TextArea layoutX="53.0" layoutY="169.0" prefHeight="185.0" prefWidth="912.0" />
-                              <Label layoutX="53.0" layoutY="132.0" text="Description du magasin (anglais)">
+                              <TextArea fx:id="descrEng" layoutY="37.0" prefHeight="251.0" prefWidth="595.0" />
+                              <Label text="Description du magasin">
                                  <font>
                                     <Font name="Aaargh Normal" size="24.0" />
                                  </font>
                               </Label>
-                              <HBox layoutX="53.0" layoutY="370.0">
-                                 <children>
-                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <HBox.margin>
-                                          <Insets right="35.0" />
-                                       </HBox.margin>
-                                       <image>
-                                          <Image url="@/images/magasin/preview150200.jpg" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <HBox.margin>
-                                          <Insets right="35.0" />
-                                       </HBox.margin>
-                                       <image>
-                                          <Image url="@/images/magasin/preview150200.jpg" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <HBox.margin>
-                                          <Insets right="35.0" />
-                                       </HBox.margin>
-                                       <image>
-                                          <Image url="@/images/magasin/preview150200.jpg" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@/images/magasin/preview150200.jpg" />
-                                       </image>
-                                    </ImageView>
-                                 </children>
-                              </HBox>
                            </children>
-                        </AnchorPane>
+                        </Pane>
                      </content>
                   </Tab>
                </tabs>
             </TabPane>
+            <Pane layoutX="720.0" layoutY="132.0">
+               <children>
+                  <VBox layoutY="7.0" prefHeight="400.0" prefWidth="146.0">
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="picPrev1" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@/images/magasin/preview150200.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="browsePic1" layoutX="66.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#BrowsePic1" text="Parcourir" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="198.0">
+                           <children>
+                              <ImageView fx:id="picPrev3" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@/images/magasin/preview150200.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="browsePic3" layoutX="66.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#BrowsePic3" text="Parcourir" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="137.0" layoutY="7.0" prefHeight="400.0" prefWidth="146.0">
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="picPrev2" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@/images/magasin/preview150200.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="browsePic2" layoutX="66.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#BrowsePic2" text="Parcourir" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="198.0">
+                           <children>
+                              <ImageView fx:id="picPrev4" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@/images/magasin/preview150200.jpg" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="browsePic4" layoutX="66.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#BrowsePic4" text="Parcourir" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+            <Button fx:id="saveInfo" layoutX="549.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#SaveInfo" prefHeight="45.0" prefWidth="91.0" text="Enregistrer">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="720.0" layoutY="100.0" text="Galerie photo">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </content>

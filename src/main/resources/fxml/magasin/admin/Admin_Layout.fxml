@@ -22,7 +22,7 @@
                   <Image url="@../../../images/common/logo/toBeOrToHave.png" />
                </image>
             </ImageView>
-            <Button fx:id="stock" mnemonicParsing="false" onMouseClicked="#goToStock" prefHeight="200.0" prefWidth="190.0" style="-fx-background-color: #b3d287; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="STOCK" textAlignment="CENTER" textFill="WHITE">
+            <Button fx:id="stock" mnemonicParsing="false" onMouseClicked="#goToStock" prefHeight="200.0" prefWidth="190.0" style="-fx-background-color: #b3d287; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;" text="PRODUITS" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Blackberries Bold" size="24.0" />
                </font>

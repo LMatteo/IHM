@@ -1,8 +1,6 @@
 package enseigne.modele;
 
-import enseigne.modele.actu.Actu;
 import enseigne.modele.magasin.Magasin;
-import enseigne.modele.modele.ActuFilter;
 import enseigne.modele.photo.Photo;
 
 import java.io.*;
@@ -14,7 +12,9 @@ public class ReadConst {
     public static final String storePath = "data/enseigne/stores/";
     public static final String actuPath = "data/enseigne/actu/";
     public static  final String imagePath = "data/enseigne/images";
-    public static final String photoPath = "data/enseigne/photo";
+    public static final String photoPath = "data/enseigne/photos/";
+    public static final String newsPath = "data/enseigne/news/";
+
     public static final FileFilter filter = new FileFilter() {
         @Override
         public boolean accept(File pathname) {
@@ -55,16 +55,6 @@ public class ReadConst {
 
     }
 
-    public static List<Actu> getActuFromJson() throws IOException{
-        File folder = new File(actuPath);
-        List<File> files = Arrays.asList(folder.listFiles(filter));
-        List<Actu> magasins = new ArrayList<>();
-        for(File file : files){
-            magasins.add(new Actu(file.toString()));
-        }
-        return magasins;
-
-    }
 
     public static List<Photo> getPhotoFromJson() throws IOException{
         File folder = new File(photoPath);

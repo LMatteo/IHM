@@ -14,18 +14,10 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="700.0" minWidth="-Infinity" prefWidth="1380.0" stylesheets="@style/storeStyle.css" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.adminController.overviewController">
+<VBox fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="700.0" minWidth="-Infinity" prefWidth="1380.0" stylesheets="@style/storeStyle.css" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.adminController.overview.overviewController">
    <children>
       <HBox alignment="TOP_CENTER">
          <children>
-            <Button fx:id="updateBtn" minWidth="250.0" mnemonicParsing="false" onAction="#update" text="update">
-               <font>
-                  <Font size="20.0" />
-               </font>
-               <HBox.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </HBox.margin>
-            </Button>
             <Button fx:id="visualizeStore" minWidth="250.0" mnemonicParsing="false" onAction="#visualizeStore" text="Visualiser les statistiques d'un magasin">
                <font>
                   <Font size="20.0" />
@@ -59,7 +51,7 @@
          <children>
             <VBox alignment="TOP_CENTER">
                <children>
-                  <Label fx:id="chiffreAffairesTitle" text="Chiffres d'affaires">
+                  <Label fx:id="chiffreAffairesTitle" text="Chiffres d'affaires annuels">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -72,7 +64,90 @@
             </VBox>
             <VBox alignment="TOP_CENTER" GridPane.columnIndex="1">
                <children>
-                  <Label fx:id="employesTitle" text="Nombre d'employés">
+                  <Label fx:id="mainDatas" text="Données générales">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="mainDatas1" text="TO BE OR TO HAVE">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="288.0" prefWidth="689.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="288.0" prefWidth="325.0">
+                           <children>
+                              <Label text="Nombre de magasins">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Chiffre d'affaire total (/an)">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label text="Nombre d'employés">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets top="32.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="288.0" prefWidth="325.0">
+                           <children>
+                              <Label fx:id="nbMags" alignment="TOP_CENTER" prefWidth="150.0" style="-fx-background-color: lightgrey;" text="..." textAlignment="CENTER">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="ChiffreAffaireTotal" alignment="TOP_CENTER" prefWidth="150.0" style="-fx-background-color: lightgrey;" text="...">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="nbEmployesTotal" alignment="TOP_CENTER" prefWidth="150.0" style="-fx-background-color: lightgrey;" text="...">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets top="32.0" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox alignment="TOP_CENTER" GridPane.rowIndex="1">
+               <children>
+                  <Label fx:id="employesTitle" text="Employés">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -83,22 +158,9 @@
                   <PieChart fx:id="employesChart" prefHeight="249.0" prefWidth="319.0" />
                </children>
             </VBox>
-            <VBox alignment="TOP_CENTER" GridPane.rowIndex="1">
-               <children>
-                  <Label fx:id="produitsTitle" text="Produits renvoyés">
-                     <font>
-                        <Font size="25.0" />
-                     </font>
-                     <VBox.margin>
-                        <Insets top="15.0" />
-                     </VBox.margin>
-                  </Label>
-                  <PieChart fx:id="produitsChart" prefHeight="249.0" prefWidth="319.0" />
-               </children>
-            </VBox>
             <VBox alignment="TOP_CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
                <children>
-                  <Label fx:id="clientsTitle" text="Clientèle">
+                  <Label fx:id="employesTitle1" text="Clientèle">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -106,7 +168,7 @@
                         <Insets top="15.0" />
                      </VBox.margin>
                   </Label>
-                  <BarChart fx:id="clienteleChart" prefHeight="303.0" prefWidth="649.0">
+                  <BarChart fx:id="clienteleChart">
                     <xAxis>
                       <CategoryAxis side="BOTTOM" />
                     </xAxis>

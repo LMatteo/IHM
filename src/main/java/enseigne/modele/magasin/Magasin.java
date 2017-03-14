@@ -149,11 +149,11 @@ public class Magasin extends Deletable {
         this.maint = maint;
     }
 
-    public Map<Integer, Integer> getPointe() {
+    public Map<Integer,Integer> getPointe() {
         return pointe;
     }
 
-    public void setPointe(Map<Integer, Integer> pointe) {
+    public void setPointe(Map<Integer,Integer> pointe) {
         this.pointe = pointe;
     }
 

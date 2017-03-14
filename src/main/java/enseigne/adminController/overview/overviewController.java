@@ -1,4 +1,4 @@
-package enseigne.adminController;
+package enseigne.adminController.overview;
 
 import enseigne.modele.magasin.Magasin;
 import enseigne.modele.modele.MagFilter;
@@ -11,11 +11,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.PieChart;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import org.apache.commons.lang.math.RandomUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,7 +33,13 @@ public class overviewController {
     private Button updateStore;
 
     @FXML
-    private Button updateBtn;
+    private Label nbMags;
+
+    @FXML
+    private Label ChiffreAffaireTotal;
+
+    @FXML
+    private Label nbEmployesTotal;
 
     @FXML
     private PieChart chiffreAffaireChart;
@@ -42,10 +48,7 @@ public class overviewController {
     private PieChart employesChart;
 
     @FXML
-    private PieChart produitsChart;
-
-    @FXML
-    private BarChart<?, ?> clienteleChart;
+    private BarChart<String, Integer> clienteleChart;
 
     @FXML
     private VBox pane;
@@ -59,61 +62,67 @@ public class overviewController {
     @FXML
     private Label clientsTitle;
 
-    @FXML
-    private Label produitsTitle;
 
 
     private MagFilter filter;
 
 
-    @FXML
-    public void update(ActionEvent event) throws IOException {
+
+    public void update() throws IOException {
         filter = new MagFilter();
         List<Magasin> magasins = filter.toDisplay();
+        nbMags.setText(String.valueOf(magasins.size()));
+        ChiffreAffaireTotal.setText(getTotalChiffreAffaire(magasins)+" €");
+        nbEmployesTotal.setText(String.valueOf(getTotalEmployes(magasins)));
         chiffreAffaireChart.setData(getChiffreAffaireDatas(magasins));
-        chiffreAffairesTitle.setText("Chiffre d'affaires (total : "+getTotalChiffreAffaire(magasins)+" €)");
+        chiffreAffairesTitle.setText("Chiffre d'affaires (total : " + getTotalChiffreAffaire(magasins) + " €)");
         employesChart.setData(getEmployesDatas(magasins));
-        employesTitle.setText("Effectifs (total : "+getTotalEmployes(magasins)+" employés)");
-        produitsChart.setData(getProduitsRenduDatas(magasins));
-        produitsTitle.setText("Produits renvoyés (total : "+getTotalProduitsRendus(magasins)+")");
+        employesTitle.setText("Effectifs (total : " + getTotalEmployes(magasins) + " employés)");
+        clienteleChart.setData(getClientele(magasins));
+        clienteleChart.getXAxis().setLabel("Magasins");
+        clienteleChart.getYAxis().setLabel("Nombre de clients");
     }
 
-    private ObservableList<PieChart.Data> getChiffreAffaireDatas(List<Magasin> magasins){
-        List<PieChart.Data> datas= new ArrayList<>();
-        for(Magasin m : magasins){
-            m.setChiffreAffaire(Math.abs(RandomUtils.nextInt()));
-            PieChart.Data data = new PieChart.Data(m.getCentre(),m.getChiffreAffaire());
+    private ObservableList<PieChart.Data> getChiffreAffaireDatas(List<Magasin> magasins) {
+        List<PieChart.Data> datas = new ArrayList<>();
+        for (Magasin m : magasins) {
+            PieChart.Data data = new PieChart.Data(m.getCentre(), m.getChiffreAffaire());
             datas.add(data);
         }
         return FXCollections.observableList(datas);
     }
 
-    private ObservableList<PieChart.Data> getEmployesDatas(List<Magasin> magasins){
-        List<PieChart.Data> datas= new ArrayList<>();
-        for(Magasin m : magasins){
-            m.setNbEmpl(Math.abs(RandomUtils.nextInt()));
-            PieChart.Data data = new PieChart.Data(m.getCentre(),m.getNbEmpl());
+    private ObservableList<PieChart.Data> getEmployesDatas(List<Magasin> magasins) {
+        List<PieChart.Data> datas = new ArrayList<>();
+        for (Magasin m : magasins) {
+            PieChart.Data data = new PieChart.Data(m.getCentre(), m.getNbEmpl());
             datas.add(data);
         }
         return FXCollections.observableList(datas);
     }
 
-    private ObservableList<PieChart.Data> getProduitsRenduDatas(List<Magasin> magasins){
-        List<PieChart.Data> datas= new ArrayList<>();
+    private ObservableList<XYChart.Series<String,Integer>> getClientele(List<Magasin> magasins) {
+        ObservableList<XYChart.Series<String,Integer>> list = FXCollections.observableArrayList();
         for(Magasin m : magasins){
-            m.setRendu(Math.abs(RandomUtils.nextInt()));
-            PieChart.Data data = new PieChart.Data( m.getCentre(),m.getRendu());
-            datas.add(data);
+            XYChart.Series series = new XYChart.Series();
+            series.setName(m.getCentre());
+            for(int i=0;i<5;i++){
+                String title = Integer.toString(i*15)+" - "+Integer.toString((i+1)*15-1)+" ans";
+                if(i==4) title = Integer.toString(i*15)+" ans et plus";
+                series.getData().add(new XYChart.Data<String,Integer>(title,m.getAge().get(i)));
+            }
+            list.add(series);
         }
-        return FXCollections.observableList(datas);
+        return list;
     }
 
     @FXML
     void updateStore(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/enseigne/admin/updaterOverview.fxml"));
         Parent rootNode = loader.load();
-        overviewUpdatedController ctrl = loader.getController();
+        overviewUpdaterController ctrl = loader.getController();
         ctrl.update();
+        ctrl.setOriginController(this);
         Scene scene = new Scene(rootNode);
         Stage stage = new Stage();
         stage.setScene(scene);
@@ -135,24 +144,25 @@ public class overviewController {
 
     }
 
-    private int getTotalChiffreAffaire(List<Magasin> magasins){
+    private int getTotalChiffreAffaire(List<Magasin> magasins) {
         int sum = 0;
-        for(Magasin m : magasins){
+        for (Magasin m : magasins) {
             sum += m.getChiffreAffaire();
         }
         return sum;
     }
-    private int getTotalEmployes(List<Magasin> magasins){
+
+    private int getTotalEmployes(List<Magasin> magasins) {
         int sum = 0;
-        for(Magasin m : magasins){
+        for (Magasin m : magasins) {
             sum += m.getNbEmpl();
         }
         return sum;
     }
 
-    private int getTotalProduitsRendus(List<Magasin> magasins){
+    private int getTotalProduitsRendus(List<Magasin> magasins) {
         int sum = 0;
-        for(Magasin m : magasins){
+        for (Magasin m : magasins) {
             sum += m.getRendu();
         }
         return sum;

@@ -15,6 +15,8 @@ public enum MagAttribute implements MagHandler {
         public void put(Magasin mag, JSONObject json){
             json.put("infoFr",mag.getInfoFr());
         }
+        @Override
+        public String get(Magasin mag){return mag.getInfoFr();}
     },
     nbEmpl{
         @Override
@@ -25,6 +27,8 @@ public enum MagAttribute implements MagHandler {
         public void put(Magasin mag, JSONObject json){
             json.put("nbEmpl",mag.getNbEmpl());
         }
+        @Override
+        public String get(Magasin mag){return Integer.toString(mag.getNbEmpl());}
     },
     web{
         @Override
@@ -35,6 +39,8 @@ public enum MagAttribute implements MagHandler {
         public void put(Magasin mag, JSONObject json){
             json.put("web",mag.getWeb());
         }
+        @Override
+        public String get(Magasin mag){return mag.getWeb();}
     },
     ChiffreAffaire{
         @Override
@@ -45,6 +51,8 @@ public enum MagAttribute implements MagHandler {
         public void put(Magasin mag, JSONObject json){
             json.put("ChiffreAffaire",mag.getChiffreAffaire());
         }
+        @Override
+        public String get(Magasin mag){return Integer.toString(mag.getChiffreAffaire());}
     },
     photo{
         @Override
@@ -55,6 +63,8 @@ public enum MagAttribute implements MagHandler {
         public void put(Magasin mag, JSONObject json){
             json.put("photo",mag.getPhoto());
         }
+        @Override
+        public String get(Magasin mag){return mag.getPhoto();}
     },
     centre{
         @Override
@@ -65,13 +75,15 @@ public enum MagAttribute implements MagHandler {
         public void put(Magasin mag, JSONObject json){
             json.put("centre",mag.getCentre());
         }
+        @Override
+        public String get(Magasin mag){return mag.getCentre();}
     },
     pointe{
         @Override
         public void assign(Magasin mag, JSONObject json) {
             json = json.getJSONObject("pointe");
             Map<Integer,Integer> map = new HashMap<>();
-            for(int i = 0;i<25;i++){
+            for(int i = 0;i<5;i++){
                 if(json.has(Integer.toString(i))){
                     map.put(i,json.getInt(Integer.toString(i)));
                 }
@@ -82,6 +94,8 @@ public enum MagAttribute implements MagHandler {
         public void put(Magasin mag, JSONObject json){
             json.put("pointe",mag.getPointe());
         }
+        @Override
+        public String get(Magasin mag){return mag.getPointe().toString();}
     },
     adresse{
         @Override
@@ -92,6 +106,8 @@ public enum MagAttribute implements MagHandler {
         public void put(Magasin mag, JSONObject json){
             json.put("adresse",mag.getAddr());
         }
+        @Override
+        public String get(Magasin mag){return mag.getAddr();}
     },
     rendu{
         @Override
@@ -102,6 +118,8 @@ public enum MagAttribute implements MagHandler {
         public void put(Magasin mag, JSONObject json){
             json.put("rendu",mag.getRendu());
         }
+        @Override
+        public String get(Magasin mag){return Integer.toString(mag.getRendu());}
     },
     infoEn{
         @Override
@@ -112,6 +130,8 @@ public enum MagAttribute implements MagHandler {
         public void put(Magasin mag, JSONObject json){
             json.put("infoEn",mag.getInfoEn());
         }
+        @Override
+        public String get(Magasin mag){return mag.getInfoEn();}
     },
     maintenance{
         @Override
@@ -122,6 +142,8 @@ public enum MagAttribute implements MagHandler {
         public void put(Magasin mag, JSONObject json){
             json.put("maintenance",mag.getMaint());
         }
+        @Override
+        public String get(Magasin mag){return Integer.toString(mag.getMaint());}
     },
     age{
         @Override
@@ -139,6 +161,8 @@ public enum MagAttribute implements MagHandler {
         public void put(Magasin mag, JSONObject json){
             json.put("age",mag.getAge());
         }
+        @Override
+        public String get(Magasin mag){return mag.getAge().toString();}
     },
     ville{
         @Override
@@ -149,6 +173,8 @@ public enum MagAttribute implements MagHandler {
         public void put(Magasin mag, JSONObject json){
             json.put("ville",mag.getVille());
         }
+        @Override
+        public String get(Magasin mag){return mag.getVille();}
     },
     codePostal{
         @Override
@@ -159,6 +185,8 @@ public enum MagAttribute implements MagHandler {
         public void put(Magasin mag, JSONObject json){
             json.put(this.toString(),mag.getCodePostal());
         }
+        @Override
+        public String get(Magasin mag){return mag.getCodePostal();}
     },
     telephone{
         @Override
@@ -169,5 +197,7 @@ public enum MagAttribute implements MagHandler {
         public void put(Magasin mag, JSONObject json){
             json.put(this.toString(),mag.getTelephone());
         }
+        @Override
+        public String get(Magasin mag){return mag.getTelephone();}
     }
 }
