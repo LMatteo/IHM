@@ -9,7 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import magasin.modele.BoutiqueInformation.BoutiqueInformation;
+import magasin.modele.boutiqueInformation.BoutiqueInformation;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
@@ -110,19 +110,19 @@ public class BoutiqueInfoControl {
         boutiqueInfo.setDescrEng(descrEng.getText());
         if(imagePath1 != null) {
             File image = new File(imagePath1);
-            boutiqueInfo.setPathPic1("data/magasin/images/" + image.getName());
+            boutiqueInfo.setPathPic1("data/magasin/info/" + image.getName());
         }
         if(imagePath2 != null) {
             File image = new File(imagePath2);
-            boutiqueInfo.setPathPic2("data/magasin/images/" + image.getName());
+            boutiqueInfo.setPathPic2("data/magasin/info/" + image.getName());
         }
         if(imagePath3 != null) {
             File image = new File(imagePath3);
-            boutiqueInfo.setPathPic3("data/magasin/images/" + image.getName());
+            boutiqueInfo.setPathPic3("data/magasin/info/" + image.getName());
         }
         if(imagePath4 != null) {
             File image = new File(imagePath4);
-            boutiqueInfo.setPathPic4("data/magasin/images/" + image.getName());
+            boutiqueInfo.setPathPic4("data/magasin/info/" + image.getName());
         }
         boutiqueInfo.write();
     }

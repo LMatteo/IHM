@@ -1,6 +1,4 @@
-package magasin.modele.BoutiqueInformation;
-
-
+package magasin.modele.boutiqueInformation;
 
 import magasin.modele.Deletable;
 import org.json.JSONObject;
@@ -23,11 +21,11 @@ public class BoutiqueInformation extends Deletable {
     private String phoneNumber;
 
     public BoutiqueInformation() {
-        super.setPath("/data/magasin/info/");
+        super.setPath(File.separator +"data" + File.separator + "magasin" + File.separator + "info" + File.separator);
     }
 
     public BoutiqueInformation(String path) throws IOException {
-        super.setPath(File.separator +"data" + File.separator + "magasin" + File.separator + "product/");
+        super.setPath(File.separator +"data" + File.separator + "magasin" + File.separator + "info" + File.separator);
         BufferedReader read = new BufferedReader(new FileReader(new File(path)));
         StringBuilder res = new StringBuilder();
         String line = "";
@@ -101,9 +99,7 @@ public class BoutiqueInformation extends Deletable {
         this.pathPic3 = pathPic3;
     }
 
-    public String getPathPic4() {
-        return pathPic4;
-    }
+    public String getPathPic4() { return pathPic4; }
 
     public void setPathPic4(String pathPic4) {
         this.pathPic4 = pathPic4;

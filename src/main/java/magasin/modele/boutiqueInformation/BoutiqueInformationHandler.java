@@ -1,6 +1,5 @@
-package magasin.modele.BoutiqueInformation;
+package magasin.modele.boutiqueInformation;
 
-import magasin.modele.product.Product;
 import org.json.JSONObject;
 
 /**

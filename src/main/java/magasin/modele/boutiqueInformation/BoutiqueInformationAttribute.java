@@ -1,7 +1,5 @@
-package magasin.modele.BoutiqueInformation;
+package magasin.modele.boutiqueInformation;
 
-import magasin.modele.BoutiqueInformation.BoutiqueInformation;
-import magasin.modele.BoutiqueInformation.BoutiqueInformationHandler;
 import org.json.JSONObject;
 
 /**
@@ -79,7 +77,9 @@ public enum BoutiqueInformationAttribute implements BoutiqueInformationHandler {
 
     phoneNumber {
         @Override
-        public void assign(BoutiqueInformation info, JSONObject json) { info.setPhoneNumber(json.getString("phoneNumber")); }
+        public void assign(BoutiqueInformation info, JSONObject json) {
+            info.setPhoneNumber(json.getString("phoneNumber"));
+        }
 
         @Override
         public void put(BoutiqueInformation info, JSONObject json) {
@@ -134,7 +134,7 @@ public enum BoutiqueInformationAttribute implements BoutiqueInformationHandler {
 
         @Override
         public void put(BoutiqueInformation info, JSONObject json) {
-            json.put("pathPic3", info.getPathPic2());
+            json.put("pathPic3", info.getPathPic3());
         }
 
         @Override

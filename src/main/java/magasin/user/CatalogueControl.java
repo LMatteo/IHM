@@ -26,6 +26,11 @@ public class CatalogueControl {
         layoutControl.changeToList(null);
     }
 
+    @FXML
+    void LoadGridPaneElement() throws IOException{
+
+    }
+
 
 
 }
