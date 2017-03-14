@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1"
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="centre.user.StoreController">
     <children>
         <VBox fx:id="accBox" alignment="CENTER" prefHeight="200.0" prefWidth="1060.0">
@@ -18,23 +18,26 @@
                             <children>
                                 <VBox fx:id="search" alignment="CENTER" prefHeight="0.0" prefWidth="321.0">
                                     <children>
-                                        <TextField fx:id="searchBar" prefHeight="52.0" prefWidth="304.0">
+                                        <TextField fx:id="searchBar" onKeyPressed="#searchType"
+                                                   prefHeight="52.0" prefWidth="304.0">
                                             <font>
                                                 <Font size="20.0"/>
                                             </font>
                                         </TextField>
                                     </children>
                                 </VBox>
-                                <Button fx:id="searchButton" mnemonicParsing="false" onAction="#confirmSearch"
-                                        prefHeight="62.0" prefWidth="109.0" styleClass="search-button" text="Chercher">
+                                <Button fx:id="searchButton" mnemonicParsing="false"
+                                        onAction="#confirmSearch" prefHeight="62.0"
+                                        prefWidth="109.0" styleClass="search-button"
+                                        text="Chercher">
                                     <font>
                                         <Font size="20.0"/>
                                     </font>
                                 </Button>
                             </children>
                         </HBox>
-                        <MenuButton fx:id="sortMenu" mnemonicParsing="false" prefHeight="50.0" prefWidth="227.0"
-                                    styleClass="sort-button" text="Trier par...">
+                        <MenuButton fx:id="sortMenu" mnemonicParsing="false" prefHeight="50.0"
+                                    prefWidth="227.0" styleClass="sort-button" text="Trier par...">
                             <font>
                                 <Font size="20.0"/>
                             </font>
