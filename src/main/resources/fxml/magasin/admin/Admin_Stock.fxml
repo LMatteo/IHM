@@ -77,7 +77,7 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                        <AnchorPane layoutX="-3.0" prefHeight="200.0" prefWidth="200.0">
                            <children>
                               <VBox AnchorPane.leftAnchor="850.0" AnchorPane.topAnchor="50.0">
                                  <children>
@@ -152,7 +152,7 @@
                                     </HBox>
                                  </children>
                               </VBox>
-                              <HBox AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="150.0">
+                              <Pane layoutX="20.0" layoutY="150.0" prefHeight="394.0" prefWidth="817.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="150.0">
                                  <children>
                                     <VBox>
                                        <children>
@@ -163,12 +163,12 @@
                                           </ImageView>
                                           <Pane>
                                              <children>
-                                                <Button fx:id="addPicture" layoutX="214.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" onMouseClicked="#browsePicture" text="Parcourir" />
+                                                <Button fx:id="addPicture" layoutX="214.0" mnemonicParsing="false" onMouseClicked="#browsePicture" prefHeight="25.0" prefWidth="77.0" text="Parcourir" />
                                              </children>
                                           </Pane>
                                        </children>
                                     </VBox>
-                                    <TabPane>
+                                    <TabPane layoutX="314.0" layoutY="-2.0" prefHeight="370.0" prefWidth="463.0">
                                        <tabs>
                                           <Tab text="Français">
                                              <content>
@@ -179,7 +179,7 @@
                                                             <Font name="Aaargh Normal" size="18.0" />
                                                          </font>
                                                       </Label>
-                                                      <TextArea fx:id="descriptionFr" prefHeight="368.0" prefWidth="460.0" />
+                                                      <TextArea fx:id="descriptionFr" prefHeight="313.0" prefWidth="460.0" />
                                                    </children>
                                                 </VBox>
                                              </content>
@@ -201,7 +201,7 @@
                                        </tabs>
                                     </TabPane>
                                  </children>
-                              </HBox>
+                              </Pane>
                            </children>
                         </AnchorPane>
                      </children>
