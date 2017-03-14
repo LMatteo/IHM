@@ -108,11 +108,13 @@ public class LayoutControl {
 
     /**
      * Methods which load some views from the client homepage
-     */
+     **/
     @FXML
     void goToCatalogue(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/user/catalogue.fxml"));
         ScrollPane sp = loader.load();
+        CatalogueControl catControl = loader.getController();
+        catControl.setLayoutControl(this);
         paneLayout.setContent(sp);
         switchButtonStyle(null);
         paneLayout.setVvalue(0);
@@ -136,7 +138,17 @@ public class LayoutControl {
         paneLayout.setVvalue(0);
     }
 
-
-
-
+    /**
+     * Methods which load some views from the catalogue view
+     **/
+    @FXML
+    void changeToList(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/user/list_catalogue.fxml"));
+        ScrollPane sp = loader.load();
+        CatalogueControl catControl = loader.getController();
+        catControl.setLayoutControl(this);
+        paneLayout.setContent(sp);
+        switchButtonStyle(null);
+        paneLayout.setVvalue(0);
+    }
 }
