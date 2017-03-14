@@ -12,11 +12,19 @@
    <children>
       <HBox alignment="TOP_CENTER">
          <children>
-            <TextField fx:id="filterText" onAction="#setFilter" prefHeight="36.0" prefWidth="164.0">
+            <HBox>
                <HBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
-            </TextField>
+               <children>
+                  <TextField fx:id="filterText" prefHeight="36.0" prefWidth="164.0" />
+                  <Button fx:id="delOne1" mnemonicParsing="false" onAction="#setFilter" prefHeight="36.0" prefWidth="145.0" text="Rechercher">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
             <Button fx:id="delOne" mnemonicParsing="false" onAction="#delOne" prefHeight="36.0" prefWidth="233.0" text="Supprimer la selection">
                <font>
                   <Font size="20.0" />
