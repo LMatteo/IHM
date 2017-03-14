@@ -21,7 +21,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<ScrollPane fx:id="stockPane" maxHeight="-Infinity" maxWidth="1060.0" minHeight="-Infinity" minWidth="1060.0" prefHeight="600.0" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="magasin.admin.OrderControl">
+<ScrollPane fx:id="stockPane" maxHeight="-Infinity" maxWidth="1060.0" minHeight="-Infinity" minWidth="1060.0"
+            prefHeight="600.0" prefWidth="1060.0" xmlns="http://javafx.com/javafx/8.0.111"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="magasin.admin.OrderControl">
    <content>
       <TabPane prefHeight="627.0" prefWidth="1045.0">
          <tabs>
