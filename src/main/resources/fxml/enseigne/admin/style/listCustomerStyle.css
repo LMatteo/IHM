@@ -1,0 +1,14 @@
+.list-cell:selected {
+    -fx-background-color: -fx-background;
+    -fx-background-insets: 0;
+}
+
+.list-view{
+    -fx-background-color: -fx-background ;
+    -fx-background-insets: 0 ;
+}
+
+.list-view .list-cell {
+    -fx-background-color: #f5f5f5;
+    -fx-text-fill: black;
+}
