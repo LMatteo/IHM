@@ -17,7 +17,7 @@ public enum BoutiqueInformationAttribute implements BoutiqueInformationHandler {
 
         @Override
         public void put(BoutiqueInformation info, JSONObject json) {
-            json.put("nom", info.getOpenTime());
+            json.put("openTime", info.getOpenTime());
         }
 
         @Override

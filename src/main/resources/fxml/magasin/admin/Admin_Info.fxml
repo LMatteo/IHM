@@ -93,7 +93,7 @@
                   </Tab>
                </tabs>
             </TabPane>
-            <Pane layoutX="720.0" layoutY="132.0">
+            <Pane layoutX="683.0" layoutY="129.0" prefHeight="407.0" prefWidth="334.0">
                <children>
                   <VBox layoutY="7.0" prefHeight="400.0" prefWidth="146.0">
                      <children>
@@ -104,7 +104,7 @@
                                     <Image url="@/images/magasin/preview150200.jpg" />
                                  </image>
                               </ImageView>
-                              <Button fx:id="browsePic1" layoutX="66.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#BrowsePic1" text="Parcourir" />
+                              <Button fx:id="browsePic1" layoutX="66.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#BrowsePic" text="Parcourir" />
                            </children>
                         </Pane>
                         <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="198.0">
@@ -114,12 +114,12 @@
                                     <Image url="@/images/magasin/preview150200.jpg" />
                                  </image>
                               </ImageView>
-                              <Button fx:id="browsePic3" layoutX="66.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#BrowsePic3" text="Parcourir" />
+                              <Button fx:id="browsePic3" layoutX="66.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#BrowsePic" text="Parcourir" />
                            </children>
                         </Pane>
                      </children>
                   </VBox>
-                  <VBox layoutX="137.0" layoutY="7.0" prefHeight="400.0" prefWidth="146.0">
+                  <VBox layoutX="174.0" layoutY="7.0" prefHeight="400.0" prefWidth="146.0">
                      <children>
                         <Pane prefHeight="200.0" prefWidth="200.0">
                            <children>
@@ -128,7 +128,7 @@
                                     <Image url="@/images/magasin/preview150200.jpg" />
                                  </image>
                               </ImageView>
-                              <Button fx:id="browsePic2" layoutX="66.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#BrowsePic2" text="Parcourir" />
+                              <Button fx:id="browsePic2" layoutX="66.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#BrowsePic" text="Parcourir" />
                            </children>
                         </Pane>
                         <Pane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="198.0">
@@ -138,19 +138,20 @@
                                     <Image url="@/images/magasin/preview150200.jpg" />
                                  </image>
                               </ImageView>
-                              <Button fx:id="browsePic4" layoutX="66.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#BrowsePic4" text="Parcourir" />
+                              <Button fx:id="browsePic4" layoutX="66.0" layoutY="160.0" mnemonicParsing="false" onMouseClicked="#BrowsePic" text="Parcourir" />
                            </children>
                         </Pane>
                      </children>
                   </VBox>
                </children>
             </Pane>
-            <Button fx:id="saveInfo" layoutX="549.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#SaveInfo" prefHeight="45.0" prefWidth="91.0" text="Enregistrer">
+            <Button fx:id="saveInfo" layoutX="549.0" layoutY="518.0" mnemonicParsing="false"
+                    onMouseClicked="#SaveInfo" prefHeight="45.0" prefWidth="91.0" text="Enregistrer">
                <font>
                   <Font size="14.0" />
                </font>
             </Button>
-            <Label layoutX="720.0" layoutY="100.0" text="Galerie photo">
+            <Label layoutX="683.0" layoutY="100.0" text="Galerie photo">
                <font>
                   <Font size="24.0" />
                </font>
