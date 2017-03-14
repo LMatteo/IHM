@@ -1,40 +1,45 @@
 package centre.user;
 
 import centre.model.NewsList;
-import centre.model.StoreList;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import static centre.constant.ButtonLabels.*;
+import static centre.constant.CentrePaths.PATHTOLOGO;
 
 /**
  * Controller for the main layout of the centre screen.
  */
 public class LayoutController {
 
-    private static final String normal = "#4B77BE";
-    private static final String active = "#84a5c9";
-
     @FXML private ScrollPane pane;
     @FXML private Button actualite;
     @FXML private Button boutiques;
     @FXML private Button infopratiques;
     @FXML private ImageView mainLogo;
+    @FXML private ImageView logo;
+    @FXML private Label timeLabel;
 
     private Button previous;
     private AnchorPane ap;
-    private StoreList loadedStores;
     private NewsList newsList;
     private boolean french = true;
     private LanguageSwitcher loadedController;
@@ -47,8 +52,9 @@ public class LayoutController {
      */
     @FXML
     public void initialize() throws IOException, URISyntaxException {
-        loadedStores = new StoreList();
         newsList = new NewsList();
+        logo.setImage(new Image(getClass().getResourceAsStream(PATHTOLOGO)));
+        bindToTime();
         goToActu(null);
     }
 
@@ -88,9 +94,9 @@ public class LayoutController {
      */
     private void switchButtonStyle(Button current) {
         if (previous != null) {
-            previous.setStyle("-fx-background-color: " + normal + "; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;");
+            previous.getStyleClass().remove("active");
         }
-        current.setStyle("-fx-background-color: " + active + "; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;");
+        current.getStyleClass().add("active");
         previous = current;
 
     }
@@ -108,7 +114,7 @@ public class LayoutController {
         ap = loader.load();
         StoreController controller = loader.getController();
         controller.setLayout(this);
-        controller.initializeContent(loadedStores);
+        controller.initializeContent();
         switchCurrentController(controller);
         pane.setContent(ap);
         switchButtonStyle(boutiques);
@@ -126,7 +132,6 @@ public class LayoutController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/user/info.fxml"));
         ap = loader.load();
         InfoController controller = loader.getController();
-        controller.initializeContent(loadedStores);
         switchCurrentController(controller);
         pane.setContent(ap);
         switchButtonStyle(infopratiques);
@@ -156,4 +161,24 @@ public class LayoutController {
         french = !french;
     }
 
+    /**
+     * Binds the time label to system time.
+     */
+    private void bindToTime() {
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(0),
+                        actionEvent -> {
+                            Calendar time = Calendar.getInstance();
+                            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
+                            timeLabel.setText(simpleDateFormat.format(time.getTime()));
+                        }
+                ),
+                new KeyFrame(Duration.seconds(1))
+        );
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
+    }
+
 }
+
+

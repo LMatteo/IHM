@@ -32,10 +32,9 @@ public class StoreController implements LanguageSwitcher {
     private StoreList loadedStores;
     private List<SortOrder> sortOrders;
     private boolean french = true;
-    private List<LanguageSwitcher> children;
     private LayoutController layout;
 
-    @FXML private TextArea searchBar;
+    @FXML private TextField searchBar;
     @FXML private VBox search;
     @FXML private VBox accBox;
     @FXML private Button searchButton;
@@ -50,13 +49,11 @@ public class StoreController implements LanguageSwitcher {
      * Loads store data and sorting order from the data folder.
      * Loads the first sorting order found by default.
      *
-     * @param loadedStores - the list of stores loaded from the data folder
      * @throws IOException        - if failing to load one of the files
      * @throws URISyntaxException - if failing to find one of the folders
      */
-    public void initializeContent(StoreList loadedStores) throws IOException, URISyntaxException {
-        this.loadedStores = loadedStores;
-        children = new ArrayList<>();
+    public void initializeContent() throws IOException, URISyntaxException {
+        loadedStores = new StoreList();
         initSort();
         createMenuItems();
         if (!sortOrders.isEmpty()) {
@@ -89,12 +86,16 @@ public class StoreController implements LanguageSwitcher {
     private void createMenuItems() {
         sortMenu.getItems().clear();
         for (SortOrder order : sortOrders) {
-            MenuItem item;
+            MenuItem item = new MenuItem();
+            Label size = new Label();
+            size.setStyle("-fx-font: 20 System");
+            size.setPrefSize(207, 50);
             if (french) {
-                item = new MenuItem(order.getName());
+                size.setText(order.getName());
             } else {
-                item = new MenuItem(order.getEnglishName());
+                size.setText(order.getEnglishName());
             }
+            item.setGraphic(size);
             item.setOnAction(event -> {
                 clearSearchResult();
                 if (french) {
@@ -134,7 +135,6 @@ public class StoreController implements LanguageSwitcher {
             StoreCategoryController controller = loader.getController();
             controller.setLayout(layout);
             controller.initializeContent(loadedStores, category);
-            children.add(controller);
             if (!french) {
                 controller.switchLanguage();
             }
@@ -149,7 +149,6 @@ public class StoreController implements LanguageSwitcher {
         for (int i = accBox.getChildren().size() - 1; i > 1; i--) {
             accBox.getChildren().remove(i);
         }
-        children.clear();
     }
 
     /**

@@ -1,0 +1,25 @@
+{
+  "logoName": "Yves Rocher.jpg",
+  "enseigneId": "",
+  "magasinId": "",
+  "name": "Yves Rocher",
+  "mapId": 12,
+  "location": "RDC, entrée ouest",
+  "categories": [
+    {
+      "english": "Fashion",
+      "french": "Mode"
+    },
+    {
+      "english": "Beauty",
+      "french": "Beauté"
+    },
+    {
+      "english": "U-Z",
+      "french": "U-Z"
+    }
+  ],
+  "promotionEnglish": "Get 5\u20ac off for each 25\u20ac worth of products purchased !",
+  "locationEnglish": "Level 0, western entrance",
+  "promotionText": "En ce moment, profitez de 5\u20ac OFFERTS dès 25\u20ac d'achat !"
+}

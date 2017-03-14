@@ -18,7 +18,7 @@
             prefHeight="1024.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111"
             xmlns:fx="http://javafx.com/fxml/1" fx:controller="magasin.user.LayoutControl">
     <center>
-        <ScrollPane fx:id="pane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER"/>
+        <ScrollPane fx:id="paneLayout" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER"/>
     </center>
     <top>
         <HBox prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #b3d287; -fx-border-color: white;

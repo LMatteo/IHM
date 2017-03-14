@@ -1,0 +1,25 @@
+{
+  "logoName": "Vodka Poutine.jpg",
+  "enseigneId": "",
+  "magasinId": "",
+  "name": "Vodka Poutine",
+  "mapId": 7,
+  "location": "RDC entrée ouest",
+  "categories": [
+    {
+      "english": "Food",
+      "french": "Alimentation"
+    },
+    {
+      "english": "Vodka",
+      "french": "Vodka"
+    },
+    {
+      "english": "U-Z",
+      "french": "U-Z"
+    }
+  ],
+  "promotionEnglish": "Get to know  the russian culture !",
+  "locationEnglish": "Level 0, western entrance",
+  "promotionText": "Familiarisez vous avec la culture russe !"
+}

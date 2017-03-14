@@ -1,12 +1,16 @@
+import com.aquafx_project.AquaFx;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.aerofx.AeroFX;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+
 
 /**
  * Class used to parse the program arguments and starting up the first fxml controller.
@@ -87,6 +91,7 @@ public class Launcher extends Application {
      */
     @Override
     public void start(Stage stage) throws IOException {
+        
         try {
             Parent rootNode = FXMLLoader.load(getClass().getResource(path));
             Scene scene = adminMode ? new Scene(rootNode, 1600, 900) : new Scene(rootNode, 1280, 1024);

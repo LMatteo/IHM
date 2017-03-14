@@ -1,5 +1,8 @@
 package centre.model;
 
+import centre.model.json.parser.InfoParser;
+import centre.model.json.writer.InfoWriter;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -52,11 +55,11 @@ public class Informations {
     /**
      * Writs the content of the information text to the data folder.
      *
-     * @throws IOException - if failing to write the file
+     * @throws IOException - if failing to save the file
      */
     public void save() throws IOException {
         InfoWriter iw = new InfoWriter(french, english);
-        iw.write();
+        iw.save();
     }
 
 }

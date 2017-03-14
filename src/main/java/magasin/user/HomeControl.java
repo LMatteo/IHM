@@ -1,9 +1,9 @@
 package magasin.user;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 
@@ -12,34 +12,25 @@ import java.io.IOException;
  */
 public class HomeControl {
 
-    @FXML private ScrollPane pane;
+    private LayoutControl layoutControl;
 
-
-    @FXML
-    void goToCatalog(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/user/catalogue.fxml"));
-        ScrollPane sp = loader.load();
-        pane.setContent(sp);
-        pane.setVvalue(0);
+    public void setLayoutControl(LayoutControl layoutControl) {
+        this.layoutControl = layoutControl;
     }
 
+    @FXML
+    void goToCatalogue(MouseEvent event) throws IOException {
+        layoutControl.goToCatalogue(null);
+    }
 
     @FXML
     void goToActu(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/user/currently.fxml"));
-        ScrollPane sp = loader.load();
-        pane.setContent(sp);
-        pane.setVvalue(0);
+        layoutControl.goToActu(null);
     }
 
     @FXML
     void goToBoutique(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/user/boutique.fxml"));
-        ScrollPane sp = loader.load();
-        pane.setContent(sp);
-        pane.setVvalue(0);
+        layoutControl.goToBoutique(null);
     }
-
-
 
 }

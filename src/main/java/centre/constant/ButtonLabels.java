@@ -18,6 +18,12 @@ public class ButtonLabels {
     public static String INFO_FR = "INFOS PRATIQUES";
     public static String INFO_EN = "INFORMATIONS";
 
+    //------------------------------------------
+    // News
+    //------------------------------------------
+
+    public static String WELCOME_FR = "Bienvenue à Cap Sophia";
+    public static String WELCOME_EN = "Welcome to Cap Sophia";
 
     //------------------------------------------
     // Store page

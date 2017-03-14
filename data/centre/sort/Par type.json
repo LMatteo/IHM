@@ -1,26 +1,26 @@
 {
-  "name": "Par type",
   "englishName": "By type",
+  "name": "Par type",
   "categories": [
     {
-      "french": "Alimentation",
-      "english": "Food"
+      "english": "Food",
+      "french": "Alimentation"
     },
     {
-      "french": "Bien-etre",
-      "english": "Wellness"
+      "english": "Wellness",
+      "french": "Bien-etre"
     },
     {
-      "french": "Culture",
-      "english": "Culture"
+      "english": "Culture",
+      "french": "Culture"
     },
     {
-      "french": "Mode",
-      "english": "Fashion"
+      "english": "Fashion",
+      "french": "Mode"
     },
     {
-      "french": "jeux Video",
-      "english": "Video Games"
+      "english": "Video Games",
+      "french": "jeux Video"
     }
   ]
 }
