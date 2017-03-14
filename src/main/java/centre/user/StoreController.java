@@ -4,15 +4,11 @@ import centre.model.SortOrder;
 import centre.model.Store;
 import centre.model.StoreList;
 import centre.model.Tag;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
@@ -35,7 +31,6 @@ public class StoreController implements LanguageSwitcher {
     private LayoutController layout;
 
     @FXML private TextField searchBar;
-    @FXML private VBox search;
     @FXML private VBox accBox;
     @FXML private Button searchButton;
     @FXML private MenuButton sortMenu;
@@ -175,35 +170,11 @@ public class StoreController implements LanguageSwitcher {
     @FXML
     void searchType(KeyEvent event) throws IOException {
         if (searchBar.getText().equals("")) {
-            clearSearchSuggestions();
             clearSearchResult();
             loadCategories(sortOrders.get(0));
             return;
         }
         confirmSearch(null);
-        if (event.getCode() == KeyCode.ENTER) {
-            searchBar.setText(searchBar.getText().substring(0, searchBar.getText().length() - 1));
-            confirmSearch(null);
-        }
-        List<Store> matches = loadedStores.getStoreStartingWith(searchBar.getText());
-        clearSearchSuggestions();
-        for (Store match : matches) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/centre/user/searchItem.fxml"));
-            AnchorPane hb = loader.load();
-            SearchItemController sic = loader.getController();
-            sic.initializeContent(match.getName(), searchBar);
-            search.getChildren().add(hb);
-        }
-    }
-
-    /**
-     * Clears all search suggestions for the search bar.
-     */
-    private void clearSearchSuggestions() {
-        ObservableList<Node> children = search.getChildren();
-        for (int i = children.size() - 1; i > 0; i--) {
-            children.remove(i);
-        }
     }
 
     /**

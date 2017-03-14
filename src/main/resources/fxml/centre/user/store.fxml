@@ -7,8 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="centre.user.StoreController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="centre.user.StoreController">
     <children>
         <VBox fx:id="accBox" alignment="CENTER" prefHeight="200.0" prefWidth="1060.0">
             <children>
@@ -16,42 +15,33 @@
                     <children>
                         <HBox prefHeight="38.0" prefWidth="634.0">
                             <children>
-                                <VBox fx:id="search" alignment="CENTER" prefHeight="0.0" prefWidth="321.0">
-                                    <children>
-                                        <TextField fx:id="searchBar" onKeyPressed="#searchType"
-                                                   prefHeight="52.0" prefWidth="304.0">
-                                            <font>
-                                                <Font size="20.0"/>
-                                            </font>
-                                        </TextField>
-                                    </children>
-                                </VBox>
-                                <Button fx:id="searchButton" mnemonicParsing="false"
-                                        onAction="#confirmSearch" prefHeight="62.0"
-                                        prefWidth="109.0" styleClass="search-button"
-                                        text="Chercher">
+                                  <TextField fx:id="searchBar" onKeyPressed="#searchType" prefHeight="52.0" prefWidth="304.0">
+                                      <font>
+                                          <Font size="20.0" />
+                                      </font>
+                                  </TextField>
+                                <Button fx:id="searchButton" mnemonicParsing="false" onAction="#confirmSearch" prefHeight="62.0" prefWidth="109.0" styleClass="search-button" text="Chercher">
                                     <font>
-                                        <Font size="20.0"/>
+                                        <Font size="20.0" />
                                     </font>
                                 </Button>
                             </children>
                         </HBox>
-                        <MenuButton fx:id="sortMenu" mnemonicParsing="false" prefHeight="50.0"
-                                    prefWidth="227.0" styleClass="sort-button" text="Trier par...">
+                        <MenuButton fx:id="sortMenu" mnemonicParsing="false" prefHeight="50.0" prefWidth="227.0" styleClass="sort-button" text="Trier par...">
                             <font>
-                                <Font size="20.0"/>
+                                <Font size="20.0" />
                             </font>
                         </MenuButton>
                     </children>
                 </HBox>
                 <Accordion fx:id="accordion">
                     <VBox.margin>
-                        <Insets top="40.0"/>
+                        <Insets top="40.0" />
                     </VBox.margin>
                 </Accordion>
             </children>
             <padding>
-                <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+                <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
             </padding>
         </VBox>
     </children>
