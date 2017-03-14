@@ -33,9 +33,9 @@ public class StatControl
 
     @FXML
     protected void initialize() throws IOException {
-//        chart = new Charts();
-//        sellers = chart.getSellers();
-//        sellersSales = chart.getSellersSales();
+/*        chart = new Charts();
+        sellers = chart.getSellers();
+        sellersSales = chart.getSellersSales();*/
         fillPieChart();
         fillSellPerHours();
         fillyears();
