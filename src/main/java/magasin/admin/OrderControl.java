@@ -73,7 +73,7 @@ public class OrderControl {
         if (file != null) {
             Image image = new Image(file.toURI().toString());
             imagePreview.setImage(image);
-            File out = new File("data/magasin/images"+"/"+file.getName());
+            File out = new File("data/magasin/images/"+ file.getName());
             try {
                 FileUtils.copyFile(file,out);
                 imagePath = out.getPath();

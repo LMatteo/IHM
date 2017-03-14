@@ -56,6 +56,7 @@ public class Product extends Deletable {
     public void setName(String nom) {
         this.nom = nom;
     }
+
     public String getDescription() {
         return this.description;
     }

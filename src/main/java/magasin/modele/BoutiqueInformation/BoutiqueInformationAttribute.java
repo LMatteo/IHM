@@ -141,7 +141,7 @@ public enum BoutiqueInformationAttribute implements BoutiqueInformationHandler {
 
         @Override
         public String get(BoutiqueInformation info) {
-            return info.getPathPic2();
+            return info.getPathPic4();
         }
     },
 }
