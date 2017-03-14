@@ -57,7 +57,7 @@ public class Product extends Deletable {
         this.nom = nom;
     }
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
     public void setDescription(String description) {
@@ -82,14 +82,11 @@ public class Product extends Deletable {
     }
 
     public void write() throws IOException{
-
         BufferedWriter bf = new BufferedWriter(
-                new FileWriter(
-                        new File("data/magasin/product/" + nom + ".json")));
-
+                new FileWriter(new File("data/magasin/product/" + nom + ".json")));
         JSONObject obj = new JSONObject();
         for(ProductHandler handler : ProductAttribute.values()){
-            handler.put(this,obj);
+            handler.put(this, obj);
         }
         bf.write(obj.toString());
         bf.close();

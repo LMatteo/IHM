@@ -5,70 +5,90 @@ import org.json.JSONObject;
 /**
  * @author Zaki
  */
-public enum ProductAttribute implements ProductHandler{
+public enum ProductAttribute implements ProductHandler {
 
-    nom{
+    nom {
         @Override
         public void assign(Product prod, JSONObject json) {
             prod.setName(json.getString("nom"));
         }
+
         @Override
-        public void put(Product prod, JSONObject json){
-            json.put("nom",prod.getName());
+        public void put(Product prod, JSONObject json) {
+            json.put("nom", prod.getName());
         }
+
         @Override
-        public String get(Product prod){return prod.getName();}
+        public String get(Product prod) {
+            return prod.getName();
+        }
     },
 
-    ref{
+    ref {
         @Override
         public void assign(Product prod, JSONObject json) {
             prod.setRef(json.getString("ref"));
         }
+
         @Override
-        public void put(Product prod, JSONObject json){
-            json.put("ref",prod.getRef());
+        public void put(Product prod, JSONObject json) {
+            json.put("ref", prod.getRef());
         }
+
         @Override
-        public String get(Product prod){return prod.getRef();}
+        public String get(Product prod) {
+            return prod.getRef();
+        }
     },
 
-    description{
+    description {
         @Override
         public void assign(Product prod, JSONObject json) {
             prod.setDescription(json.getString("description"));
         }
+
         @Override
-        public void put(Product prod, JSONObject json){
-            json.put("description",prod.getDescription());
+        public void put(Product prod, JSONObject json) {
+            json.put("description", prod.getDescription());
         }
+
         @Override
-        public String get(Product prod){return prod.getDescription();}
+        public String get(Product prod) {
+            return prod.getDescription();
+        }
     },
 
-    type{
+    type {
         @Override
         public void assign(Product prod, JSONObject json) {
             prod.setType(json.getString("type"));
         }
+
         @Override
-        public void put(Product prod, JSONObject json){
-            json.put("type",prod.getType());
+        public void put(Product prod, JSONObject json) {
+            json.put("type", prod.getType());
         }
+
         @Override
-        public String get(Product prod){return prod.getType();}
+        public String get(Product prod) {
+            return prod.getType();
+        }
     },
 
-    photo{
+    photo {
         @Override
         public void assign(Product prod, JSONObject json) {
             prod.setPhoto(json.getString("photo"));
         }
+
         @Override
-        public void put(Product prod, JSONObject json){
-            json.put("photo",prod.getPhoto());
+        public void put(Product prod, JSONObject json) {
+            json.put("photo", prod.getPhoto());
         }
+
         @Override
-        public String get(Product prod){return prod.getPhoto();}
+        public String get(Product prod) {
+            return prod.getPhoto();
+        }
     },
 }
