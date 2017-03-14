@@ -15,7 +15,8 @@
 <?import javafx.scene.layout.VBox?>
 
 
-<ScrollPane fx:id="paneCatalogue" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane fx:id="paneCatalogue" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="magasin.admin.StatControl">
    <content>
       <AnchorPane prefHeight="598.0" prefWidth="1065.0">
          <children>
@@ -25,17 +26,10 @@
                      <children>
                         <HBox>
                            <children>
-                              <Label text="Ventes de livres " />
-                              <MenuButton mnemonicParsing="false" text="Période">
-                                <items>
-                                  <MenuItem mnemonicParsing="false" text="Semaine" />
-                                  <MenuItem mnemonicParsing="false" text="Mois" />
-                                    <MenuItem mnemonicParsing="false" text="Année" />
-                                </items>
-                              </MenuButton>
+                              <Label text="Ventes par années" />
                            </children>
                         </HBox>
-                        <LineChart prefHeight="225.0" prefWidth="366.0">
+                        <LineChart fx:id="years" prefHeight="225.0" prefWidth="366.0">
                           <xAxis>
                             <CategoryAxis side="BOTTOM" />
                           </xAxis>
@@ -49,17 +43,10 @@
                      <children>
                         <HBox>
                            <children>
-                              <Label text="Ventes de CD/DVD" />
-                              <MenuButton mnemonicParsing="false" text="Période">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Semaine" />
-                                    <MenuItem mnemonicParsing="false" text="Mois" />
-                                    <MenuItem mnemonicParsing="false" text="Année" />
-                                 </items>
-                              </MenuButton>
+                              <Label text="Ventes par mois" />
                            </children>
                         </HBox>
-                        <LineChart prefHeight="225.0" prefWidth="366.0">
+                        <LineChart fx:id="months" prefHeight="225.0" prefWidth="366.0">
                            <xAxis>
                               <CategoryAxis side="BOTTOM" />
                            </xAxis>
@@ -73,17 +60,10 @@
                      <children>
                         <HBox>
                            <children>
-                              <Label text="Ventes de stages" />
-                              <MenuButton mnemonicParsing="false" text="Période">
-                                 <items>
-                                    <MenuItem mnemonicParsing="false" text="Semaine" />
-                                    <MenuItem mnemonicParsing="false" text="Mois" />
-                                    <MenuItem mnemonicParsing="false" text="Année" />
-                                 </items>
-                              </MenuButton>
+                              <Label text="Ventes par semaine" />
                            </children>
                         </HBox>
-                        <LineChart prefHeight="225.0" prefWidth="366.0">
+                        <LineChart fx:id="weeks" prefHeight="225.0" prefWidth="366.0">
                            <xAxis>
                               <CategoryAxis side="BOTTOM" />
                            </xAxis>
@@ -98,8 +78,8 @@
                   <Insets left="10.0" />
                </padding>
             </HBox>
-            <PieChart layoutX="52.0" layoutY="309.0" prefHeight="250.0" prefWidth="350.0" title="Pourcentage des ventes par vendeur" />
-            <BarChart layoutX="502.0" layoutY="288.0" prefHeight="293.0" prefWidth="514.0" title="Ventes par heures">
+            <PieChart fx:id="pie" layoutX="52.0" layoutY="309.0" prefHeight="250.0" prefWidth="350.0" title="Pourcentage des ventes par vendeur" />
+            <BarChart fx:id="perhour" layoutX="502.0" layoutY="288.0" prefHeight="293.0" prefWidth="514.0" title="Ventes par heures">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>
