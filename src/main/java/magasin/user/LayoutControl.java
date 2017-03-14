@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import magasin.admin.BoutiqueInfoControl;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -124,6 +125,9 @@ public class LayoutControl {
     void goToBoutique(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/user/boutique.fxml"));
         ScrollPane sp = loader.load();
+        infoBoutiqueControl infoControl = loader.getController();
+        infoControl.setLayoutControl(this);
+        infoControl.setElements();
         paneLayout.setContent(sp);
         switchButtonStyle(null);
         paneLayout.setVvalue(0);

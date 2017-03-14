@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<ScrollPane fx:id="paneBoutique" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1080.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane fx:id="paneBoutique" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1024.0" prefWidth="1080.0" BorderPane.alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="magasin.user.infoBoutiqueControl">
     <content>
         <Pane prefHeight="1074.0" prefWidth="1056.0">
             <children>
@@ -22,29 +22,24 @@
                             <children>
                                 <HBox layoutX="-1.0" layoutY="-5.0" prefHeight="214.0" prefWidth="1280.0">
                                     <children>
-                                        <ImageView fitHeight="325.0" fitWidth="404.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fx:id="pic1" fitHeight="325.0" fitWidth="404.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../../../images/magasin/boutique5.jpg" />
                                             </image>
                                         </ImageView>
-                                        <ImageView fitHeight="325.0" fitWidth="404.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fx:id="pic2" fitHeight="325.0" fitWidth="404.0" layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../../../images/magasin/boutique4.jpg" />
                                             </image>
                                         </ImageView>
-                                        <ImageView fitHeight="325.0" fitWidth="404.0" layoutX="330.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fx:id="pic3" fitHeight="325.0" fitWidth="404.0" layoutX="330.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../../../images/magasin/boutique2.jpg" />
                                             </image>
                                         </ImageView>
-                                        <ImageView fitHeight="325.0" fitWidth="404.0" layoutX="650.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                                        <ImageView fx:id="pic4" fitHeight="325.0" fitWidth="404.0" layoutX="650.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
                                                 <Image url="@../../../images/magasin/boutique3.jpg" />
-                                            </image>
-                                        </ImageView>
-                                        <ImageView fitHeight="325.0" fitWidth="404.0" layoutX="805.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                            <image>
-                                                <Image url="@../../../images/magasin/boutique1.jpg" />
                                             </image>
                                         </ImageView>
                                     </children>
@@ -55,12 +50,7 @@
                 </ScrollPane>
                 <Pane layoutX="34.0" layoutY="642.0" prefHeight="326.0" prefWidth="972.0">
                     <children>
-                        <Text layoutX="2.0" layoutY="144.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Nous sommes bien plus qu'une simple boutique, nous disposons d'une salle de conférence où nous recevons d'éminents chercheurs, nous y diffusons aussi des documentaires puis organisons des débats autour d'un verre. Nous proposons également des stages de développement personnel ! Une terrasse est également à votre disposition où vous pourrez dégustez nos jus et smoothie les plus frais et bio ! Alors n'hésitez plus, venez prendre une bouffée d'air frais chez To Be Or To Have ! " textAlignment="JUSTIFY" wrappingWidth="968.0660400390625">
-                            <font>
-                                <Font size="24.0" />
-                            </font>
-                        </Text>
-                        <Text layoutY="42.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="To Be Or To Have vous ouvre ses portes à Cap Sophia ! Ici vous pourrez acheter le dernier numéro de votre revue scientifique préférée, ou avoir accès avant tout le monde aux derniers ouvrages scientifiques ! " textAlignment="JUSTIFY" wrappingWidth="972.7666625976562">
+                        <Text fx:id="description" layoutY="16.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="To Be Or To Have vous ouvre ses portes à Cap Sophia ! Ici vous pourrez acheter le dernier numéro de votre revue scientifique préférée, ou avoir accès avant tout le monde aux derniers ouvrages scientifiques ! Nous sommes bien plus qu'une simple boutique, nous disposons d'une salle de conférence où nous recevons d'éminents chercheurs, nous y diffusons aussi des documentaires puis organisons des débats autour d'un verre. Nous proposons également des stages de développement personnel ! Une terrasse est également à votre disposition où vous pourrez dégustez nos jus et smoothie les plus frais et bio ! Alors n'hésitez plus, venez prendre une bouffée d'air frais chez To Be Or To Have ! " textAlignment="JUSTIFY" wrappingWidth="972.7666625976562">
                             <font>
                                 <Font size="24.0" />
                             </font>
@@ -111,7 +101,7 @@
                                       <Font size="36.0" />
                                   </font>
                               </Label>
-                        <Label text="9h">
+                        <Label fx:id="openTime" text="9h">
                            <font>
                               <Font size="36.0" />
                            </font>
@@ -121,14 +111,14 @@
                               <Font size="36.0" />
                            </font>
                         </Label>
-                        <Label layoutX="100.0" layoutY="10.0" text="18h">
+                        <Label fx:id="closingTime" layoutX="100.0" layoutY="10.0" text="18h">
                            <font>
                               <Font size="36.0" />
                            </font>
                         </Label>
                      </children>
                   </HBox>
-                        <Hyperlink layoutY="142.0" text="Visualiser sur le plan">
+                        <Hyperlink fx:id="location" layoutY="142.0" onMouseClicked="#showLocation" text="Visualiser sur le plan">
                             <font>
                                 <Font size="24.0" />
                             </font>
@@ -143,7 +133,7 @@
                                 <Font size="36.0" />
                             </font>
                         </Label>
-                        <Label layoutX="783.0" layoutY="109.0" text="04.93.31.10.35">
+                        <Label fx:id="phoneNumber" layoutX="782.0" layoutY="109.0" text="04.93.31.10.35">
                             <font>
                                 <Font size="36.0" />
                             </font>

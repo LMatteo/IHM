@@ -1,11 +1,7 @@
 package magasin.modele.BoutiqueInformation;
 
 
-import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
-import magasin.modele.BoutiqueInformation.BoutiqueInformation;
-import magasin.modele.BoutiqueInformation.BoutiqueInformationAttribute;
-import magasin.modele.BoutiqueInformation.BoutiqueInformationHandler;
+
 import magasin.modele.Deletable;
 import org.json.JSONObject;
 
@@ -24,14 +20,15 @@ public class BoutiqueInformation extends Deletable {
     private String pathPic2;
     private String pathPic3;
     private String pathPic4;
+    private String phoneNumber;
 
     public BoutiqueInformation() {
         super.setPath("/data/magasin/info/");
     }
 
     public BoutiqueInformation(String path) throws IOException {
-        super.setPath("/data/magasin/product/");
-        BufferedReader read = new BufferedReader(new FileReader(new File(path + "boutiqueInfo.json")));
+        super.setPath(File.separator +"data" + File.separator + "magasin" + File.separator + "product/");
+        BufferedReader read = new BufferedReader(new FileReader(new File(path)));
         StringBuilder res = new StringBuilder();
         String line = "";
         while((line = read.readLine()) != null ){
@@ -46,16 +43,11 @@ public class BoutiqueInformation extends Deletable {
         }
     }
 
-
-
     public String getOpenTime() {
         return openTime;
     }
 
-    public void setOpenTime(String openTime) {
-        this.openTime = openTime;
-    }
-
+    public void setOpenTime(String openTime) { this.openTime = openTime; }
 
     public String getCloseTime() {
         return closeTime;
@@ -80,6 +72,10 @@ public class BoutiqueInformation extends Deletable {
     public void setDescrEng(String descrEng) {
         this.descrEng = descrEng;
     }
+
+    public String getPhoneNumber() { return phoneNumber; }
+
+    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
 
     public String getPathPic1() {
         return pathPic1;
@@ -115,7 +111,7 @@ public class BoutiqueInformation extends Deletable {
 
     public void write() throws IOException{
         BufferedWriter bf = new BufferedWriter(
-                new FileWriter(new File("data/magasin/info/boutiqueInfo.json")));
+                new FileWriter(new File("data/magasin/info/info.json")));
         JSONObject obj = new JSONObject();
         for(BoutiqueInformationHandler handler : BoutiqueInformationAttribute.values()){
             handler.put(this, obj);

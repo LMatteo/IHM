@@ -145,8 +145,7 @@
                   </VBox>
                </children>
             </Pane>
-            <Button fx:id="saveInfo" layoutX="549.0" layoutY="518.0" mnemonicParsing="false"
-                    onMouseClicked="#SaveInfo" prefHeight="45.0" prefWidth="91.0" text="Enregistrer">
+            <Button fx:id="saveInfo" layoutX="549.0" layoutY="518.0" mnemonicParsing="false" onMouseClicked="#SaveInfo" prefHeight="45.0" prefWidth="91.0" text="Enregistrer">
                <font>
                   <Font size="14.0" />
                </font>
@@ -156,6 +155,23 @@
                   <Font size="24.0" />
                </font>
             </Label>
+            <VBox layoutX="53.0" layoutY="428.0" prefHeight="108.0" prefWidth="237.0">
+               <children>
+                  <Label prefHeight="37.0" prefWidth="243.0" text="Numéro de téléphone">
+                     <font>
+                        <Font name="Aaargh Normal" size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="phoneNumber" prefHeight="31.0" prefWidth="396.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets top="40.0" />
+               </padding>
+            </VBox>
          </children>
       </AnchorPane>
    </content>

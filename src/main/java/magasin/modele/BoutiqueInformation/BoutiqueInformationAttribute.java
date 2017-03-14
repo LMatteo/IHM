@@ -77,6 +77,21 @@ public enum BoutiqueInformationAttribute implements BoutiqueInformationHandler {
         }
     },
 
+    phoneNumber {
+        @Override
+        public void assign(BoutiqueInformation info, JSONObject json) { info.setPhoneNumber(json.getString("phoneNumber")); }
+
+        @Override
+        public void put(BoutiqueInformation info, JSONObject json) {
+            json.put("phoneNumber", info.getPhoneNumber());
+        }
+
+        @Override
+        public String get(BoutiqueInformation info) {
+            return info.getPhoneNumber();
+        }
+    },
+
     pathPic1 {
         @Override
         public void assign(BoutiqueInformation info, JSONObject json) {
@@ -143,5 +158,7 @@ public enum BoutiqueInformationAttribute implements BoutiqueInformationHandler {
         public String get(BoutiqueInformation info) {
             return info.getPathPic4();
         }
-    },
+    },;
+
+
 }
