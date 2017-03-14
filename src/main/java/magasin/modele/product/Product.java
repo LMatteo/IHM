@@ -7,7 +7,7 @@ import java.io.*;
 
 public class Product extends Deletable {
 
-    private String nom;
+    private String name;
     private String ref;
     private String description;
     private String type;
@@ -16,27 +16,27 @@ public class Product extends Deletable {
     private Boolean freshProduct;
     private Boolean exhibit;
 
-    private int prix;
-    private int solde;
+    private String price;
+    private String promotion;
 
 
     public Product() {
         super.setPath("/data/magasin/product/");
     }
 
-    public Product(String path) throws IOException{
+    public Product(String path) throws IOException {
         super.setPath("/data/magasin/product/");
-        BufferedReader read = new BufferedReader(new FileReader(new File(path + nom + ".json")));
+        BufferedReader read = new BufferedReader(new FileReader(new File(path + name + ".json")));
         StringBuilder res = new StringBuilder();
         String line = "";
-        while((line = read.readLine()) != null ){
+        while ((line = read.readLine()) != null) {
             res.append(line);
         }
         read.close();
         JSONObject json = new JSONObject(res.toString());
-        for(ProductHandler handler : ProductAttribute.values()){
-            if(json.has(handler.toString())){
-                handler.assign(this,json);
+        for (ProductHandler handler : ProductAttribute.values()) {
+            if (json.has(handler.toString())) {
+                handler.assign(this, json);
             }
         }
     }
@@ -50,11 +50,11 @@ public class Product extends Deletable {
     }
 
     public String getName() {
-        return nom;
+        return name;
     }
 
     public void setName(String nom) {
-        this.nom = nom;
+        this.name = nom;
     }
 
     public String getDescription() {
@@ -64,7 +64,6 @@ public class Product extends Deletable {
     public void setDescription(String description) {
         this.description = description;
     }
-
 
     public String getType() {
         return type;
@@ -82,11 +81,19 @@ public class Product extends Deletable {
         this.ref = ref;
     }
 
-    public void write() throws IOException{
+    public String getPrice() { return price; }
+
+    public void setPrice(String price) { this.price = price; }
+
+    public String getPromotion() { return promotion; }
+
+    public void setPromotion(String promotion) { this.promotion = promotion; }
+
+    public void write() throws IOException {
         BufferedWriter bf = new BufferedWriter(
-                new FileWriter(new File("data/magasin/product/" + nom + ".json")));
+                new FileWriter(new File("data/magasin/product/" + name + ".json")));
         JSONObject obj = new JSONObject();
-        for(ProductHandler handler : ProductAttribute.values()){
+        for (ProductHandler handler : ProductAttribute.values()) {
             handler.put(this, obj);
         }
         bf.write(obj.toString());
@@ -94,13 +101,13 @@ public class Product extends Deletable {
     }
 
     @Override
-    public boolean equals(Object prod){
+    public boolean equals(Object prod) {
         return prod instanceof Product &&
-                ((Product) prod).nom.equals(this.nom);
+                ((Product) prod).name.equals(this.name);
     }
 
     @Override
-    public int hashCode(){
-        return nom.hashCode();
+    public int hashCode() {
+        return name.hashCode();
     }
 }

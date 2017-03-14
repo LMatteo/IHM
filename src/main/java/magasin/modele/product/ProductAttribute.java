@@ -91,4 +91,40 @@ public enum ProductAttribute implements ProductHandler {
             return prod.getPhoto();
         }
     },
+
+    price {
+        @Override
+        public void assign(Product prod, JSONObject json) {
+            prod.setPrice(json.getString("price"));
+        }
+
+        @Override
+        public void put(Product prod, JSONObject json) {
+            json.put("price", prod.getPrice());
+        }
+
+        @Override
+        public String get(Product prod) {
+            return prod.getPrice();
+        }
+    },
+
+
+    promotion {
+        @Override
+        public void assign(Product prod, JSONObject json) {
+            prod.setPromotion(json.getString("promotion"));
+        }
+
+        @Override
+        public void put(Product prod, JSONObject json) {
+            json.put("promotion", prod.getPromotion());
+        }
+
+        @Override
+        public String get(Product prod) {
+            return prod.getPromotion();
+        }
+    },
+
 }

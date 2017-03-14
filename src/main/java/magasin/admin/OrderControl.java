@@ -25,7 +25,7 @@ public class OrderControl {
     @FXML TextField ref;
     @FXML TextField price;
     @FXML TextField promotion;
-    @FXML TextArea description;
+    @FXML TextArea descriptionFr;
     @FXML CheckBox newProduct;
     @FXML CheckBox exhibit;
     @FXML Button addProduct;
@@ -56,7 +56,7 @@ public class OrderControl {
         product.setName(name.getText());
         product.setRef(ref.getText());
         product.setType(type.getText());
-        product.setDescription(description.getText());
+        product.setDescription(descriptionFr.getText());
         if(imagePath != null) {
             File image = new File(imagePath);
             product.setPhoto("data/magasin/images/" + image.getName());

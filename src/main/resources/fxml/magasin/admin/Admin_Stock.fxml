@@ -195,7 +195,7 @@
                                                             <Font name="Aaargh Normal" size="18.0" />
                                                          </font>
                                                       </Label>
-                                                      <TextArea fx:id="description" prefHeight="309.0" prefWidth="460.0" />
+                                                      <TextArea fx:id="descriptionEng" prefHeight="309.0" prefWidth="460.0" />
                                                    </children>
                                                 </VBox>
                                              </content>
