@@ -1,7 +1,6 @@
 package enseigne.modele.modele;
 
 import enseigne.modele.ReadConst;
-import enseigne.modele.actu.Actu;
 import enseigne.modele.photo.Photo;
 
 import java.io.IOException;
