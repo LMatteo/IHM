@@ -7,9 +7,11 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="centre.user.StoreController">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="centre.user.StoreController">
     <children>
-        <VBox fx:id="accBox" alignment="CENTER" prefHeight="200.0" prefWidth="1060.0">
+        <VBox fx:id="accBox" alignment="CENTER" prefHeight="200.0" prefWidth="1060.0"
+              spacing="20.0">
             <children>
                 <HBox alignment="CENTER" prefHeight="52.0" prefWidth="867.0">
                     <children>
