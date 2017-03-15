@@ -43,6 +43,7 @@ public class AdminStoreController {
         StoreFormController controller = loader.getController();
         controller.setLoadedStores(loadedStores);
         Scene scene = new Scene(rootNode, 1477, 861);
+        scene.getStylesheets().add("/styles/centre/styleAdmin.css");
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.setTitle("Nouvelle boutique");
@@ -63,6 +64,7 @@ public class AdminStoreController {
         controller.setLoadedStores(loadedStores);
         controller.initializeContent(new DeleteTransition());
         Scene scene = new Scene(rootNode, 968, 555);
+        scene.getStylesheets().add("/styles/centre/styleAdmin.css");
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.setTitle("Supprimer une boutique");
@@ -83,6 +85,7 @@ public class AdminStoreController {
         controller.setLoadedStores(loadedStores);
         controller.initializeContent(new EditStoreTransition());
         Scene scene = new Scene(rootNode, 968, 555);
+        scene.getStylesheets().add("/styles/centre/styleAdmin.css");
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.setTitle("Sélectionner une boutique");
@@ -101,6 +104,7 @@ public class AdminStoreController {
         EditSortController controller = loader.getController();
         controller.setLoadedStores(loadedStores);
         Scene scene = new Scene(rootNode, 1449, 951);
+        scene.getStylesheets().add("/styles/centre/styleAdmin.css");
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.setTitle("Editer le tri des boutiques");
