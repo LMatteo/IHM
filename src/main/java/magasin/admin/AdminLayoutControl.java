@@ -106,10 +106,8 @@ public class AdminLayoutControl {
     @FXML
     void goToBoutiques(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/admin/Admin_Map.fxml"));
-        AdminMapControl mapControl = new AdminMapControl();
         sp = loader.load();
-        //mapControl.mapInitialized();
-        //mapControl.initMap();
+
         paneLayout.setContent(sp);
         switchButtonStyle(boutiques);
         paneLayout.setVvalue(0);
