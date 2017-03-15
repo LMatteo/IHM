@@ -62,6 +62,13 @@ public class OrderControl {
             product.setPhoto("data/magasin/images/" + image.getName());
         }
         product.write();
+        this.name.clear();
+        this.type.clear();
+        this.ref.clear();
+        this.price.clear();
+        this.promotion.clear();
+        this.descriptionFr.clear();
+        this.imagePreview.setImage(null);
     }
 
     @FXML

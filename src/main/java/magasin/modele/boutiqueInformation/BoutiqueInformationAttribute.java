@@ -22,6 +22,7 @@ public enum BoutiqueInformationAttribute implements BoutiqueInformationHandler {
         public String get(BoutiqueInformation info) {
             return info.getOpenTime();
         }
+
     },
 
     closeTime {

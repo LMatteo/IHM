@@ -100,14 +100,5 @@ public class Product extends Deletable {
         bf.close();
     }
 
-    @Override
-    public boolean equals(Object prod) {
-        return prod instanceof Product &&
-                ((Product) prod).name.equals(this.name);
-    }
 
-    @Override
-    public int hashCode() {
-        return name.hashCode();
-    }
 }
