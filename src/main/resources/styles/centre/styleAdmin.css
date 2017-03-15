@@ -1,4 +1,17 @@
+.root{
+    -fx-accent: #4B77BE;
+    -fx-focus-color: #4B77BE;
+}
+
 .button {
     -fx-background-color: #4B77BE;
     -fx-text-fill : WHITE;
+}
+
+.button:hover {
+    -fx-background-color: derive(#4B77BE, 50%);
+}
+
+.button:pressed {
+    -fx-effect: innershadow(three-pass-box, rgba(100, 100, 100, 1), 15, 0, 0, 0);}
 }
