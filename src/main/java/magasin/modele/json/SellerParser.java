@@ -1,10 +1,14 @@
 package magasin.modele.json;
 
+import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,8 +17,15 @@ import java.util.List;
  */
 public class SellerParser extends JsonParser{
 
-    public String FILE = File.separator+"data"+File.separator+"magasin"+File.separator+"sales"+File.separator+"sales.json";
-    private JSONObject json= new JSONObject(FILE);;
+    public String FILE = "ihm"+ File.separator+"data"+File.separator+"magasin"+File.separator+"sales"+File.separator+"sales.json";
+
+    public static String readJsonFile(String filename) throws IOException {
+        try (InputStream is = new FileInputStream(filename)) {
+            return IOUtils.toString(is, String.valueOf(StandardCharsets.UTF_8));
+        }
+    }
+
+    private JSONArray json= new JSONArray(readJsonFile(FILE));
 
 
     public SellerParser(File file) throws IOException {
@@ -24,7 +35,7 @@ public class SellerParser extends JsonParser{
     public List<JSONObject> getSales()
     {
         List<JSONObject> sales = new ArrayList<JSONObject>();
-        JSONArray array = this.json.getJSONArray("ventes");
+        JSONArray array = this.json;
         for (int i = 0; i < array.length() ; i++)
         {
             sales.add((JSONObject) array.get(i));
@@ -40,7 +51,7 @@ public class SellerParser extends JsonParser{
         for(int i = 0 ; i < sales.size(); i++)
         {
             if(!sellers.contains(sales.get(i).getString("Vendeur")))
-               sellers.add(sales.get(i).getString("Vendeur"));
+               sellers.add((String) sales.get(i).getString("Vendeur"));
         }
         return sellers;
     }
@@ -48,14 +59,17 @@ public class SellerParser extends JsonParser{
     public int getSellerSales(String seller)
     {
         int qt = 0;
-        List<JSONObject> sales = new ArrayList<JSONObject>();
+        List<JSONObject> sales;
         sales = getSales();
 
+        System.out.println("looking for "+seller);
         for(int i = 0 ; i < sales.size(); i++)
         {
-            if(sales.get(i).getString("Vendeur") == seller)
+            System.out.println("sale "+i+"made by"+sales.get(i).getString("Vendeur"));
+            if(sales.get(i).getString("Vendeur").equals(seller))
             {
                 qt++;
+                System.out.println(sales.get(i).getString("Vendeur")+" sold "+qt+" item at "+sales.get(i).get("Heure"));
             }
         }
         return qt;
@@ -64,12 +78,12 @@ public class SellerParser extends JsonParser{
     public int getYearSales(int year)
     {
         int qt = 0;
-        List<JSONObject> sales = new ArrayList<JSONObject>();
+        List<JSONObject> sales;
         sales = getSales();
 
         for (int i = 0 ; i < sales.size() ; i++)
         {
-            if (sales.get(i).getInt("Annee") == year)
+            if ((int)sales.get(i).getInt("Annee") == year)
                 qt++;
         }
 
@@ -79,12 +93,12 @@ public class SellerParser extends JsonParser{
     public int getMonthSales(int year, int month)
     {
         int qt = 0;
-        List<JSONObject> sales = new ArrayList<JSONObject>();
+        List<JSONObject> sales ;
         sales = getSales();
 
         for (int i = 0 ; i < sales.size() ; i++)
         {
-            if (sales.get(i).getInt("Annee") == year && sales.get(i).getInt("Mois") == month )
+            if ((int)sales.get(i).getInt("Annee") == year && (int)sales.get(i).getInt("Mois") == month )
                 qt++;
         }
 
@@ -95,12 +109,12 @@ public class SellerParser extends JsonParser{
     {
         {
             int qt = 0;
-            List<JSONObject> sales = new ArrayList<JSONObject>();
+            List<JSONObject> sales;
             sales = getSales();
 
             for (int i = 0 ; i < sales.size() ; i++)
             {
-                if (sales.get(i).getInt("Annee") == year && sales.get(i).getInt("Mois") == month && sales.get(i).getInt("Jour")==day)
+                if ((int)sales.get(i).getInt("Annee") == year && (int)sales.get(i).getInt("Mois") == month && (int)sales.get(i).getInt("Jour")==day)
                     qt++;
             }
             return qt;
@@ -111,11 +125,11 @@ public class SellerParser extends JsonParser{
     {
         {
             int qt = 0;
-            List<JSONObject> sales = new ArrayList<JSONObject>();
+            List<JSONObject> sales;
             sales = getSales();
 
             for (int i = 0; i < sales.size(); i++) {
-                if (sales.get(i).getInt("Annee") == year && sales.get(i).getInt("Mois") == month && sales.get(i).getInt("Jour") == day && sales.get(i).getString("Heure") == hour)
+                if ((int)sales.get(i).getInt("Annee") == year && (int)sales.get(i).getInt("Mois") == month && (int)sales.get(i).getInt("Jour") == day && (String) sales.get(i).getString("Heure") == hour)
                     qt++;
             }
             return qt;
