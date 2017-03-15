@@ -1,31 +1,17 @@
 package enseigne.adminController.store;
 
-import enseigne.ToNode;
-import enseigne.modele.magasin.MagAttribute;
 import enseigne.modele.magasin.Magasin;
-import enseigne.modele.modele.MagFilter;
-import javafx.beans.property.IntegerProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
+import enseigne.modele.MagFilter;
 import javafx.collections.ListChangeListener;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 
 import java.io.IOException;
-import java.nio.file.NoSuchFileException;
-import java.util.List;
 
 public class AdminStoreController {
 
@@ -77,6 +63,10 @@ public class AdminStoreController {
 
     @FXML
     public void delOne(ActionEvent event){
+        if(filter.selected() == null) {
+            showAlert("Veuillez sélectionner un magasin à supprimer");
+            return;
+        }
         filter.delete();
     }
 

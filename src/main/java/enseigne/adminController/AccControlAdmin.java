@@ -2,16 +2,23 @@ package enseigne.adminController;
 
 import enseigne.adminController.overview.overviewController;
 import enseigne.adminController.store.AdminStoreController;
-import enseigne.modele.modele.MagFilter;
+import enseigne.modele.MagFilter;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ToggleButton;
+import javafx.util.Duration;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class AccControlAdmin {
 
@@ -36,6 +43,9 @@ public class AccControlAdmin {
     @FXML
     private ToggleButton adminOverview;
 
+    @FXML
+    private Label timeLabel;
+
     private Button previous;
 
     private Node accueilPane;
@@ -58,6 +68,7 @@ public class AccControlAdmin {
         magasinPane = loader.load();
         AdminStoreController ctrl = loader.getController();
         ctrl.setFilter(new MagFilter());
+        pane.setContent(accueilPane);
 
     }
 
@@ -96,5 +107,20 @@ public class AccControlAdmin {
             e.printStackTrace();
         }
         pane.setVvalue(0);
+    }
+
+    private void bindToTime() {
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(0),
+                        actionEvent -> {
+                            Calendar time = Calendar.getInstance();
+                            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
+                            timeLabel.setText(simpleDateFormat.format(time.getTime()));
+                        }
+                ),
+                new KeyFrame(Duration.seconds(1))
+        );
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
     }
 }

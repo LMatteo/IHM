@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.adminController.AccControlAdmin">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" stylesheets="@style/overallStyle.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.adminController.AccControlAdmin">
     <center>
         <ScrollPane fx:id="pane" prefWidth="280.0" BorderPane.alignment="CENTER" />
     </center>
@@ -64,7 +64,7 @@
     <bottom>
         <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="80.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
             <children>
-                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="80.0" prefWidth="198.0" text="13:37">
+                <Label fx:id="timeLabel" alignment="CENTER" contentDisplay="CENTER" prefHeight="80.0" prefWidth="198.0" text="13:37">
                     <font>
                         <Font size="40.0" />
                     </font>
