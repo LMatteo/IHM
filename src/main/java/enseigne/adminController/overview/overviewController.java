@@ -75,7 +75,7 @@ public class overviewController {
         ChiffreAffaireTotal.setText(getTotalChiffreAffaire(magasins)+" €");
         nbEmployesTotal.setText(String.valueOf(getTotalEmployes(magasins)));
         chiffreAffaireChart.setData(getChiffreAffaireDatas(magasins));
-        chiffreAffairesTitle.setText("Chiffre d'affaires (total : " + getTotalChiffreAffaire(magasins) + " €)");
+        chiffreAffairesTitle.setText("Chiffre d'affaires annuel (total : " + getTotalChiffreAffaire(magasins) + " €)");
         employesChart.setData(getEmployesDatas(magasins));
         employesTitle.setText("Effectifs (total : " + getTotalEmployes(magasins) + " employés)");
         clienteleChart.setData(getClientele(magasins));

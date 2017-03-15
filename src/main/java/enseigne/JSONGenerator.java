@@ -13,10 +13,10 @@ public class JSONGenerator {
     @Test
     public void photo() throws IOException {
         Photo p = new Photo();
-        p.setCategory("artiste");
-        p.setTitreFr("K2A 2-7-0");
-        p.setPhoto("data/enseigne/images/kaaris.jpg");
-        p.setDescriptionFr("Toujours plus haut");
+        p.setCategory("musique");
+        p.setTitreFr("Dance 2014");
+        p.setPhoto("data/enseigne/images/music2.jpg");
+        p.setDescriptionFr("Le best pour le booty shake");
 
         p.write();
     }
