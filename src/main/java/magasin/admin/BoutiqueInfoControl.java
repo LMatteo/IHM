@@ -22,6 +22,7 @@ public class BoutiqueInfoControl {
 
     @FXML private TextField openTime;
     @FXML private TextField closeTime;
+    @FXML private TextField phoneNumber;
     @FXML private TextArea descrFr;
     @FXML private TextArea descrEng;
     @FXML private Button browsePic1;
@@ -32,7 +33,6 @@ public class BoutiqueInfoControl {
     @FXML private ImageView picPrev2;
     @FXML private ImageView picPrev3;
     @FXML private ImageView picPrev4;
-    @FXML private Button saveInfo;
 
     private AdminLayoutControl adminLayoutControl;
     private BoutiqueInformation boutiqueInfo;
@@ -44,10 +44,6 @@ public class BoutiqueInfoControl {
     @FXML
     public void initialize(){
         boutiqueInfo = new BoutiqueInformation();
-    }
-
-    public void setAdminLayoutControl(AdminLayoutControl adminLayoutControl) {
-        this.adminLayoutControl = adminLayoutControl;
     }
 
     @FXML
@@ -108,6 +104,7 @@ public class BoutiqueInfoControl {
         boutiqueInfo.setCloseTime(closeTime.getText());
         boutiqueInfo.setDescrFr(descrFr.getText());
         boutiqueInfo.setDescrEng(descrEng.getText());
+        boutiqueInfo.setPhoneNumber(phoneNumber.getText());
         if(imagePath1 != null) {
             File image = new File(imagePath1);
             boutiqueInfo.setPathPic1("data/magasin/info/" + image.getName());
