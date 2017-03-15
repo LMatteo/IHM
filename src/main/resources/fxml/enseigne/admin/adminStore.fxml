@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="paneOld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1380.0" style="-fx-background-color: #f5f5f5;" stylesheets="@style/storeStyle.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.adminController.store.AdminStoreController">
+<VBox fx:id="paneOld" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1380.0" style="-fx-background-color: #f5f5f5;" stylesheets="@style/storeStyle.css" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="enseigne.adminController.store.AdminStoreController">
    <children>
       <HBox alignment="TOP_CENTER">
          <children>
@@ -17,7 +17,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
                <children>
-                  <TextField fx:id="filterText" prefHeight="36.0" prefWidth="164.0" />
+                  <TextField fx:id="filterText" prefHeight="47.0" prefWidth="164.0" />
                   <Button fx:id="delOne1" mnemonicParsing="false" onAction="#setFilter" prefHeight="36.0" prefWidth="145.0" text="Rechercher">
                      <font>
                         <Font size="20.0" />

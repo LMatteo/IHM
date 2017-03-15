@@ -63,6 +63,10 @@ public class AdminStoreController {
 
     @FXML
     public void delOne(ActionEvent event){
+        if(filter.selected() == null) {
+            showAlert("Veuillez sélectionner un magasin à supprimer");
+            return;
+        }
         filter.delete();
     }
 
