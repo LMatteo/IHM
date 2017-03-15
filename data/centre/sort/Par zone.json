@@ -1,0 +1,14 @@
+{
+  "englishName": "By area",
+  "name": "Par zone",
+  "categories": [
+    {
+      "english": "Level 0",
+      "french": "Niveau 0"
+    },
+    {
+      "english": "Level 1",
+      "french": "Niveau 1"
+    }
+  ]
+}
