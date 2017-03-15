@@ -12,7 +12,7 @@ import java.util.*;
  */
 public class Charts
 {
-        String DATA_PATH = System.getProperty("user.dir")+File.separator+"ihm"+File.separator+"data"+File.separator+"magasin"+File.separator+"sales"+File.separator+"sales.json";
+        String DATA_PATH = System.getProperty("user.dir")+File.separator+File.separator+"data"+File.separator+"magasin"+File.separator+"sales"+File.separator+"sales.json";
         File file = new File(DATA_PATH);
 
         List<String> sellers;
@@ -74,7 +74,6 @@ public class Charts
         {
             if(parser.getSales().get(i).getInt("Semaine")==day)
             {
-                System.out.println("igetin");
                 q++;
             }
         }
