@@ -1,14 +1,21 @@
 package enseigne.customerController;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.util.Duration;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class AccControl {
     public static final String color = "#a3d35f";
@@ -28,6 +35,8 @@ public class AccControl {
 
     @FXML
     private Button infos;
+    @FXML
+    private Label timeLabel;
 
     private Button previous;
 
@@ -90,6 +99,20 @@ public class AccControl {
         pane.setVvalue(0);
     }
 
+    private void bindToTime() {
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(0),
+                        actionEvent -> {
+                            Calendar time = Calendar.getInstance();
+                            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
+                            timeLabel.setText(simpleDateFormat.format(time.getTime()));
+                        }
+                ),
+                new KeyFrame(Duration.seconds(1))
+        );
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
+    }
 
 
 

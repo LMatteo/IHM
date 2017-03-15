@@ -2,15 +2,23 @@ package enseigne.adminController;
 
 import enseigne.adminController.overview.overviewController;
 import enseigne.adminController.store.AdminStoreController;
-import enseigne.modele.modele.MagFilter;
+import enseigne.modele.MagFilter;
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.ToggleButton;
+import javafx.util.Duration;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class AccControlAdmin {
 
@@ -21,19 +29,22 @@ public class AccControlAdmin {
     private ScrollPane pane;
 
     @FXML
-    private Button adminAccueil;
+    private ToggleButton adminAccueil;
 
     @FXML
-    private Button adminGallerie;
+    private ToggleButton adminGallerie;
 
     @FXML
-    private Button adminStore;
+    private ToggleButton adminStore;
 
     @FXML
-    private Button adminInfo;
+    private ToggleButton adminInfo;
 
     @FXML
-    private Button adminOverview;
+    private ToggleButton adminOverview;
+
+    @FXML
+    private Label timeLabel;
 
     private Button previous;
 
@@ -57,45 +68,37 @@ public class AccControlAdmin {
         magasinPane = loader.load();
         AdminStoreController ctrl = loader.getController();
         ctrl.setFilter(new MagFilter());
+        pane.setContent(accueilPane);
 
     }
 
     @FXML
     void switchAccueil(ActionEvent event) {
-        Button source = (Button) event.getSource();
         pane.setContent(accueilPane);
-        switchBut(source);
         pane.setVvalue(0);
     }
 
     @FXML
     void switchGallerie(ActionEvent event) {
-        Button source = (Button) event.getSource();
         pane.setContent(galeriePane);
-        switchBut(source);
         pane.setVvalue(0);
     }
 
     @FXML
     void switchMagasins(ActionEvent event) {
-        Button source = (Button) event.getSource();
         pane.setContent(magasinPane);
-        switchBut(source);
         pane.setVvalue(0);
     }
 
     @FXML
     void switchInfos(ActionEvent event) {
-        Button source = (Button) event.getSource();
         infoPane.setStyle("-fx-padding: 20px 20px 20px 150px");
         pane.setContent(infoPane);
-        switchBut(source);
         pane.setVvalue(0);
     }
 
     @FXML
     void switchOverview(ActionEvent event) {
-        Button source = (Button) event.getSource();
         pane.setContent(overviewPane);
         overviewController ctrl = overviewPaneLoader.getController();
         try {
@@ -103,17 +106,21 @@ public class AccControlAdmin {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        switchBut(source);
         pane.setVvalue(0);
     }
 
-    private void switchBut(Button bigButt) {
-        if (previous != null) {
-            previous.setStyle("-fx-background-color: " + color + "; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;");
-        }
-        bigButt.setStyle("-fx-background-color: " + foncey + "; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 2;");
-        previous = bigButt;
-
+    private void bindToTime() {
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(0),
+                        actionEvent -> {
+                            Calendar time = Calendar.getInstance();
+                            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
+                            timeLabel.setText(simpleDateFormat.format(time.getTime()));
+                        }
+                ),
+                new KeyFrame(Duration.seconds(1))
+        );
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
     }
-
 }

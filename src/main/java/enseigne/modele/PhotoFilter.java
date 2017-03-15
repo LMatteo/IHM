@@ -1,4 +1,4 @@
-package enseigne.modele.modele;
+package enseigne.modele;
 
 import enseigne.modele.ReadConst;
 import enseigne.modele.photo.Photo;

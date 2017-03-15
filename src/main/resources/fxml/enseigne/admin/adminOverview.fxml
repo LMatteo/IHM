@@ -26,14 +26,6 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="updateStore" minWidth="200.0" mnemonicParsing="false" onAction="#updateStore" text="Modifier les données d'un magasin">
-               <font>
-                  <Font size="20.0" />
-               </font>
-               <HBox.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-               </HBox.margin>
-            </Button>
          </children>
          <VBox.margin>
             <Insets bottom="20.0" top="20.0" />
