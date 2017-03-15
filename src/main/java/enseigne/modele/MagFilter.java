@@ -68,7 +68,7 @@ public class MagFilter {
     public void filter(){
         if(!isReadyToFilter()) return;
         List<Magasin> toDisp = new ArrayList<>();
-        Pattern p = Pattern.compile(filter+".*");
+        Pattern p = Pattern.compile(".*"+filter+".*");
         for(Magasin magasin : mags){
             for(MagAttribute selectedAttribute : MagAttribute.values()) {
                 if(selectedAttribute.get(magasin)!=null) {

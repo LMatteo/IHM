@@ -1,3 +1,8 @@
 .Button{
 
 }
+
+#image{
+    -fx-background-color: -fx-background ;
+    -fx-background-insets: 0 ;
+}
