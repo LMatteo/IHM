@@ -1,4 +1,4 @@
-.button{
+.button,.toggle-button{
     -fx-border-style: none;
     -fx-border-radius: 0px;
     -fx-background-color: #7cb131;
