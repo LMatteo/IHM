@@ -20,7 +20,11 @@
     },
     {
       "english": "Video Games",
-      "french": "jeux Video"
+      "french": "Jeux Vidéo"
+    },
+    {
+      "english": "Telecoms",
+      "french": "Téléphonie"
     }
   ]
 }
