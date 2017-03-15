@@ -90,9 +90,7 @@ public class AdminGalerieController {
         List<Photo> toDisplay = new ArrayList<>();
         for(Photo p : allPhotos){
             if(p.getTitreFr().contains(request) ||
-                    p.getTitreEn().contains(request) ||
-                    p.getDescriptionFr().contains(request) ||
-                    p.getDescriptionEn().contains(request)){
+                    p.getDescriptionFr().contains(request)){
                 toDisplay.add(p);
             }
         }
