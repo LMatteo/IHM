@@ -6,8 +6,6 @@ import javafx.scene.Cursor;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import magasin.admin.BoutiqueInfoControl;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
