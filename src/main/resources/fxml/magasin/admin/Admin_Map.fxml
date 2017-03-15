@@ -10,7 +10,8 @@
 <?import javafx.scene.web.WebView?>
 
 
-<ScrollPane xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="magasin.admin.AdminMapControl">
    <content>
       <AnchorPane maxWidth="1060.0" minWidth="1060.0" prefHeight="598.0" prefWidth="1060.0">
          <children>
@@ -96,7 +97,7 @@
                         </AnchorPane>
                      </content>
                   </ScrollPane>
-                  <WebView prefHeight="598.0" prefWidth="811.0" />
+                  <WebView fx:id="webMap" prefHeight="598.0" prefWidth="811.0" />
                </children>
             </HBox>
          </children>
