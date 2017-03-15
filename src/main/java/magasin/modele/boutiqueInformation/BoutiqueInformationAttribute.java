@@ -77,12 +77,12 @@ public enum BoutiqueInformationAttribute implements BoutiqueInformationHandler {
 
     phoneNumber {
         @Override
-        public void assign(BoutiqueInformation info, JSONObject json) {
-            info.setPhoneNumber(json.getString("phoneNumber"));
-        }
+        public void assign(BoutiqueInformation info, JSONObject json) { info.setPhoneNumber(json.getString("phoneNumber")); }
 
         @Override
         public void put(BoutiqueInformation info, JSONObject json) {
+            System.out.println("TEST TEST TEST TEST TEST TEST");
+            System.out.println(info.getPhoneNumber());
             json.put("phoneNumber", info.getPhoneNumber());
         }
 
