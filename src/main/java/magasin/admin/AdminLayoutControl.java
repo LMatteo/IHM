@@ -97,7 +97,6 @@ public class AdminLayoutControl {
     void goToStats(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/magasin/admin/Admin_Stats.fxml"));
         sp = loader.load();
-
         paneLayout.setContent(sp);
         switchButtonStyle(stats);
         paneLayout.setVvalue(0);
