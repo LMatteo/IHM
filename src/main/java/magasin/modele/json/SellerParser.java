@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class SellerParser extends JsonParser{
 
-    public String FILE = "data"+File.separator+"magasin"+File.separator+"sales"+File.separator+"sales.json";
+    public String FILE = "ihm"+ File.separator+"data"+File.separator+"magasin"+File.separator+"sales"+File.separator+"sales.json";
 
     public static String readJsonFile(String filename) throws IOException {
         try (InputStream is = new FileInputStream(filename)) {
