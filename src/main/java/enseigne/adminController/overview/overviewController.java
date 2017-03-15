@@ -1,7 +1,7 @@
 package enseigne.adminController.overview;
 
 import enseigne.modele.magasin.Magasin;
-import enseigne.modele.modele.MagFilter;
+import enseigne.modele.MagFilter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

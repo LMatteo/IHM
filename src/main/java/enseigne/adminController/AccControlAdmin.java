@@ -2,7 +2,7 @@ package enseigne.adminController;
 
 import enseigne.adminController.overview.overviewController;
 import enseigne.adminController.store.AdminStoreController;
-import enseigne.modele.modele.MagFilter;
+import enseigne.modele.MagFilter;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
