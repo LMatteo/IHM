@@ -104,6 +104,19 @@
             <artifactId>junit-jupiter-api</artifactId>
             <version>RELEASE</version>
         </dependency>
+        <dependency>
+            <groupId>com.aquafx-project</groupId>
+            <artifactId>aquafx</artifactId>
+            <version>0.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.aerofx/aerofx -->
+        <dependency>
+            <groupId>org.aerofx</groupId>
+            <artifactId>aerofx</artifactId>
+            <version>0.2</version>
+        </dependency>
+
 
     </dependencies>
 

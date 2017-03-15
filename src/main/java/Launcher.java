@@ -1,4 +1,4 @@
-import centre.constant.CentrePaths;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+
 
 /**
  * Class used to parse the program arguments and starting up the first fxml controller.
