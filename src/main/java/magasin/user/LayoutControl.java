@@ -1,14 +1,21 @@
 package magasin.user;
 
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Cursor;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 /**
  * Controller for the main layout of the boutique screen.
@@ -22,6 +29,7 @@ public class LayoutControl {
     @FXML private Button media;
     @FXML private Button stage;
     @FXML private Button home;
+    @FXML private Label clock;
 
     private Button previous;
     private ScrollPane sp;
@@ -39,6 +47,7 @@ public class LayoutControl {
         sp = loader.load();
         HomeControl homeControl = loader.getController();
         homeControl.setLayoutControl(this);
+        bindToTime();
         paneLayout.setVvalue(0);
         paneLayout.setContent(sp);
         home.setCursor(Cursor.HAND);
@@ -152,5 +161,23 @@ public class LayoutControl {
         paneLayout.setContent(sp);
         switchButtonStyle(null);
         paneLayout.setVvalue(0);
+    }
+
+    /**
+     * * Binds the time label to system time.
+     */
+    private void bindToTime() {
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(0),
+                        actionEvent -> {
+                            Calendar time = Calendar.getInstance();
+                            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("HH:mm");
+                            clock.setText(simpleDateFormat.format(time.getTime()));
+                        }
+                ),
+                new KeyFrame(Duration.seconds(1))
+        );
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
     }
 }
