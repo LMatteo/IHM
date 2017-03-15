@@ -33,6 +33,7 @@ public class NewsList {
 
     public void add(News n) {
         newsList.add(n);
+        sort();
     }
 
     public List<News> getNewsList() {
