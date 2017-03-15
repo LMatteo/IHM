@@ -13,6 +13,10 @@
     {
       "english": "Food",
       "french": "Alimentation"
+    },
+    {
+      "english": "Level 0",
+      "french": "Niveau 0"
     }
   ],
   "promotionEnglish": "Liquidation of stocks ! Everything must go !",

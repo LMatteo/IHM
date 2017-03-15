@@ -1,1 +1,25 @@
-{"logoName":"Celio.png","enseigneId":"undefined","magasinId":"undefined","name":"Celio","mapId":1,"location":"Niveau 0","categories":[{"english":"Fashion","french":"Mode"},{"english":"A-C","french":"A-C"}],"promotionEnglish":"Winter sale for Valentine's day","locationEnglish":"Level 0","promotionText":"Réduction d'hiver le jour de la St-Valentin"}
+{
+  "logoName": "Celio.png",
+  "enseigneId": "undefined",
+  "magasinId": "undefined",
+  "name": "Celio",
+  "mapId": 1,
+  "location": "Niveau 0",
+  "categories": [
+    {
+      "english": "Fashion",
+      "french": "Mode"
+    },
+    {
+      "english": "A-C",
+      "french": "A-C"
+    },
+    {
+      "english": "Level 0",
+      "french": "Niveau 0"
+    }
+  ],
+  "promotionEnglish": "Winter sale for Valentine's day",
+  "locationEnglish": "Level 0",
+  "promotionText": "Réduction d'hiver le jour de la St-Valentin"
+}
