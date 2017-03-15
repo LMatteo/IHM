@@ -75,8 +75,6 @@ public class infoBoutiqueControl {
         }
         if (boutiqueInfo.getPathPic4() != null) {
             File file = new File(boutiqueInfo.getPathPic4());
-            System.out.println(boutiqueInfo.getPathPic4());
-            System.out.println(file.toURI().toString());
             pic4.setImage(new Image(new File(boutiqueInfo.getPathPic4()).toURI().toString()));
             pic4.setFitWidth(404);
             pic4.setFitHeight(325);

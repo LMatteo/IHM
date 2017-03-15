@@ -81,8 +81,6 @@ public enum BoutiqueInformationAttribute implements BoutiqueInformationHandler {
 
         @Override
         public void put(BoutiqueInformation info, JSONObject json) {
-            System.out.println("TEST TEST TEST TEST TEST TEST");
-            System.out.println(info.getPhoneNumber());
             json.put("phoneNumber", info.getPhoneNumber());
         }
 

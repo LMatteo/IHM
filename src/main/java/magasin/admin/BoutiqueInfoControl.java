@@ -122,6 +122,16 @@ public class BoutiqueInfoControl {
             boutiqueInfo.setPathPic4("data/magasin/info/" + image.getName());
         }
         boutiqueInfo.write();
+        this.openTime.clear();
+        this.closeTime.clear();
+        this.phoneNumber.clear();
+        this.descrFr.clear();
+        this.descrEng.clear();
+        this.picPrev1.setImage(null);
+        this.picPrev2.setImage(null);
+        this.picPrev3.setImage(null);
+        this.picPrev4.setImage(null);
+
     }
 
 
