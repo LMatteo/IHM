@@ -201,32 +201,58 @@ public class StatControl
 
     }
 
-
-    @FXML
-    public void fillmonths()
+    private String numberToMonth(int j)
     {
-        ObservableList<XYChart.Series<String, Double>> graphic = FXCollections.observableArrayList();
-        XYChart.Series<String, Double> bSeries = new XYChart.Series<String, Double>();
-        bSeries.setName("Mois");
-
-        bSeries.getData().add(new XYChart.Data("Janv.", 500));
-        bSeries.getData().add(new XYChart.Data("Fév.", 600));
-        bSeries.getData().add(new XYChart.Data("Mar.", 700));
-        bSeries.getData().add(new XYChart.Data("Avril.", 650));
-        bSeries.getData().add(new XYChart.Data("Mai.", 750));
-        bSeries.getData().add(new XYChart.Data("Juin.", 750));
-        bSeries.getData().add(new XYChart.Data("Juil.", 950));
-        bSeries.getData().add(new XYChart.Data("Aou.", 990));
-        bSeries.getData().add(new XYChart.Data("Sep.", 890));
-        bSeries.getData().add(new XYChart.Data("Oct.", 790));
-        bSeries.getData().add(new XYChart.Data("Nov.", 750));
-        bSeries.getData().add(new XYChart.Data("Déc.", 1050));
-
-
-        graphic.addAll(bSeries);
-        months.setData(graphic);
+        switch (j)
+        {
+            case 1:
+                return "Janver";
+            case 2:
+                return "Février";
+            case 3:
+                return "Mars";
+            case 4:
+                return "Avril";
+            case 5:
+                return "Mai";
+            case 6:
+                return "Juin";
+            case 7:
+                return "Juillet";
+            case 8:
+                return "Août";
+            case 9:
+                return "Septembre";
+            case 10:
+                return "Octobre";
+            case 11:
+                return "Novembre";
+            case 12:
+                return "Décembre";
+            default:
+                return null;
+        }
 
     }
 
+    private ObservableList<XYChart.Series<String, Double>> monthSetter() throws IOException {
+        ObservableList<XYChart.Series<String, Double>> graph = FXCollections.observableArrayList();
+        XYChart.Series<String, Double> bSeries = new XYChart.Series<String, Double>();
+        bSeries.setName("Mois");
+        Calendar c = new GregorianCalendar();
 
+        for(int i = 1 ; i <= 12 ; i++)
+            bSeries.getData().add(new XYChart.Data(numberToMonth(i), chart.getMonth(i)));
+
+        graph.addAll(bSeries);
+
+        return graph;
+
+    }
+
+    @FXML
+    public void fillmonths() throws IOException {
+        months.setData(monthSetter());
+
+    }
 }

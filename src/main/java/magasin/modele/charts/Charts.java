@@ -67,6 +67,19 @@ public class Charts
         return parser.getYearSales(year);
     }
 
+    public int getMonth(int month) throws IOException {
+        int q=0;
+        SellerParser parser = new SellerParser(file);
+        for(int i = 0 ; i < parser.getSales().size(); i++)
+        {
+            if(parser.getSales().get(i).getInt("Mois")== month)
+            {
+                q++;
+            }
+        }
+        return q;
+    }
+
     public int getWeek(int day) throws IOException {
         int q=0;
         SellerParser parser = new SellerParser(file);

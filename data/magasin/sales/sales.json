@@ -1,6 +1,15 @@
 [{
+  "Annee": 2013,
+  "Mois": 1,
+  "Jour": 2,
+  "Semaine": 2,
+  "Heure": "08-10",
+  "Vendeur": "Amy Pound",
+  "Article": "010072"
+},
+  {
     "Annee": 2013,
-    "Mois": 1,
+    "Mois": 2,
     "Jour": 2,
     "Semaine": 2,
     "Heure": "08-10",
@@ -9,129 +18,120 @@
   },
   {
     "Annee": 2013,
-    "Mois": 1,
+    "Mois": 2,
+    "Jour": 2,
+    "Semaine": 2,
+    "Heure": "08-10",
+    "Vendeur": "Dean Winchester",
+    "Article": "010072"
+  }, {
+  "Annee": 2013,
+  "Mois": 2,
+  "Jour": 2,
+  "Semaine": 2,
+  "Heure": "10-12",
+  "Vendeur": "Molly Hooper",
+  "Article": "010072"
+}, {
+  "Annee": 2013,
+  "Mois": 4,
+  "Jour": 2,
+  "Semaine": 2,
+  "Heure": "12-14",
+  "Vendeur": "Dean Winchester",
+  "Article": "010052"
+},
+  {
+    "Annee": 2014,
+    "Mois": 4,
+    "Jour": 2,
+    "Semaine": 2,
+    "Heure": "14-16",
+    "Vendeur": "Jim Moriarty",
+    "Article": "010052"
+  },
+  {
+    "Annee": 2014,
+    "Mois": 3,
     "Jour": 2,
     "Semaine": 2,
     "Heure": "08-10",
     "Vendeur": "Amy Pound",
     "Article": "010072"
-  },
-  {
-    "Annee": 2013,
-    "Mois": 1,
-    "Jour": 2,
-    "Semaine": 2,
-    "Heure": "08-10",
-    "Vendeur": "Dean Winchester",
-    "Article": "010072"
   }, {
-    "Annee": 2013,
-    "Mois": 1,
-    "Jour": 2,
-    "Semaine": 2,
-    "Heure": "10-12",
-    "Vendeur": "Molly Hooper",
-    "Article": "010072"
-  }, {
-    "Annee": 2013,
-    "Mois": 1,
-    "Jour": 2,
-    "Semaine": 2,
-    "Heure": "12-14",
-    "Vendeur": "Dean Winchester",
-    "Article": "010052"
-  },
-    {
-      "Annee": 2014,
-      "Mois": 1,
-      "Jour": 2,
-      "Semaine": 2,
-      "Heure": "14-16",
-      "Vendeur": "Jim Moriarty",
-      "Article": "010052"
-    },
-    {
-      "Annee": 2014,
-      "Mois": 1,
-      "Jour": 2,
-      "Semaine": 2,
-      "Heure": "08-10",
-      "Vendeur": "Amy Pound",
-      "Article": "010072"
-    }, {
-    "Annee": 2014,
-    "Mois": 1,
-    "Jour": 2,
-    "Semaine": 2,
-    "Heure": "08-10",
-    "Vendeur": "Dean Winchester",
-    "Article": "010072"
-  }, {
-    "Annee": 2014,
-    "Mois": 1,
-    "Jour": 2,
-    "Semaine": 2,
-    "Heure": "10-12",
-    "Vendeur": "Molly Hooper",
-    "Article": "010072"
-  }, {
-    "Annee": 2015,
-    "Mois": 1,
-    "Jour": 2,
-    "Semaine": 2,
-    "Heure": "12-14",
-    "Vendeur": "Dean Winchester",
-    "Article": "010052"
-  },
-
-    {
-      "Annee": 2015,
-      "Mois": 1,
-      "Jour": 2,
-      "Semaine": 2,
-      "Heure": "14-16",
-      "Vendeur": "Jim Moriarty",
-      "Article": "010052"
-    },
-    {
-      "Annee": 2015,
-      "Mois": 1,
-      "Jour": 2,
-      "Semaine": 7,
-      "Heure": "14-16",
-      "Vendeur": "Molly Hooper",
-      "Article": "010052"
-    },
-    {
-      "Annee": 2015,
-      "Mois": 1,
-      "Jour": 2,
-      "Semaine": 3,
-      "Heure": "14-16",
-      "Vendeur": "Molly Hooper",
-      "Article": "010052"
-  },
-  {
-      "Annee": 2015,
-      "Mois": 1,
-      "Jour": 2,
-      "Semaine": 3,
-      "Heure": "16-18",
-      "Vendeur": "Jim Moriarty",
-      "Article": "010052"
-  },
-
-  {
-  "Annee": 2015,
-  "Mois": 1,
+  "Annee": 2014,
+  "Mois": 5,
   "Jour": 2,
-  "Semaine": 4,
+  "Semaine": 2,
   "Heure": "08-10",
-  "Vendeur": "Amy Pound",
+  "Vendeur": "Dean Winchester",
+  "Article": "010072"
+}, {
+  "Annee": 2014,
+  "Mois": 6,
+  "Jour": 2,
+  "Semaine": 2,
+  "Heure": "10-12",
+  "Vendeur": "Molly Hooper",
   "Article": "010072"
 }, {
   "Annee": 2015,
-  "Mois": 1,
+  "Mois": 9,
+  "Jour": 2,
+  "Semaine": 2,
+  "Heure": "12-14",
+  "Vendeur": "Dean Winchester",
+  "Article": "010052"
+},
+
+  {
+    "Annee": 2015,
+    "Mois": 8,
+    "Jour": 2,
+    "Semaine": 2,
+    "Heure": "14-16",
+    "Vendeur": "Jim Moriarty",
+    "Article": "010052"
+  },
+  {
+    "Annee": 2015,
+    "Mois": 8,
+    "Jour": 2,
+    "Semaine": 7,
+    "Heure": "14-16",
+    "Vendeur": "Molly Hooper",
+    "Article": "010052"
+  },
+  {
+    "Annee": 2015,
+    "Mois": 8,
+    "Jour": 2,
+    "Semaine": 3,
+    "Heure": "14-16",
+    "Vendeur": "Molly Hooper",
+    "Article": "010052"
+  },
+  {
+    "Annee": 2015,
+    "Mois": 8,
+    "Jour": 2,
+    "Semaine": 3,
+    "Heure": "16-18",
+    "Vendeur": "Jim Moriarty",
+    "Article": "010052"
+  },
+
+  {
+    "Annee": 2015,
+    "Mois": 7,
+    "Jour": 2,
+    "Semaine": 4,
+    "Heure": "08-10",
+    "Vendeur": "Amy Pound",
+    "Article": "010072"
+  }, {
+  "Annee": 2015,
+  "Mois": 7,
   "Jour": 2,
   "Semaine": 4,
   "Heure": "08-10",
@@ -139,7 +139,7 @@
   "Article": "010072"
 }, {
   "Annee": 2015,
-  "Mois": 1,
+  "Mois": 8,
   "Jour": 2,
   "Semaine": 5,
   "Heure": "10-12",
@@ -147,7 +147,7 @@
   "Article": "010072"
 }, {
   "Annee": 2015,
-  "Mois": 1,
+  "Mois": 9,
   "Jour": 2,
   "Semaine": 5,
   "Heure": "12-14",
@@ -156,7 +156,7 @@
 },
   {
     "Annee": 2015,
-    "Mois": 1,
+    "Mois": 10,
     "Jour": 2,
     "Semaine": 5,
     "Heure": "14-16",
@@ -164,16 +164,16 @@
     "Article": "010052"
   },
   {
+    "Annee": 2016,
+    "Mois": 11,
+    "Jour": 2,
+    "Semaine": 6,
+    "Heure": "08-10",
+    "Vendeur": "Amy Pound",
+    "Article": "010072"
+  }, {
   "Annee": 2016,
-  "Mois": 1,
-  "Jour": 2,
-  "Semaine": 6,
-  "Heure": "08-10",
-  "Vendeur": "Amy Pound",
-  "Article": "010072"
-}, {
-  "Annee": 2016,
-  "Mois": 1,
+  "Mois": 12,
   "Jour": 2,
   "Semaine": 6,
   "Heure": "08-10",
@@ -181,7 +181,7 @@
   "Article": "010072"
 }, {
   "Annee": 2016,
-  "Mois": 1,
+  "Mois": 12,
   "Jour": 2,
   "Semaine": 6,
   "Heure": "10-12",
@@ -189,7 +189,7 @@
   "Article": "010072"
 }, {
   "Annee": 2016,
-  "Mois": 1,
+  "Mois": 8,
   "Jour": 2,
   "Semaine": 6,
   "Heure": "12-14",
@@ -198,7 +198,7 @@
 },
   {
     "Annee": 2016,
-    "Mois": 1,
+    "Mois": 7,
     "Jour": 2,
     "Semaine": 5,
     "Heure": "14-16",
@@ -207,7 +207,7 @@
   },
   {
     "Annee": 2016,
-    "Mois": 1,
+    "Mois": 5,
     "Jour": 2,
     "Semaine": 4,
     "Heure": "14-16",
@@ -216,7 +216,7 @@
   },
   {
     "Annee": 2016,
-    "Mois": 1,
+    "Mois": 4,
     "Jour": 2,
     "Semaine": 4,
     "Heure": "14-16",
