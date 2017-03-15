@@ -2,6 +2,11 @@
     -fx-background-color: #84a5c9 !important;
 }
 
+.root{
+    -fx-accent: #4B77BE;
+    -fx-focus-color: #4B77BE;
+}
+
 .border {
     -fx-background-color : #4B77BE;
     -fx-border-color : #ffffff;
