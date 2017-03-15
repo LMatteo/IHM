@@ -51,6 +51,7 @@ public class AdminNewsController extends NewsController {
         controller.initializeContents(this, altenatives, sourceId, current);
         Scene scene = new Scene(rootNode, 600, 500);
         Stage stage = new Stage();
+        scene.getStylesheets().add("/styles/centre/styleAdmin.css");
         stage.setScene(scene);
         stage.setTitle("Choisir une promotion/actualité");
         stage.show();
@@ -63,6 +64,7 @@ public class AdminNewsController extends NewsController {
         addNewsFormController controller = loader.getController();
         controller.setNewsList(listNews);
         Scene scene = new Scene(rootNode, 781, 458);
+        scene.getStylesheets().add("/styles/centre/styleAdmin.css");
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.setTitle("Ajouter une nouvelle promotion/actualité");

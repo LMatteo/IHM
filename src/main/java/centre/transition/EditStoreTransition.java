@@ -32,6 +32,7 @@ public class EditStoreTransition implements Transition {
         controller.setLoadedStores(loadedStores);
         controller.loadStoreData(selectedStore);
         Scene scene = new Scene(rootNode, 1477, 861);
+        scene.getStylesheets().add("/styles/centre/styleAdmin.css");
         Stage newStage = new Stage();
         newStage.setTitle("Edition d'une boutique");
         newStage.setScene(scene);

@@ -1,10 +1,9 @@
-import centre.constant.AlertMessage;
 import centre.constant.CentrePaths;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -37,7 +36,8 @@ public class Launcher extends Application {
     }
 
     private String part = "--centre";
-    private String style = "/styles/centre/style1.css";
+    private String style;
+    private boolean alternateStyle;
     private boolean adminMode = false;
     private double adminWidth = 1600;
     private double adminHeight = 900;
@@ -58,7 +58,7 @@ public class Launcher extends Application {
                     adminMode = true;
                     break;
                 case "--alternate":
-                    style = "/styles/centre/style2.css";
+                    alternateStyle = true;
                     CentrePaths.PATHTOLOGO = "/images/centre/logoCentre2.png";
                     break;
                 case "--magasin":
@@ -66,12 +66,20 @@ public class Launcher extends Application {
                         adminHeight = 800;
                         adminWidth = 1060;
                     }
-                case "--centre":
                 case "--enseigne":
                     part = arg;
                     break;
+                case "--centre" :
+                    break;
                 default:
                     exit();
+            }
+        }
+        if (part.equals("--centre")) {
+            if (!adminMode) {
+                style = alternateStyle ? "/styles/centre/style2.css" : "/styles/centre/style1.css";
+            } else {
+                style = "/styles/centre/styleAdmin.css";
             }
         }
     }
@@ -81,9 +89,6 @@ public class Launcher extends Application {
      */
     private void exit() {
         System.out.println(INVALID_ARGS);
-        AlertMessage.alert(Alert.AlertType.ERROR, "Mauvais arguments utilisés", "Par défaut, la vue client du" +
-                " centre sera chargée. Veuillez vous référer au readme pour plus d'informations sur les " +
-                "arguments disponibles.");
         System.exit(1);
     }
 
@@ -103,9 +108,12 @@ public class Launcher extends Application {
         }
         Parent rootNode = FXMLLoader.load(getClass().getResource(path));
         Scene scene = adminMode ? new Scene(rootNode, adminWidth, adminHeight) : new Scene(rootNode, 1280, 1024);
-        scene.getStylesheets().add(style);
+        if (style != null) {
+            scene.getStylesheets().add(style);
+        }
         stage.setTitle("Borne");
         stage.setScene(scene);
+        stage.getIcons().add(new Image(CentrePaths.PATHTOLOGO));
         stage.show();
     }
 
