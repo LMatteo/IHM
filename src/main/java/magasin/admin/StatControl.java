@@ -11,9 +11,7 @@ import magasin.modele.charts.Charts;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Meriveri on 14/03/2017.
@@ -33,9 +31,9 @@ public class StatControl
 
     @FXML
     protected void initialize() throws IOException {
-/*        chart = new Charts();
+        chart = new Charts();
         sellers = chart.getSellers();
-        sellersSales = chart.getSellersSales();*/
+        sellersSales = chart.getSellersSales();
         fillPieChart();
         fillSellPerHours();
         fillyears();
@@ -45,7 +43,7 @@ public class StatControl
     }
 
 
-    private ObservableList<PieChart.Data> dataSetter() {
+    private ObservableList<PieChart.Data> pieDataSetter() {
         ObservableList<PieChart.Data> list = FXCollections.observableList(new ArrayList<PieChart.Data>());
 
         for (int i = 0; i < sellers.size(); i++) {
@@ -56,89 +54,151 @@ public class StatControl
 
     @FXML
     private void fillPieChart() {
-        ObservableList<PieChart.Data> pieChartData =
+/*        ObservableList<PieChart.Data> pieChartData =
                 FXCollections.observableArrayList(
                         new PieChart.Data("Amy Pond", 92),
                         new PieChart.Data("Dean Wintchester", 82),
                         new PieChart.Data("Ned Stark", 44),
                         new PieChart.Data("Jim Moriarty", 87)
-                );
+                );*/
 
         pie.setTitle("Répartition des ventes");
-        pie.setData(pieChartData);
+        pie.setLegendVisible(false);
+        pie.setData(pieDataSetter());
+    }
+
+
+    private ObservableList<XYChart.Series<String, Double>> hourDataSetter()
+    {
+        ObservableList<XYChart.Series<String, Double>> graph = FXCollections.observableArrayList();
+
+        XYChart.Series<String, Double> aSeries = new XYChart.Series<String, Double>();
+        XYChart.Series<String, Double> bSeries = new XYChart.Series<String, Double>();
+        aSeries.setName("semaine");
+        bSeries.setName("week-end");
+
+        int var8, var10, var12, var14, var16;
+        var8 = 0;
+        var10 = 0;
+        var12 = 0;
+        var14 = 0;
+        var16 = 0;
+        for(int i = 0 ; i < chart.getSales().size() ; i++)
+        {
+                switch(chart.getSales().get(i).getString("Heure"))
+                {
+                    case "08-10":
+                        var8++;
+                        break;
+                    case "10-12":
+                        var10++;
+                        break;
+                    case "12-14":
+                        var12++;
+                        break;
+                    case "14-16":
+                        var14++;
+                        break;
+                    case "16-18":
+                        var16++;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+        aSeries.getData().add(new XYChart.Data("8-10", var8));
+        bSeries.getData().add(new XYChart.Data("8-10", var8*1.2));
+
+        aSeries.getData().add(new XYChart.Data("10-12", var10));
+        bSeries.getData().add(new XYChart.Data("10-12", var10*1.1));
+
+        aSeries.getData().add(new XYChart.Data("12-14", var12));
+        bSeries.getData().add(new XYChart.Data("12-14", var12*1.13));
+
+        aSeries.getData().add(new XYChart.Data("14-16", var14));
+        bSeries.getData().add(new XYChart.Data("14-16", var14*1.3));
+
+        aSeries.getData().add(new XYChart.Data("16-18", var16));
+        bSeries.getData().add(new XYChart.Data("16-18", var16*1.21));
+
+
+        graph.addAll(aSeries, bSeries);
+        return graph;
+
+
     }
 
     @FXML
     private void fillSellPerHours()
     {
 
-            ObservableList<XYChart.Series<String, Double>> graph = FXCollections.observableArrayList();
-            XYChart.Series<String, Double> aSeries = new XYChart.Series<String, Double>();
-            XYChart.Series<String, Double> bSeries = new XYChart.Series<String, Double>();
-            aSeries.setName("semaine");
-            bSeries.setName("week-end");
 
-            aSeries.getData().add(new XYChart.Data("8-10", 12));
-            bSeries.getData().add(new XYChart.Data("8-10", 15));
-
-            aSeries.getData().add(new XYChart.Data("10-12", 14));
-            bSeries.getData().add(new XYChart.Data("10-12", 19));
-
-            aSeries.getData().add(new XYChart.Data("12-14", 10));
-            bSeries.getData().add(new XYChart.Data("12-14", 16));
-
-            aSeries.getData().add(new XYChart.Data("14-16", 19));
-            bSeries.getData().add(new XYChart.Data("14-16", 25));
-
-            aSeries.getData().add(new XYChart.Data("16-18", 14));
-            bSeries.getData().add(new XYChart.Data("16-18", 19));
-
-
-            graph.addAll(aSeries, bSeries);
             perhour.setTitle("Ventes par tranches horaires");
-            perhour.setData(graph);
+            perhour.setData(hourDataSetter());
 
     }
 
-    @FXML
-    public void fillyears()
-    {
+
+    private ObservableList<XYChart.Series<String, Double>> yearSetter() throws IOException {
+
         ObservableList<XYChart.Series<String, Double>> graph = FXCollections.observableArrayList();
         XYChart.Series<String, Double> aSeries = new XYChart.Series<String, Double>();
         aSeries.setName("Année");
-
-
-
-        aSeries.getData().add(new XYChart.Data("2010", 3000));
-        aSeries.getData().add(new XYChart.Data("2011", 3500));
-        aSeries.getData().add(new XYChart.Data("2012", 3750));
-        aSeries.getData().add(new XYChart.Data("2013", 4000));
-        aSeries.getData().add(new XYChart.Data("2014", 4300));
-        aSeries.getData().add(new XYChart.Data("2015", 4300));
-        aSeries.getData().add(new XYChart.Data("2016", 4800));
-        aSeries.getData().add(new XYChart.Data("2017", 3000));
+        Calendar c = new GregorianCalendar();
+        c.add(Calendar.YEAR, -1);
+        for(int i = 2013; i <= 2016; i++)
+        {
+            aSeries.getData().add(new XYChart.Data(Integer.toString(i), chart.getYear(i)));
+        }
 
         graph.addAll(aSeries);
-        years.setData(graph);
 
+        return graph;
     }
 
     @FXML
-    public void fillweeks()
+    public void fillyears() throws IOException {
+        years.setData(yearSetter());
+
+    }
+
+    private String numberToDay(int j)
     {
+        switch (j)
+        {
+            case 2:
+                return "Lundi";
+            case 3:
+                return "Mardi";
+            case 4:
+                return "Mercredi";
+            case 5:
+                return "Jeudi";
+            case 6:
+                return "Vendredi";
+            case 7:
+                return "Samedi";
+        }
+        return null;
+    }
+
+    private ObservableList<XYChart.Series<String, Double>> weekSetter() throws IOException {
         ObservableList<XYChart.Series<String, Double>> graph = FXCollections.observableArrayList();
         XYChart.Series<String, Double> aSeries = new XYChart.Series<String, Double>();
         aSeries.setName("Semaine");
-
-        aSeries.getData().add(new XYChart.Data("Lundi", 20));
-        aSeries.getData().add(new XYChart.Data("Mardi", 25));
-        aSeries.getData().add(new XYChart.Data("Mercredi", 27));
-        aSeries.getData().add(new XYChart.Data("Jeudi", 26));
-        aSeries.getData().add(new XYChart.Data("Vendredi", 29));
-        aSeries.getData().add(new XYChart.Data("Samedi", 40));
+        Calendar c = new GregorianCalendar();
+        System.out.println(c.get(Calendar.DAY_OF_WEEK));
+        for(int i = 2; i <= 7 ; i++)
+            aSeries.getData().add(new XYChart.Data(numberToDay(i), chart.getWeek(i)));
 
         graph.addAll(aSeries);
-        weeks.setData(graph);
+        return graph;
+    }
+
+    @FXML
+    public void fillweeks() throws IOException {
+        weeks.setData(weekSetter());
 
     }
 
