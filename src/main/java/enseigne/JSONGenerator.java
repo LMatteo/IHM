@@ -1,5 +1,6 @@
 package enseigne;
 
+import enseigne.modele.photo.Photo;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -10,7 +11,14 @@ import java.io.IOException;
 public class JSONGenerator {
 
     @Test
-    public void magasin() throws IOException {
+    public void photo() throws IOException {
+        Photo p = new Photo();
+        p.setCategory("artiste");
+        p.setTitreFr("K2A 2-7-0");
+        p.setPhoto("data/enseigne/images/kaaris.jpg");
+        p.setDescriptionFr("Toujours plus haut");
 
+        p.write();
     }
+
 }
