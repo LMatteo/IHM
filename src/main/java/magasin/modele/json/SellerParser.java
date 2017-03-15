@@ -62,14 +62,11 @@ public class SellerParser extends JsonParser{
         List<JSONObject> sales;
         sales = getSales();
 
-        System.out.println("looking for "+seller);
         for(int i = 0 ; i < sales.size(); i++)
         {
-            System.out.println("sale "+i+"made by"+sales.get(i).getString("Vendeur"));
             if(sales.get(i).getString("Vendeur").equals(seller))
             {
                 qt++;
-                System.out.println(sales.get(i).getString("Vendeur")+" sold "+qt+" item at "+sales.get(i).get("Heure"));
             }
         }
         return qt;

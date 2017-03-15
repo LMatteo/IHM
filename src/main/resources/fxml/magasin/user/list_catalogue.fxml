@@ -74,24 +74,24 @@
                               <Image url="@../../../images/magasin/BOOK1.png" />
                            </image>
                         </ImageView>
-                        <Pane prefHeight="179.0" prefWidth="509.0" style="-fx-border-color: #000000; -fx-border-width: 1px;">
+                        <Pane prefHeight="179.0" prefWidth="509.0" style="-fx-border-color: #000000; -fx-border-width: 2px;">
                            <children>
-                              <Label layoutX="1.0" prefHeight="50.0" prefWidth="392.0" text="Je fabrique mes produits ménagers">
+                              <Label layoutX="10.0" prefHeight="50.0" prefWidth="392.0" text="Je fabrique mes produits ménagers">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="1.0" layoutY="40.0" prefHeight="31.0" prefWidth="298.0" text="de Pascal Hippie aux éditions Eaux Stagnantes">
+                              <Label layoutX="10.0" layoutY="40.0" prefHeight="31.0" prefWidth="298.0" text="de Pascal Massive aux éditions Eaux Stagnantes">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="1.0" layoutY="74.0" text="Prix : 8.5€">
+                              <Label layoutX="10.0" layoutY="74.0" text="Prix : 8.5€">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Text layoutX="1.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marre des produits chimiques qui agressent votre intérieur ? Plus de 700 recettes de grand-mère pour confectionner ses propres produits ménagers" wrappingWidth="468.8033752441406">
+                              <Text layoutX="10.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marre des produits chimiques qui agressent votre intérieur ? Plus de 700 recettes de grand-mère pour confectionner ses propres produits ménagers" wrappingWidth="468.8033752441406">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -107,24 +107,24 @@
                               <Image url="@../../../images/magasin/DVD8.png" />
                            </image>
                         </ImageView>
-                        <Pane prefHeight="179.0" prefWidth="509.0" style="-fx-border-color: #000000; -fx-border-width: 1px;">
+                        <Pane prefHeight="179.0" prefWidth="509.0" style="-fx-border-color: #000000; -fx-border-width: 2px;">
                            <children>
-                              <Label layoutX="1.0" prefHeight="50.0" prefWidth="392.0" text="Sous les pavés, la Terre !">
+                              <Label layoutX="10.0" prefHeight="50.0" prefWidth="392.0" text="Sous les pavés, la Terre !">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="1.0" layoutY="40.0" prefHeight="31.0" prefWidth="298.0" text="de Pascal Agronome">
+                              <Label layoutX="10.0" layoutY="40.0" prefHeight="31.0" prefWidth="298.0" text="de Pascal Agronome">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="1.0" layoutY="74.0" text="Prix : 14€">
+                              <Label layoutX="10.0" layoutY="74.0" text="Prix : 14€">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Text layoutX="1.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vous voulez vraiment savoir ce que vous mangez? Pascal Agronome, à travers son documentaire vous dévoile les secrets les mieux gardé de l'industrie alimentaire" wrappingWidth="468.8033752441406">
+                              <Text layoutX="10.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vous voulez vraiment savoir ce que vous mangez? Pascal Agronome, à travers son documentaire vous dévoile les secrets les mieux gardé de l'industrie alimentaire" wrappingWidth="468.8033752441406">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -140,24 +140,24 @@
                               <Image url="@../../../images/magasin/stage1.png" />
                            </image>
                         </ImageView>
-                        <Pane prefHeight="179.0" prefWidth="509.0" style="-fx-border-color: #000000; -fx-border-width: 1px;">
+                        <Pane prefHeight="179.0" prefWidth="509.0" style="-fx-border-color: #000000; -fx-border-width: 2px;">
                            <children>
-                              <Label layoutX="1.0" prefHeight="50.0" prefWidth="392.0" text="Se remettre après un accident">
+                              <Label layoutX="10.0" prefHeight="50.0" prefWidth="392.0" text="Se remettre après un accident">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="1.0" layoutY="40.0" prefHeight="31.0" prefWidth="298.0" text="Stage proposé par Pascal Thérapiste">
+                              <Label layoutX="10.0" layoutY="40.0" prefHeight="31.0" prefWidth="298.0" text="Stage proposé par Pascal Thérapiste">
                                  <font>
                                     <Font size="14.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="1.0" layoutY="74.0" text="Prix : 50€ le séminaire">
+                              <Label layoutX="10.0" layoutY="74.0" text="Prix : 50€ le séminaire">
                                  <font>
                                     <Font size="18.0" />
                                  </font>
                               </Label>
-                              <Text layoutX="1.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ne laissez plus vos peurs vous dicter votre quotidien, reprenez les devants et croquez de nouveau la vie à pleine dent." wrappingWidth="468.8033752441406">
+                              <Text layoutX="10.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ne laissez plus vos peurs vous dicter votre quotidien, reprenez les devants et croquez de nouveau la vie à pleine dent." wrappingWidth="468.8033752441406">
                                  <font>
                                     <Font size="15.0" />
                                  </font>

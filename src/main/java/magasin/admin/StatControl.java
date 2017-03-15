@@ -188,7 +188,6 @@ public class StatControl
         XYChart.Series<String, Double> aSeries = new XYChart.Series<String, Double>();
         aSeries.setName("Semaine");
         Calendar c = new GregorianCalendar();
-        System.out.println(c.get(Calendar.DAY_OF_WEEK));
         for(int i = 2; i <= 7 ; i++)
             aSeries.getData().add(new XYChart.Data(numberToDay(i), chart.getWeek(i)));
 
