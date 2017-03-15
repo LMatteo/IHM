@@ -1,7 +1,7 @@
 package enseigne.adminController.photo;
 
 import enseigne.ToNode;
-import enseigne.modele.modele.PhotoFilter;
+import enseigne.modele.PhotoFilter;
 import enseigne.modele.photo.Photo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

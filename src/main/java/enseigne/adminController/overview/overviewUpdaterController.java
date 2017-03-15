@@ -2,7 +2,7 @@ package enseigne.adminController.overview;
 
 import enseigne.modele.ReadConst;
 import enseigne.modele.magasin.Magasin;
-import enseigne.modele.modele.MagFilter;
+import enseigne.modele.MagFilter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
