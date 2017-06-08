@@ -1,6 +1,6 @@
 # Description
 
-A compléter
+Projet universitaire de modèle d'interface d'une borne de centre commercial effectué en JavaFX.
 
 ## Auteurs
 |Nom                      |Mail                           |Partie         | Alias github |
