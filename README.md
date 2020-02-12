@@ -7,7 +7,7 @@ Projet universitaire de modèle d'interface d'une borne de centre commercial eff
 |:-----------------------:|:-----------------------------:|:-------------:|:------------:|
 |Guillaume André          |guillaume.andre@etu.unice.fr   |Centre         |Sriki13       |
 |Jean-Adam Puskaric       |jean-adam.puskaric@etu.unice.fr|Centre         |JAUnice       |
-|Josué Collombier         |josue.collombier@etu.unice.fr  |Enseigne       |josue38       |
+|Josueeyyy         |anonimous  |Enseigne       |josue38       |
 |Lucas Matteo             |lucas.matteo@etu.unice.fr      |Enseigne       |LucasUnice    |
 |Charlotte Aknin          |charlotte.aknin@etu.unice.fr   |Magasin        |Meriveri      |
 |Zaki Berouk              |zaki.berouk@etu.unice.fr       |Magasin        |Miikzy        |
