@@ -10,7 +10,7 @@ Projet universitaire de modèle d'interface d'une borne de centre commercial eff
 |Josueeyyy         |anonimous  |Enseigne       |josue38       |
 |Lucas Matteo             |lucas.matteo@etu.unice.fr      |Enseigne       |LucasUnice    |
 |Charlotte Aknin          |charlotte.aknin@etu.unice.fr   |Magasin        |Meriveri      |
-|Zaki Berouk              |zaki.berouk@etu.unice.fr       |Magasin        |Miikzy        |
+|Zaki Berouk              |zaki.berouk[at]etu.unice.fr       |Magasin        |Miikzy        |
 
 
 ## Arguments du programme
